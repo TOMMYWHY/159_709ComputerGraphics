@@ -1,0 +1,13 @@
+HEADERS = -I/usr/lib/include/
+LIBS = -L/usr/lib/x86_64-linux-gnu -lglfw -lGLEW -lGL
+CC = g++ -O3 -Wall -W
+
+example01: example01.o
+	${CC} example01.o -o example01 ${LIBS}
+
+example01.o: example01.cpp
+	${CC} -c example01.cpp -o example01.o ${HEADERS}
+
+clean:
+	rm *.o
+	rm example01
