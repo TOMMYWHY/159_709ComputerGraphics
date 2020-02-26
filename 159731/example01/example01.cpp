@@ -24,6 +24,7 @@ void onWindowClose(GLFWwindow *window) {
 // Called on Window Size Event
 void onFramebufferSize(GLFWwindow *window, int width, int height) {
 	// Set-up the window/screen coordinates
+	//todo ?? already have context?
 	glfwMakeContextCurrent(window);
 	glViewport(0, 0, width, height);
 	glfwMakeContextCurrent(NULL);
@@ -97,10 +98,10 @@ int main() {
 	// Main Render loop
 	while (!glfwWindowShouldClose(window)) {
 		// Make the context of the given window current on the calling thread
-		glfwMakeContextCurrent(window);
+		glfwMakeContextCurrent(window); //todo ???Context?
 
 		// Set clear (background) colour to green
-		glClearColor(0.f, 0.5f, 0.f, 0.f);
+		glClearColor(0.2f, 0.5f, 0.7f, 0.f);
 
 		// Clear Screen
 		glClear(GL_COLOR_BUFFER_BIT);
