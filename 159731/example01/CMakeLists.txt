@@ -3,15 +3,17 @@ project(opengl_start_03)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(GLEW_H /usr/local/Cellar/glew/2.1.0/include/GL)
+#set(GLEW_H /usr/local/Cellar/glew/2.1.0/include/GL) # macos dont need glew
 set(GLFW_H /usr/local/Cellar/glfw/3.3/include/)
-include_directories(${GLEW_H} ${GLFW_H} )
+#include_directories(${GLEW_H} ${GLFW_H} )
+include_directories(${GLFW_H} )
 
 
 # 添加目标链接
-set(GLEW_LINK /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.dylib)
+#set(GLEW_LINK /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.dylib) # macos dont need glew
 set(GLFW_LINK /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib)
-link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
+#link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
+link_libraries(${OPENGL} ${GLFW_LINK})
 
 set(SOURCE_FILES "example01.cpp")
 add_executable(OpenGL ${SOURCE_FILES})

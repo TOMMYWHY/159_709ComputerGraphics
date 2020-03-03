@@ -1,0 +1,39 @@
+# Makefile Settings
+headers = -I/opt/local/include/ -I./include/
+frameworks = -framework OpenGL
+libs = -L/opt/local/lib/ -lglfw
+build = ./
+src = ./
+cc = g++ -O3
+
+example = example03
+
+# All
+all : ${example} ${example}.zip
+
+# Example
+
+src_files := $(wildcard ${src}/*.cpp)
+header_files := $(wildcard ${./include}/*.h)
+shader_files := $(wildcard ${./shader}/*.glsl)
+
+# Example .zip
+${example}.zip : ${src_files} ${header_files} ${shader_files}
+	zip ${example}.zip ${src_files} ${header_files} ${shader_files} makefile-mac makefile-win10 makefile-ubuntu	
+
+
+# Example Objects
+objects := $(patsubst ${src}/%.cpp,${build}/%.o,$(wildcard ${src}/*.cpp))
+
+# Build Rule
+${example} : ${objects}
+	${cc} -o ${example} ${objects} ${libs} ${frameworks}
+
+# Object Build Rule
+${build}/%.o : ${src}/%.cpp
+	$(cc) -o $@ -c $^ ${headers} ${frameworks}
+
+# Clean
+clean:
+	rm ${build}/*.o
+	rm ${example}
