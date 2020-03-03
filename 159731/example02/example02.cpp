@@ -372,18 +372,18 @@ int main() {
 	// glFrontFace(GL_CW);	// Clockwise
 
 	// // Triangle Vertexes
-	// GLfloat buffer[9];
+	 GLfloat buffer[9];
 
-	// buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
-	// buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.5f;
-	// buffer[6] = -0.5f; buffer[7] = -0.289f; buffer[8] =  0.5f;
+	 buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
+	 buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.5f;
+	 buffer[6] = -0.5f; buffer[7] = -0.289f; buffer[8] =  0.5f;
 
 	// Square Vertexes
-	GLfloat buffer[12];
+	/*GLfloat buffer[12];
 	buffer[0] =  0.5f; buffer[1]  =  0.5f; buffer[2]  =  0.0f;
 	buffer[3] = -0.5f; buffer[4]  =  0.5f; buffer[5]  =  0.0f;
 	buffer[6] =  0.5f; buffer[7]  = -0.5f; buffer[8]  =  0.0f;
-	buffer[9] = -0.5f; buffer[10] = -0.5f; buffer[11] =  0.0f;
+	buffer[9] = -0.5f; buffer[10] = -0.5f; buffer[11] =  0.0f;*/
 
 	// Load GLSL Program
 	GLuint program = loadProgram("vert.glsl", NULL, NULL, NULL, "frag.glsl");
@@ -415,14 +415,14 @@ int main() {
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 
 	// Load Vertex Data
-	// glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
-	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+	 glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+//	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
 
 	// Get Position Attribute location (must match name in shader)
 	GLuint posLoc = glGetAttribLocation(program, "vert_Position");
 
 	// Set Vertex Attribute Pointer
-	glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
+    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
 
 	// Enable Vertex Attribute Array
 	glEnableVertexAttribArray(posLoc);
@@ -439,15 +439,15 @@ int main() {
 		glClear(GL_COLOR_BUFFER_BIT);
 
 		// Draw Elements (Triangles)
-		// glDrawArrays(GL_POINTS, 0, 3);
+//		 glDrawArrays(GL_POINTS, 0, 3);
 		// glDrawArrays(GL_LINES, 0, 3);
 		// glDrawArrays(GL_LINE_STRIP, 0, 3);
-		// glDrawArrays(GL_TRIANGLES, 0, 3);
+		 glDrawArrays(GL_TRIANGLES, 0, 3);
 
 		// Draw Elements (Square)
 		// glDrawArrays(GL_POINTS, 0, 4);
 		// glDrawArrays(GL_LINES, 0, 4);
-		glDrawArrays(GL_LINE_STRIP, 0, 4);
+//		glDrawArrays(GL_LINE_STRIP, 0, 4);
 		// glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
 		// Swap the back and front buffers
