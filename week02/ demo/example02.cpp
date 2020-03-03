@@ -15,7 +15,10 @@ void on_framebuffer_size(GLFWwindow *window,int width, int height){
     glViewport(0, 0, width, height);
     cout <<"window resize to width:"<<width<<"; height:"<<height <<endl;
 }
-
+void onError(int error, const char *description) {
+    // Print Error message
+    cerr << "Error: " << error << " : " << description << endl;
+}
 /*
  * create window
  * */
@@ -40,10 +43,14 @@ GLFWwindow* create_window( int width =800,int height=600,
     return window;
 }
 
-
+/*
+ * shader
+ */
 
 int main(){
-//    glfwInit();
+    glfwSetErrorCallback(onError);
+
+    glfwInit();
     if(!glfwInit()){
         cout << "Failed to initialize GLFW!\n";
         return 1;
@@ -55,10 +62,33 @@ int main(){
         // Return Error
         return 1;
     }
+
     glfwMakeContextCurrent(window);
 
+    /*
+     * shader
+     */
+    const char* filename = "vert.glsl";
 
-    //engine
+    ifstream input(filename);
+    //fstream还有和open()一样的构造函数
+    /*ifstream input;
+    input.open(filename);*/
+    if(!input.good()){
+        cerr << "Error: Could not open " << filename <<endl;
+        return 0;
+    }
+    input.seekg(0,ios::end);
+    size_t size = input.tellg();
+    char * data = new char[size+1]; // 添加一个字符空位 给 '\0'
+    input.seekg(0,ios::beg);
+    input.read(data, size);
+    data[size] = '\0';
+    input.close();
+    cout <<"shader:"<< data <<endl;
+
+
+    //=================//engine//=================//
     while (!glfwWindowShouldClose(window)){
         glClearColor(0.0f, 0.34f, 0.57f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);

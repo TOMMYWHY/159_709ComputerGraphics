@@ -13,7 +13,7 @@ set(GLFW_LINK /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib)
 link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
-set(SOURCE_FILES  "example02.cpp")
+set(SOURCE_FILES "vert.glsl" "example02.cpp")
 add_executable(OpenGL ${SOURCE_FILES})
 
 
