@@ -4,7 +4,21 @@
 #include <GLFW/glfw3.h>
 using namespace std;
 
-// create window
+
+/*
+ * callbacks
+ * */
+void on_window_close(GLFWwindow *window){
+    cout <<"on_window_close..." <<endl;
+}
+void on_framebuffer_size(GLFWwindow *window,int width, int height){
+    glViewport(0, 0, width, height);
+    cout <<"window resize to width:"<<width<<"; height:"<<height <<endl;
+}
+
+/*
+ * create window
+ * */
 GLFWwindow* create_window( int width =800,int height=600,
                             const char * title ="demo",
                            int major = 3, int minor = 2,
@@ -20,8 +34,13 @@ GLFWwindow* create_window( int width =800,int height=600,
         cout << "Failed to Create window" << endl;
         return NULL;
     }
+    // callbacks
+    glfwSetFramebufferSizeCallback(window,on_framebuffer_size);
+    glfwSetWindowCloseCallback(window,on_window_close);
     return window;
 }
+
+
 
 int main(){
 //    glfwInit();
@@ -30,7 +49,12 @@ int main(){
         return 1;
     }
     GLFWwindow* window = create_window(500,400,"testing...");
-
+    if (window == NULL) {
+        // Print Error Message
+        cerr << "Error: create window or context failed." << endl;
+        // Return Error
+        return 1;
+    }
     glfwMakeContextCurrent(window);
 
 
@@ -44,6 +68,5 @@ int main(){
     }
     glfwDestroyWindow(window);
     glfwTerminate();
-    cout <<"testing..." <<endl;
     return 0;
 }
