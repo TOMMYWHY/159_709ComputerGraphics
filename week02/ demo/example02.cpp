@@ -6,8 +6,6 @@
 
 using namespace std;
 
-
-
 /*
  * callbacks
  * */
@@ -45,17 +43,92 @@ GLFWwindow* create_window( int width =800,int height=600,
     glfwSetWindowCloseCallback(window,on_window_close);
     return window;
 }
+/*
+ * read files
+ * */
+char * read_shader_file( const char* filename){
+// const char* filename = "vert.glsl";
+
+    ifstream input(filename);
+    //fstream还有和open()一样的构造函数
+    /*ifstream input;
+    input.open(filename);*/
+    if(!input.good()){
+        cerr << "Error: Could not open " << filename <<endl;
+        return 0;
+    }
+    input.seekg(0,ios::end);
+    size_t size = input.tellg();
+    char * data = new char[size+1]; // 添加一个字符空位 给 '\0'
+    input.seekg(0,ios::beg);
+    input.read(data, size);
+    data[size] = '\0';
+    input.close();
+    cout <<data <<endl;
+    return data;
+}
+
+/*
+ * load shader
+ * */
+GLuint checkShader(GLuint shader) {
+    // Compile status
+    GLint status = 0;
+
+    // Check compile status
+    glGetShaderiv(shader, GL_COMPILE_STATUS, &status);
+
+    // Error detected
+    if(status != GL_TRUE) {
+        // Get error message length
+        int size;
+        glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &size);
+
+        // Get error message
+        char *message = new char[size];
+        glGetShaderInfoLog(shader, size, &size, message);
+
+        // Print error message
+        std::cerr << message << std::endl;
+
+        // Delete message
+        delete[] message;
+
+        // Return error
+        return GL_FALSE;
+    }
+
+    // Return success
+    return GL_TRUE;
+}
+GLuint load_shader( GLuint shader_type ,const char* filename){
+    char* source = read_shader_file(filename);
+    GLuint shader_id = glCreateShader(shader_type);
+    glShaderSource(shader_id,1, &source, NULL);
+    glCompileShader(shader_id);
+    // check v shader
+    // Check shaders for errors
+    if(checkShader(shader_id) == GL_TRUE) {
+        // Log
+        cout << "Loaded: " << filename << endl;
+    } else {
+        // Print Error
+        cerr << "Error: could not compile " << filename << endl;
+        // Delete shader source
+        delete[] source;
+        // Return Error
+        return 0;
+    }
+    // Delete shader source
+    delete[] source;
+    return shader_id;
+}
+
 
 /*
  * shader
  */
 
-const float triangle[] = {
-//     ---- 位置 ----
-        -0.5f, -0.5f, 0.0f,   // 左下
-        0.5f, -0.5f, 0.0f,   // 右下
-        0.0f,  0.5f, 0.0f    // 正上
-};
 
 int main(){
     glfwSetErrorCallback(onError);
@@ -77,64 +150,15 @@ int main(){
     glViewport(0, 0, 800, 600);
 
 
-    /*
-     * shader
-     */
-    // reading shader file
-   /* const char* filename = "vert.glsl";
-
-    ifstream input(filename);
-    //fstream还有和open()一样的构造函数
-    *//*ifstream input;
-    input.open(filename);*//*
-    if(!input.good()){
-        cerr << "Error: Could not open " << filename <<endl;
-        return 0;
-    }
-    input.seekg(0,ios::end);
-    size_t size = input.tellg();
-    char * data = new char[size+1]; // 添加一个字符空位 给 '\0'
-    input.seekg(0,ios::beg);
-    input.read(data, size);
-    data[size] = '\0';
-    input.close();
-    cout <<"shader:"<< data <<endl;*/
-
-
-
-    const char *vertex_shader_source =
-            "#version 330 core\n"
-            "layout (location = 0) in vec3 aPos;\n"           // 位置变量的属性位置值为0
-//            "in vec3 vert_Position;\n"           // 位置变量的属性位置值为0
-            "void main()\n"
-            "{\n"
-            "    gl_Position = vec4(aPos, 1.0);\n"
-            "}\n\0";
-    const char *fragment_shader_source =
-            "#version 330 core\n"
-            "out vec4 FragColor;\n"                           // 输出的颜色向量
-            "void main()\n"
-            "{\n"
-            "    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-            "}\n\0";
-
-
     // v shader
-    GLuint v_shader_id = glCreateShader(GL_VERTEX_SHADER);
-//    glShaderSource(v_shader_id,1,&data,NULL);
-    glShaderSource(v_shader_id,1,&vertex_shader_source,NULL);
-    glCompileShader(v_shader_id);
-    // check v shader
-
-    //fragment temp....
-    int fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragment_shader, 1, &fragment_shader_source, NULL);
-    glCompileShader(fragment_shader);
+    GLuint v_shader_id = load_shader(GL_VERTEX_SHADER,"shaders/vert.glsl");
+    // f shader
+    GLuint f_shader_id = load_shader(GL_FRAGMENT_SHADER,"shaders/frag.glsl");
 
     // program
     GLuint program_id = glCreateProgram();
     glAttachShader(program_id,v_shader_id);
-    glAttachShader(program_id, fragment_shader);
+    glAttachShader(program_id, f_shader_id);
 
     glLinkProgram(program_id);
     glUseProgram(program_id);
@@ -145,19 +169,6 @@ int main(){
         // Return Error
         return 1;
     }
-
-    // check link
-
-
-    /*
-    * buffers
-    */
-    /* mac 不需要 glew
-     * if (glewInit() != GLEW_OK) {
-        // Return Error
-        return 1;
-    }*/
-//     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     GLfloat buffer[9];
     buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
@@ -172,21 +183,17 @@ int main(){
     glGenBuffers(1,&vbo);
     glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
 
-    // buffer 装载入 vbo
+    // buffer[] 装载入 vbo
     glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
 
     // todo
     //  program id  与 shader 中的 vert_Position 建立对应关系
-    /*GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
+    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
     glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(posLoc);*/
+    glEnableVertexAttribArray(posLoc);
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(0);
-
-
-
-
+    /*glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(0);*/
 
 
 

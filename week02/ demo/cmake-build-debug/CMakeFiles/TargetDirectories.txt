@@ -1,3 +1,4 @@
 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles/OpenGL.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles/opengl_start_03.dir

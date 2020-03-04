@@ -13,7 +13,23 @@ set(GLFW_LINK /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib)
 link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
-set(SOURCE_FILES "vert.glsl" "example02.cpp")
+
+file(GLOB PROJECT_SOURCES example02.cpp)
+file(GLOB PROJECT_SHADERS shader/*.glsl)
+
+source_group("Sources" FILES ${PROJECT_SOURCES})
+source_group("Shaders" FILES ${PROJECT_SHADERS})
+
+add_definitions(-DGLFW_INCLUDE_NONE
+        -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_SHADERS} )
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_Debug
+        RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_Release)
+
+
+set(SOURCE_FILES  ${PROJECT_SHADERS} "example02.cpp")
 #set(SOURCE_FILES "demo.cpp")
 add_executable(OpenGL ${SOURCE_FILES})
 

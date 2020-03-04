@@ -123,6 +123,19 @@ OpenGL/fast:
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/build
 .PHONY : OpenGL/fast
 
+#=============================================================================
+# Target rules for targets named opengl_start_03
+
+# Build rule for target.
+opengl_start_03: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opengl_start_03
+.PHONY : opengl_start_03
+
+# fast build rule for target.
+opengl_start_03/fast:
+	$(MAKE) -f CMakeFiles/opengl_start_03.dir/build.make CMakeFiles/opengl_start_03.dir/build
+.PHONY : opengl_start_03/fast
+
 example02.o: example02.cpp.o
 
 .PHONY : example02.o
@@ -130,6 +143,7 @@ example02.o: example02.cpp.o
 # target to build an object file
 example02.cpp.o:
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/example02.cpp.o
+	$(MAKE) -f CMakeFiles/opengl_start_03.dir/build.make CMakeFiles/opengl_start_03.dir/example02.cpp.o
 .PHONY : example02.cpp.o
 
 example02.i: example02.cpp.i
@@ -139,6 +153,7 @@ example02.i: example02.cpp.i
 # target to preprocess a source file
 example02.cpp.i:
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/example02.cpp.i
+	$(MAKE) -f CMakeFiles/opengl_start_03.dir/build.make CMakeFiles/opengl_start_03.dir/example02.cpp.i
 .PHONY : example02.cpp.i
 
 example02.s: example02.cpp.s
@@ -148,6 +163,7 @@ example02.s: example02.cpp.s
 # target to generate assembly for a file
 example02.cpp.s:
 	$(MAKE) -f CMakeFiles/OpenGL.dir/build.make CMakeFiles/OpenGL.dir/example02.cpp.s
+	$(MAKE) -f CMakeFiles/opengl_start_03.dir/build.make CMakeFiles/opengl_start_03.dir/example02.cpp.s
 .PHONY : example02.cpp.s
 
 # Help Target
@@ -159,6 +175,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... OpenGL"
+	@echo "... opengl_start_03"
 	@echo "... example02.o"
 	@echo "... example02.i"
 	@echo "... example02.s"
