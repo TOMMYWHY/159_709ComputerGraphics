@@ -1,29 +1,12 @@
 #include <iostream>
 #include <fstream>
 
-//#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <OpenGL/gl3.h>
+#include <GLFW/glfw3.h>
 
 using namespace std;
 
-const char *fragment_shader_source =
 
-        "#version 330 core\n"
-//        "out vec4 FragColor;\n"                           // 输出的颜色向量
-        "in vec3 vert_Position;\n"
-        "void main()\n"
-        "{\n"
-        "    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
-        "}\n\0";
-
-const char *vertex_shader_source =
-        "#version 330 core\n"
-        "layout (location = 0) in vec3 aPos;\n"           // 位置变量的属性位置值为0
-        "void main()\n"
-        "{\n"
-        "    gl_Position = vec4(aPos, 1.0);\n"
-        "}\n\0";
 
 /*
  * callbacks
@@ -67,6 +50,13 @@ GLFWwindow* create_window( int width =800,int height=600,
  * shader
  */
 
+const float triangle[] = {
+//     ---- 位置 ----
+        -0.5f, -0.5f, 0.0f,   // 左下
+        0.5f, -0.5f, 0.0f,   // 右下
+        0.0f,  0.5f, 0.0f    // 正上
+};
+
 int main(){
     glfwSetErrorCallback(onError);
 
@@ -75,7 +65,7 @@ int main(){
         cout << "Failed to initialize GLFW!\n";
         return 1;
     }
-    GLFWwindow* window = create_window(500,400,"testing...");
+    GLFWwindow* window = create_window(500,400,"example2...");
     if (window == NULL) {
         // Print Error Message
         cerr << "Error: create window or context failed." << endl;
@@ -84,6 +74,7 @@ int main(){
     }
 
     glfwMakeContextCurrent(window);
+    glViewport(0, 0, 800, 600);
 
 
     /*
@@ -108,6 +99,25 @@ int main(){
     data[size] = '\0';
     input.close();
     cout <<"shader:"<< data <<endl;*/
+
+
+
+    const char *vertex_shader_source =
+            "#version 330 core\n"
+            "layout (location = 0) in vec3 aPos;\n"           // 位置变量的属性位置值为0
+//            "in vec3 vert_Position;\n"           // 位置变量的属性位置值为0
+            "void main()\n"
+            "{\n"
+            "    gl_Position = vec4(aPos, 1.0);\n"
+            "}\n\0";
+    const char *fragment_shader_source =
+            "#version 330 core\n"
+            "out vec4 FragColor;\n"                           // 输出的颜色向量
+            "void main()\n"
+            "{\n"
+            "    FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+            "}\n\0";
+
 
     // v shader
     GLuint v_shader_id = glCreateShader(GL_VERTEX_SHADER);
@@ -147,7 +157,7 @@ int main(){
         // Return Error
         return 1;
     }*/
-     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+//     glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 
     GLfloat buffer[9];
     buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
@@ -165,14 +175,17 @@ int main(){
     // buffer 装载入 vbo
     glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
 
-    //program id  与 shader 中的 vert_Position 建立对应关系
-    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
-
+    // todo
+    //  program id  与 shader 中的 vert_Position 建立对应关系
+    /*GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
     glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(posLoc);
+    glEnableVertexAttribArray(posLoc);*/
 
-    /*glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(0);*/
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(0);
+
+
+
 
 
 

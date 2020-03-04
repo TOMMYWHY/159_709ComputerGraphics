@@ -11,9 +11,9 @@ iostream
 -
 fstream
 -
-GLFW/glfw3.h
--
 OpenGL/gl3.h
+-
+GLFW/glfw3.h
 -
 
 /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
