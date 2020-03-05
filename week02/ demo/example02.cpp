@@ -154,29 +154,56 @@ int main(){
     GLuint v_shader_id = load_shader(GL_VERTEX_SHADER,"shaders/vert.glsl");
     // f shader
     GLuint f_shader_id = load_shader(GL_FRAGMENT_SHADER,"shaders/frag.glsl");
-
     // program
     GLuint program_id = glCreateProgram();
     glAttachShader(program_id,v_shader_id);
     glAttachShader(program_id, f_shader_id);
-
     glLinkProgram(program_id);
     glUseProgram(program_id);
     if(program_id == 0) {
         // Print Error Message
-        std::cerr << "Error: could not load GLSL program" << std::endl;
-
+        cerr << "Error: could not load GLSL program" << endl;
         // Return Error
         return 1;
     }
 
-    GLfloat buffer[9];
-    buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
-    buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.5f;
-    buffer[6] = -0.5f; buffer[7] = -0.289f; buffer[8] =  0.5f;
+
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+//    glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
+
+//     glEnable(GL_CULL_FACE);
+//     glCullFace(GL_BACK);
+
+    // OpenGL Winding Order
+//     glFrontFace(GL_CCW);	// Counter-Clockwise
+//     glFrontFace(GL_CW);	// Clockwise
+
+    /*GLfloat buffer[9];
+    buffer[0] =  1.0f; buffer[1] =  0.577f; buffer[2] =  0.0f;
+    buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.0f;
+    buffer[6] = -0.5f; buffer[7] = -0.789f; buffer[8] =  0.0f;*/
+
+   /* GLfloat buffer[12];
+	buffer[0] =  0.5f; buffer[1]  =  0.5f; buffer[2]  =  0.0f;
+	buffer[3] = -0.5f; buffer[4]  =  0.5f; buffer[5]  =  0.0f;
+	buffer[6] =  0.5f; buffer[7]  = -0.5f; buffer[8]  =  0.0f;
+	buffer[9] = -0.5f; buffer[10] = -0.5f; buffer[11] =  0.0f;*/
 
 
-    //VAO VBO //
+    // Triangle Vertexes (and colours)
+    GLfloat buffer[18];
+
+    buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
+    buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
+
+    buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
+    buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
+
+    buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
+    buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
+
+
+    //===VAO VBO ===//
     GLuint vao, vbo;
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
@@ -184,16 +211,26 @@ int main(){
     glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
 
     // buffer[] 装载入 vbo
-    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+//    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+//    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
 
-    // todo
-    //  program id  与 shader 中的 vert_Position 建立对应关系
-    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
-    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(posLoc);
 
     /*glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
     glEnableVertexAttribArray(0);*/
+    /*GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
+    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(posLoc);*/
+
+    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
+    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(posLoc);
+    GLuint colLoc = glGetAttribLocation(program_id,"vert_Colour");
+    glVertexAttribPointer(colLoc,3,GL_FLOAT,GL_FALSE,6* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
+    glEnableVertexAttribArray(colLoc);
+
+
+
 
 
 
@@ -206,7 +243,23 @@ int main(){
 
 //        glUseProgram(program_id);
 
+    // Draw Elements (Triangles)
+//		 glDrawArrays(GL_POINTS, 0, 3);
+//         glDrawArrays(GL_LINES, 0, 3);
+//         glDrawArrays(GL_LINE_STRIP, 0, 3);
+//         glDrawArrays(GL_LINE_LOOP, 0, 3);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
+        // Draw Elements (Square)
+//         glDrawArrays(GL_POINTS, 0, 4);
+//         glDrawArrays(GL_LINES, 0, 4);
+//		glDrawArrays(GL_LINE_STRIP, 0, 4);
+        // glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+
+        glBindVertexArray(vao);
+        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+
+
 
         glfwSwapBuffers(window);
         glfwPollEvents();

@@ -1,5 +1,5 @@
 // OpenGL 3.3
-#version 330
+	#version 330
 
 // Output from Fragment Shader
 out vec4 pixel_Colour;
