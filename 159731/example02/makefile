@@ -10,4 +10,4 @@ example02.o: example02.cpp
 
 clean:
 	rm *.o
-	rm example02
+	rm example02q

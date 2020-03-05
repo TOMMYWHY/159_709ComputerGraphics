@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/opengl_start_03.dir/example02.cpp.o"
+  "CMakeFiles/opengl_start_03.dir/example03.cpp.o"
   "opengl_start_03_Debug/opengl_start_03.pdb"
   "opengl_start_03_Debug/opengl_start_03"
 )

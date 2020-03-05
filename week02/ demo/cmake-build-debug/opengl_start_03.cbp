@@ -134,7 +134,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example02.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example03.cpp">
 			<Option target="OpenGL"/>
 			<Option target="opengl_start_03"/>
 		</Unit>

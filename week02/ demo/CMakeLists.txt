@@ -15,10 +15,11 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
 file(GLOB PROJECT_SOURCES example02.cpp)
+file(GLOB PROJECT_SOURCES example03.cpp)
 file(GLOB PROJECT_SHADERS shader/*.glsl)
 
 source_group("Sources" FILES ${PROJECT_SOURCES})
-source_group("Shaders" FILES ${PROJECT_SHADERS})
+source_group("shaders-02" FILES ${PROJECT_SHADERS})
 
 add_definitions(-DGLFW_INCLUDE_NONE
         -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
@@ -29,7 +30,8 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_Release)
 
 
-set(SOURCE_FILES  ${PROJECT_SHADERS} "example02.cpp")
+#set(SOURCE_FILES  ${PROJECT_SHADERS} "example02.cpp")
+set(SOURCE_FILES  ${PROJECT_SHADERS} "example03.cpp")
 #set(SOURCE_FILES "demo.cpp")
 add_executable(OpenGL ${SOURCE_FILES})
 

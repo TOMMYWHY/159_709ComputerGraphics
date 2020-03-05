@@ -57,27 +57,27 @@ include CMakeFiles/opengl_start_03.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/opengl_start_03.dir/flags.make
 
-CMakeFiles/opengl_start_03.dir/example02.cpp.o: CMakeFiles/opengl_start_03.dir/flags.make
-CMakeFiles/opengl_start_03.dir/example02.cpp.o: ../example02.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_03.dir/example02.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_03.dir/example02.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example02.cpp"
+CMakeFiles/opengl_start_03.dir/example03.cpp.o: CMakeFiles/opengl_start_03.dir/flags.make
+CMakeFiles/opengl_start_03.dir/example03.cpp.o: ../example03.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_03.dir/example03.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_03.dir/example03.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example03.cpp"
 
-CMakeFiles/opengl_start_03.dir/example02.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_03.dir/example02.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example02.cpp" > CMakeFiles/opengl_start_03.dir/example02.cpp.i
+CMakeFiles/opengl_start_03.dir/example03.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_03.dir/example03.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example03.cpp" > CMakeFiles/opengl_start_03.dir/example03.cpp.i
 
-CMakeFiles/opengl_start_03.dir/example02.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_03.dir/example02.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example02.cpp" -o CMakeFiles/opengl_start_03.dir/example02.cpp.s
+CMakeFiles/opengl_start_03.dir/example03.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_03.dir/example03.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week02/ demo/example03.cpp" -o CMakeFiles/opengl_start_03.dir/example03.cpp.s
 
 # Object files for target opengl_start_03
 opengl_start_03_OBJECTS = \
-"CMakeFiles/opengl_start_03.dir/example02.cpp.o"
+"CMakeFiles/opengl_start_03.dir/example03.cpp.o"
 
 # External object files for target opengl_start_03
 opengl_start_03_EXTERNAL_OBJECTS =
 
-opengl_start_03_Debug/opengl_start_03: CMakeFiles/opengl_start_03.dir/example02.cpp.o
+opengl_start_03_Debug/opengl_start_03: CMakeFiles/opengl_start_03.dir/example03.cpp.o
 opengl_start_03_Debug/opengl_start_03: CMakeFiles/opengl_start_03.dir/build.make
 opengl_start_03_Debug/opengl_start_03: /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib
 opengl_start_03_Debug/opengl_start_03: CMakeFiles/opengl_start_03.dir/link.txt

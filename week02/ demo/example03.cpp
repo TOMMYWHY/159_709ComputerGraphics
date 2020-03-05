@@ -1,3 +1,6 @@
+//
+// Created by Tommy on 2020-03-06.
+//
 #include <iostream>
 #include <fstream>
 
@@ -24,7 +27,7 @@ void onError(int error, const char *description) {
  * create window
  * */
 GLFWwindow* create_window( int width =800,int height=600,
-                            const char * title ="demo",
+                           const char * title ="demo",
                            int major = 3, int minor = 2,
                            GLFWmonitor *monitor = NULL, GLFWwindow *share = NULL){
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -124,12 +127,6 @@ GLuint load_shader( GLuint shader_type ,const char* filename){
     return shader_id;
 }
 
-
-/*
- * shader
- */
-
-
 int main(){
     glfwSetErrorCallback(onError);
 
@@ -138,23 +135,21 @@ int main(){
         cout << "Failed to initialize GLFW!\n";
         return 1;
     }
-    GLFWwindow* window = create_window(500,400,"example2...");
+    GLFWwindow* window = create_window(800,600,"example3...");
     if (window == NULL) {
         // Print Error Message
         cerr << "Error: create window or context failed." << endl;
         // Return Error
         return 1;
     }
-
     glfwMakeContextCurrent(window);
     glViewport(0, 0, 800, 600);
 
+    //===========================================//
 
-    // v shader
-    GLuint v_shader_id = load_shader(GL_VERTEX_SHADER,"shaders-02/vert.glsl");
-    // f shader
-    GLuint f_shader_id = load_shader(GL_FRAGMENT_SHADER,"shaders-02/frag.glsl");
-    // program
+    //shaders-03
+    GLuint v_shader_id = load_shader(GL_VERTEX_SHADER,"shaders-03/vert.glsl");
+    GLuint f_shader_id = load_shader(GL_FRAGMENT_SHADER,"shaders-03/frag.glsl");
     GLuint program_id = glCreateProgram();
     glAttachShader(program_id,v_shader_id);
     glAttachShader(program_id, f_shader_id);
@@ -166,29 +161,6 @@ int main(){
         // Return Error
         return 1;
     }
-
-
-//    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-//    glPolygonMode(GL_FRONT_AND_BACK, GL_POINT);
-
-//     glEnable(GL_CULL_FACE);
-//     glCullFace(GL_BACK);
-
-    // OpenGL Winding Order
-//     glFrontFace(GL_CCW);	// Counter-Clockwise
-//     glFrontFace(GL_CW);	// Clockwise
-
-    /*GLfloat buffer[9];
-    buffer[0] =  1.0f; buffer[1] =  0.577f; buffer[2] =  0.0f;
-    buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.0f;
-    buffer[6] = -0.5f; buffer[7] = -0.789f; buffer[8] =  0.0f;*/
-
-   /* GLfloat buffer[12];
-	buffer[0] =  0.5f; buffer[1]  =  0.5f; buffer[2]  =  0.0f;
-	buffer[3] = -0.5f; buffer[4]  =  0.5f; buffer[5]  =  0.0f;
-	buffer[6] =  0.5f; buffer[7]  = -0.5f; buffer[8]  =  0.0f;
-	buffer[9] = -0.5f; buffer[10] = -0.5f; buffer[11] =  0.0f;*/
-
 
     // Triangle Vertexes (and colours)
     GLfloat buffer[18];
@@ -202,75 +174,56 @@ int main(){
     buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
     buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
 
-
-    //===VAO VBO ===//
-    GLuint vao, vbo;
+    // Triangle Indexes
+    GLuint indexes[3];
+    indexes[0] = 0;
+    indexes[1] = 2;
+    indexes[2] = 1;
+    // VAO VBO EBO
+    GLuint vao, vbo,ebo;
     glGenVertexArrays(1,&vao);
     glBindVertexArray(vao);
+
     glGenBuffers(1,&vbo);
     glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
 
-    // buffer[] 装载入 vbo
-//    glBufferData(GL_ARRAY_BUFFER, 9 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
-//    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
-
-
-//就是告诉OpenGl，编号为 0 的opengl属性 使用当前绑定在GL_ARRAY_BUFFER​的VBO。
-    /*glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(0);*/
-    /*GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
-    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(posLoc);*/
+    glGenBuffers(1,&ebo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexes), indexes, GL_STATIC_DRAW);
 
     GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
-    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(posLoc);
     GLuint colLoc = glGetAttribLocation(program_id,"vert_Colour");
+    glVertexAttribPointer(posLoc,3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), NULL);
     glVertexAttribPointer(colLoc,3,GL_FLOAT,GL_FALSE,6* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
+    glEnableVertexAttribArray(posLoc);
     glEnableVertexAttribArray(colLoc);
+    //clean
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+    //===========================================//
 
-
-
-
-
-
-
-
-    //=================//engine//=================//
-    while (!glfwWindowShouldClose(window)){
+    //--engine--//
+    while (!glfwWindowShouldClose(window)) {
         glClearColor(0.0f, 0.34f, 0.57f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-//        glUseProgram(program_id);
-
-    // Draw Elements (Triangles)
-//		 glDrawArrays(GL_POINTS, 0, 3);
-//         glDrawArrays(GL_LINES, 0, 3);
-//         glDrawArrays(GL_LINE_STRIP, 0, 3);
-//         glDrawArrays(GL_LINE_LOOP, 0, 3);
-//        glDrawArrays(GL_TRIANGLES, 0, 3);
-
-        // Draw Elements (Square)
-//         glDrawArrays(GL_POINTS, 0, 4);
-//         glDrawArrays(GL_LINES, 0, 4);
-//		glDrawArrays(GL_LINE_STRIP, 0, 4);
-        // glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-
-        /*
-         * testing....
-         */
-//        glBindVertexArray(vao);
-        glDrawArrays(GL_TRIANGLES, 0, 3);                                          // 绘制三角形
-
-//        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-
+        //
+        glUseProgram(program_id);
+        glBindVertexArray(vao);
+        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
 
 
         glfwSwapBuffers(window);
         glfwPollEvents();
-
     }
+
+    // clean VAO/VBO/EBO
+    glDeleteVertexArrays(1, &vao);
+    glDeleteBuffers(1, &vbo);
+    glDeleteBuffers(1, &ebo);
+    glDeleteProgram(program_id);
     glfwDestroyWindow(window);
     glfwTerminate();
     return 0;
