@@ -376,7 +376,7 @@ int main() {
 
 	 buffer[0] =  0.0f; buffer[1] =  0.577f; buffer[2] =  0.5f;
 	 buffer[3] =  0.5f; buffer[4] = -0.289f; buffer[5] =  0.5f;
-	 buffer[6] = -0.5f; buffer[7] = -0.289f; buffer[8] =  0.5f;
+	 buffer[6] = -0.7f; buffer[7] = -0.289f; buffer[8] =  0.5f;
 
 	// Square Vertexes
 	/*GLfloat buffer[12];
@@ -444,7 +444,11 @@ int main() {
 		// glDrawArrays(GL_LINE_STRIP, 0, 3);
 		 glDrawArrays(GL_TRIANGLES, 0, 3);
 
-		// Draw Elements (Square)
+        /*glBindVertexArray(vao);
+        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);*/
+
+
+        // Draw Elements (Square)
 		// glDrawArrays(GL_POINTS, 0, 4);
 		// glDrawArrays(GL_LINES, 0, 4);
 //		glDrawArrays(GL_LINE_STRIP, 0, 4);

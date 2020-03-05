@@ -216,6 +216,7 @@ int main(){
 //    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
 
 
+//就是告诉OpenGl，编号为 0 的opengl属性 使用当前绑定在GL_ARRAY_BUFFER​的VBO。
     /*glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
     glEnableVertexAttribArray(0);*/
     /*GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
@@ -248,7 +249,7 @@ int main(){
 //         glDrawArrays(GL_LINES, 0, 3);
 //         glDrawArrays(GL_LINE_STRIP, 0, 3);
 //         glDrawArrays(GL_LINE_LOOP, 0, 3);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+//        glDrawArrays(GL_TRIANGLES, 0, 3);
 
         // Draw Elements (Square)
 //         glDrawArrays(GL_POINTS, 0, 4);
@@ -256,8 +257,13 @@ int main(){
 //		glDrawArrays(GL_LINE_STRIP, 0, 4);
         // glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
 
-        glBindVertexArray(vao);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        /*
+         * testing....
+         */
+//        glBindVertexArray(vao);
+        glDrawArrays(GL_TRIANGLES, 0, 3);                                          // 绘制三角形
+
+//        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 
 
