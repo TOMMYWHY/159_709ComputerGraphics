@@ -233,22 +233,22 @@ void view(float p[4], float f[3], float u[3], float V[16]) {
 }
 
 // Create an Orthographic Projection matrix
-void orthographic(float width, float height, float near, float far, float matrix[16]) {
+void orthographic(float width, float height, float near1, float far1, float matrix[16]) {
 	matrix[0]  = 2.0/width;  matrix[4]  = 0.0f;         matrix[8]  =  0.0f;             matrix[12] = 0.0f;
 	matrix[1]  = 0.0f;       matrix[5]  = 2.0f/height;  matrix[9]  =  0.0f;             matrix[13] = 0.0f;
-	matrix[2]  = 0.0f;       matrix[6]  = 0.0f;         matrix[10] = -2.0f/(far-near);  matrix[14] = -(far+near) / (far-near);
+	matrix[2]  = 0.0f;       matrix[6]  = 0.0f;         matrix[10] = -2.0f / (far1-near1);  matrix[14] = -(far1+near1) / (far1-near1);
 	matrix[3]  = 0.0f;       matrix[7]  = 0.0f;         matrix[11] =  0.0f;             matrix[15] = 1.0f;
 }
 
 // Create a Perspective Projection matrix
-void perspective(float aspect, float fov, float near, float far, float matrix[16]) {
+void perspective(float aspect, float fov, float near1, float far1, float matrix[16]) {
 	// Calculate f
 	float f = 1.0f / tan(fov * 0.5);
 
 	// Create Perspective matrix
 	matrix[0]  = f/aspect;  matrix[4]  = 0.0f;  matrix[8]  =  0.0f;                  matrix[12] = 0.0f;
 	matrix[1]  = 0.0f;      matrix[5]  = f;     matrix[9]  =  0.0f;                  matrix[13] = 0.0f;
-	matrix[2]  = 0.0f;      matrix[6]  = 0.0f;  matrix[10] = (far+near)/(near-far);  matrix[14] = (2*far*near) / (near - far);
+	matrix[2]  = 0.0f;      matrix[6]  = 0.0f;  matrix[10] = (far1+near1)/(near1-far1);  matrix[14] = (2*far1*near1) / (near1 - far1);
 	matrix[3]  = 0.0f;      matrix[7]  = 0.0f;  matrix[11] =  -1.0f;                 matrix[15] = 0.0f;
 }
 
@@ -266,7 +266,7 @@ int main() {
 	}
 
 	// Create Window
-	GLFWwindow *window = createWindow(600, 600, "Example 04 - Transforms", 3, 2);
+	GLFWwindow *window = createWindow(600, 600, "Example 05 - Transforms - Cube", 3, 2);
 
 	// Check Window
 	if (window == NULL) {
@@ -296,26 +296,118 @@ int main() {
 	glDepthFunc(GL_LEQUAL);
 
 	// ----------------------------------------
-	// Create Triangle Data
+	// Create Cube Data
 	// ----------------------------------------
 
 	// Triangle Vertexes (and colours)
-	GLfloat buffer[18];
+	GLfloat buffer[144];
+	int i = 0;
 
-	buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
-	buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
+	// Top - Red
+	buffer[i++] = -1.0f;  buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.72f; buffer[i++] =  0.07f;  buffer[i++] =  0.2f;
 
-	buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
-	buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
+	buffer[i++] =  1.0f;  buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.72f; buffer[i++] =  0.07f;  buffer[i++] =  0.2f;
 
-	buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
-	buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
+	buffer[i++] =  1.0f;  buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.72f; buffer[i++] =  0.07f;  buffer[i++] =  0.2f;
+
+	buffer[i++] = -1.0f;  buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.72f; buffer[i++] =  0.07f;  buffer[i++] =  0.2f;
+
+	// Bottom - Orange
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.35f;  buffer[i++] =  0.0f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.35f;  buffer[i++] =  0.0f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.35f;  buffer[i++] =  0.0f;
+
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.35f;  buffer[i++] =  0.0f;
+
+	// Front - Yellow
+	buffer[i++] = -1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.84f;  buffer[i++] =  0.0f;
+
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.84f;  buffer[i++] =  0.0f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.84f;  buffer[i++] =  0.0f;
+
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  0.84f;  buffer[i++] =  0.0f;
+
+	// Back - White
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+
+	buffer[i++] = -1.0f; buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+
+	// Right - Blue
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.27f;  buffer[i++] =  0.68f;
+
+	buffer[i++] =  1.0f; buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.27f;  buffer[i++] =  0.68f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.27f;  buffer[i++] =  0.68f;
+
+	buffer[i++] =  1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.27f;  buffer[i++] =  0.68f;
+
+	// Left - Green
+	buffer[i++] = -1.0f; buffer[i++] =  1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.6f;   buffer[i++] =  0.27f;
+
+	buffer[i++] = -1.0f; buffer[i++] =  1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.6f;   buffer[i++] =  0.27f;
+
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] =  1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.6f;   buffer[i++] =  0.27f;
+
+	buffer[i++] = -1.0f; buffer[i++] = -1.0f;   buffer[i++] = -1.0f;
+	buffer[i++] =  0.0f; buffer[i++] =  0.6f;   buffer[i++] =  0.27f;
 
 	// Triangle Indexes
-	GLuint indexes[3];
-	indexes[0] = 0;
-	indexes[1] = 1;
-	indexes[2] = 2;
+	GLuint indexes[36];
+	i = 0;
+
+	// Top
+	indexes[i++] =  0; indexes[i++] =  1; indexes[i++] =  2;
+	indexes[i++] =  0; indexes[i++] =  2; indexes[i++] =  3;
+
+	// Bottom
+	indexes[i++] =  4; indexes[i++] =  5; indexes[i++] =  6;
+	indexes[i++] =  4; indexes[i++] =  6; indexes[i++] =  7;
+
+	// Front
+	indexes[i++] =  8; indexes[i++] =  9; indexes[i++] = 10;
+	indexes[i++] =  8; indexes[i++] = 10; indexes[i++] = 11;
+
+	// Back
+	indexes[i++] = 12; indexes[i++] = 13; indexes[i++] = 14;
+	indexes[i++] = 12; indexes[i++] = 14; indexes[i++] = 15;
+
+	// Right
+	indexes[i++] = 16; indexes[i++] = 17; indexes[i++] = 18;
+	indexes[i++] = 16; indexes[i++] = 18; indexes[i++] = 19;
+
+	// Left
+	indexes[i++] = 20; indexes[i++] = 21; indexes[i++] = 22;
+	indexes[i++] = 20; indexes[i++] = 22; indexes[i++] = 23;
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -348,10 +440,10 @@ int main() {
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 
 	// Load Vertex Data
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, 144 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
 
 	// Load Element Data
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(GLuint), indexes, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 36 * sizeof(GLuint), indexes, GL_STATIC_DRAW);
 
 	// Get Position Attribute location (must match name in shader)
 	GLuint posLoc = glGetAttribLocation(program, "vert_Position");
@@ -390,17 +482,17 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	float viewMatrix[16];
-	float viewPosition[3] = { 0.0f,  0.0f,  5.0f};
-	float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
-	float viewForward[3]  = { 0.0f,  0.0f, -1.0f};
+	float viewPosition[3] = { 0.0f,  5.0f,  5.0f};
+	float viewUp[3]       = { 0.0f,  1.0f, -1.0f};
+	float viewForward[3]  = { 0.0f, -1.0f, -1.0f};
 
-	/* float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
-	 float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
-	 float viewForward[3]  = { 0.0f, -1.0f, -0.1f};*/
+	// float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
+	// float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
+	// float viewForward[3]  = { 0.0f, -1.0f, -0.1f};
 
-	/* float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
-	 float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
-	 float viewForward[3]  = { -0.5f,  0.0f, -1.0f};*/
+	// float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
+	// float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
+	// float viewForward[3]  = { -0.5f,  0.0f, -1.0f};
 
 	normalize(viewUp, viewUp);
 	normalize(viewForward, viewForward);
@@ -491,7 +583,7 @@ int main() {
 		// float rotation[16];
 
 		// // Create Rotation Matrix
-		// rotate(glfwGetTime(), 1.0f, tan(30/180.0f * M_PI), 0.0f, rotation);
+		// rotate(glfwGetTime(), 1.0f, 1.0f, 1.0f, rotation);
 
 		// // Get Model Matrix location
 		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
@@ -566,7 +658,7 @@ int main() {
 		glBindVertexArray(vao);
 
 		// Draw Elements (Triangles)
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
+		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, NULL);
 
 		// Swap the back and front buffers
 		glfwSwapBuffers(window);
