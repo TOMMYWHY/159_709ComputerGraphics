@@ -1,0 +1,3 @@
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/demo/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/demo/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/demo/CMakeFiles/demo.dir
