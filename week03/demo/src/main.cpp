@@ -359,7 +359,7 @@ int main(){
         // uniform
 //        trans = glm::translate(trans,glm::vec3(-0.001f,0,0));
 //        trans = glm::rotate(trans,glm::radians(.01f),glm::vec3(0,0,1.0f));
-//        trans= glm::scale(trans,glm::vec3(1.0001f,1.0001f,1.0001f));
+        trans= glm::scale(trans,glm::vec3(1.0001f,1.0001f,1.0001f));
 
 
         unsigned int transformLoc = glGetUniformLocation(program_id, "transform");
