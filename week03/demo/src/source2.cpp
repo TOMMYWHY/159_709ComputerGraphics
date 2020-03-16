@@ -58,12 +58,7 @@ GLFWwindow* create_window( int width =800,int height=600,
  * read files
  * */
 char * read_shader_file( const char* filename){
-// const char* filename = "vert.glsl";
-
     ifstream input(filename);
-    //fstream还有和open()一样的构造函数
-    /*ifstream input;
-    input.open(filename);*/
     if(!input.good()){
         cerr << "Error: Could not open " << filename <<endl;
         return 0;
@@ -75,7 +70,7 @@ char * read_shader_file( const char* filename){
     input.read(data, size);
     data[size] = '\0';
     input.close();
-    cout <<data <<endl;
+//    cout <<data <<endl;
     return data;
 }
 
@@ -247,13 +242,7 @@ GLuint loadProgram(const char *vert_file, const char *ctrl_file, const char *eva
     return program;
 }
 
-#if 0
-int main(){
 
-    cout <<"testing...."<<endl;
-    return 0;
-    }
-#endif
 
 #if 1
 int main(){
@@ -279,47 +268,128 @@ int main(){
 
     GLuint program_id = loadProgram("shaders/vert.glsl", NULL, NULL, NULL, "shaders/frag.glsl");
 
-
-    //----------------
-    int i = 0;
-    float p = 0.0, r = 0.04;
-    GLfloat vertex_list[2 * 360 / STEP][3];
-    GLfloat color_list[2 * 360 / STEP][3];
-    GLuint index_list[360 / STEP];
-    for (i = 0; i < SAMPLE_CNT * 2; i += 2)
+    //===========球================================//
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.07;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices;
+    std::vector<int> sphereIndices;
+    std::vector<float> buffer_all;
+    for (int y = 0; y <= Y_SEGMENTS; y++)
     {
-        p = i * STEP * 3.14 / 180;
-        vertex_list[i][0] = cos(p) * r;
-        vertex_list[i][2] = sin(p) * r;
-        vertex_list[i][1] = 0.5f;
-        vertex_list[i + 1][0] = cos(p) * r;
-        vertex_list[i + 1][2] = sin(p) * r;
-        vertex_list[i + 1][1] = -0.5f;
+        for (int x = 0; x <= X_SEGMENTS; x++)
+        {
+            float xSegment = (float)x / (float)X_SEGMENTS;
+            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+            float yPos = std::cos(ySegment * PI);
+            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+
+
+            sphereVertices.push_back(xPos*radius);
+            sphereVertices.push_back(yPos*radius);
+            sphereVertices.push_back(zPos*radius);
+        }
+    }
+
+    // 生成球的Indices
+    for (int i = 0; i < Y_SEGMENTS; i++)
+    {
+        for (int j = 0; j < X_SEGMENTS; j++)
+        {
+
+            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
+        }
+    }
+
+
+    //--------cylinder--------
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderVertices;
+    std::vector<float> cylinderColorList;
+    std::vector<int>   cylinderIndexList;
+//    GLfloat vertex_list[2 * 360 / step][3];
+    GLfloat color_list[2 * 360 / step][3];
+    GLuint index_list[360 / step];
+
+
+    for ( i = 0; i < sample_cnt * 2; i += 2)
+    {
+        p = i * step * 3.14 / 180;
+        float xPos = cos(p) * r;
+        float zPos = sin(p) * r;
+        float yPos = 0.5f;
+        cylinderVertices.push_back(xPos);
+        cylinderVertices.push_back(yPos);
+        cylinderVertices.push_back(zPos);
+        float xPos_next = cos(p) * r;
+        float zPos_next = sin(p) * r;
+        float yPos_next = -0.5f;
+        cylinderVertices.push_back(xPos_next);
+        cylinderVertices.push_back(yPos_next);
+        cylinderVertices.push_back(zPos_next);
+
     }
     /* 确定每个点的坐标*/
-    for (i = 0; i < SAMPLE_CNT * 2; i++)
+    for (int i = 0; i < sample_cnt * 2; i++)
     {
-        color_list[i][0] = 0.5f;
+        std::cout<<i<<std::endl;
+
+        /*color_list[i][0] = 0.5f;
         color_list[i][1] = 0.0f;
-        color_list[i][2] = 1.0f;
+        color_list[i][2] = 1.0f;*/
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.4f);
+        cylinderColorList.push_back(0.2f);
 
     }
     /* 确定顶面的索引*/
-    for (i = 0; i < SAMPLE_CNT; i++)
+    for (int i = 0; i < sample_cnt; i++)
     {
-        index_list[i] = i+2;
+//        index_list[i] = i+2;
+        int index = i+2;
+        cylinderIndexList.push_back(index) ;
     }
 
     std::cout<<"testing"<<std::endl;
-    /*for(int i=0;i<60;i++)
-    {
-        std::cout<<index_list[i]<<",";
-    }*/
-    for(int i=0;i<120;i++)
-    {
-        std::cout<<vertex_list[i][0]<<",";
-    }
+//    std::cout<< sizeof(vertex_list)<<std::endl;
 
+    /*for(int i=0;i< 50;i++)
+    {
+        std::cout<<"i:"<<i;
+        std::cout<<vertex_list[i][0]<<" , ";
+        std::cout<<vertex_list[i][1]<<" , ";
+        std::cout<<vertex_list[i][2]<<endl;
+
+    }
+*/
+
+    // Triangle Vertexes (and colours)
+    GLfloat buffer[18];
+
+    buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
+    buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
+
+    buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
+    buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
+
+    buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
+    buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
+
+    // Triangle Indexes
+    GLuint indexes[3];
+    indexes[0] = 0;
+    indexes[1] = 2;
+    indexes[2] = 1;
     // VAO VBO EBO
     GLuint vao, vbo,ebo;
     glGenVertexArrays(1,&vao);
@@ -330,14 +400,14 @@ int main(){
 
     glGenBuffers(1,&ebo);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertex_list) + sizeof(color_list), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertex_list), vertex_list);
-    glBufferSubData(GL_ARRAY_BUFFER, sizeof(vertex_list), sizeof(color_list), color_list);
+    glBufferData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float) + cylinderColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, cylinderVertices.size()* sizeof(float), &cylinderVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float), cylinderColorList.size()* sizeof(float), &cylinderColorList[0]);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(sizeof(vertex_list)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(cylinderVertices.size()* sizeof(float)));
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(index_list), index_list, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
 
 
 

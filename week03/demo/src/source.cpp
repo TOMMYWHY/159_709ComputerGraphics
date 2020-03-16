@@ -336,28 +336,7 @@ int main(){
     // Triangle Vertexes (and colours)
 
 
-    GLfloat buffer[18];
 
-    buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
-    buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
-
-    buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
-    buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
-
-    buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
-    buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
-
-    /*float buffer[] = {
-            0.5f, -0.5f, 0.0f,  // bottom right
-            -0.5f, -0.5f, 0.0f,  // bottom left
-            0.0f,  0.5f, 0.0f   // top
-    };*/
-
-    // Triangle Indexes
-    GLuint indexes[3];
-    indexes[0] = 0;
-    indexes[1] = 2;
-    indexes[2] = 1;
     // VAO VBO EBO
     GLuint vao, vbo,ebo;
     glGenVertexArrays(1,&vao);

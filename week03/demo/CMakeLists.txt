@@ -24,7 +24,8 @@ set(SHADERS shaders)
 # --- demo2 ---#
 #set(SHADERS shaders)
 #file(GLOB PROJECT_SOURCES src/source.cpp) # 球 未能上色
-file(GLOB PROJECT_SOURCES src/source1.cpp) # 圆柱体
+#file(GLOB PROJECT_SOURCES src/source1.cpp) # 圆柱体
+file(GLOB PROJECT_SOURCES src/source2.cpp) # merge ball and cylinder
 
 
 source_group("Sources" FILES ${PROJECT_SOURCES})
