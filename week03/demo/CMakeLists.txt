@@ -9,6 +9,7 @@ include_directories(${GLEW_H} ${GLFW_H} )
 include_directories(include/
         external/glm)
 
+
 # 添加目标链接
 #set(GLEW_LINK /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.dylib)
 set(GLFW_LINK /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib)
@@ -22,7 +23,8 @@ set(SHADERS shaders)
 
 # --- demo2 ---#
 #set(SHADERS shaders)
-file(GLOB PROJECT_SOURCES src/source.cpp)
+#file(GLOB PROJECT_SOURCES src/source.cpp) # 球 未能上色
+file(GLOB PROJECT_SOURCES src/source1.cpp) # 圆柱体
 
 
 source_group("Sources" FILES ${PROJECT_SOURCES})
