@@ -123,32 +123,32 @@ demo/fast:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
-src/source2.o: src/source2.cpp.o
+src/source4.o: src/source4.cpp.o
 
-.PHONY : src/source2.o
+.PHONY : src/source4.o
 
 # target to build an object file
-src/source2.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source2.cpp.o
-.PHONY : src/source2.cpp.o
+src/source4.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source4.cpp.o
+.PHONY : src/source4.cpp.o
 
-src/source2.i: src/source2.cpp.i
+src/source4.i: src/source4.cpp.i
 
-.PHONY : src/source2.i
+.PHONY : src/source4.i
 
 # target to preprocess a source file
-src/source2.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source2.cpp.i
-.PHONY : src/source2.cpp.i
+src/source4.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source4.cpp.i
+.PHONY : src/source4.cpp.i
 
-src/source2.s: src/source2.cpp.s
+src/source4.s: src/source4.cpp.s
 
-.PHONY : src/source2.s
+.PHONY : src/source4.s
 
 # target to generate assembly for a file
-src/source2.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source2.cpp.s
-.PHONY : src/source2.cpp.s
+src/source4.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/source4.cpp.s
+.PHONY : src/source4.cpp.s
 
 # Help Target
 help:
@@ -159,9 +159,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... demo"
-	@echo "... src/source2.o"
-	@echo "... src/source2.i"
-	@echo "... src/source2.s"
+	@echo "... src/source4.o"
+	@echo "... src/source4.i"
+	@echo "... src/source4.s"
 .PHONY : help
 
 

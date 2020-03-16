@@ -274,6 +274,8 @@ int main(){
     const float radius = 0.07;
     const GLfloat  PI = 3.14159265358979323846f;
     std::vector<float> sphereVertices;
+    std::vector<float> sphereColorList;
+
     std::vector<int> sphereIndices;
     std::vector<float> buffer_all;
     for (int y = 0; y <= Y_SEGMENTS; y++)
@@ -292,6 +294,15 @@ int main(){
             sphereVertices.push_back(zPos*radius);
         }
     }
+
+    for (int i = 0; i < sphereVertices.size();) {
+        sphereColorList.push_back(0.9f);
+        sphereColorList.push_back(0.4f);
+        sphereColorList.push_back(0.2f);
+        i = i+3;
+//        std::cout<< "sphereColorList -> i:"<< i ;
+    }
+
 
     // 生成球的Indices
     for (int i = 0; i < Y_SEGMENTS; i++)
@@ -339,14 +350,14 @@ int main(){
     /* 确定每个点的坐标*/
     for (int i = 0; i < sample_cnt * 2; i++)
     {
-        std::cout<<i<<std::endl;
+//        std::cout<<i<<std::endl;
 
         /*color_list[i][0] = 0.5f;
         color_list[i][1] = 0.0f;
         color_list[i][2] = 1.0f;*/
         cylinderColorList.push_back(0.9f);
-        cylinderColorList.push_back(0.4f);
-        cylinderColorList.push_back(0.2f);
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.0f);
 
     }
     /* 确定顶面的索引*/
@@ -358,54 +369,51 @@ int main(){
     }
 
     std::cout<<"testing"<<std::endl;
-//    std::cout<< sizeof(vertex_list)<<std::endl;
+    std::cout << sphereColorList.data()<<std::endl;
 
-    /*for(int i=0;i< 50;i++)
-    {
-        std::cout<<"i:"<<i;
-        std::cout<<vertex_list[i][0]<<" , ";
-        std::cout<<vertex_list[i][1]<<" , ";
-        std::cout<<vertex_list[i][2]<<endl;
 
-    }
-*/
-
-    // Triangle Vertexes (and colours)
-    GLfloat buffer[18];
-
-    buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
-    buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
-
-    buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
-    buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
-
-    buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
-    buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
-
-    // Triangle Indexes
-    GLuint indexes[3];
-    indexes[0] = 0;
-    indexes[1] = 2;
-    indexes[2] = 1;
-    // VAO VBO EBO
-    GLuint vao, vbo,ebo;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
-
-    glGenBuffers(1,&vbo);
-    glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
-
-    glGenBuffers(1,&ebo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-
-    glBufferData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float) + cylinderColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, cylinderVertices.size()* sizeof(float), &cylinderVertices[0]);
-    glBufferSubData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float), cylinderColorList.size()* sizeof(float), &cylinderColorList[0]);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(cylinderVertices.size()* sizeof(float)));
+    // sphere VAO VBO EBO
+    GLuint sphere_vao=0;
+    GLuint sphere_vbo=0;
+    GLuint sphere_ebo=0;
+    glGenVertexArrays(1, &sphere_vao);
+    glGenBuffers(1, &sphere_vbo);
+    glGenBuffers(1, &sphere_ebo);
+    glBindVertexArray(sphere_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, sphere_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_ebo);
+    glBufferData(GL_ARRAY_BUFFER, sphereVertices.size()* sizeof(float) + sphereColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,sphereIndices.size()* sizeof(float), &sphereIndices[0], GL_STATIC_DRAW);
+    /*GLuint colorPosLoc = glGetAttribLocation(program_id, "vert_Position");
+    GLuint colorColLoc = glGetAttribLocation(program_id, "vert_Normal");
+    glVertexAttribPointer(colorPosLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
+    glVertexAttribPointer(colorColLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(16*sizeof(GLfloat)));
+    glEnableVertexAttribArray(colorPosLoc);
+    glEnableVertexAttribArray(colorColLoc);*/
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0 * sizeof(GLfloat), NULL);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0 * sizeof(GLfloat), (GLvoid *)(sphereVertices.size()* sizeof(float)));
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
+
+
+
+
+
+
+
+    //cylinder
+
+
+//    glBufferData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float) + cylinderColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+//    glBufferSubData(GL_ARRAY_BUFFER, 0, cylinderVertices.size()* sizeof(float), &cylinderVertices[0]);
+//    glBufferSubData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float), cylinderColorList.size()* sizeof(float), &cylinderColorList[0]);
+//    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+//    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(cylinderVertices.size()* sizeof(float)));
+//    glEnableVertexAttribArray(0);
+//    glEnableVertexAttribArray(1);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
+//
+
 
 
 
@@ -425,7 +433,9 @@ int main(){
 
         //
         glUseProgram(program_id);
-        glBindVertexArray(vao);
+        glBindVertexArray(sphere_vao);
+        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
+
 
 //        unsigned int transformLoc = glGetUniformLocation(program_id, "transform");
 //        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
@@ -437,15 +447,18 @@ int main(){
         glDrawElementsBaseVertex(GL_TRIANGLE_FAN, SAMPLE_CNT, GL_UNSIGNED_INT, (GLvoid *)(0),1);
 
 
+//        glBindVertexArray(vao[1]);
+
+
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     // clean VAO/VBO/EBO
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo);
-    glDeleteBuffers(1, &ebo);
+    glDeleteVertexArrays(1, &sphere_vao);
+    glDeleteBuffers(1, &sphere_vbo);
+    glDeleteBuffers(1, &sphere_ebo);
     glDeleteProgram(program_id);
     glfwDestroyWindow(window);
     glfwTerminate();
