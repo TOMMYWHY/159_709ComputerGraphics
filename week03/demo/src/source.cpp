@@ -281,6 +281,7 @@ int main(){
     const GLfloat  PI = 3.14159265358979323846f;
     std::vector<float> sphereVertices;
     std::vector<int> sphereIndices;
+    std::vector<float> buffer_all;
     for (int y = 0; y <= Y_SEGMENTS; y++)
     {
         for (int x = 0; x <= X_SEGMENTS; x++)
@@ -314,12 +315,27 @@ int main(){
         }
     }
 
-    std::cout<<"testing"<<std::endl;
-    for(int i=0;i<sphereIndices.size();i++)
+//    std::cout<<"testing"<<sphereVertices.size()<<std::endl;
+    std::vector<float> sphereFragColor;
+    int sphereVertices_amount = sphereVertices.size();
+    std::cout<<sphereVertices_amount<<endl ;
+    for(int i=0;i<sphereVertices.size();i++)
     {
-        std::cout<<sphereIndices[i]<<"," << std::endl;
+//        sphereFragColor[i] = 0.9f;
+        sphereFragColor.push_back(0.3f);
+//        std::cout<<sphereFragColor[i]<<"," << std::endl;
     }
+    sphereVertices.insert(sphereVertices.end(),sphereFragColor.begin(),sphereFragColor.end());
+
+    for(int i=0;i<sphereVertices.size();i++)
+    {
+        std::cout<<sphereVertices[i]<<" ; "  ;
+    }
+
+    std::cout<<sphereVertices.size()<<endl ;
     // Triangle Vertexes (and colours)
+
+
     GLfloat buffer[18];
 
     buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
@@ -365,9 +381,14 @@ int main(){
     glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
     glEnableVertexAttribArray(0);
 
-//    glVertexAttribPointer(colLoc,3,GL_FLOAT,GL_FALSE,6* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
+//    glVertexAttribPointer(sphereVertices_amount,3,GL_FLOAT,GL_FALSE,3* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
 //    glEnableVertexAttribArray(posLoc);
 //    glEnableVertexAttribArray(colLoc);
+
+//    glEnableVertexAttribArray(0);
+// 颜色属性
+//    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
+//    glEnableVertexAttribArray(1);
     //clean
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);

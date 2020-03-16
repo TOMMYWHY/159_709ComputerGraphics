@@ -2,9 +2,11 @@
 #version 330
 
 // Input to Vertex Shader
-layout (location = 0) in vec3 vert_Position;
-
-in vec3 vert_Colour;
+//layout (location = 0) in vec3 vert_Position;
+layout (location = 0) in vec3 vert_Position;   // 位置变量的属性位置值为 0
+layout (location = 1) in vec3 vert_Colour;
+//in vec3 vert_Position;
+//in vec3 vert_Colour;
 //layout (location = 0) in vec3 vert_Position;
 //uniform mat4 transform;
 
