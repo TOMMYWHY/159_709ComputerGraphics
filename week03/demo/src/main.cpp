@@ -3,7 +3,7 @@
 //
 #include <iostream>
 #include <fstream>
-
+#include <vector>
 #include <OpenGL/gl3.h>
 #include <GLFW/glfw3.h>
 
@@ -272,22 +272,53 @@ int main(){
 
     //===========================================//
 
-    //shaders
-    /*GLuint v_shader_id = load_shader(GL_VERTEX_SHADER,"shaders/vert.glsl");
-    GLuint f_shader_id = load_shader(GL_FRAGMENT_SHADER,"shaders/frag.glsl");
-    GLuint program_id = glCreateProgram();
-    glAttachShader(program_id,v_shader_id);
-    glAttachShader(program_id, f_shader_id);
-    glLinkProgram(program_id);
-    glUseProgram(program_id);
-    if(program_id == 0) {
-        // Print Error Message
-        cerr << "Error: could not load GLSL program" << endl;
-        // Return Error
-        return 1;
-    }*/
     GLuint program_id = loadProgram("shaders/vert.glsl", NULL, NULL, NULL, "shaders/frag.glsl");
 
+    // 生成球的顶点
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.07;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices;
+    std::vector<int> sphereIndices;
+    for (int y = 0; y <= Y_SEGMENTS; y++)
+    {
+        for (int x = 0; x <= X_SEGMENTS; x++)
+        {
+            float xSegment = (float)x / (float)X_SEGMENTS;
+            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+            float yPos = std::cos(ySegment * PI);
+            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+
+
+            sphereVertices.push_back(xPos*radius);
+            sphereVertices.push_back(yPos*radius);
+            sphereVertices.push_back(zPos*radius);
+        }
+    }
+
+    // 生成球的Indices
+    for (int i = 0; i < Y_SEGMENTS; i++)
+    {
+        for (int j = 0; j < X_SEGMENTS; j++)
+        {
+
+            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
+        }
+    }
+
+    std::cout<<"testing"<<std::endl;
+    for(int i=0;i<sphereIndices.size();i++)
+    {
+        std::cout<<sphereIndices[i]<<"," << std::endl;
+    }
     // Triangle Vertexes (and colours)
     GLfloat buffer[18];
 
@@ -321,30 +352,29 @@ int main(){
 
     glGenBuffers(1,&ebo);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexes), indexes, GL_STATIC_DRAW);
+//    glBufferData(GL_ARRAY_BUFFER,  sizeof(buffer), buffer, GL_STATIC_DRAW);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indexes), indexes, GL_STATIC_DRAW);
 
-    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
-    GLuint colLoc = glGetAttribLocation(program_id,"vert_Colour");
-    glVertexAttribPointer(posLoc,3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), NULL);
-    glVertexAttribPointer(colLoc,3,GL_FLOAT,GL_FALSE,6* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
-    glEnableVertexAttribArray(posLoc);
-    glEnableVertexAttribArray(colLoc);
+    // Load Vertex Data
+    glBufferData(GL_ARRAY_BUFFER, sphereVertices.size() * sizeof(float), &sphereVertices[0], GL_STATIC_DRAW);
+    // Load Element Data
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sphereIndices.size() * sizeof(int), &sphereIndices[0], GL_STATIC_DRAW);
+
+//    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
+//    GLuint colLoc = glGetAttribLocation(program_id,"vert_Colour");
+    glVertexAttribPointer(0,3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), NULL);
+    glEnableVertexAttribArray(0);
+
+//    glVertexAttribPointer(colLoc,3,GL_FLOAT,GL_FALSE,6* sizeof(GLfloat),(GLvoid*)(3*sizeof(GLfloat)));
+//    glEnableVertexAttribArray(posLoc);
+//    glEnableVertexAttribArray(colLoc);
     //clean
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
-    //===========================================//
-    //glm
-    glm::mat4 trans;
-//    trans = glm::translate(trans,glm::vec3(-0.4f,0,0)); //
-//    trans = glm::rotate(trans,glm::radians(90.0f),glm::vec3(0,0,1.0f));
-//    trans= glm::scale(trans,glm::vec3(1.7f,1.7f,1.7f));
 
-
-    //===========================================//
 
     //--engine--//
     while (!glfwWindowShouldClose(window)) {
@@ -355,15 +385,11 @@ int main(){
         //
         glUseProgram(program_id);
         glBindVertexArray(vao);
-
-        // uniform
-//        trans = glm::translate(trans,glm::vec3(-0.001f,0,0));
-//        trans = glm::rotate(trans,glm::radians(.01f),glm::vec3(0,0,1.0f));
-        trans= glm::scale(trans,glm::vec3(1.0001f,1.0001f,1.0001f));
+        glPolygonMode(GL_FRONT_AND_BACK,GL_FILL);
+        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
 
 
         unsigned int transformLoc = glGetUniformLocation(program_id, "transform");
-        glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(trans));
 
 
 

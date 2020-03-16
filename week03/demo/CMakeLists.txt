@@ -18,11 +18,11 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 file(GLOB PROJECT_HEADERS include/*.h)
 # --- demo1 ---#
 set(SHADERS shaders)
-file(GLOB PROJECT_SOURCES src/main.cpp)
+#file(GLOB PROJECT_SOURCES src/main.cpp)
 
 # --- demo2 ---#
 #set(SHADERS shaders)
-#file(GLOB PROJECT_SOURCES src/source.cpp)
+file(GLOB PROJECT_SOURCES src/source.cpp)
 
 
 source_group("Sources" FILES ${PROJECT_SOURCES})
