@@ -285,10 +285,10 @@ int main(){
 
     GLuint program_id = loadProgram("shaders/vert.glsl", NULL, NULL, NULL, "shaders/frag.glsl");
 
-    //===========球================================//
+    //===========sphere================================//
     const int Y_SEGMENTS = 50;
     const int X_SEGMENTS = 50;
-    const float radius = 0.12;
+    const float radius = 0.08;
     const GLfloat  PI = 3.14159265358979323846f;
     std::vector<float> sphereVertices;
     std::vector<float> sphereColorList;
@@ -305,12 +305,12 @@ int main(){
             float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
 
             sphereVertices.push_back(xPos*radius);
-            sphereVertices.push_back(yPos*radius);
+            sphereVertices.push_back(yPos*radius+0.5f);
             sphereVertices.push_back(zPos*radius);
         }
     }
 
-
+    // sphere color
     for (int i = 0; i < sphereVertices.size();) {
         sphereColorList.push_back(0.9f);
         sphereColorList.push_back(0.4f);
@@ -318,7 +318,7 @@ int main(){
         i = i+3;
     }
 
-    // 生成球的Indices
+    // sphere Indices
     for (int i = 0; i < Y_SEGMENTS; i++)
     {
         for (int j = 0; j < X_SEGMENTS; j++)
@@ -336,7 +336,7 @@ int main(){
 
 
     //--------cylinder--------
-    float p = 0.0, r = 0.02;
+    float p = 0.0, r = 0.04;
     int i = 0, step = 6;
     int sample_cnt =(360/step);
     std::vector<float> cylinderVertices;
@@ -355,29 +355,25 @@ int main(){
         cylinderVertices.push_back(zPos);
         float xPos_next = cos(p) * r;
         float zPos_next = sin(p) * r;
-        float yPos_next = -0.5f;
+        float yPos_next = -0.7f;
         cylinderVertices.push_back(xPos_next);
         cylinderVertices.push_back(yPos_next);
         cylinderVertices.push_back(zPos_next);
 
     }
-    /* 确定每个点的坐标*/
+    // cylinder color
     for (int i = 0; i < sample_cnt * 2; i++)
     {
-
         cylinderColorList.push_back(0.9f);
         cylinderColorList.push_back(0.9f);
         cylinderColorList.push_back(0.0f);
-
     }
-    /* 确定顶面的索引*/
+    // cylinder  Indices
     for (int i = 0; i < sample_cnt; i++)
     {
-//        index_list[i] = i+2;
         int index = i+2;
         cylinderIndexList.push_back(index) ;
     }
-
     std::cout<<"testing"<<std::endl;
 
 

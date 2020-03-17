@@ -8,15 +8,14 @@
 #include <GLFW/glfw3.h>
 #include <vector>
 
-#include <math.h>
+//#include "vmath.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
 using namespace std;
 
-#define STEP                    6
-#define SAMPLE_CNT              (360/STEP)
+
 /*
  * callbacks
  * */
@@ -35,7 +34,7 @@ void onError(int error, const char *description) {
  * create window
  * */
 GLFWwindow* create_window( int width =800,int height=600,
-                           const char * title ="demo",
+                           const char * title ="project1",
                            int major = 3, int minor = 2,
                            GLFWmonitor *monitor = NULL, GLFWwindow *share = NULL){
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -43,7 +42,6 @@ GLFWwindow* create_window( int width =800,int height=600,
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-//    GLFWmonitor * monitor = NULL; GLFWwindow * share= NULL;
     GLFWwindow *window = glfwCreateWindow(width,height,title,monitor,share);
     if(window == NULL){
         cout << "Failed to Create window" << endl;
@@ -285,33 +283,113 @@ int main(){
 
     GLuint program_id = loadProgram("shaders/vert.glsl", NULL, NULL, NULL, "shaders/frag.glsl");
 
+    //===========sphere================================//
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.08;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices;
+    std::vector<float> sphereColorList;
+    std::vector<int> sphereIndices;
+//    std::vector<float> buffer_all;
+    for (int y = 0; y <= Y_SEGMENTS; y++)
+    {
+        for (int x = 0; x <= X_SEGMENTS; x++)
+        {
+            float xSegment = (float)x / (float)X_SEGMENTS;
+            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+            float yPos = std::cos(ySegment * PI);
+            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
 
+            sphereVertices.push_back(xPos*radius);
+            sphereVertices.push_back(yPos*radius+0.5f);
+            sphereVertices.push_back(zPos*radius);
+        }
+    }
+
+    // sphere color
+    for (int i = 0; i < sphereVertices.size();) {
+        sphereColorList.push_back(0.9f);
+        sphereColorList.push_back(0.4f);
+        sphereColorList.push_back(0.2f);
+        i = i+3;
+    }
+
+    // sphere Indices
+    for (int i = 0; i < Y_SEGMENTS; i++)
+    {
+        for (int j = 0; j < X_SEGMENTS; j++)
+        {
+
+            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
+        }
+    }
+
+
+    //--------cylinder--------
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderVertices;
+    std::vector<float> cylinderColorList;
+    std::vector<int>   cylinderIndexList;
+
+
+    for ( i = 0; i < sample_cnt * 2; i += 2)
+    {
+        p = i * step * 3.14 / 180;
+        float xPos = cos(p) * r;
+        float yPos = 0.5f;
+        float zPos = sin(p) * r;
+        cylinderVertices.push_back(xPos);
+        cylinderVertices.push_back(yPos);
+        cylinderVertices.push_back(zPos);
+        float xPos_next = cos(p) * r;
+        float yPos_next = -0.7f;
+        float zPos_next = sin(p) * r;
+        cylinderVertices.push_back(xPos_next);
+        cylinderVertices.push_back(yPos_next);
+        cylinderVertices.push_back(zPos_next);
+
+    }
+    // cylinder color
+    for (int i = 0; i < sample_cnt * 2; i++)
+    {
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.0f);
+    }
+    // cylinder  Indices
+    for (int i = 0; i < sample_cnt; i++)
+    {
+        int index = i+2;
+        cylinderIndexList.push_back(index) ;
+    }
 
 
     //--------flag--------
-
-
-    /*std::vector<float> flagColorList={
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-    };*/
-
     std::vector<float> flagVertices = {
             // 第一个三角形
-            0.5f, 0.5f, 0.0f,      // 右上
-            0.5f, -0.5f, 0.0f,   // 右下
-            -0.5f, -0.5f, 0.0f,   // 左下
+            0.9f, 0.5f, 0.0f,1.0f,      // 右上
+            .9f, -0.5f, 0.0f,  1.0f,   // 右下
+            0.0f, -0.5f, 0.0f, 1.0f,    // 左下
             // 第二个三角形
-            -0.5f, -0.5f, 0.0f,   // 左下
-            0.5f, 0.5f, 0.0f,    // 右上
-            -0.5f, 0.5f, 0.0f,   // 左上
+            0.0f, -0.5f, 0.0f,1.0f,     // 左下
+            .9f, 0.5f, 0.0f,  1.0f,    // 右上
+            0.0f, 0.5f, 0.0f, 1.0f,    // 左上
     };
-
-    float flagColorList []={
+//    glm::mat4 trans;
+//    trans = glm::translate(trans,glm::vec3(1.0f,1.0f,0.0f));
+//    flagVertices = trans * flagVertices;
+//    cout <<tran.x<< <<endl;
+    std::vector<float>  flagColorList ={
             .0,0.635,0.345,
             .0,0.935,0.345,
             .0,0.635,0.345,
@@ -320,30 +398,80 @@ int main(){
             .0,0.635,0.345,
     };
 
-    unsigned int indices[] = {
+    std::vector<int>  flagIndices = {
             0, 1, 5,              // 第一个三角形
             1, 2, 5               // 第二个三角形
     };
-    // VAO VBO EBO
-    GLuint vao, vbo,ebo;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
-
-    glGenBuffers(1,&vbo);
-    glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
-
-    glGenBuffers(1,&ebo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 
 
-    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + sizeof(flagColorList)* sizeof(float), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
-    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), sizeof(flagColorList)* sizeof(float), flagColorList);
+    std::cout<<"testing"<<std::endl;
+
+
+
+
+
+//   cylinder
+    GLuint cylinder_vao = 0;
+    GLuint cylinder_vbo = 0;
+    GLuint cylinder_ebo = 0;
+    glGenVertexArrays(1, &cylinder_vao);
+    glGenBuffers(1, &cylinder_vbo);
+    glGenBuffers(1, &cylinder_ebo);
+    glBindVertexArray(cylinder_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, cylinder_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cylinder_ebo);
+    glBufferData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float) + cylinderColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, cylinderVertices.size()* sizeof(float), &cylinderVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float), cylinderColorList.size()* sizeof(float), &cylinderColorList[0]);
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(cylinderVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
+
+
+    // sphere
+    GLuint sphere_vao = 0;
+    GLuint sphere_vbo = 0;
+    GLuint sphere_ebo = 0;
+    glGenVertexArrays(1, &sphere_vao);
+    glGenBuffers(1, &sphere_vbo);
+    glGenBuffers(1, &sphere_ebo);
+    glBindVertexArray(sphere_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, sphere_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_ebo);
+
+    glBufferData(GL_ARRAY_BUFFER, sphereVertices.size()* sizeof(float) + sphereColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sphereVertices.size()* sizeof(float), &sphereVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, sphereVertices.size()* sizeof(float), sphereColorList.size()* sizeof(float), &sphereColorList[0]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(sphereVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sphereIndices.size()* sizeof(float), &sphereIndices[0], GL_STATIC_DRAW);
+
+// flag
+    GLuint flag_vao = 0;
+    GLuint flag_vbo = 0;
+    GLuint flag_ebo = 0;
+    glGenVertexArrays(1, &flag_vao);
+    glGenBuffers(1, &flag_vbo);
+    glGenBuffers(1, &flag_ebo);
+    glBindVertexArray(flag_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, flag_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, flag_ebo);
+
+    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + flagColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), flagColorList.size()* sizeof(float), &flagColorList[0]);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices)* sizeof(float), &indices[0], GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(flagIndices)* sizeof(float), &flagIndices[0], GL_STATIC_DRAW);
+
+
+
 
 
     //clean
@@ -358,18 +486,47 @@ int main(){
         glClearColor(0.0f, 0.34f, 0.57f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        //
+        /*glUseProgram(program_id);
+        glBindVertexArray(vao);*/
+
+
+
+        //cylinder
         glUseProgram(program_id);
-        glBindVertexArray(vao);
+        glBindVertexArray(cylinder_vao);
+
+        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
+        glDrawElements(GL_TRIANGLE_FAN, 360/step, GL_UNSIGNED_INT, (GLvoid *)(0));
+        glDrawElementsBaseVertex(GL_TRIANGLE_FAN, 360/step, GL_UNSIGNED_INT, (GLvoid *)(0),1);
+        glBindVertexArray(0);
+
+        // sphere
+        glUseProgram(program_id);
+        glBindVertexArray(sphere_vao);
+        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
+
+        // flag
+        glUseProgram(program_id);
+        glBindVertexArray(flag_vao);
         glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
+
+
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     // clean VAO/VBO/EBO
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo);
-    glDeleteBuffers(1, &ebo);
+    glDeleteVertexArrays(1, &cylinder_vao);
+    glDeleteBuffers(1, &cylinder_vbo);
+    glDeleteBuffers(1, &cylinder_ebo);
+
+    glDeleteVertexArrays(1, &sphere_vao);
+    glDeleteBuffers(1, &sphere_vbo);
+    glDeleteBuffers(1, &sphere_ebo);
     glDeleteProgram(program_id);
     glfwDestroyWindow(window);
     glfwTerminate();
