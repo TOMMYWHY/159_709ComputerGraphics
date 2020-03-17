@@ -15,7 +15,17 @@
 
 using namespace std;
 
+vector<float> flag_vertex_data();
+vector<float> flag_color_data();
+vector<int> flag_index_data();
 
+vector<float> cylinder_vertex_data();
+vector<float> cylinder_color_data();
+vector<int> cylinder_index_data();
+
+vector<float> sphere_vertex_data();
+vector<float> sphere_color_data(vector<float> sphereVertices);
+vector<int> sphere_index_data();
 /*
  * callbacks
  * */
@@ -278,139 +288,21 @@ int main(){
     glfwMakeContextCurrent(window);
     glViewport(0, 0, 800, 600);
 
-    //===========================================//
 
 
     GLuint program_id = loadProgram("shaders/vert.glsl", NULL, NULL, NULL, "shaders/frag.glsl");
 
-    //===========sphere================================//
-    const int Y_SEGMENTS = 50;
-    const int X_SEGMENTS = 50;
-    const float radius = 0.08;
-    const GLfloat  PI = 3.14159265358979323846f;
-    std::vector<float> sphereVertices;
-    std::vector<float> sphereColorList;
-    std::vector<int> sphereIndices;
-//    std::vector<float> buffer_all;
-    for (int y = 0; y <= Y_SEGMENTS; y++)
-    {
-        for (int x = 0; x <= X_SEGMENTS; x++)
-        {
-            float xSegment = (float)x / (float)X_SEGMENTS;
-            float ySegment = (float)y / (float)Y_SEGMENTS;
-            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
-            float yPos = std::cos(ySegment * PI);
-            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
 
-            sphereVertices.push_back(xPos*radius);
-            sphereVertices.push_back(yPos*radius+0.5f);
-            sphereVertices.push_back(zPos*radius);
-        }
-    }
+    //===========================================//
 
-    // sphere color
-    for (int i = 0; i < sphereVertices.size();) {
-        sphereColorList.push_back(0.9f);
-        sphereColorList.push_back(0.4f);
-        sphereColorList.push_back(0.2f);
-        i = i+3;
-    }
-
-    // sphere Indices
-    for (int i = 0; i < Y_SEGMENTS; i++)
-    {
-        for (int j = 0; j < X_SEGMENTS; j++)
-        {
-
-            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
-            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
-            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
-
-            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
-            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
-            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
-        }
-    }
-
-
-    //--------cylinder--------
+//--------cylinder--------
     float p = 0.0, r = 0.04;
     int i = 0, step = 6;
     int sample_cnt =(360/step);
-    std::vector<float> cylinderVertices;
-    std::vector<float> cylinderColorList;
-    std::vector<int>   cylinderIndexList;
+    vector<float> cylinderVertices = cylinder_vertex_data();
+    vector<float> cylinderColorList =cylinder_color_data() ;
+    vector<int>   cylinderIndexList = cylinder_index_data();
 
-
-    for ( i = 0; i < sample_cnt * 2; i += 2)
-    {
-        p = i * step * 3.14 / 180;
-        float xPos = cos(p) * r;
-        float yPos = 0.5f;
-        float zPos = sin(p) * r;
-        cylinderVertices.push_back(xPos);
-        cylinderVertices.push_back(yPos);
-        cylinderVertices.push_back(zPos);
-        float xPos_next = cos(p) * r;
-        float yPos_next = -0.7f;
-        float zPos_next = sin(p) * r;
-        cylinderVertices.push_back(xPos_next);
-        cylinderVertices.push_back(yPos_next);
-        cylinderVertices.push_back(zPos_next);
-
-    }
-    // cylinder color
-    for (int i = 0; i < sample_cnt * 2; i++)
-    {
-        cylinderColorList.push_back(0.9f);
-        cylinderColorList.push_back(0.9f);
-        cylinderColorList.push_back(0.0f);
-    }
-    // cylinder  Indices
-    for (int i = 0; i < sample_cnt; i++)
-    {
-        int index = i+2;
-        cylinderIndexList.push_back(index) ;
-    }
-
-
-    //--------flag--------
-    std::vector<float> flagVertices = {
-            // 第一个三角形
-            0.9f, 0.5f, 0.0f,1.0f,      // 右上
-            .9f, -0.5f, 0.0f,  1.0f,   // 右下
-            0.0f, -0.5f, 0.0f, 1.0f,    // 左下
-            // 第二个三角形
-            0.0f, -0.5f, 0.0f,1.0f,     // 左下
-            .9f, 0.5f, 0.0f,  1.0f,    // 右上
-            0.0f, 0.5f, 0.0f, 1.0f,    // 左上
-    };
-//    glm::mat4 trans;
-//    trans = glm::translate(trans,glm::vec3(1.0f,1.0f,0.0f));
-//    flagVertices = trans * flagVertices;
-//    cout <<tran.x<< <<endl;
-    std::vector<float>  flagColorList ={
-            .0,0.635,0.345,
-            .0,0.935,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-    };
-
-    std::vector<int>  flagIndices = {
-            0, 1, 5,              // 第一个三角形
-            1, 2, 5               // 第二个三角形
-    };
-
-
-    std::cout<<"testing"<<std::endl;
-
-
-
-
-
-//   cylinder
     GLuint cylinder_vao = 0;
     GLuint cylinder_vbo = 0;
     GLuint cylinder_ebo = 0;
@@ -430,7 +322,15 @@ int main(){
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
 
 
-    // sphere
+    //-------------------sphere---------------//
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.08;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices = sphere_vertex_data();
+    std::vector<float> sphereColorList = sphere_color_data(sphereVertices);
+    std::vector<int> sphereIndices = sphere_index_data();
+
     GLuint sphere_vao = 0;
     GLuint sphere_vbo = 0;
     GLuint sphere_ebo = 0;
@@ -450,7 +350,12 @@ int main(){
     glEnableVertexAttribArray(1);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sphereIndices.size()* sizeof(float), &sphereIndices[0], GL_STATIC_DRAW);
 
-// flag
+
+//--------flag--------
+    vector<float> flagVertices =flag_vertex_data();
+    vector<float>  flagColorList =flag_color_data();
+    vector<int>  flagIndices =flag_index_data();
+
     GLuint flag_vao = 0;
     GLuint flag_vbo = 0;
     GLuint flag_ebo = 0;
@@ -471,6 +376,7 @@ int main(){
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(flagIndices)* sizeof(float), &flagIndices[0], GL_STATIC_DRAW);
 
 
+    //===========================================//
 
 
 
@@ -540,3 +446,149 @@ int main(){
     return 0;
 }
 #endif
+//--------flag--------
+vector<float> flag_vertex_data(){
+    std::vector<float> flagVertices = {
+            // 第一个三角形
+            0.9f, 0.5f, 0.0f,1.0f,      // 右上
+            .9f, -0.5f, 0.0f,  1.0f,   // 右下
+            0.0f, -0.5f, 0.0f, 1.0f,    // 左下
+            // 第二个三角形
+            0.0f, -0.5f, 0.0f,1.0f,     // 左下
+            .9f, 0.5f, 0.0f,  1.0f,    // 右上
+            0.0f, 0.5f, 0.0f, 1.0f,    // 左上
+    };
+    return flagVertices;
+}
+vector<float> flag_color_data(){
+    std::vector<float> flagVertices = {
+            .0,0.635,0.345,
+            .0,0.935,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+    };
+    return flagVertices;
+}
+vector<int> flag_index_data(){
+    vector<int>  flagIndices = {
+            0, 1, 5,              // 第一个三角形
+            1, 2, 5               // 第二个三角形
+    };
+
+    return flagIndices;
+}
+
+//--------cylinder--------
+vector<float> cylinder_vertex_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderVertices;
+//    std::vector<float> cylinderColorList;
+//    std::vector<int>   cylinderIndexList;
+    for ( i = 0; i < sample_cnt * 2; i += 2)
+    {
+        p = i * step * 3.14 / 180;
+        float xPos = cos(p) * r;
+        float yPos = 0.5f;
+        float zPos = sin(p) * r;
+        cylinderVertices.push_back(xPos);
+        cylinderVertices.push_back(yPos);
+        cylinderVertices.push_back(zPos);
+        float xPos_next = cos(p) * r;
+        float yPos_next = -0.7f;
+        float zPos_next = sin(p) * r;
+        cylinderVertices.push_back(xPos_next);
+        cylinderVertices.push_back(yPos_next);
+        cylinderVertices.push_back(zPos_next);
+    }
+    return cylinderVertices;
+
+}
+vector<float> cylinder_color_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderColorList;
+    for (int i = 0; i < sample_cnt * 2; i++)
+    {
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.0f);
+    }
+    return cylinderColorList;
+
+}
+vector<int> cylinder_index_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<int> cylinderIndexList;
+    for (int i = 0; i < sample_cnt; i++)
+    {
+        int index = i+2;
+        cylinderIndexList.push_back(index) ;
+    }
+    return cylinderIndexList;
+
+}
+
+//===========sphere================================//
+
+vector<float> sphere_vertex_data(){
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.08;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices;
+    for (int y = 0; y <= Y_SEGMENTS; y++)
+    {
+        for (int x = 0; x <= X_SEGMENTS; x++)
+        {
+            float xSegment = (float)x / (float)X_SEGMENTS;
+            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+            float yPos = std::cos(ySegment * PI);
+            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+
+            sphereVertices.push_back(xPos*radius);
+            sphereVertices.push_back(yPos*radius+0.5f);
+            sphereVertices.push_back(zPos*radius);
+        }
+    }
+    return sphereVertices;
+
+}
+vector<float> sphere_color_data(vector<float> sphereVertices){
+    std::vector<float> sphereColorList;
+    for (int i = 0; i < sphereVertices.size();) {
+        sphereColorList.push_back(0.9f);
+        sphereColorList.push_back(0.4f);
+        sphereColorList.push_back(0.2f);
+        i = i+3;
+    }
+    return sphereColorList;
+
+}
+vector<int> sphere_index_data(){
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    std::vector<int> sphereIndices;
+    // sphere Indices
+    for (int i = 0; i < Y_SEGMENTS; i++)
+    {
+        for (int j = 0; j < X_SEGMENTS; j++)
+        {
+            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
+        }
+    }
+    return sphereIndices;
+}

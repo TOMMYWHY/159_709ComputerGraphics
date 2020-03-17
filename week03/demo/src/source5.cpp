@@ -15,8 +15,6 @@
 
 using namespace std;
 
-#define STEP                    6
-#define SAMPLE_CNT              (360/STEP)
 /*
  * callbacks
  * */
@@ -352,6 +350,18 @@ int main(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
+//    glm::mat4 trans;
+    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
+    glm::mat4 modelMat;
+    modelMat = glm::rotate(modelMat,glm::radians(-55.0f),glm::vec3(1.0f,0,0));
+    glm::mat4 viewMat;
+    viewMat = glm::translate(viewMat,glm::vec3(0,0,-3.0f));
+    glm::mat4 projMat;
+    projMat = glm::perspective(glm::radians(45.0f), 800.0f/600.0f,0.1f,100.0f);
+    vec = viewMat * vec;
+
+    std::cout << vec.x << vec.y << vec.z << std::endl;
+
     //--engine--//
     while (!glfwWindowShouldClose(window)) {
 
@@ -359,6 +369,12 @@ int main(){
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(program_id);
+
+        glUniformMatrix4fv(glGetUniformLocation(program_id, "ModelMat"), 1, GL_FALSE, glm::value_ptr(modelMat));
+        glUniformMatrix4fv(glGetUniformLocation(program_id, "viewMat"), 1, GL_FALSE, glm::value_ptr(viewMat));
+        glUniformMatrix4fv(glGetUniformLocation(program_id, "projMat"), 1, GL_FALSE, glm::value_ptr(projMat));
+
+
         glBindVertexArray(vao);
         glDrawArrays(GL_TRIANGLES, 0, 6);
 
