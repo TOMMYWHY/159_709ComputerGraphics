@@ -2,8 +2,8 @@
 #version 330
 
 // Input to Vertex Shader
-in vec3 vert_Position;
-in vec3 vert_Colour;
+layout (location = 0)  in vec3 vert_Position;
+layout (location = 1)  in vec3 vert_Colour;
 
 // Transform Matrices
 uniform mat4 u_Model;

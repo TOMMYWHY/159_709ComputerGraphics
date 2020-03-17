@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
+#include <vector>
 
 // OpenGL Headers
 #if defined(_WIN32)
@@ -33,6 +34,18 @@
 #include "shader.h"
 #include "utils.h"
 
+using namespace std;
+vector<float> flag_vertex_data();
+vector<float> flag_color_data();
+vector<int> flag_index_data();
+
+vector<float> cylinder_vertex_data();
+vector<float> cylinder_color_data();
+vector<int> cylinder_index_data();
+
+vector<float> sphere_vertex_data();
+vector<float> sphere_color_data(vector<float> sphereVertices);
+vector<int> sphere_index_data();
 // --------------------------------------------------------------------------------
 // GLFW Callbacks
 // --------------------------------------------------------------------------------
@@ -286,88 +299,103 @@ int main() {
 	#endif
 
 	// Set window callback functions
-	glfwSetFramebufferSizeCallback(window, onFramebufferSize);
-	glfwSetWindowCloseCallback(window, onWindowClose);
+    glfwSetFramebufferSizeCallback(window, onFramebufferSize);
+    glfwSetWindowCloseCallback(window, onWindowClose);
 
-	// ----------------------------------------
-	// Initialise OpenGL
-	// ----------------------------------------
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LEQUAL);
+    GLuint program = loadProgram("./shader/vert.glsl", NULL, NULL, NULL, "./shader/frag.glsl");
+    // ----------------------------------------
+    // Initialise OpenGL
+    // ----------------------------------------
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
 
-	// ----------------------------------------
-	// Create Triangle Data
-	// ----------------------------------------
 
-	// Triangle Vertexes (and colours)
-	GLfloat buffer[18];
+    //===========================================//
 
-	buffer[0]  =  0.0f; buffer[1]  =  0.577f; buffer[2]  =  0.0f;
-	buffer[3]  =  1.0f; buffer[4]  =  0.0f;   buffer[5]  =  0.0f;
+//--------cylinder--------
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    vector<float> cylinderVertices = cylinder_vertex_data();
+    vector<float> cylinderColorList =cylinder_color_data() ;
+    vector<int>   cylinderIndexList = cylinder_index_data();
 
-	buffer[6]  =  0.5f; buffer[7]  = -0.289f; buffer[8]  =  0.0f;
-	buffer[9]  =  0.0f; buffer[10] =  1.0f;   buffer[11] =  0.0f;
+    GLuint cylinder_vao = 0;
+    GLuint cylinder_vbo = 0;
+    GLuint cylinder_ebo = 0;
+    glGenVertexArrays(1, &cylinder_vao);
+    glGenBuffers(1, &cylinder_vbo);
+    glGenBuffers(1, &cylinder_ebo);
+    glBindVertexArray(cylinder_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, cylinder_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cylinder_ebo);
+    glBufferData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float) + cylinderColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, cylinderVertices.size()* sizeof(float), &cylinderVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, cylinderVertices.size()* sizeof(float), cylinderColorList.size()* sizeof(float), &cylinderColorList[0]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(cylinderVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
 
-	buffer[12] = -0.5f; buffer[13] = -0.289f; buffer[14] =  0.0f;
-	buffer[15] =  0.0f; buffer[16] =  0.0f;   buffer[17] =  1.0f;
 
-	// Triangle Indexes
-	GLuint indexes[3];
-	indexes[0] = 0;
-	indexes[1] = 1;
-	indexes[2] = 2;
+    //-------------------sphere---------------//
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.08;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices = sphere_vertex_data();
+    std::vector<float> sphereColorList = sphere_color_data(sphereVertices);
+    std::vector<int> sphereIndices = sphere_index_data();
 
-	// ----------------------------------------
-	// Create GLSL Program and VAOs, VBOs
-	// ----------------------------------------
+    GLuint sphere_vao = 0;
+    GLuint sphere_vbo = 0;
+    GLuint sphere_ebo = 0;
+    glGenVertexArrays(1, &sphere_vao);
+    glGenBuffers(1, &sphere_vbo);
+    glGenBuffers(1, &sphere_ebo);
+    glBindVertexArray(sphere_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, sphere_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, sphere_ebo);
 
-	// Load GLSL Program
-	GLuint program = loadProgram("./shader/vert.glsl", NULL, NULL, NULL, "./shader/frag.glsl");
+    glBufferData(GL_ARRAY_BUFFER, sphereVertices.size()* sizeof(float) + sphereColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, sphereVertices.size()* sizeof(float), &sphereVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, sphereVertices.size()* sizeof(float), sphereColorList.size()* sizeof(float), &sphereColorList[0]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(sphereVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sphereIndices.size()* sizeof(float), &sphereIndices[0], GL_STATIC_DRAW);
 
-	// Vertex Array Objects (VAO)
-	GLuint vao = 0;
-	
-	// Vertex Buffer Objects (VBO)
-	GLuint vbo = 0;
 
-	// Element Buffer Objects (EBO)
-	GLuint ebo = 0;
+//--------flag--------
+    vector<float> flagVertices =flag_vertex_data();
+    vector<float>  flagColorList =flag_color_data();
+    vector<int>  flagIndices =flag_index_data();
 
-	// ----------------------------------------
-	// Triangle
-	// ----------------------------------------
+    GLuint flag_vao = 0;
+    GLuint flag_vbo = 0;
+    GLuint flag_ebo = 0;
+    glGenVertexArrays(1, &flag_vao);
+    glGenBuffers(1, &flag_vbo);
+    glGenBuffers(1, &flag_ebo);
+    glBindVertexArray(flag_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, flag_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, flag_ebo);
 
-	// Create VAO, VBO & EBO
-	glGenVertexArrays(1, &vao);
-	glGenBuffers(1, &vbo);
-	glGenBuffers(1, &ebo);
+    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + flagColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), flagColorList.size()* sizeof(float), &flagColorList[0]);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(flagIndices)* sizeof(float), &flagIndices[0], GL_STATIC_DRAW);
 
-	// Bind VAO, VBO & EBO
-	glBindVertexArray(vao);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 
-	// Load Vertex Data
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), buffer, GL_STATIC_DRAW);
+    //===========================================//
 
-	// Load Element Data
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, 3 * sizeof(GLuint), indexes, GL_STATIC_DRAW);
-
-	// Get Position Attribute location (must match name in shader)
-	GLuint posLoc = glGetAttribLocation(program, "vert_Position");
-
-	// Get Colour Attribute location (must match name in shader)
-	GLuint colLoc = glGetAttribLocation(program, "vert_Colour");
-
-	// Set Vertex Attribute Pointers
-	glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(colLoc, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(GLfloat), (GLvoid*)(3*sizeof(float)));
-
-	// Enable Vertex Attribute Arrays
-	glEnableVertexAttribArray(posLoc);
-	glEnableVertexAttribArray(colLoc);
-
-	// Unbind VAO, VBO & EBO
+    // Unbind VAO, VBO & EBO
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -390,17 +418,21 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	float viewMatrix[16];
-	float viewPosition[3] = { 0.0f,  0.0f,  5.0f};
+	float viewPosition[3] = { 0.0f,  0.0f,  2.0f};
 	float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
 	float viewForward[3]  = { 0.0f,  0.0f, -1.0f};
 
-	/* float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
-	 float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
-	 float viewForward[3]  = { 0.0f, -1.0f, -0.1f};*/
+//	 float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
+//	 float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
+//	 float viewForward[3]  = { 0.0f, -1.0f, -0.1f};
 
-	/* float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
-	 float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
-	 float viewForward[3]  = { -0.5f,  0.0f, -1.0f};*/
+//	 float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
+//	 float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
+//	 float viewForward[3]  = { -0.5f,  0.0f, -1.0f};
+
+//	 float viewPosition[3] = { 1.0f,  1.0f,  1.0f};
+//	 float viewUp[3]       = { 1.0f,  1.0f,  1.0f};
+//	 float viewForward[3]  = { 1.0f,  1.0f, 1.0f};
 
 	normalize(viewUp, viewUp);
 	normalize(viewForward, viewForward);
@@ -444,129 +476,146 @@ int main() {
 		// Use Program
 		glUseProgram(program);
 
-		// // ----------------------------------------
-		// // Rotation Matrix - X
-		// float rotation[16];
+//		 // ----------------------------------------
+//		 // Rotation Matrix - X
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateX(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // ----------------------------------------
 
-		// // Create Rotation Matrix
-		// rotateX(glfwGetTime(), rotation);
+		 // ----------------------------------------
+		 // Rotation Matrix - Y
+		 float rotation[16];
 
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
+		 // Create Rotation Matrix
+		 rotateY(glfwGetTime(), rotation);
 
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		// // ----------------------------------------
+		 // Get Model Matrix location
+		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
 
-		// // ----------------------------------------
-		// // Rotation Matrix - Y
-		// float rotation[16];
+		 // Copy Rotation Matrix to Shader
+		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+		 // ----------------------------------------
 
-		// // Create Rotation Matrix
-		// rotateY(glfwGetTime(), rotation);
+//		 // ----------------------------------------
+//		 // Rotation Matrix - Z
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // ----------------------------------------
 
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//		 // ----------------------------------------
+//		 // Rotation Matrix - (rx,ry,rz)
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotate(glfwGetTime(), 1.0f, tan(30/180.0f * M_PI), 0.0f, rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // ----------------------------------------
 
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		// // ----------------------------------------
+//		 // ----------------------------------------
+//		 // Translation Matrix
+//		 float translation[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.5 * sin(glfwGetTime()), 0.5 * cos(glfwGetTime()), 0.0f, translation);
+//
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, translation);
+//		 // ----------------------------------------
 
-		// // ----------------------------------------
-		// // Rotation Matrix - Z
-		// float rotation[16];
+//		 // ----------------------------------------
+////		  Rotation - Translation Matrix
+//		 float translation[16];
+//		 float rotation[16];
+//		 float model[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.0, -0.577f, 0.0, translation);
+//		 // translate(0.0, -2.0f, 0.0, translation);
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Multiply Translation Matrix by Rotation Matrix
+//		 multiply44(rotation, translation, model);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
+//		 // ----------------------------------------
 
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
+//		 // ----------------------------------------
+//		 // Translation - Rotation Matrix
+//		 float translation[16];
+//		 float rotation[16];
+//		 float model[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.0, -0.577f, 0.0, translation);
+//		 // translate(0.0, -2.0f, 0.0, translation);
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Multiply Translation Matrix by Rotation Matrix
+//		 multiply44(translation, rotation, model);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
+//		 // ----------------------------------------
 
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
+        //===================drawing========================//
 
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		// // ----------------------------------------
+// flag
+        glUseProgram(program);
+        glBindVertexArray(flag_vao);
+        glDrawArrays(GL_TRIANGLES, 0, 6);
+        glBindVertexArray(0);
 
-		// // ----------------------------------------
-		// // Rotation Matrix - (rx,ry,rz)
-		// float rotation[16];
+        //cylinder
+        glUseProgram(program);
+        glBindVertexArray(cylinder_vao);
+        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
+        glDrawElements(GL_TRIANGLE_FAN, 360/step, GL_UNSIGNED_INT, (GLvoid *)(0));
+        glDrawElementsBaseVertex(GL_TRIANGLE_FAN, 360/step, GL_UNSIGNED_INT, (GLvoid *)(0),1);
+        glBindVertexArray(0);
 
-		// // Create Rotation Matrix
-		// rotate(glfwGetTime(), 1.0f, tan(30/180.0f * M_PI), 0.0f, rotation);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		// // ----------------------------------------
-
-		// // ----------------------------------------
-		// // Translation Matrix
-		// float translation[16];
-
-		// // Create Translation Matrix
-		// translate(0.5 * sin(glfwGetTime()), 0.5 * cos(glfwGetTime()), 0.0f, translation);
-		
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, translation);
-		// // ----------------------------------------
-
-		// // ----------------------------------------
-		// // Rotation - Translation Matrix
-		// float translation[16];
-		// float rotation[16];
-		// float model[16];
-
-		// // Create Translation Matrix
-		// translate(0.0, -0.577f, 0.0, translation);
-		// // translate(0.0, -2.0f, 0.0, translation);
-
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
-
-		// // Multiply Translation Matrix by Rotation Matrix
-		// multiply44(rotation, translation, model);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
-		// // ----------------------------------------
-
-		// // ----------------------------------------
-		// // Translation - Rotation Matrix
-		// float translation[16];
-		// float rotation[16];
-		// float model[16];
-
-		// // Create Translation Matrix
-		// translate(0.0, -0.577f, 0.0, translation);
-		// // translate(0.0, -2.0f, 0.0, translation);
-
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
-
-		// // Multiply Translation Matrix by Rotation Matrix
-		// multiply44(translation, rotation, model);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
-		// // ----------------------------------------
-
-
-		// Bind Vertex Array Object
-		glBindVertexArray(vao);
-
-		// Draw Elements (Triangles)
-		glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, NULL);
+        // sphere
+        glUseProgram(program);
+//        glEnable(GL_CULL_FACE);
+        glCullFace(GL_BACK);
+        glBindVertexArray(sphere_vao);
+        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(0);
 
 		// Swap the back and front buffers
 		glfwSwapBuffers(window);
@@ -576,9 +625,17 @@ int main() {
 	}
 
 	// Delete VAO, VBO & EBO
-	glDeleteVertexArrays(1, &vao);
-	glDeleteBuffers(1, &vbo);
-	glDeleteBuffers(1, &ebo);
+    glDeleteVertexArrays(1, &cylinder_vao);
+    glDeleteBuffers(1, &cylinder_vbo);
+    glDeleteBuffers(1, &cylinder_ebo);
+
+    glDeleteVertexArrays(1, &sphere_vao);
+    glDeleteBuffers(1, &sphere_vbo);
+    glDeleteBuffers(1, &sphere_ebo);
+
+    glDeleteVertexArrays(1, &flag_vao);
+    glDeleteBuffers(1, &flag_vbo);
+    glDeleteBuffers(1, &flag_ebo);
 
 	// Delete Program
 	glDeleteProgram(program);
@@ -594,3 +651,146 @@ int main() {
 }
 
 
+
+#if 1
+//--------flag--------
+vector<float> flag_vertex_data(){
+    std::vector<float> flagVertices = {
+            // 第一个三角形
+            0.9f, 0.5f, 0.0f,1.0f,      // 右上
+            .9f, -0.5f, 0.0f,  1.0f,   // 右下
+            0.0f, -0.5f, 0.0f, 1.0f,    // 左下
+            // 第二个三角形
+            0.0f, -0.5f, 0.0f,1.0f,     // 左下
+            .9f, 0.5f, 0.0f,  1.0f,    // 右上
+            0.0f, 0.5f, 0.0f, 1.0f,    // 左上
+    };
+    return flagVertices;
+}
+vector<float> flag_color_data(){
+    std::vector<float> flagVertices = {
+            .0,0.635,0.345,
+            .0,0.935,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+            .0,0.635,0.345,
+    };
+    return flagVertices;
+}
+vector<int> flag_index_data(){
+    vector<int>  flagIndices = {
+            0, 1, 5,              // 第一个三角形
+            1, 2, 5               // 第二个三角形
+    };
+    return flagIndices;
+}
+//--------cylinder--------
+vector<float> cylinder_vertex_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderVertices;
+    for ( i = 0; i < sample_cnt * 2; i += 2)
+    {
+        p = i * step * 3.14 / 180;
+        float xPos = cos(p) * r;
+        float yPos = 0.5f;
+        float zPos = sin(p) * r;
+        cylinderVertices.push_back(xPos);
+        cylinderVertices.push_back(yPos);
+        cylinderVertices.push_back(zPos);
+        float xPos_next = cos(p) * r;
+        float yPos_next = -0.7f;
+        float zPos_next = sin(p) * r;
+        cylinderVertices.push_back(xPos_next);
+        cylinderVertices.push_back(yPos_next);
+        cylinderVertices.push_back(zPos_next);
+    }
+    return cylinderVertices;
+
+}
+vector<float> cylinder_color_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<float> cylinderColorList;
+    for (int i = 0; i < sample_cnt * 2; i++)
+    {
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.9f);
+        cylinderColorList.push_back(0.0f);
+    }
+    return cylinderColorList;
+
+}
+vector<int> cylinder_index_data(){
+    float p = 0.0, r = 0.04;
+    int i = 0, step = 6;
+    int sample_cnt =(360/step);
+    std::vector<int> cylinderIndexList;
+    for (int i = 0; i < sample_cnt; i++)
+    {
+        int index = i+2;
+        cylinderIndexList.push_back(index) ;
+    }
+    return cylinderIndexList;
+
+}
+//===========sphere================================//
+vector<float> sphere_vertex_data(){
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    const float radius = 0.08;
+    const GLfloat  PI = 3.14159265358979323846f;
+    std::vector<float> sphereVertices;
+    for (int y = 0; y <= Y_SEGMENTS; y++)
+    {
+        for (int x = 0; x <= X_SEGMENTS; x++)
+        {
+            float xSegment = (float)x / (float)X_SEGMENTS;
+            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+            float yPos = std::cos(ySegment * PI);
+            float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
+
+            sphereVertices.push_back(xPos*radius);
+            sphereVertices.push_back(yPos*radius+0.5f);
+            sphereVertices.push_back(zPos*radius);
+        }
+    }
+    return sphereVertices;
+
+}
+vector<float> sphere_color_data(vector<float> sphereVertices){
+    std::vector<float> sphereColorList;
+    for (int i = 0; i < sphereVertices.size();) {
+        sphereColorList.push_back(0.9f);
+        sphereColorList.push_back(0.4f);
+        sphereColorList.push_back(0.2f);
+        i = i+3;
+    }
+    return sphereColorList;
+
+}
+vector<int> sphere_index_data(){
+    const int Y_SEGMENTS = 50;
+    const int X_SEGMENTS = 50;
+    std::vector<int> sphereIndices;
+    // sphere Indices
+    for (int i = 0; i < Y_SEGMENTS; i++)
+    {
+        for (int j = 0; j < X_SEGMENTS; j++)
+        {
+            sphereIndices.push_back(i * (X_SEGMENTS+1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j);
+            sphereIndices.push_back((i + 1) * (X_SEGMENTS + 1) + j + 1);
+            sphereIndices.push_back(i * (X_SEGMENTS + 1) + j + 1);
+        }
+    }
+    return sphereIndices;
+}
+#endif
