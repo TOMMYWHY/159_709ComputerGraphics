@@ -28,10 +28,10 @@ set(SHADERS shaders)
 #file(GLOB PROJECT_SOURCES src/source2.cpp) # cylinder to vector
 #file(GLOB PROJECT_SOURCES src/source3.cpp) # merge ball and cylinder vetor
 #file(GLOB PROJECT_SOURCES src/source4.cpp) #  merge ball and cylinder  display
-#file(GLOB PROJECT_SOURCES src/source5.cpp) # ....flag
+file(GLOB PROJECT_SOURCES src/source5.cpp) # ....flag
 #file(GLOB PROJECT_SOURCES src/source6.cpp) # merge ball  cylinder flag  working
 #file(GLOB PROJECT_SOURCES src/source7.cpp) # view not working
-file(GLOB PROJECT_SOURCES src/source8.cpp) # to function
+#file(GLOB PROJECT_SOURCES src/source8.cpp) # to function
 
 
 source_group("Sources" FILES ${PROJECT_SOURCES})

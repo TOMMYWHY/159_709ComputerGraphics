@@ -1,0 +1,13 @@
+HEADERS = -I./GLFW/include/ -I./GLEW/include/
+LIBS = -L./GLFW/lib/ -L./GLEW/lib/ -lglew32 -lglfw3 -lopengl32 -lgdi32
+CC = g++ -O3 -Wall -W
+
+example03: example03.o
+	${CC} example03.o -o example03 ${LIBS}
+
+example03.o: example03.cpp
+	${CC} -c example03.cpp -o example03.o ${HEADERS}
+
+clean:
+	del *.o
+	del example03

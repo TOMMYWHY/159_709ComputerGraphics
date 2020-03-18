@@ -151,7 +151,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=opengl_start_04
+CMAKE_PROJECT_NAME:STATIC=project01
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
@@ -216,16 +216,16 @@ CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 ProcessorCount_cmd_sysctl:FILEPATH=/usr/sbin/sysctl
 
 //Value Computed by CMake
-demo_BINARY_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing/cmake-build-debug
-
-//Value Computed by CMake
-demo_SOURCE_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing
-
-//Value Computed by CMake
 opengl_start_04_BINARY_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing/cmake-build-debug
 
 //Value Computed by CMake
 opengl_start_04_SOURCE_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing
+
+//Value Computed by CMake
+project01_BINARY_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing/cmake-build-debug
+
+//Value Computed by CMake
+project01_SOURCE_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example04_testing
 
 
 ########################

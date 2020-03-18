@@ -413,7 +413,6 @@ int main(){
         glDrawElementsBaseVertex(GL_TRIANGLE_FAN, 360/step, GL_UNSIGNED_INT, (GLvoid *)(0),1);
         glBindVertexArray(0);
 
-
         // sphere
         glUseProgram(program_id);
 //        glEnable(GL_CULL_FACE);
@@ -476,18 +475,14 @@ vector<int> flag_index_data(){
             0, 1, 5,              // 第一个三角形
             1, 2, 5               // 第二个三角形
     };
-
     return flagIndices;
 }
-
 //--------cylinder--------
 vector<float> cylinder_vertex_data(){
     float p = 0.0, r = 0.04;
     int i = 0, step = 6;
     int sample_cnt =(360/step);
     std::vector<float> cylinderVertices;
-//    std::vector<float> cylinderColorList;
-//    std::vector<int>   cylinderIndexList;
     for ( i = 0; i < sample_cnt * 2; i += 2)
     {
         p = i * step * 3.14 / 180;
@@ -534,9 +529,7 @@ vector<int> cylinder_index_data(){
     return cylinderIndexList;
 
 }
-
 //===========sphere================================//
-
 vector<float> sphere_vertex_data(){
     const int Y_SEGMENTS = 50;
     const int X_SEGMENTS = 50;

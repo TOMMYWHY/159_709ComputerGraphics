@@ -52,5 +52,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/opengl_start_04.dir/DependInfo.cmake"
+  "CMakeFiles/project01.dir/DependInfo.cmake"
   )

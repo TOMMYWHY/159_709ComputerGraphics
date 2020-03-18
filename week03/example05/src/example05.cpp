@@ -486,13 +486,13 @@ int main() {
 	float viewUp[3]       = { 0.0f,  1.0f, -1.0f};
 	float viewForward[3]  = { 0.0f, -1.0f, -1.0f};
 
-	// float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
-	// float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
-	// float viewForward[3]  = { 0.0f, -1.0f, -0.1f};
+//	 float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
+//	 float viewUp[3]       = { 0.0f,  0.1f, -1.0f};
+//	 float viewForward[3]  = { 0.0f, -1.0f, -0.1f};
 
-	// float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
-	// float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
-	// float viewForward[3]  = { -0.5f,  0.0f, -1.0f};
+//	 float viewPosition[3] = { 1.0f,  0.0f,  1.0f};
+//	 float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
+//	 float viewForward[3]  = { -0.5f,  0.0f, -1.0f};
 
 	normalize(viewUp, viewUp);
 	normalize(viewForward, viewForward);
@@ -537,120 +537,120 @@ int main() {
 		glUseProgram(program);
 
 		// // ----------------------------------------
-		// // Rotation Matrix - X
-		// float rotation[16];
-
-		// // Create Rotation Matrix
-		// rotateX(glfwGetTime(), rotation);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+		 // Rotation Matrix - X
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateX(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Rotation Matrix - Y
-		// float rotation[16];
-
-		// // Create Rotation Matrix
-		// rotateY(glfwGetTime(), rotation);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // Rotation Matrix - Y
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateY(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Rotation Matrix - Z
-		// float rotation[16];
-
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // Rotation Matrix - Z
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Rotation Matrix - (rx,ry,rz)
-		// float rotation[16];
-
-		// // Create Rotation Matrix
-		// rotate(glfwGetTime(), 1.0f, 1.0f, 1.0f, rotation);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // Rotation Matrix - (rx,ry,rz)
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotate(glfwGetTime(), 1.0f, 1.0f, 1.0f, rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Translation Matrix
-		// float translation[16];
-
-		// // Create Translation Matrix
-		// translate(0.5 * sin(glfwGetTime()), 0.5 * cos(glfwGetTime()), 0.0f, translation);
-		
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, translation);
+//		 // Translation Matrix
+//		 float translation[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.5 * sin(glfwGetTime()), 0.5 * cos(glfwGetTime()), 0.0f, translation);
+//
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, translation);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Rotation - Translation Matrix
-		// float translation[16];
-		// float rotation[16];
-		// float model[16];
-
-		// // Create Translation Matrix
-		// translate(0.0, -0.577f, 0.0, translation);
-		// // translate(0.0, -2.0f, 0.0, translation);
-
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
-
-		// // Multiply Translation Matrix by Rotation Matrix
-		// multiply44(rotation, translation, model);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
+//		 // Rotation - Translation Matrix
+//		 float translation[16];
+//		 float rotation[16];
+//		 float model[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.0, -0.577f, 0.0, translation);
+//		 // translate(0.0, -2.0f, 0.0, translation);
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Multiply Translation Matrix by Rotation Matrix
+//		 multiply44(rotation, translation, model);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
 		// // ----------------------------------------
 
 		// // ----------------------------------------
-		// // Translation - Rotation Matrix
-		// float translation[16];
-		// float rotation[16];
-		// float model[16];
-
-		// // Create Translation Matrix
-		// translate(0.0, -0.577f, 0.0, translation);
-		// // translate(0.0, -2.0f, 0.0, translation);
-
-		// // Create Rotation Matrix
-		// rotateZ(glfwGetTime(), rotation);
-
-		// // Multiply Translation Matrix by Rotation Matrix
-		// multiply44(translation, rotation, model);
-
-		// // Get Model Matrix location
-		// GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		// // Copy Rotation Matrix to Shader
-		// glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
+//		 // Translation - Rotation Matrix
+//		 float translation[16];
+//		 float rotation[16];
+//		 float model[16];
+//
+//		 // Create Translation Matrix
+//		 translate(0.0, -0.577f, 0.0, translation);
+//		 // translate(0.0, -2.0f, 0.0, translation);
+//
+//		 // Create Rotation Matrix
+//		 rotateZ(glfwGetTime(), rotation);
+//
+//		 // Multiply Translation Matrix by Rotation Matrix
+//		 multiply44(translation, rotation, model);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, model);
 		// // ----------------------------------------
 
 

@@ -260,6 +260,101 @@ int main(){
 #endif
 
 #if 1
+GLfloat Buffer[45408];
+float points[ 45 ][ 45 ][3];
+void vertexJF(GLfloat s[],int i,int j)
+{
+    int static Fx=0;
+    s[Fx++] =points[i][j][0];
+    s[Fx++] =points[j][j][1];
+    s[Fx++] =points[i][j][2];
+    s[Fx++] =1.0f;
+    s[Fx++] =0.0f;
+    s[Fx++] =0.0f;
+}
+void DrawGLScene(){
+    for (int x = 0; x < 33; x++) {
+        for (int y = 0; y < 11; y++) {
+            points[x][y][0]=float((x/6.0f)-4.5f)+2.451f;
+            points[x][y][1]=float((y/6.0f)-4.5f)+4.1f;
+            points[x][y][2]=float(sin((((x/4.0f)*35.0f)/360.0f)*3.141592654*2.0f));
+        }
+    }
+    for (int x = 0; x < 22; x++) {
+        for (int y = 0; y < 10; y++) {
+            vertexJF(Buffer,x,y);
+            vertexJF(Buffer,x,y+1);
+            vertexJF(Buffer,x+1,y+1);
+            vertexJF(Buffer,x+1,y);
+        }
+    }
+}
+
+
+const int n = 7000;
+const GLfloat R = 0.2f;
+const GLfloat pi = 3.1415926f;
+GLfloat Sbuffer[n*3*2];
+int vertexJC(GLfloat s[],int z)
+{
+    int static x =0;
+    s[z++] =R*cos(2*pi/n*(x))-2.2f;
+    s[z++] =R*sin(2*pi/n*(x))+1.525f;
+    s[z++] =0.0f;
+    s[z++] =1.0f;
+    s[z++] =1.0f;
+    s[z] =0.0f;
+    x++;
+    return z;
+}
+
+
+GLfloat bufferS[24];
+void DrawGLSquare()
+{
+    bufferS[0]  =  -2.35f; bufferS[1]  =  1.335f; bufferS[2]  =  0.0f;
+    bufferS[3]  =  0.5f; bufferS[4]  =  0.5f;   bufferS[5]  =  0.5f;
+
+    //second
+    bufferS[6]  =  -2.05f; bufferS[7]  =  1.335f; bufferS[8]  =  0.0f;
+    bufferS[9]  =  0.5f; bufferS[10]  =  0.5f;   bufferS[11]  =  0.5f;
+
+    //third
+    bufferS[12] =  -2.05f; bufferS[13] = -3.289f; bufferS[14] =  0.0f;
+    bufferS[15]  =  0.5f; bufferS[16]  =  0.5f;   bufferS[17]  =  0.5f;
+
+    //four
+    bufferS[18] =  -2.35f; bufferS[19] = -3.289f; bufferS[20] =  0.0f;
+    bufferS[21]  =  0.5f; bufferS[22]  =  0.5f;   bufferS[23]  =  0.5f;
+
+}
+
+GLfloat allBuffer[((n*3)*2)+45408+24];
+
+void concat_int(GLfloat a[], GLfloat b[],GLfloat o[],GLfloat c[])
+{
+    int i =0;
+    int j = 0;
+    for(i =0 ;i<45408;i++ )
+    {
+        c[i] = a[i];
+    }
+    int aa=((n*3)*2+45408);
+    for( j=i;j<aa;j++)
+    {
+        c[j]=b[j-i];
+    }
+    aa=((n*3)*2+45408)+48;
+    for(int k = j ; k<aa;k++)
+    {
+        c[k]=o[k-j];
+    }
+}
+
+#endif
+
+
+#if 1
 int main(){
     glfwSetErrorCallback(onError);
 
@@ -289,14 +384,8 @@ int main(){
     //--------flag--------
 
 
-    /*std::vector<float> flagColorList={
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-    };*/
+
+
 
     std::vector<float> flagVertices = {
             // 第一个三角形
@@ -322,27 +411,55 @@ int main(){
             0, 1, 5,              // 第一个三角形
             1, 2, 5               // 第二个三角形
     };
-    // VAO VBO EBO
-    GLuint vao, vbo,ebo;
-    glGenVertexArrays(1,&vao);
-    glBindVertexArray(vao);
 
-    glGenBuffers(1,&vbo);
-    glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
-
-    glGenBuffers(1,&ebo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+    DrawGLScene();
+    DrawGLSquare();
+    concat_int(Buffer,Sbuffer,bufferS,allBuffer);
 
 
-    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + sizeof(flagColorList)* sizeof(float), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
-    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), sizeof(flagColorList)* sizeof(float), flagColorList);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices)* sizeof(float), &indices[0], GL_STATIC_DRAW);
+    GLuint VBO,VAO;
+    //buffer
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    //bind
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBufferData(GL_ARRAY_BUFFER,(((n*3)*2)+45408+24)*sizeof(GLfloat), allBuffer, GL_STATIC_DRAW);
+//    glBufferData(GL_ARRAY_BUFFER,24*sizeof(GLfloat), bufferS, GL_STATIC_DRAW);
+//    GLuint posLoc = glGetAttribLocation(program_id, "position");
+//    GLuint colLoc = glGetAttribLocation(program_id, "color");
+    GLuint posLoc = glGetAttribLocation(program_id, "vert_Position");
+    GLuint colLoc = glGetAttribLocation(program_id,"vert_Colour");
+    //set point
+    //vertex
+    glVertexAttribPointer(posLoc, 3, GL_FLOAT, GL_FALSE, 6*sizeof(GLfloat), (GLvoid*)0);
+    glEnableVertexAttribArray(posLoc);
+    //color
+    glVertexAttribPointer(colLoc, 3, GL_FLOAT, GL_FALSE, 6*sizeof(GLfloat), (GLvoid*)(3*sizeof(GLfloat)));
+    glEnableVertexAttribArray(colLoc);
 
+
+    /*  // VAO VBO EBO
+      GLuint vao, vbo,ebo;
+      glGenVertexArrays(1,&vao);
+      glBindVertexArray(vao);
+
+      glGenBuffers(1,&vbo);
+      glBindBuffer(GL_ARRAY_BUFFER,vbo);//vbo 装载入 vao
+
+      glGenBuffers(1,&ebo);
+      glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+
+
+      glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + sizeof(flagColorList)* sizeof(float), NULL, GL_STATIC_DRAW);
+      glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
+      glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), sizeof(flagColorList)* sizeof(float), flagColorList);
+      glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+      glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
+      glEnableVertexAttribArray(0);
+      glEnableVertexAttribArray(1);
+      glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices)* sizeof(float), &indices[0], GL_STATIC_DRAW);
+  */
 
     //clean
     glBindVertexArray(0);
@@ -350,17 +467,8 @@ int main(){
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
-//    glm::mat4 trans;
-    glm::vec4 vec(1.0f, 0.0f, 0.0f, 1.0f);
-    glm::mat4 modelMat;
-    modelMat = glm::rotate(modelMat,glm::radians(-55.0f),glm::vec3(1.0f,0,0));
-    glm::mat4 viewMat;
-    viewMat = glm::translate(viewMat,glm::vec3(0,0,-3.0f));
-    glm::mat4 projMat;
-    projMat = glm::perspective(glm::radians(45.0f), 800.0f/600.0f,0.1f,100.0f);
-    vec = viewMat * vec;
 
-    std::cout << vec.x << vec.y << vec.z << std::endl;
+
 
     //--engine--//
     while (!glfwWindowShouldClose(window)) {
@@ -370,22 +478,29 @@ int main(){
 
         glUseProgram(program_id);
 
-        glUniformMatrix4fv(glGetUniformLocation(program_id, "ModelMat"), 1, GL_FALSE, glm::value_ptr(modelMat));
-        glUniformMatrix4fv(glGetUniformLocation(program_id, "viewMat"), 1, GL_FALSE, glm::value_ptr(viewMat));
-        glUniformMatrix4fv(glGetUniformLocation(program_id, "projMat"), 1, GL_FALSE, glm::value_ptr(projMat));
+        glBindVertexArray(VAO);
+//        glDrawArrays(GL_TRIANGLE_FAN, 0, n*3);
+        glDrawArrays(GL_LINE_LOOP, 0, 7000);
+        glDrawArrays(GL_TRIANGLE_FAN, 7600, 6500);
+        glDrawArrays(GL_TRIANGLES, 14565, 6);
+        glDrawArrays(GL_TRIANGLES, 14566, 6);
+//        glDrawArrays(GL_TRIANGLE_FAN, 0, 24);
+        glBindVertexArray(0);
 
-
-        glBindVertexArray(vao);
-        glDrawArrays(GL_TRIANGLES, 0, 6);
+//        glBindVertexArray(vao);
+//        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
 
     // clean VAO/VBO/EBO
-    glDeleteVertexArrays(1, &vao);
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+
+ /*   glDeleteVertexArrays(1, &vao);
     glDeleteBuffers(1, &vbo);
-    glDeleteBuffers(1, &ebo);
+    glDeleteBuffers(1, &ebo);*/
     glDeleteProgram(program_id);
     glfwDestroyWindow(window);
     glfwTerminate();
