@@ -39,9 +39,8 @@ vector<float> land_vertex_data();
 vector<float> land_color_data();
 vector<int> land_index_data();
 
-vector<float> flag_vertex_data();
-vector<float> flag_color_data();
-vector<int> flag_index_data();
+void flag_vertex_data(vector<float> &vertex);
+vector<float> flag_color_data(vector<float> &vertex);
 
 vector<float> small_cylinder_vertex_data();
 vector<float> small_cylinder_color_data();
@@ -402,32 +401,7 @@ int main() {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sphereIndices.size()* sizeof(float), &sphereIndices[0], GL_STATIC_DRAW);
 
 
-//--------flag--------
-    vector<float> flagVertices =flag_vertex_data();
-    vector<float>  flagColorList =flag_color_data();
-    vector<int>  flagIndices =flag_index_data();
-
-    GLuint flag_vao = 0;
-    GLuint flag_vbo = 0;
-    GLuint flag_ebo = 0;
-    glGenVertexArrays(1, &flag_vao);
-    glGenBuffers(1, &flag_vbo);
-    glGenBuffers(1, &flag_ebo);
-    glBindVertexArray(flag_vao);
-    glBindBuffer(GL_ARRAY_BUFFER, flag_vbo);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, flag_ebo);
-
-    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + flagColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
-    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
-    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), flagColorList.size()* sizeof(float), &flagColorList[0]);
-    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
-    glEnableVertexAttribArray(0);
-    glEnableVertexAttribArray(1);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(flagIndices)* sizeof(float), &flagIndices[0], GL_STATIC_DRAW);
-
-
-    //--------land_ flag--------
+    //--------land_ --------
     vector<float> landVertices =land_vertex_data();
     vector<float>  landColorList =land_color_data();
     vector<int>  landIndices =land_index_data();
@@ -450,6 +424,39 @@ int main() {
     glEnableVertexAttribArray(0);
     glEnableVertexAttribArray(1);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(landIndices)* sizeof(float), &landIndices[0], GL_STATIC_DRAW);
+
+
+
+
+//--------flag--------
+    /*vector<float> flagVertices =flag_vertex_data();
+    vector<float>  flagColorList =flag_color_data();
+    vector<int>  flagIndices =flag_index_data();*/
+
+    vector<float> flagVertices, flagColorList;
+    flag_vertex_data(flagVertices);
+//    cout <<flagVertices.size() <<endl;
+    flagColorList = flag_color_data(flagVertices);
+
+    GLuint flag_vao = 0;
+    GLuint flag_vbo = 0;
+    GLuint flag_ebo = 0;
+    glGenVertexArrays(1, &flag_vao);
+    glGenBuffers(1, &flag_vbo);
+    glGenBuffers(1, &flag_ebo);
+    glBindVertexArray(flag_vao);
+    glBindBuffer(GL_ARRAY_BUFFER, flag_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, flag_ebo);
+
+    glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + flagColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+    glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
+    glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), flagColorList.size()* sizeof(float), &flagColorList[0]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
+    glEnableVertexAttribArray(0);
+    glEnableVertexAttribArray(1);
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(flagIndices)* sizeof(float), &flagIndices[0], GL_STATIC_DRAW);
+
 
     //===========================================//
 
@@ -476,7 +483,7 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	float viewMatrix[16];
-	float viewPosition[3] = { 0.0f,  0.0f,  2.0f};
+	float viewPosition[3] = { 0.0f,  0.0f,  5.0f};
 	float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
 	float viewForward[3]  = { 0.0f,  0.0f, -1.0f};
 
@@ -548,19 +555,19 @@ int main() {
 //		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 //		 // ----------------------------------------
 
-		 // ----------------------------------------
-		 // Rotation Matrix - Y
-		 float rotation[16];
-
-		 // Create Rotation Matrix
-		 rotateY(glfwGetTime(), rotation);
-
-		 // Get Model Matrix location
-		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		 // Copy Rotation Matrix to Shader
-		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		 // ----------------------------------------
+//		 // ----------------------------------------
+//		 // Rotation Matrix - Y
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateY(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // ----------------------------------------
 
 //		 // ----------------------------------------
 //		 // Rotation Matrix - Z
@@ -653,17 +660,12 @@ int main() {
 
         //===================drawing========================//
 
-        // flag
+        // land
         glUseProgram(program);
         glBindVertexArray(land_vao);
         glDrawArrays(GL_TRIANGLES, 0, 6);
         glBindVertexArray(0);
 
-        // flag
-        glUseProgram(program);
-        glBindVertexArray(flag_vao);
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-        glBindVertexArray(0);
 
         //cylinder
         glUseProgram(program);
@@ -687,6 +689,50 @@ int main() {
         glBindVertexArray(sphere_vao);
         glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
         glBindVertexArray(0);
+
+
+
+
+        // flag
+        glUseProgram(program);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+        float timeValue = glfwGetTime();
+        float waving = sin(timeValue) / 2.0f + 0.5f;
+
+        for (int i = 0; i < flagVertices.size(); i++) {
+            if(i%3 ==2){
+//                Buffer[i] = waving;
+                flagVertices[i] = flagVertices[i+1]*sin(0.8*timeValue+0.8* flagVertices[i+1]);
+//                cout <<flagVertices[i] <<" ; ";
+            }
+        }
+
+        GLuint flag_vao = 0;
+        GLuint flag_vbo = 0;
+        GLuint flag_ebo = 0;
+        glGenVertexArrays(1, &flag_vao);
+        glGenBuffers(1, &flag_vbo);
+        glGenBuffers(1, &flag_ebo);
+        glBindVertexArray(flag_vao);
+        glBindBuffer(GL_ARRAY_BUFFER, flag_vbo);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, flag_ebo);
+        glBufferData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float) + flagColorList.size()* sizeof(float), NULL, GL_STATIC_DRAW);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, flagVertices.size()* sizeof(float), &flagVertices[0]);
+        glBufferSubData(GL_ARRAY_BUFFER, flagVertices.size()* sizeof(float), flagColorList.size()* sizeof(float), &flagColorList[0]);
+        glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)0);
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid *)(flagVertices.size()* sizeof(float)));
+        glEnableVertexAttribArray(0);
+        glEnableVertexAttribArray(1);
+
+        glBindVertexArray(flag_vao);
+        glDrawArrays(GL_TRIANGLES, 0, 6075);
+        glBindVertexArray(0);
+
+
+
+
+
+
 
 		// Swap the back and front buffers
 		glfwSwapBuffers(window);
@@ -765,37 +811,54 @@ vector<int> land_index_data(){
     return landIndices;
 }
 //--------flag--------
-vector<float> flag_vertex_data(){
-    std::vector<float> flagVertices = {
-            // 第一个三角形
-            0.9f, 0.42f, 0.0f,1.0f,      // 右上
-            .9f, -0.2f, 0.0f,  1.0f,   // 右下
-            0.0f, -0.2f, 0.0f, 1.0f,    // 左下
-            // 第二个三角形
-            0.0f, -0.2f, 0.0f,1.0f,     // 左下
-            .9f, 0.42f, 0.0f,  1.0f,    // 右上
-            0.0f, 0.42f, 0.0f, 1.0f,    // 左上
-    };
-    return flagVertices;
+
+void flag_vertex_data(vector<float> &vertex)
+{
+    int const p = 50;
+    float points[ p ][ p ][3];
+    for(int x=0; x<p; x++)
+    {
+        for(int y=0; y<p; y++)
+        {
+            points[x][y][0]=float(((x/5.0f))+0.046f)*0.08;
+            points[x][y][1]=float(((y/5.0f))-1.96)*0.056;
+            points[x][y][2]=float(sin((((x/8.0f)*40.0f)/360.0f)*3.141592654*4.0f))*0.1;
+        }
+    }
+    for( int x = 0; x < p-1; x++ )
+    {
+        for( int y = 0; y < p-1; y++ )
+        {
+            vertex.push_back(points[x][y][0]);
+            vertex.push_back(points[x][y][1]);
+            vertex.push_back(points[x][y][2]);
+
+            vertex.push_back(points[x][y+1][0]);
+            vertex.push_back(points[x][y+1][1]);
+            vertex.push_back(points[x][y+1][2]);
+
+            vertex.push_back(points[x+1][y+1][0]);
+            vertex.push_back(points[x+1][y+1][1]);
+            vertex.push_back(points[x+1][y+1][2]);
+
+            vertex.push_back(points[x+1][y][0]);
+            vertex.push_back(points[x+1][y][1]);
+            vertex.push_back(points[x+1][y][2]);
+        }
+    }
 }
-vector<float> flag_color_data(){
-    std::vector<float> flagVertices = {
-            .0,0.635,0.345,
-            .0,0.935,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-    };
-    return flagVertices;
+
+vector<float> flag_color_data(vector<float> &vertex){
+    std::vector<float> flagColor;
+    for (int i = 0; i < vertex.size()/3; i++) {
+        flagColor.push_back(0.0f);
+        flagColor.push_back(0.635f);
+        flagColor.push_back(0.345f);
+    }
+    return flagColor;
 }
-vector<int> flag_index_data(){
-    vector<int>  flagIndices = {
-            0, 1, 5,              // 第一个三角形
-            1, 2, 5               // 第二个三角形
-    };
-    return flagIndices;
-}
+
+
 //--------cylinder--------
 vector<float> cylinder_vertex_data(){
     float p = 0.0, r = 0.04;
