@@ -39,7 +39,7 @@ vector<float> land_vertex_data();
 vector<float> land_color_data();
 vector<int> land_index_data();
 
-void flag_vertex_data(vector<float> &vertex);
+void flag_vertex_data(vector<float> &vertex,int point_amount);
 vector<float> flag_color_data(vector<float> &vertex);
 
 vector<float> small_cylinder_vertex_data();
@@ -346,9 +346,7 @@ int main() {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, cylinderIndexList.size()* sizeof(float), &cylinderIndexList[0], GL_STATIC_DRAW);
 
 //--------small_cylinder--------
-//    float p = 0.0, r = 0.04;
-//    int i = 0, step = 6;
-//    int sample_cnt =(360/step);
+
     vector<float> small_cylinderVertices = small_cylinder_vertex_data();
     vector<float> small_cylinderColorList =small_cylinder_color_data() ;
     vector<int>   small_cylinderIndexList = small_cylinder_index_data();
@@ -434,7 +432,8 @@ int main() {
     vector<int>  flagIndices =flag_index_data();*/
 
     vector<float> flagVertices, flagColorList;
-    flag_vertex_data(flagVertices);
+    int point_amount = 50;
+    flag_vertex_data(flagVertices,point_amount);
 //    cout <<flagVertices.size() <<endl;
     flagColorList = flag_color_data(flagVertices);
 
@@ -483,7 +482,7 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	float viewMatrix[16];
-	float viewPosition[3] = { 0.0f,  0.0f,  5.0f};
+	float viewPosition[3] = { 0.0f,  1.0f,  5.0f};
 	float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
 	float viewForward[3]  = { 0.0f,  0.0f, -1.0f};
 
@@ -795,15 +794,16 @@ vector<float> land_vertex_data(){
     return landVertices;
 }
 vector<float> land_color_data(){
-    std::vector<float> landVertices = {
-            .0,0.635,0.345,
-            .0,0.935,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
-            .0,0.635,0.345,
+    std::vector<float> land_color = {
+            .205f, .205f, .180f,
+            .205f, .205f, .180f,
+            .205f, .205f, .180f,
+            .205f, .205f, .180f,
+            .205f, .205f, .180f,
+            .205f, .205f, .180f,
+
     };
-    return landVertices;
+    return land_color;
 }
 vector<int> land_index_data(){
     vector<int>  landIndices = {
@@ -814,22 +814,22 @@ vector<int> land_index_data(){
 }
 //--------flag--------
 
-void flag_vertex_data(vector<float> &vertex)
+void flag_vertex_data(vector<float> &vertex,int point_amount)
 {
     int const p = 50;
-    float points[ p ][ p ][3];
+    float points[ point_amount ][ point_amount ][3];
     for(int x=0; x<p; x++)
     {
-        for(int y=0; y<p; y++)
+        for(int y=0; y<point_amount; y++)
         {
-            points[x][y][0]=float(((x/5.0f))+0.046f)*0.08;
-            points[x][y][1]=float(((y/5.0f))-1.96)*0.056;
-            points[x][y][2]=float(sin((((x/8.0f)*40.0f)/360.0f)*3.141592654*4.0f))*0.1;
+            points[x][y][0]=float(((x/5.0f))+0.046f)*0.09;
+            points[x][y][1]=float(((y/5.0f))-1.96)*0.058;
+            points[x][y][2]=float(sin((((x/8.0f)*40.0f)/360.0f)*3.141592654*4.0f))*0.6;
         }
     }
-    for( int x = 0; x < p-1; x++ )
+    for( int x = 0; x < point_amount-1; x++ )
     {
-        for( int y = 0; y < p-1; y++ )
+        for( int y = 0; y < point_amount-1; y++ )
         {
             vertex.push_back(points[x][y][0]);
             vertex.push_back(points[x][y][1]);
