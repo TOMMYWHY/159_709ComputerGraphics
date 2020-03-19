@@ -555,19 +555,19 @@ int main() {
 //		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
 //		 // ----------------------------------------
 
-		 // ----------------------------------------
-		 // Rotation Matrix - Y
-		 float rotation[16];
-
-		 // Create Rotation Matrix
-		 rotateY(glfwGetTime()*0.3, rotation);
-
-		 // Get Model Matrix location
-		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
-
-		 // Copy Rotation Matrix to Shader
-		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		 // ----------------------------------------
+//		 // ----------------------------------------
+//		 // Rotation Matrix - Y
+//		 float rotation[16];
+//
+//		 // Create Rotation Matrix
+//		 rotateY(glfwGetTime(), rotation);
+//
+//		 // Get Model Matrix location
+//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+//
+//		 // Copy Rotation Matrix to Shader
+//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+//		 // ----------------------------------------
 
 //		 // ----------------------------------------
 //		 // Rotation Matrix - Z
@@ -702,11 +702,11 @@ int main() {
         for (int i = 0; i < flagVertices.size(); i++) {
             if(i%3 ==2){
 //                Buffer[i] = waving;
-                flagVertices[i] = flagVertices[i+1]*sin(1.8*timeValue+1.8* flagVertices[i+1]);
+                flagVertices[i] = flagVertices[i+1]*sin(0.8*timeValue+0.8* flagVertices[i+1]);
 //                cout <<flagVertices[i] <<" ; ";
             }
         }
-        cout<< flagVertices.size()<<endl;
+
         GLuint flag_vao = 0;
         GLuint flag_vbo = 0;
         GLuint flag_ebo = 0;
@@ -725,9 +725,7 @@ int main() {
         glEnableVertexAttribArray(1);
 
         glBindVertexArray(flag_vao);
-//        glDrawArrays(GL_TRIANGLES, 0, 9604);
-//        glDrawArrays(GL_TRIANGLE_FAN, 0, 9604);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, 6075);
+        glDrawArrays(GL_TRIANGLES, 0, 6075);
         glBindVertexArray(0);
 
 
