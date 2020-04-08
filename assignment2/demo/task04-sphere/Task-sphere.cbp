@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Task-sphere"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\glfw\;CMake Files\external\glfw\CMake\;CMake Files\external\glfw\CMake\modules\;CMake Files\external\glfw\src\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Task-sphere">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Task-sphere_Debug/Task-sphere" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_INCLUDE_NONE"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere&quot;"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glad/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glm"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/stb"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 Task-sphere"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Task-sphere/fast">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Task-sphere_Debug/Task-sphere" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DGLFW_INCLUDE_NONE"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere&quot;"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glad/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glm"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/stb"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 Task-sphere/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 glfw"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="glfw/fast">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/libglfw3.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-D_GLFW_USE_CONFIG_H"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 glfw/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glad/src/glad.c">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include/GLFW/glfw3.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/include/GLFW/glfw3native.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_init.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_joystick.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_joystick.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_monitor.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_platform.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_time.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/cocoa_window.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/egl_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/egl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/glfw_config.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/init.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/input.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/internal.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/mappings.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/monitor.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/nsgl_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/nsgl_context.m">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/osmesa_context.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/osmesa_context.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/posix_thread.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/posix_thread.h">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/vulkan.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/window.c">
+			<Option target="glfw"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/include/shader.h">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/res/shader/task3.fs">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/res/shader/task3.vs">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/src/main.cpp">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/src/shader.cpp">
+			<Option target="Task-sphere"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\glfw\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/CMake/modules/FindVulkan.cmake">
+			<Option virtualFolder="CMake Files\external\glfw\CMake\modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/glfw3.pc.in">
+			<Option virtualFolder="CMake Files\external\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/glfw3Config.cmake.in">
+			<Option virtualFolder="CMake Files\external\glfw\src\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/glfw_config.h.in">
+			<Option virtualFolder="CMake Files\external\glfw\src\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

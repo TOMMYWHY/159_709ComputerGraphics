@@ -1,15 +1,1 @@
-"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem
--- Found OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework   
--- Found GLEW: /usr/local/lib/cmake/glew/glew-config.cmake  
--- Found C3GA: /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem/libs/libc3ga.so
-CMake Error: The following variables are used in this project, but they are set to NOTFOUND.
-Please set them or make sure they are set and tested correctly in the CMake files:
-SDL_INCLUDE_DIR
-   used as include directory in directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem
-   used as include directory in directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem
-   used as include directory in directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem
-   used as include directory in directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem/assets
-   used as include directory in directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem/assets
-
--- Configuring incomplete, errors occurred!
-See also "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+CMakeLists.txt not found in /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/ConformalGeometricAlgebra_OpenGL3_SolarSystem-master/SolarSystem Select CMakeLists.txt file...

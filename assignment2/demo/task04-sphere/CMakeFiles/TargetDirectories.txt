@@ -1,0 +1,8 @@
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/CMakeFiles/Task-sphere.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/task04-sphere/external/glfw/src/CMakeFiles/glfw.dir

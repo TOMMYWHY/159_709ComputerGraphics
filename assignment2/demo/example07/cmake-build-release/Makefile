@@ -111,44 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named opengl_start_04
+# Target rules for targets named opengl_start_DEMO
 
 # Build rule for target.
-opengl_start_04: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 opengl_start_04
-.PHONY : opengl_start_04
+opengl_start_DEMO: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 opengl_start_DEMO
+.PHONY : opengl_start_DEMO
 
 # fast build rule for target.
-opengl_start_04/fast:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/build
-.PHONY : opengl_start_04/fast
-
-src/example07.o: src/example07.cpp.o
-
-.PHONY : src/example07.o
-
-# target to build an object file
-src/example07.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/example07.cpp.o
-.PHONY : src/example07.cpp.o
-
-src/example07.i: src/example07.cpp.i
-
-.PHONY : src/example07.i
-
-# target to preprocess a source file
-src/example07.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/example07.cpp.i
-.PHONY : src/example07.cpp.i
-
-src/example07.s: src/example07.cpp.s
-
-.PHONY : src/example07.s
-
-# target to generate assembly for a file
-src/example07.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/example07.cpp.s
-.PHONY : src/example07.cpp.s
+opengl_start_DEMO/fast:
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/build
+.PHONY : opengl_start_DEMO/fast
 
 src/geometry.o: src/geometry.cpp.o
 
@@ -156,7 +129,7 @@ src/geometry.o: src/geometry.cpp.o
 
 # target to build an object file
 src/geometry.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/geometry.cpp.o
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/geometry.cpp.o
 .PHONY : src/geometry.cpp.o
 
 src/geometry.i: src/geometry.cpp.i
@@ -165,7 +138,7 @@ src/geometry.i: src/geometry.cpp.i
 
 # target to preprocess a source file
 src/geometry.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/geometry.cpp.i
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/geometry.cpp.i
 .PHONY : src/geometry.cpp.i
 
 src/geometry.s: src/geometry.cpp.s
@@ -174,8 +147,35 @@ src/geometry.s: src/geometry.cpp.s
 
 # target to generate assembly for a file
 src/geometry.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/geometry.cpp.s
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/geometry.cpp.s
 .PHONY : src/geometry.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/shader.o: src/shader.cpp.o
 
@@ -183,7 +183,7 @@ src/shader.o: src/shader.cpp.o
 
 # target to build an object file
 src/shader.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/shader.cpp.o
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/shader.cpp.o
 .PHONY : src/shader.cpp.o
 
 src/shader.i: src/shader.cpp.i
@@ -192,7 +192,7 @@ src/shader.i: src/shader.cpp.i
 
 # target to preprocess a source file
 src/shader.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/shader.cpp.i
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/shader.cpp.i
 .PHONY : src/shader.cpp.i
 
 src/shader.s: src/shader.cpp.s
@@ -201,7 +201,7 @@ src/shader.s: src/shader.cpp.s
 
 # target to generate assembly for a file
 src/shader.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/shader.cpp.s
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
 src/utils.o: src/utils.cpp.o
@@ -210,7 +210,7 @@ src/utils.o: src/utils.cpp.o
 
 # target to build an object file
 src/utils.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/utils.cpp.o
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/utils.cpp.o
 .PHONY : src/utils.cpp.o
 
 src/utils.i: src/utils.cpp.i
@@ -219,7 +219,7 @@ src/utils.i: src/utils.cpp.i
 
 # target to preprocess a source file
 src/utils.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/utils.cpp.i
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/utils.cpp.i
 .PHONY : src/utils.cpp.i
 
 src/utils.s: src/utils.cpp.s
@@ -228,7 +228,7 @@ src/utils.s: src/utils.cpp.s
 
 # target to generate assembly for a file
 src/utils.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_04.dir/build.make CMakeFiles/opengl_start_04.dir/src/utils.cpp.s
+	$(MAKE) -f CMakeFiles/opengl_start_DEMO.dir/build.make CMakeFiles/opengl_start_DEMO.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
 # Help Target
@@ -239,13 +239,13 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... opengl_start_04"
-	@echo "... src/example07.o"
-	@echo "... src/example07.i"
-	@echo "... src/example07.s"
+	@echo "... opengl_start_DEMO"
 	@echo "... src/geometry.o"
 	@echo "... src/geometry.i"
 	@echo "... src/geometry.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"

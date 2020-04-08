@@ -1,0 +1,8 @@
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/CMakeFiles/Task-sphere.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/external/glfw/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/external/glfw/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/external/glfw/src/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/external/glfw/src/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/projects/learnings/opengl_learning/opengl_wanlin405/Computer_Graphics/task04-sphere/cmake-build-debug/external/glfw/src/CMakeFiles/glfw.dir

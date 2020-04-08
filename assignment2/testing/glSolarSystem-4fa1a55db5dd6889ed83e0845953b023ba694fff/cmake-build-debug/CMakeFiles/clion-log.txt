@@ -1,0 +1,34 @@
+"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/glSolarSystem-4fa1a55db5dd6889ed83e0845953b023ba694fff
+-- The C compiler identification is AppleClang 11.0.0.11000033
+-- The CXX compiler identification is AppleClang 11.0.0.11000033
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc -- works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ -- works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found PkgConfig: /usr/local/bin/pkg-config (found version "0.29.2") 
+-- Checking for one of the modules 'glfw3'
+-- Checking for one of the modules 'glew'
+-- Checking for one of the modules 'openal'
+CMake Error at /Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/FindPkgConfig.cmake:696 (message):
+  None of the required 'openal' found
+Call Stack (most recent call first):
+  CMakeLists.txt:13 (pkg_search_module)
+
+
+-- Checking for one of the modules 'freealut'
+CMake Error at /Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/FindPkgConfig.cmake:696 (message):
+  None of the required 'freealut' found
+Call Stack (most recent call first):
+  CMakeLists.txt:14 (pkg_search_module)
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/glSolarSystem-4fa1a55db5dd6889ed83e0845953b023ba694fff/cmake-build-debug/CMakeFiles/CMakeOutput.log".

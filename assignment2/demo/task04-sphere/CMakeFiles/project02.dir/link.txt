@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/project02.dir/src/main.cpp.o CMakeFiles/project02.dir/src/shader.cpp.o  -o project02_Debug/project02 /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib -framework OpenGL -framework GLUT 
