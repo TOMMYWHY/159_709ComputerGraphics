@@ -5,7 +5,9 @@ set(CMAKE_CXX_STANDARD 14)
 
 #set(GLEW_H /usr/local/Cellar/glew/2.1.0/include)
 set(GLFW_H /usr/local/Cellar/glfw/3.3/include)
-include_directories(${GLEW_H} ${GLFW_H} )
+set(GLM_H /usr/local/Cellar/glm/0.9.9.5/include)
+
+include_directories(${GLEW_H} ${GLFW_H} ${GLM_H})
 
 # 添加目标链接
 #set(GLEW_LINK /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.dylib)

@@ -33,6 +33,12 @@
 #include "shader.h"
 #include "utils.h"
 
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+
+using namespace std;
+
 // --------------------------------------------------------------------------------
 // GLFW Callbacks
 // --------------------------------------------------------------------------------
@@ -80,6 +86,7 @@ void translate(float tx, float ty, float tz, float T[16]) {
 // Create a rotation matrix around the X-axis
 void rotateX(float theta, float Rx[16]) {
 	// Calculate sin(theta) and cos(theta)
+//	cout <<"time:"<<theta <<endl;
 	float sinTheta = sin(theta);
 	float cosTheta = cos(theta);
 
@@ -188,7 +195,7 @@ float length4(float v[4]) {
 	return sqrt(v[0]*v[0] + v[1]*v[1] + v[2]*v[2] + v[3]*v[3]);
 }
 
-// Normalize a vector
+// Normalize a vector //
 void normalize(float v[3], float u[3]) {
 	return multiply3(1.0f/length3(v), v, u);
 }
@@ -409,6 +416,20 @@ int main() {
 	indexes[i++] = 20; indexes[i++] = 21; indexes[i++] = 22;
 	indexes[i++] = 20; indexes[i++] = 22; indexes[i++] = 23;
 
+
+    glm::vec3 cubePositions[] = {
+            glm::vec3( 0.0f,  0.0f,  0.0f),
+            glm::vec3( 2.0f,  5.0f, -15.0f),
+            glm::vec3(-1.5f, -2.2f, -2.5f),
+            glm::vec3(-3.8f, -2.0f, -12.3f),
+            glm::vec3( 2.4f, -0.4f, -3.5f),
+            glm::vec3(-1.7f,  3.0f, -7.5f),
+            glm::vec3( 1.3f, -2.0f, -2.5f),
+            glm::vec3( 1.5f,  2.0f, -2.5f),
+            glm::vec3( 1.5f,  0.2f, -1.5f),
+            glm::vec3(-1.3f,  1.0f, -1.5f)
+    };
+
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
 	// ----------------------------------------
@@ -470,7 +491,11 @@ int main() {
 	// ----------------------------------------
 	// Model Matrix
 	float modelMatrix[16];
-	translate(0.0f, 0.0f, 0.0f, modelMatrix);
+	translate(0.5f, 0.5f, 0.5f, modelMatrix);
+
+    /*for (int i = 0; i < sizeof(modelMatrix); i++) {
+        cout <<modelMatrix[i]<<",";
+    }*/
 
 	// Get Model Matrix location
 	GLint modelLoc = glGetUniformLocation(program, "u_Model");
@@ -482,8 +507,8 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	float viewMatrix[16];
-	float viewPosition[3] = { 0.0f,  5.0f,  5.0f};
-	float viewUp[3]       = { 0.0f,  1.0f, -1.0f};
+	float viewPosition[3] = { 3.0f,  3.0f,  5.0f};
+	float viewUp[3]       = { 0.0f,  1.0f, 0.0f};
 	float viewForward[3]  = { 0.0f, -1.0f, -1.0f};
 
 //	 float viewPosition[3] = { 0.0f,  1.0f,  0.2f};
@@ -494,7 +519,7 @@ int main() {
 //	 float viewUp[3]       = { 0.0f,  1.0f,  0.0f};
 //	 float viewForward[3]  = { -0.5f,  0.0f, -1.0f};
 
-	normalize(viewUp, viewUp);
+	normalize(viewUp, viewUp); //  归一化
 	normalize(viewForward, viewForward);
 
 	// identity(viewMatrix);
@@ -536,19 +561,19 @@ int main() {
 		// Use Program
 		glUseProgram(program);
 
-		// // ----------------------------------------
-		 // Rotation Matrix - X
-//		 float rotation[16];
-//
-//		 // Create Rotation Matrix
-//		 rotateX(glfwGetTime(), rotation);
-//
-//		 // Get Model Matrix location
-//		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
-//
-//		 // Copy Rotation Matrix to Shader
-//		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
-		// // ----------------------------------------
+		 // ----------------------------------------
+//		  Rotation Matrix - X
+		 float rotation[16];
+
+		 // Create Rotation Matrix
+		 rotateX(glfwGetTime(), rotation);
+
+		 // Get Model Matrix location
+		 GLint modelLoc = glGetUniformLocation(program, "u_Model");
+
+		 // Copy Rotation Matrix to Shader
+		 glUniformMatrix4fv(modelLoc, 1, GL_FALSE, rotation);
+		 // ----------------------------------------
 
 		// // ----------------------------------------
 //		 // Rotation Matrix - Y
@@ -656,6 +681,7 @@ int main() {
 
 		// Bind Vertex Array Object
 		glBindVertexArray(vao);
+
 
 		// Draw Elements (Triangles)
 		glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, NULL);

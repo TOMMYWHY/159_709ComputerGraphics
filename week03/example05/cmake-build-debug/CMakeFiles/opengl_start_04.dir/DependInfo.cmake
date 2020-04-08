@@ -19,6 +19,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/Cellar/glfw/3.3/include"
+  "/usr/local/Cellar/glm/0.9.9.5/include"
   "../include"
   )
 

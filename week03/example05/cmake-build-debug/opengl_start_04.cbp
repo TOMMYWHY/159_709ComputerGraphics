@@ -47,6 +47,7 @@
 					<Add option="-DGLFW_INCLUDE_NONE"/>
 					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example05&quot;"/>
 					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
 					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example05/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
@@ -72,6 +73,7 @@
 					<Add option="-DGLFW_INCLUDE_NONE"/>
 					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example05&quot;"/>
 					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
 					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week03/example05/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
