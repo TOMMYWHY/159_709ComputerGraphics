@@ -72,13 +72,14 @@ int main()
     {
         for (int x = 0; x <= X_SEGMENTS; x++)
         {
-            float xSegment = (float)x / (float)X_SEGMENTS;
-            float ySegment = (float)y / (float)Y_SEGMENTS;
+            float xSegment = (double)x / (double)X_SEGMENTS;
+            float ySegment = (double)y / (double)Y_SEGMENTS;
             float xPos = std::cos(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
             float yPos = std::cos(ySegment * PI);
             float zPos = std::sin(xSegment * 2.0f * PI) * std::sin(ySegment * PI);
 
-            sphereVertices.push_back(glm::vec4(xPos*0.5,yPos*0.5,zPos*0.5,1.0f));
+//            sphereVertices.push_back(glm::vec4(xPos*0.5,yPos*0.5,zPos*0.5,1.0f));
+            sphereVertices.push_back(glm::vec4(xPos,yPos,zPos,1.0f));
 
         }
     }
@@ -159,7 +160,9 @@ int main()
         glBindVertexArray(VAO);
         //使用线框模式绘制
         glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
+//        glDrawElements(GL_TRIANGLES, X_SEGMENTS*Y_SEGMENTS * 6, GL_UNSIGNED_INT, 0);
+        		glDrawElements(GL_TRIANGLES, sphereIndices.size() * 3, GL_UNSIGNED_INT, NULL);
+
         //点阵模式绘制
         //glPointSize(5);
         //glDrawElements(GL_POINTS, X_SEGMENTS*Y_SEGMENTS*6, GL_UNSIGNED_INT, 0);

@@ -14,7 +14,7 @@ uniform vec4 Ia = vec4(0.3f, 0.3f, 0.3f, 1.0f);
 uniform vec4 Id = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 uniform vec4 Is = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 
-// Material - Brass
+ // Material - Brass
 uniform vec4 Ka = vec4(0.329412, 0.223529, 0.027451, 1.0);
 uniform vec4 Kd = vec4(0.780392, 0.568627, 0.113725, 1.0);
 uniform vec4 Ks = vec4(0.992157, 0.941176, 0.807843, 1.0);

@@ -43,4 +43,10 @@ void createCube(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexes
 // Create Torus with Positions and Normals
 void createTorus(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexes, float r1, float r2, int sub1, int sub2);
 
+
+
+// Create Sphere with Positions and Normals
+
+void createSphere(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexes);
+
 #endif // GEOMETRY_H

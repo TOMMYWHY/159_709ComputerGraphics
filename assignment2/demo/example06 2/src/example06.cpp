@@ -117,6 +117,8 @@ int main() {
 
 	// Create Cube
 	 createCube(buffer, indexes);
+//	 createSphere(buffer, indexes);
+
 
 	// // Create Tetrahedron
 	// createTetrahedron(buffer, indexes);
@@ -206,7 +208,7 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	glm::mat4 viewMatrix(1.0f);
-	glm::vec3 viewPosition(0.0f,  0.0f,  2.0f);
+	glm::vec3 viewPosition(0.0f,  0.0f,  5.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
 	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
 
@@ -255,22 +257,22 @@ int main() {
 		glUseProgram(program);
 
 		// ----------------------------------------
-		// Orbiting - View Matrix
-		viewPosition.x = sin(glfwGetTime()) * 5.0f;
-		viewPosition.z = cos(glfwGetTime()) * 5.0f;
-
-		// Look towards origin
-		viewForward = -viewPosition;
-
-		// Normalise Vectors
-		viewUp      = glm::normalize(viewUp);
-		viewForward = glm::normalize(viewForward);
-
-		// Construct View Matrix
-		viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-
-		// Copy View Matrix to Shader
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
+//		// Orbiting - View Matrix
+//		viewPosition.x = sin(glfwGetTime()) * 5.0f;
+//		viewPosition.z = cos(glfwGetTime()) * 5.0f;
+//
+//		// Look towards origin
+//		viewForward = -viewPosition;
+//
+//		// Normalise Vectors
+//		viewUp      = glm::normalize(viewUp);
+//		viewForward = glm::normalize(viewForward);
+//
+//		// Construct View Matrix
+//		viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+//
+//		// Copy View Matrix to Shader
+//		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 		// ----------------------------------------
 
 		// ----------------------------------------		
@@ -339,7 +341,10 @@ int main() {
 		// Draw Elements (Triangles)
 		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
-		// Swap the back and front buffers
+
+//        glDrawElements(GL_TRIANGLES, 50*50 * 6, GL_UNSIGNED_INT, 0);
+
+        // Swap the back and front buffers
 		glfwSwapBuffers(window);
 
 		// Poll window events
