@@ -115,6 +115,9 @@ int main() {
 	std::vector<glm::vec4> buffer;
 	std::vector<glm::ivec3> indexes;
 
+
+    std::vector<glm::vec4> buffer2;
+    std::vector<glm::ivec3> indexes2;
 	// Create Cube
 	 createCube(buffer, indexes);
 //	 createSphere(buffer, indexes);
@@ -124,7 +127,7 @@ int main() {
 	// createTetrahedron(buffer, indexes);
 
 	// // Create Torus
-//	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
+	createTorus(buffer2, indexes2, 2.0f, 0.9f, 20, 20);
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -142,7 +145,7 @@ int main() {
 
 	// Vertex Array Objects (VAO)
 	GLuint vao = 0;
-	
+
 	// Vertex Buffer Objects (VBO)
 	GLuint vbo = 0;
 
@@ -184,9 +187,51 @@ int main() {
 	glEnableVertexAttribArray(norLoc);
 
 	// Unbind VAO, VBO & EBO
-	glBindVertexArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+//	glBindVertexArray(0);
+//	glBindBuffer(GL_ARRAY_BUFFER, 0);
+//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+//    // ----------------------------------------
+//    // Triangle222
+//    // ----------------------------------------
+//    GLuint vao2 = 0;
+//    GLuint vbo2 = 0;
+//    GLuint ebo2 = 0;
+//
+//    // Create VAO, VBO & EBO
+//    glGenVertexArrays(1, &vao2);
+//    glGenBuffers(1, &vbo2);
+//    glGenBuffers(1, &ebo2);
+//
+//    // Bind VAO, VBO & EBO
+//    glBindVertexArray(vao);
+//    glBindBuffer(GL_ARRAY_BUFFER, vbo2);
+//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo2);
+//
+//    // Load Vertex Data
+//    glBufferData(GL_ARRAY_BUFFER, buffer2.size() * sizeof(glm::vec4), buffer2.data(), GL_STATIC_DRAW);
+//
+//    // Load Element Data
+//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes2.size() * sizeof(glm::ivec3), indexes2.data(), GL_STATIC_DRAW);
+//
+//    // Get Position Attribute location (must match name in shader)
+//    GLuint posLoc2 = glGetAttribLocation(program, "vert_Position");
+//
+//    // Get Normal Attribute location (must match name in shader)
+//    GLuint norLoc2 = glGetAttribLocation(program, "vert_Normal");
+//
+//    // Set Vertex Attribute Pointers
+//    glVertexAttribPointer(posLoc2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
+//    glVertexAttribPointer(norLoc2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+//
+//    // Enable Vertex Attribute Arrays
+//    glEnableVertexAttribArray(posLoc2);
+//    glEnableVertexAttribArray(norLoc2);
+
+    // Unbind VAO, VBO & EBO
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	// ----------------------------------------
 	// Model Matrix
@@ -208,9 +253,9 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	glm::mat4 viewMatrix(1.0f);
-	glm::vec3 viewPosition(0.0f,  0.0f,  5.0f);
+	glm::vec3 viewPosition(0.0f,  0.0f,  8.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
-	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
+	glm::vec3 viewForward (0.2f,  0.0f, -1.0f);
 
 	// Normalise Vectors
 	viewUp      = glm::normalize(viewUp);
@@ -231,7 +276,7 @@ int main() {
 	glm::mat4 projectionMatrix(1.0f);
 	
 	// Calculate Perspective Projection
-	projectionMatrix = glm::perspective(glm::radians(67.0f), 1.0f, 0.2f, 10.0f);
+	projectionMatrix = glm::perspective(glm::radians(77.0f), 1.0f, 0.2f, 10.0f); // fov 张角
 
 	// Get Projection Matrix location
 	GLint projectionLoc = glGetUniformLocation(program, "u_Projection");
@@ -341,6 +386,11 @@ int main() {
 		// Draw Elements (Triangles)
 		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
+
+//        glBindVertexArray(vao2);
+//
+//        // Draw Elements (Triangles)
+//        glDrawElements(GL_TRIANGLES, indexes2.size() * 3, GL_UNSIGNED_INT, NULL);
 
 //        glDrawElements(GL_TRIANGLES, 50*50 * 6, GL_UNSIGNED_INT, 0);
 

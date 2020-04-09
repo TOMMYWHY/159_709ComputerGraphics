@@ -116,133 +116,49 @@ int main() {
 	// Create Object
 	// ----------------------------------------
 
-	// Vertex and Index buffers (tetrahedron)
-	std::vector<glm::vec4>  tetrahedron_buffer;
-	std::vector<glm::ivec3> tetrahedron_indexes;
-
-	// Vertex and Index buffers (cube)
 	std::vector<glm::vec4>  cube_buffer;
 	std::vector<glm::ivec3> cube_indexes;
-
-	// // Create Cube - (Interleaved)
-	// createCubeInterleaved(cube_buffer, cube_indexes);
-
-	// Create Cube - (Separate)
 	createCubeSeparate(cube_buffer, cube_indexes);
-
-	// // Create Tetrahedron - (Interleaved)
-	// createTetrahedronInterleaved(tetrahedron_buffer, tetrahedron_indexes);
-
-	// Create Tetrahedron - (Separate)
-//	createTetrahedronSeparate(tetrahedron_buffer, tetrahedron_indexes);
-    createCubeSeparate(tetrahedron_buffer, tetrahedron_indexes);
-
-    std::cout << tetrahedron_buffer.size()<<std::endl; //8
 
 	// ----------------------------------------
 	// Create GLSL Programs
 	// ----------------------------------------
 
 	// Load GLSL Program
-//	GLuint phongProgram2 = loadProgram("./shader/colour.vert.glsl", NULL, NULL, NULL, "./shader/colour.frag.glsl");
 	GLuint phongProgram  = loadProgram( "./shader/phong.vert.glsl", NULL, NULL, NULL,  "./shader/phong.frag.glsl");
-	GLuint phongProgram2  = loadProgram( "./shader/phong.vert.glsl", NULL, NULL, NULL,  "./shader/phong.frag.glsl");
 
-	// ----------------------------------------
-	// Configure Tetrahedron
-	// ----------------------------------------
-	// Vertex Array Objects (VAO)
-	GLuint tetrahedron_vao = 0;
-	
-	// Buffer Objects (VBO)
-	GLuint tetrahedron_vbo = 0;
-	GLuint tetrahedron_ebo = 0;
-
-	// Create VAO, VBO & EBO
-	glGenVertexArrays(1, &tetrahedron_vao);
-	glGenBuffers(1, &tetrahedron_vbo);
-	glGenBuffers(1, &tetrahedron_ebo);
-
-	// Bind VAO, VBO & EBO
-	glBindVertexArray(tetrahedron_vao);
-	glBindBuffer(GL_ARRAY_BUFFER, tetrahedron_vbo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, tetrahedron_ebo);
-
-	// Load Vertex Data
-	glBufferData(GL_ARRAY_BUFFER, tetrahedron_buffer.size() * sizeof(glm::vec4), tetrahedron_buffer.data(), GL_STATIC_DRAW);
-
-	// Load Element Data
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, tetrahedron_indexes.size() * sizeof(glm::ivec3), tetrahedron_indexes.data(), GL_STATIC_DRAW);
-
-	// Get Position Attribute location (must match name in shader)
-	GLuint colorPosLoc = glGetAttribLocation(phongProgram2, "vert_Position");
-
-	// Get Colour Attribute location (must match name in shader)
-//	GLuint colorColLoc = glGetAttribLocation(phongProgram2, "vert_Colour");
-	GLuint colorColLoc = glGetAttribLocation(phongProgram2, "vert_Normal");
-
-	// // Set Vertex Attribute Pointers - Interleaved
-	// glVertexAttribPointer(colorPosLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
-	// glVertexAttribPointer(colorColLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(GLfloat)));
-
-	// Set Vertex Attribute Pointers - Separate
-	glVertexAttribPointer(colorPosLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(colorColLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(16*sizeof(GLfloat)));
-
-	// Enable Vertex Attribute Arrays
-	glEnableVertexAttribArray(colorPosLoc);
-	glEnableVertexAttribArray(colorColLoc);
-
-	// Unbind VAO, VBO & EBO (Unbind VAO first)
-	glBindVertexArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 
 	// ----------------------------------------
-	// Configure Cube
+	// obj1
 	// ----------------------------------------
 	// Vertex Array Objects (VAO)
-	GLuint cube_vao = 0;
-	
+	GLuint cube_vao1 = 0;
 	// Buffer Objects (VBO)
 	GLuint cube_vbo = 0;
 	GLuint cube_ebo = 0;
-
 	// Create VAO, VBO & EBO
-	glGenVertexArrays(1, &cube_vao);
+	glGenVertexArrays(1, &cube_vao1);
 	glGenBuffers(1, &cube_vbo);
 	glGenBuffers(1, &cube_ebo);
-
 	// Bind VAO, VBO & EBO
-	glBindVertexArray(cube_vao);
+	glBindVertexArray(cube_vao1);
 	glBindBuffer(GL_ARRAY_BUFFER, cube_vbo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cube_ebo);
-
 	// Load Vertex Data
 	glBufferData(GL_ARRAY_BUFFER, cube_buffer.size() * sizeof(glm::vec4), cube_buffer.data(), GL_STATIC_DRAW);
-
 	// Load Element Data
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, cube_indexes.size() * sizeof(glm::ivec3), cube_indexes.data(), GL_STATIC_DRAW);
-
 	// Get Position Attribute location (must match name in shader)
-	GLuint phongPosLoc = glGetAttribLocation(phongProgram, "vert_Position");
-
-	// Get Normal Attribute location (must match name in shader)
-	GLuint phongNorLoc = glGetAttribLocation(phongProgram, "vert_Normal");
-
-	// // Set Vertex Attribute Pointers - Interleaved
-	// glVertexAttribPointer(phongPosLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
-	// glVertexAttribPointer(phongNorLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(GLfloat)));
-
+	GLuint colorPosLoc = glGetAttribLocation(phongProgram, "vert_Position");
+	// Get Colour Attribute location (must match name in shader)
+	GLuint colorColLoc = glGetAttribLocation(phongProgram, "vert_Normal");
 	// Set Vertex Attribute Pointers - Separate
-	glVertexAttribPointer(phongPosLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(phongNorLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(96*sizeof(GLfloat)));
-
+	glVertexAttribPointer(colorPosLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
+	glVertexAttribPointer(colorColLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(16*sizeof(GLfloat)));
 	// Enable Vertex Attribute Arrays
-	glEnableVertexAttribArray(phongPosLoc);
-	glEnableVertexAttribArray(phongNorLoc);
-
+	glEnableVertexAttribArray(colorPosLoc);
+	glEnableVertexAttribArray(colorColLoc);
 	// Unbind VAO, VBO & EBO (Unbind VAO first)
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -250,73 +166,52 @@ int main() {
 
 
 	// ----------------------------------------
-	// Create Transforms
-	// ----------------------------------------
+	// obj2
+    // ----------------------------------------
+    // Vertex Array Objects (VAO)
+    GLuint cube_vao2 = 0;
+    glGenVertexArrays(1, &cube_vao2);
+    glGenBuffers(1, &cube_vbo);
+    glGenBuffers(1, &cube_ebo);
+    // Bind VAO, VBO & EBO
+    glBindVertexArray(cube_vao2);
+    glBindBuffer(GL_ARRAY_BUFFER, cube_vbo);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, cube_ebo);
+    // Load Vertex Data
+    glBufferData(GL_ARRAY_BUFFER, cube_buffer.size() * sizeof(glm::vec4), cube_buffer.data(), GL_STATIC_DRAW);
+    // Load Element Data
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, cube_indexes.size() * sizeof(glm::ivec3), cube_indexes.data(), GL_STATIC_DRAW);
+    // Get Position Attribute location (must match name in shader)
+    GLuint colorPosLoc2 = glGetAttribLocation(phongProgram, "vert_Position");
+    // Get Colour Attribute location (must match name in shader)
+    GLuint colorColLoc2 = glGetAttribLocation(phongProgram, "vert_Normal");
+    // Set Vertex Attribute Pointers - Separate
+    glVertexAttribPointer(colorPosLoc2, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
+    glVertexAttribPointer(colorColLoc2, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(16*sizeof(GLfloat)));
+    // Enable Vertex Attribute Arrays
+    glEnableVertexAttribArray(colorPosLoc2);
+    glEnableVertexAttribArray(colorColLoc2);
+    // Unbind VAO, VBO & EBO (Unbind VAO first)
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-	// ----------------------------------------
-	// Tetrahedron - Model Matrix
-	glm::mat4 tetrahedronModelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-1.5f, 0.0f, 0.0f));
-	// ----------------------------------------
 
-	// ----------------------------------------
-	// Cube - Model Matrix
-	glm::mat4 cubeModelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(1.5f, 0.0f, 0.0f));
-	// ----------------------------------------
-
-	// ----------------------------------------
-	// View Matrix
+	//----public ---- View Matrix ------------ // function
+	//----public ---- View Matrix ------------ // function
 	glm::mat4 viewMatrix(1.0f);
 	glm::vec3 viewPosition(0.0f,  0.0f,  5.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
 	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
-
 	// Normalise Vectors
 	viewUp      = glm::normalize(viewUp);
 	viewForward = glm::normalize(viewForward);
-
 	// Construct View Matrix
 	viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-	// ----------------------------------------
-
-	// ----------------------------------------
 	// Projection Matrix
 	glm::mat4 projectionMatrix(1.0f);
-	
 	// Calculate Perspective Projection
 	projectionMatrix = glm::perspective(glm::radians(67.0f), 1.0f, 0.2f, 10.0f);
-	// ----------------------------------------
-
-
-	// ----------------------------------------
-	// Copy to Shader Programs
-	// ----------------------------------------
-
-	// ----------------------------------------
-	// Use Colour Program
-	glUseProgram(phongProgram2);
-
-	// Copy Model Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram2, "u_Model"),      1, GL_FALSE, glm::value_ptr(tetrahedronModelMatrix));
-
-	// Copy View Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram2, "u_View"),       1, GL_FALSE, glm::value_ptr(viewMatrix));
-
-	// Copy Projection Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram2, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
-
-	// ----------------------------------------
-	// Copy to Phong Program
-	glUseProgram(phongProgram);
-
-	// Copy Model Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Model"),      1, GL_FALSE, glm::value_ptr(cubeModelMatrix));
-
-	// Copy View Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_View"),       1, GL_FALSE, glm::value_ptr(viewMatrix));
-
-	// Copy Projection Matrix to Shader
-	glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
-
 
 	// ----------------------------------------
 	// Main Render loop
@@ -331,12 +226,15 @@ int main() {
 		// Clear Screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
+		// Use Colour Program
+        glUseProgram(phongProgram);
 
 		// ----------------------------------------
 		// Orbiting - View Matrix
 		viewPosition.x = sin(glfwGetTime()) * 8.0f;
 		viewPosition.z = cos(glfwGetTime()) * 8.0f;
-
+/*        viewPosition.x =  2.0f;
+        viewPosition.z = 2.0f;*/
 		// Look towards origin
 		viewForward = -viewPosition;
 
@@ -349,44 +247,46 @@ int main() {
 		// ----------------------------------------
 
 		// ----------------------------------------
-		// Draw Tetrahedron
+		// obj1
 		// ----------------------------------------
 
-		// Use Colour Program
-		glUseProgram(phongProgram2);
+        glm::mat4 cubeModelMatrix1 = glm::translate(glm::mat4(1.0f), glm::vec3(-1.5f, 0.0f, 0.0f));
+        cubeModelMatrix1 = glm::rotate(cubeModelMatrix1, (float)glfwGetTime()*2, glm::vec3(1.0f, 1.0f, 0.0f));
+        cubeModelMatrix1 = glm::scale(cubeModelMatrix1, glm::vec3(.5f,.5f,.5f));
+        // Copy Model Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Model"),      1, GL_FALSE, glm::value_ptr(cubeModelMatrix1));
+        // Copy View Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_View"),       1, GL_FALSE, glm::value_ptr(viewMatrix));
+        // Copy Projection Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 
-		// Copy View Matrix to Shader
-		glUniformMatrix4fv(glGetUniformLocation(phongProgram2, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-
-		// Bind Tetrahedron Vertex Array Object
-		glBindVertexArray(tetrahedron_vao);
-
+        glBindVertexArray(cube_vao1);
 		// Draw Tetrahedron
-		glDrawElements(GL_TRIANGLES, tetrahedron_indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+		glDrawElements(GL_TRIANGLES, cube_indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Unbind Tetrahedron Vertex Array Object
 		glBindVertexArray(0);
 		// ----------------------------------------
 
 		// ----------------------------------------
-		// Draw Cube
+		// obj2
 		// ----------------------------------------
+        glm::mat4 cubeModelMatrix2 = glm::translate(glm::mat4(1.0f), glm::vec3(1.5f, 0.0f, 0.0f));
+        cubeModelMatrix2 = glm::rotate(cubeModelMatrix2, (float)glfwGetTime()*5, glm::vec3(0.0f, 1.0f, 0.0f));
+        cubeModelMatrix2 = glm::scale(cubeModelMatrix2, glm::vec3(.8f,.8f,.8f));
+        // Copy Model Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Model"),      1, GL_FALSE, glm::value_ptr(cubeModelMatrix2));
+        // Copy View Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_View"),       1, GL_FALSE, glm::value_ptr(viewMatrix));
+        // Copy Projection Matrix to Shader
+        glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 
-		// Use Phong Program
-		glUseProgram(phongProgram);
+        glBindVertexArray(cube_vao2);
+        // Draw Tetrahedron
+        glDrawElements(GL_TRIANGLES, cube_indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
-		// Copy View Matrix to Shader
-		glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-
-		// Bind Cube Vertex Array Object
-		glBindVertexArray(cube_vao);
-
-		// Draw Cube
-		glDrawElements(GL_TRIANGLES, cube_indexes.size() * 3, GL_UNSIGNED_INT, NULL);
-
-		// Unbind Cube Vertex Array Object
-		glBindVertexArray(0);
-		// ----------------------------------------
+        // Unbind Tetrahedron Vertex Array Object
+        glBindVertexArray(0);
 
 
 		// Swap the back and front buffers
@@ -397,16 +297,17 @@ int main() {
 	}
 
 	// Delete VAO, VBO & EBO
-	glDeleteVertexArrays(1, &tetrahedron_vao);
-	glDeleteBuffers(1, &tetrahedron_vbo);
-	glDeleteBuffers(1, &tetrahedron_ebo);
-
-	glDeleteVertexArrays(1, &cube_vao);
+	glDeleteVertexArrays(1, &cube_vao1);
+	glDeleteVertexArrays(1, &cube_vao2);
 	glDeleteBuffers(1, &cube_vbo);
 	glDeleteBuffers(1, &cube_ebo);
 
+/*	glDeleteVertexArrays(1, &cube_vao1);
+	glDeleteBuffers(1, &cube_vbo);
+	glDeleteBuffers(1, &cube_ebo);*/
+
 	// Delete Programs
-	glDeleteProgram(phongProgram2);
+//	glDeleteProgram(phongProgram2);
 	glDeleteProgram(phongProgram);
 
 	// Stop receiving events for the window and free resources; this must be
