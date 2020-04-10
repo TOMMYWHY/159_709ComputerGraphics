@@ -38,6 +38,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -81,6 +82,7 @@
       <workItem from="1584401280231" duration="62000" />
       <workItem from="1586383143147" duration="377000" />
       <workItem from="1586383544389" duration="2887000" />
+      <workItem from="1586555492031" duration="28000" />
     </task>
     <servers />
   </component>
