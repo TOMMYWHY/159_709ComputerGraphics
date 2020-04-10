@@ -71,39 +71,17 @@ void onFramebufferSize(GLFWwindow *window, int width, int height) {
 	glViewport(0, 0, width, height);
 	glfwMakeContextCurrent(NULL);
 }
-//水星 金星 地球 火星 木星 土星 天王星//海王星＞＞＞＞＞＞＞
-//name：Sum 15.0f ,Mercury 2.0f,Venus 4.0f,Earth 8.0f ,Mars 4.0f,jupiter 10.0f,Saturn 10.0f,Uranus 12.0f,Neptune 8.0f
-struct STAR{
-        char url[128];
-        float size ;
-        float distance ;
-        float RotationSpeed;
-};
-STAR Sun = {"./images/sunmap.jpg",          1.5f,   0.0f,   0.0f };
-STAR Mercury = {"./images/mercurymap.jpg",  .2f,    1.8f,   0.1f};
-STAR Venus = {"./images/venusmap.jpg",      .4f,    2.5f,   0.02f};
-STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f};
-STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   1.0f};
-STAR Jupiter = {"./images/jupitermap.jpg",  1.0f,   8.0f,   2.0f};
-STAR Saturn = {"./images/saturnmap.jpg",    1.0f,   10.5f,   2.0f};
-STAR Uranus = {"./images/uranusmap.jpg",    1.2f,   13.0f,   1.5f};
-STAR Neptune = {"./images/neptunemap.jpg",  .8f,    15.5f,   3.0f};
 
 void CreateSpheres_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program);
 
-
-//===== stars =====
-GLuint Create_VAO    ( GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program);
-
-
-
-GLuint Create_Texture(STAR star,int x,int y, int n, GLuint program);
+GLuint CreateEarth_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program);
+GLuint CreateEarth_Texture(int x,int y, int n, GLuint program);
+GLuint CreateJupiter_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program);
+GLuint CreateJupiter_Texture(int x,int y, int n, GLuint program);
 
 
-void Rotation  (STAR star,GLuint vaoEarth,GLuint textureEarth,vector<glm::ivec3> indexes,GLuint program);
-
-
-
+void RotationEarth(float speed,float size,GLuint vaoEarth,GLuint textureEarth,vector<glm::ivec3> indexes,GLuint program);
+void RotationJupiter(float speed,float size,GLuint vaoEarth,GLuint textureEarth,vector<glm::ivec3> indexes,GLuint program);
 
 void RenderingSpheres(GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuint program, glm::mat4 modelMatrix);
 void CameraMovement(GLFWwindow *window,
@@ -173,41 +151,19 @@ int main() {
     // texture params
 	int x, y, n;
 
-    //name：Sum 15.0f ,Mercury 2.0f,Venus 4.0f,Earth 8.0f ,Mars 4.0f,jupiter 10.0f,Saturn 10.0f,Uranus 12.0f,Neptune 8.0f
-
-    // -------------object Sun---------------------------
-    GLuint textureSun = Create_Texture(Sun, x,y,n,program);
-    GLuint vaoSun = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Mercury---------------------------
-    GLuint textureMercury = Create_Texture(Mercury, x,y,n,program);
-    GLuint vaoMercury = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Venus---------------------------
-    GLuint textureVenus = Create_Texture(Venus, x,y,n,program);
-    GLuint vaoVenus = Create_VAO( vbo,ebo,buffer,indexes,program);
     // -------------object Earth---------------------------
-    GLuint textureEarth = Create_Texture(Earth, x,y,n,program);
-    GLuint vaoEarth = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Mars---------------------------
-    GLuint textureMars = Create_Texture(Mars, x,y,n,program);
-    GLuint vaoMars = Create_VAO( vbo,ebo,buffer,indexes,program);
+    GLuint textureEarth = CreateEarth_Texture(x,y,n,program);
+    GLuint vaoEarth = CreateEarth_VAO(vbo,ebo,buffer,indexes,program);
+
     // -------------object Jupiter---------------------------
-    GLuint textureJupiter = Create_Texture(Jupiter,x,y,n,program);
-    GLuint vaoJupiter = Create_VAO(vbo,ebo,buffer,indexes,program);
-    // -------------object Saturn---------------------------
-    GLuint textureSaturn = Create_Texture(Saturn, x,y,n,program);
-    GLuint vaoSaturn = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Uranus---------------------------
-    GLuint textureUranus = Create_Texture(Uranus, x,y,n,program);
-    GLuint vaoUranus = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Neptune---------------------------
-    GLuint textureNeptune = Create_Texture(Neptune, x,y,n,program);
-    GLuint vaoNeptune = Create_VAO( vbo,ebo,buffer,indexes,program);
+    GLuint textureJupiter = CreateJupiter_Texture(x,y,n,program);
+    GLuint vaoJupiter = CreateJupiter_VAO(vbo,ebo,buffer,indexes,program);
 
 	// ----------------------------------------
 	// View Matrix  ----camera
 	// ----------------------------------------
 	glm::mat4 viewMatrix(1.0f);
-	glm::vec3 viewPosition(0.0f,  0.0f,  20.0f);
+	glm::vec3 viewPosition(0.0f,  0.0f,  4.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
 	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
 	// Normalise Vectors
@@ -252,8 +208,6 @@ int main() {
 
 // ----------------move camera------------------------ function-------
 //        void CameraMovement(window, viewMatrix, viewPosition, viewForward, viewUp, program , last);
-        float camera_horizontal_angle;
-        float camera_vertical_angle;
         if(glfwGetKey(window, GLFW_KEY_UP)) {
 			// Move Closer
 			viewPosition.z -= 1.0f * dt;
@@ -294,69 +248,20 @@ int main() {
             // Copy View Matrix to Shader
             glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
         }
-        // camera  angle // 尝试左右转动 cemera
-        if(glfwGetKey(window, GLFW_KEY_A)) {
-//            viewForward.x -=  1.0f * dt;
-            camera_horizontal_angle -=  (1.0f*dt );
-            viewForward.x =fmod( camera_horizontal_angle,3);
-            // Construct View Matrix
-            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-            // Copy View Matrix to Shader
-            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-        }
-        if(glfwGetKey(window, GLFW_KEY_D)) {
-//             旋转 360度
-//            viewForward.x +=  (1.0f*dt );
-            camera_horizontal_angle +=  (1.0f*dt );
-            viewForward.x =fmod( camera_horizontal_angle,360 );
-//            cout <<viewForward.x <<endl;
-            // Construct View Matrix
-            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-            // Copy View Matrix to Shader
-            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-        }
-
-        if(glfwGetKey(window, GLFW_KEY_W)) {
-            // Move Away
-//            viewForward.y +=  1.0f * dt;
-            camera_vertical_angle +=  (1.0f*dt );
-            viewForward.y =fmod( camera_vertical_angle,3);
-            // Construct View Matrix
-            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-            // Copy View Matrix to Shader
-            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-        }
-        if(glfwGetKey(window, GLFW_KEY_S)) {
-            // viewForward Away
-//            viewForward.y -=  1.0f * dt;
-            camera_vertical_angle -=  (1.0f*dt );
-            viewForward.y =fmod( camera_vertical_angle,3);
-            // Construct View Matrix
-            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-            // Copy View Matrix to Shader
-            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-        }
         // ------end----------move camera------------------------ function-------
 
+// -----------------object earth-----------------------
+        float Earth_RotationSpeed = 1;
+        float Earth_size = .5;
+        RotationEarth(Earth_RotationSpeed,Earth_size, vaoEarth, textureEarth,indexes, program);
 
-        // -------------object Sun---------------------------
-        Rotation(Sun, vaoSun, textureSun,indexes, program);
-        // -------------object Mercury---------------------------
-        Rotation(Mercury, vaoMercury, textureMercury,indexes, program);
-        // -------------object Venus---------------------------
-        Rotation(Venus, vaoVenus, textureVenus,indexes, program);
-        // -----------------object earth-----------------------
-        Rotation(Earth, vaoEarth, textureEarth,indexes, program);
-        // -------------object Mars---------------------------
-        Rotation(Mars, vaoMars, textureMars,indexes, program);
-        // -----------------object Jupiter-----------------------
-        Rotation(Jupiter, vaoJupiter, textureJupiter,indexes, program);
-        // -------------object Saturn---------------------------
-        Rotation(Saturn, vaoSaturn, textureSaturn,indexes, program);
-        // -------------object Uranus---------------------------
-        Rotation(Uranus, vaoUranus, textureUranus,indexes, program);
-        // -------------object Neptune---------------------------
-        Rotation(Neptune, vaoNeptune, textureNeptune,indexes, program);
+// -----------------object Jupiter-----------------------
+        float Jupiter_RotationSpeed = 0.2;
+        float Jupiter_size = 1;
+        RotationJupiter(Jupiter_RotationSpeed,Jupiter_size, vaoJupiter, textureJupiter,indexes, program);
+
+
+
 
 
 
@@ -369,7 +274,6 @@ int main() {
 
 	// Delete VAO, VBO & EBO
 	glDeleteVertexArrays(1, &vaoEarth);
-//    glDeleteVertexArrays(1, &vaoJupyter);
 	glDeleteBuffers(1, &vbo);
 	glDeleteBuffers(1, &ebo);
 
@@ -392,40 +296,109 @@ int main() {
 /*
  * =================球球们=============================
  */
-// =============Star================//
-GLuint Create_VAO( GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program){
-    GLuint vao = 0;
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
+// =============Earth================//
+GLuint CreateEarth_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program){
+    GLuint vaoEarth = 0;
+    glGenVertexArrays(1, &vaoEarth);
+    glBindVertexArray(vaoEarth);
     CreateSpheres_VAO(vbo,ebo,buffer,indexes,program);
-    return vao;
+    return vaoEarth;
 }
-GLuint Create_Texture(STAR star,int x,int y, int n, GLuint program){
-    unsigned char *imageEarth = loadImage(star.url, x, y, n, false);
+GLuint CreateEarth_Texture(int x,int y, int n, GLuint program){
+    unsigned char *imageEarth = loadImage("./images/earthmap.tga", x, y, n, false);
     if(imageEarth == NULL) {return 0;}
+    // Texture
     GLuint textureEarth;
+    // Generate texture
     glGenTextures(1, &textureEarth);
+    // Bind texture
     glBindTexture(GL_TEXTURE_2D, textureEarth);
+    // Copy data to texture
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageEarth);
+    // Configure texture
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // No mip-mapping
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    // Configure Texture Coordinate Wrapping
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
     glBindTexture(GL_TEXTURE_2D, 0);
+    // Delete image data
     delete[] imageEarth;
     imageEarth = NULL;
+
     glUseProgram(program);
     GLuint textureMapLocEarth = glGetUniformLocation(program, "u_texture_Map");
     glUniform1i(textureMapLocEarth, 0);
+
     return textureEarth;
 }
-void Rotation(STAR star, GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuint program){
-    glm::mat4 modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3(star.distance, 0.0f, 0.0f)) *
-                                  glm::rotate(   glm::mat4(1.0f), (float)(glfwGetTime()*star.RotationSpeed), glm::vec3(0.0f, 1.0f, 0.0f))*
-                                  glm::scale(glm::mat4(1.0f), glm::vec3(star.size,star.size,star.size));
-    RenderingSpheres(vao,texture,indexes,program,modelMatrix);
+
+void RotationEarth(float speed,float size, GLuint vaoEarth,GLuint textureEarth,vector<glm::ivec3> indexes,GLuint program){
+    // adjust earth rotation params //
+    glm::mat4 modelMatrix_Earth = glm::translate(glm::mat4(1.0f),  glm::vec3(1.5f, 0.0f, 0.0f)) *
+                                  glm::rotate(   glm::mat4(1.0f), (float)(glfwGetTime()*speed), glm::vec3(0.0f, 1.0f, 0.0f))*
+                                    glm::scale(glm::mat4(1.0f), glm::vec3(size,size,size));
+    RenderingSpheres(vaoEarth,textureEarth,indexes,program,modelMatrix_Earth);
+
+/*    // Copy Rotation Matrix to Shader
+    glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix_Earth));
+    glBindVertexArray(vaoEarth);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, textureEarth);
+    glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, 0);*/
 }
 
+
+
+
+// =============Jupiter================//
+GLuint CreateJupiter_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program){
+    GLuint vaoJupiter = 0;
+    glGenVertexArrays(1, &vaoJupiter);
+    glBindVertexArray(vaoJupiter);
+    CreateSpheres_VAO(vbo,ebo,buffer,indexes,program);
+    return vaoJupiter;
+}
+GLuint CreateJupiter_Texture(int x,int y, int n, GLuint program){
+    unsigned char *imageJupiter = loadImage("./images/jupitermap.jpg", x, y, n, false);
+    if(imageJupiter == NULL) {return 0;}
+    // Texture
+    GLuint textureJupiter;
+    // Generate texture
+    glGenTextures(1, &textureJupiter);
+    // Bind texture
+    glBindTexture(GL_TEXTURE_2D, textureJupiter);
+    // Copy data to texture
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageJupiter);
+    // Configure texture
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // No mip-mapping
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    // Configure Texture Coordinate Wrapping
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
+    glBindTexture(GL_TEXTURE_2D, 0);
+    // Delete image data
+    delete[] imageJupiter;
+    imageJupiter = NULL;
+    glUseProgram(program);
+    GLuint textureMapLocJupiter = glGetUniformLocation(program, "u_texture_Map");
+    glUniform1i(textureMapLocJupiter, 0);
+
+    return textureJupiter;
+}
+
+void RotationJupiter(float speed,float size,GLuint vaoJupiter,GLuint textureJupiter,vector<glm::ivec3> indexes,GLuint program){
+    // adjust Jupiter rotation params //
+    glm::mat4 modelMatrix_Jupiter = glm::translate(glm::mat4(1.0f), glm::vec3(-1.5f, 0.0f, 0.0f)) *
+                                    glm::rotate(   glm::mat4(1.0f), (float)(glfwGetTime()* speed ), glm::vec3(0.0f, 1.0f, 0.0f)) *
+                                    glm::scale(glm::mat4(1.0f), glm::vec3(size,size,size));
+
+    RenderingSpheres(vaoJupiter,textureJupiter,indexes,program,modelMatrix_Jupiter);
+}
 
 
 /*
@@ -524,8 +497,6 @@ void CameraMovement(GLFWwindow *window,
         // Copy View Matrix to Shader
         glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
     }
-
-
     // ------end----------move camera------------------------ function-------
 
 }
