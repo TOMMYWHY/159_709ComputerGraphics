@@ -15,9 +15,9 @@ uniform vec4 Id = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 uniform vec4 Is = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 
 // Material - Turquoise
-uniform vec4 Ka = vec4(0.1,      0.18725, 0.1745,   1.0f);
-uniform vec4 Kd = vec4(0.396,    0.74151, 0.69102,  1.0f);
-uniform vec4 Ks = vec4(0.297254, 0.30729, 0.306678, 1.0f);
+uniform vec4 Ka = vec4(0.1,      0.18725, 0.1745,   1.0f); // ambient 环境光
+uniform vec4 Kd = vec4(0.396,    0.74151, 0.69102,  1.0f);// diffuse  漫反射
+uniform vec4 Ks = vec4(0.297254, 0.30729, 0.306678, 1.0f);// specular 镜面反射
 uniform float a = 12.8;
 
 void main () {

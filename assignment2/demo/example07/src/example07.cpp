@@ -231,10 +231,10 @@ int main() {
 
 		// ----------------------------------------
 		// Orbiting - View Matrix
-		viewPosition.x = sin(glfwGetTime()) * 8.0f;
-		viewPosition.z = cos(glfwGetTime()) * 8.0f;
-/*        viewPosition.x =  2.0f;
-        viewPosition.z = 2.0f;*/
+	/*	viewPosition.x = sin(glfwGetTime()) * 8.0f;
+		viewPosition.z = cos(glfwGetTime()) * 8.0f;*/
+//        viewPosition.x =  5.0f;
+        viewPosition.z = 5.0f;
 		// Look towards origin
 		viewForward = -viewPosition;
 
@@ -251,7 +251,7 @@ int main() {
 		// ----------------------------------------
 
         glm::mat4 cubeModelMatrix1 = glm::translate(glm::mat4(1.0f), glm::vec3(-1.5f, 0.0f, 0.0f));
-        cubeModelMatrix1 = glm::rotate(cubeModelMatrix1, (float)glfwGetTime()*2, glm::vec3(1.0f, 1.0f, 0.0f));
+        cubeModelMatrix1 = glm::rotate(cubeModelMatrix1, (float)glfwGetTime()*0.2f, glm::vec3(1.0f, 1.0f, 0.0f));
         cubeModelMatrix1 = glm::scale(cubeModelMatrix1, glm::vec3(.5f,.5f,.5f));
         // Copy Model Matrix to Shader
         glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Model"),      1, GL_FALSE, glm::value_ptr(cubeModelMatrix1));
@@ -272,7 +272,7 @@ int main() {
 		// obj2
 		// ----------------------------------------
         glm::mat4 cubeModelMatrix2 = glm::translate(glm::mat4(1.0f), glm::vec3(1.5f, 0.0f, 0.0f));
-        cubeModelMatrix2 = glm::rotate(cubeModelMatrix2, (float)glfwGetTime()*5, glm::vec3(0.0f, 1.0f, 0.0f));
+        cubeModelMatrix2 = glm::rotate(cubeModelMatrix2, (float)glfwGetTime()*0.5f, glm::vec3(0.0f, 1.0f, 0.0f));
         cubeModelMatrix2 = glm::scale(cubeModelMatrix2, glm::vec3(.8f,.8f,.8f));
         // Copy Model Matrix to Shader
         glUniformMatrix4fv(glGetUniformLocation(phongProgram, "u_Model"),      1, GL_FALSE, glm::value_ptr(cubeModelMatrix2));

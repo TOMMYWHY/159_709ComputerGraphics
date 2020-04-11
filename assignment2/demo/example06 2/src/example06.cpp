@@ -119,15 +119,15 @@ int main() {
     std::vector<glm::vec4> buffer2;
     std::vector<glm::ivec3> indexes2;
 	// Create Cube
-	 createCube(buffer, indexes);
+//	 createCube(buffer, indexes);
 //	 createSphere(buffer, indexes);
 
 
 	// // Create Tetrahedron
-	// createTetrahedron(buffer, indexes);
+//	 createTetrahedron(buffer, indexes);
 
 	// // Create Torus
-	createTorus(buffer2, indexes2, 2.0f, 0.9f, 20, 20);
+	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -253,7 +253,7 @@ int main() {
 	// ----------------------------------------
 	// View Matrix
 	glm::mat4 viewMatrix(1.0f);
-	glm::vec3 viewPosition(0.0f,  0.0f,  8.0f);
+	glm::vec3 viewPosition(0.0f,  0.0f,  10.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
 	glm::vec3 viewForward (0.2f,  0.0f, -1.0f);
 

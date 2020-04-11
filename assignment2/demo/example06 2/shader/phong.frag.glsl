@@ -14,11 +14,11 @@ uniform vec4 Ia = vec4(0.3f, 0.3f, 0.3f, 1.0f);
 uniform vec4 Id = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 uniform vec4 Is = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 
- // Material - Brass
-uniform vec4 Ka = vec4(0.329412, 0.223529, 0.027451, 1.0);
-uniform vec4 Kd = vec4(0.780392, 0.568627, 0.113725, 1.0);
-uniform vec4 Ks = vec4(0.992157, 0.941176, 0.807843, 1.0);
-uniform float a = 27.89743616;
+// // Material - Brass
+//uniform vec4 Ka = vec4(0.329412, 0.223529, 0.027451, 1.0);
+//uniform vec4 Kd = vec4(0.780392, 0.568627, 0.113725, 1.0);
+//uniform vec4 Ks = vec4(0.992157, 0.941176, 0.807843, 1.0);
+//uniform float a = 27.89743616;
 
 // // Material - Pearl
 // uniform vec4 Ka = vec4(0.25,     0.20725,  0.20725,  1.0);
@@ -32,11 +32,11 @@ uniform float a = 27.89743616;
 // uniform vec4 Ks = vec4(0.633,   0.727811, 0.633,   1.0f);
 // uniform float a = 76.8;
 
-// // Material - Turquoise
-// uniform vec4 Ka = vec4(0.1,      0.18725, 0.1745,   1.0f);
-// uniform vec4 Kd = vec4(0.396,    0.74151, 0.69102,  1.0f);
-// uniform vec4 Ks = vec4(0.297254, 0.30729, 0.306678, 1.0f);
-// uniform float a = 12.8;
+ // Material - Turquoise
+ uniform vec4 Ka = vec4(0.1,      0.18725, 0.1745,   1.0f);
+ uniform vec4 Kd = vec4(0.396,    0.74151, 0.69102,  1.0f);
+ uniform vec4 Ks = vec4(0.297254, 0.30729, 0.306678, 1.0f);
+ uniform float a = 12.8;
 
 // // Material - Black Plastic
 // uniform vec4 Ka = vec4(0.0,  0.0,  0.0,  1.0);

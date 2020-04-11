@@ -79,15 +79,21 @@ struct STAR{
         float RotationSpeed;
         float RevolutionSpeed;
 };
-STAR Sun = {"./images/sunmap.jpg",          3.0f,   0.0f,   0.0f, 0.0f};
-STAR Mercury = {"./images/mercurymap.jpg",  .1f,    1.8f,   1.4f,0.87f};
-STAR Venus = {"./images/venusmap.jpg",      .3f,    2.5f,   1.3f,2.24f};
-STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f,3.65f};
-STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   0.8f,6.86f};
-STAR Jupiter = {"./images/jupitermap.jpg",  1.5f,   8.0f,   0.4f,23.32f};
-STAR Saturn = {"./images/saturnmap.jpg",    1.0f,   10.5f,   0.3f,40.0f};
-STAR Uranus = {"./images/uranusmap.jpg",    0.8f,   13.0f,   0.2f,80.0f};
-STAR Neptune = {"./images/neptunemap.jpg",  .8f,    15.5f,   0.1f,100.0f};
+
+//STAR Sun = {"./images/sunmap.jpg",          3.0f,   0.0f,   0.0f, 0.0f};
+//STAR Mercury = {"./images/mercurymap.jpg",  .1f,    1.8f,   1.4f,0.87f};
+//STAR Venus = {"./images/venusmap.jpg",      .3f,    2.5f,   1.3f,2.24f};
+
+//STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f,3.65f};
+
+//STAR Earth = {"./images/earthbump1k.jpg",      .8f,    4.0f,   1.0f,3.65f};
+STAR Earth = {"./images/earthbump1k.jpg",      1.8f,    0.0f,   .02f,13.65f};
+
+//STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   0.8f,6.86f};
+//STAR Jupiter = {"./images/jupitermap.jpg",  1.5f,   8.0f,   0.4f,23.32f};
+//STAR Saturn = {"./images/saturnmap.jpg",    1.0f,   10.5f,   0.3f,40.0f};
+//STAR Uranus = {"./images/uranusmap.jpg",    0.8f,   13.0f,   0.2f,80.0f};
+//STAR Neptune = {"./images/neptunemap.jpg",  .8f,    15.5f,   0.1f,100.0f};
 
 void CreateSpheres_VAO(GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::ivec3> indexes,GLuint program);
 
@@ -167,39 +173,39 @@ int main() {
 
     //name：Sum 15.0f ,Mercury 2.0f,Venus 4.0f,Earth 8.0f ,Mars 4.0f,jupiter 10.0f,Saturn 10.0f,Uranus 12.0f,Neptune 8.0f
 
-    // -------------object Sun---------------------------
-    GLuint textureSun = Create_Texture(Sun, x,y,n,program);
-    GLuint vaoSun = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Mercury---------------------------
-    GLuint textureMercury = Create_Texture(Mercury, x,y,n,program);
-    GLuint vaoMercury = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Venus---------------------------
-    GLuint textureVenus = Create_Texture(Venus, x,y,n,program);
-    GLuint vaoVenus = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Sun---------------------------
+//    GLuint textureSun = Create_Texture(Sun, x,y,n,program);
+//    GLuint vaoSun = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Mercury---------------------------
+//    GLuint textureMercury = Create_Texture(Mercury, x,y,n,program);
+//    GLuint vaoMercury = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Venus---------------------------
+//    GLuint textureVenus = Create_Texture(Venus, x,y,n,program);
+//    GLuint vaoVenus = Create_VAO( vbo,ebo,buffer,indexes,program);
     // -------------object Earth---------------------------
     GLuint textureEarth = Create_Texture(Earth, x,y,n,program);
     GLuint vaoEarth = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Mars---------------------------
-    GLuint textureMars = Create_Texture(Mars, x,y,n,program);
-    GLuint vaoMars = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Jupiter---------------------------
-    GLuint textureJupiter = Create_Texture(Jupiter,x,y,n,program);
-    GLuint vaoJupiter = Create_VAO(vbo,ebo,buffer,indexes,program);
-    // -------------object Saturn---------------------------
-    GLuint textureSaturn = Create_Texture(Saturn, x,y,n,program);
-    GLuint vaoSaturn = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Uranus---------------------------
-    GLuint textureUranus = Create_Texture(Uranus, x,y,n,program);
-    GLuint vaoUranus = Create_VAO( vbo,ebo,buffer,indexes,program);
-    // -------------object Neptune---------------------------
-    GLuint textureNeptune = Create_Texture(Neptune, x,y,n,program);
-    GLuint vaoNeptune = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Mars---------------------------
+//    GLuint textureMars = Create_Texture(Mars, x,y,n,program);
+//    GLuint vaoMars = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Jupiter---------------------------
+//    GLuint textureJupiter = Create_Texture(Jupiter,x,y,n,program);
+//    GLuint vaoJupiter = Create_VAO(vbo,ebo,buffer,indexes,program);
+//    // -------------object Saturn---------------------------
+//    GLuint textureSaturn = Create_Texture(Saturn, x,y,n,program);
+//    GLuint vaoSaturn = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Uranus---------------------------
+//    GLuint textureUranus = Create_Texture(Uranus, x,y,n,program);
+//    GLuint vaoUranus = Create_VAO( vbo,ebo,buffer,indexes,program);
+//    // -------------object Neptune---------------------------
+//    GLuint textureNeptune = Create_Texture(Neptune, x,y,n,program);
+//    GLuint vaoNeptune = Create_VAO( vbo,ebo,buffer,indexes,program);
 
 	// ----------------------------------------
 	// View Matrix  ----camera
 	// ----------------------------------------
 	glm::mat4 viewMatrix(1.0f);
-	glm::vec3 viewPosition(0.0f,  0.0f,  20.0f);
+	glm::vec3 viewPosition(0.0f,  0.0f,  10.0f);
 	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
 	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
 	// Normalise Vectors
@@ -216,7 +222,16 @@ int main() {
 	glUniformMatrix4fv(glGetUniformLocation(program, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
     // ----------------------------------------
 
-	// Get time
+    // -----------------light-----------------------啊啊
+
+    glUniform4f(glGetUniformLocation(program, "material.ambient"),1.0f, 1.0f, 1.0f, 1.0f);
+    glUniform1i(glGetUniformLocation(program, "material.diffuse"),textureEarth);
+    glUniform4f(glGetUniformLocation(program, "material.specular"),1.0f, 1.0f, 1.0f, 1.0f);
+    glUniform1f(glGetUniformLocation(program, "material.shininess"), 27.89743616);
+
+
+    // Get time
+    // Get time
 	float last = glfwGetTime();
 
     // ----------------------------------------
@@ -337,25 +352,25 @@ int main() {
         // ------end----------move camera------------------------ function-------
 
 
-//        // -------------object Sun---------------------------
-        Rotation(Sun, vaoSun, textureSun,indexes, program );
-//        // -------------object Mercury---------------------------
-        Rotation(Mercury, vaoMercury, textureMercury,indexes, program);
-//        // -------------object Venus---------------------------
-        Rotation(Venus, vaoVenus, textureVenus,indexes, program);
+////        // -------------object Sun---------------------------
+//        Rotation(Sun, vaoSun, textureSun,indexes, program );
+////        // -------------object Mercury---------------------------
+//        Rotation(Mercury, vaoMercury, textureMercury,indexes, program);
+////        // -------------object Venus---------------------------
+//        Rotation(Venus, vaoVenus, textureVenus,indexes, program);
 //        // -----------------object earth-----------------------
         Rotation(Earth, vaoEarth, textureEarth,indexes, program);
-//        // -------------object Mars---------------------------
-        Rotation(Mars, vaoMars, textureMars,indexes, program);
-//        // -----------------object Jupiter-----------------------
-        Rotation(Jupiter, vaoJupiter, textureJupiter,indexes, program);
-//        // -------------object Saturn---------------------------
-        Rotation(Saturn, vaoSaturn, textureSaturn,indexes, program);
-//        // -------------object Uranus---------------------------
-        Rotation(Uranus, vaoUranus, textureUranus,indexes, program);
-        // -------------object Neptune---------------------------
-//        float theta;
-        Rotation(Neptune, vaoNeptune, textureNeptune,indexes, program);
+////        // -------------object Mars---------------------------
+//        Rotation(Mars, vaoMars, textureMars,indexes, program);
+////        // -----------------object Jupiter-----------------------
+//        Rotation(Jupiter, vaoJupiter, textureJupiter,indexes, program);
+////        // -------------object Saturn---------------------------
+//        Rotation(Saturn, vaoSaturn, textureSaturn,indexes, program);
+////        // -------------object Uranus---------------------------
+//        Rotation(Uranus, vaoUranus, textureUranus,indexes, program);
+//        // -------------object Neptune---------------------------
+////        float theta;
+//        Rotation(Neptune, vaoNeptune, textureNeptune,indexes, program);
 
 
 
@@ -399,24 +414,60 @@ GLuint Create_VAO( GLuint vbo,GLuint ebo,vector<glm::vec4> buffer,vector<glm::iv
     CreateSpheres_VAO(vbo,ebo,buffer,indexes,program);
     return vao;
 }
+/*GLuint Create_Texture(STAR star,int x,int y, int n, GLuint program){
+//    unsigned char *imageEarth = loadImage(star.url, x, y, n, false);
+    GLuint textureEarth = loadTexture2D(star.url, x, y, n,GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR,GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
+//    if(imageEarth == NULL) {return 0;}
+//    GLuint textureEarth;
+//    glGenTextures(1, &textureEarth);
+//    glBindTexture(GL_TEXTURE_2D, textureEarth);
+//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageEarth);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // No mip-mapping
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+//    glBindTexture(GL_TEXTURE_2D, 0);
+//    delete[] imageEarth;
+//    imageEarth = NULL;
+//    glUseProgram(program);
+//    GLuint textureMapLocEarth = glGetUniformLocation(program, "u_texture_Map");
+//    glUniform1i(textureMapLocEarth, 0);
+    return textureEarth;
+}*/
+
+
 GLuint Create_Texture(STAR star,int x,int y, int n, GLuint program){
     unsigned char *imageEarth = loadImage(star.url, x, y, n, false);
+//    GLuint imageEarth = loadTexture2D(star.url, x, y, n,GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR,GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
     if(imageEarth == NULL) {return 0;}
-    GLuint textureEarth;
-    glGenTextures(1, &textureEarth);
-    glBindTexture(GL_TEXTURE_2D, textureEarth);
+    GLuint texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, imageEarth);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // No mip-mapping
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
+     // Generate Mipmap
+     glGenerateMipmap(GL_TEXTURE_2D);
+
+     // Configure texture
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+     // Configure Texture Coordinate Wrapping
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
+
+
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); // No mip-mapping
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S,     GL_CLAMP_TO_EDGE);
+//    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T,     GL_CLAMP_TO_EDGE);
     glBindTexture(GL_TEXTURE_2D, 0);
     delete[] imageEarth;
     imageEarth = NULL;
     glUseProgram(program);
     GLuint textureMapLocEarth = glGetUniformLocation(program, "u_texture_Map");
     glUniform1i(textureMapLocEarth, 0);
-    return textureEarth;
+    return texture;
 }
 void Rotation(STAR star, GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuint program){
 

@@ -11,7 +11,7 @@ uniform mat4 u_View;
 uniform mat4 u_Projection;
 
 // Light Source - Directional
-uniform vec4 u_Light_Direction = vec4(0.0f, 0.0f, -1.0f, 0.0f);
+uniform vec4 u_Light_Direction = vec4(1.0f, .0f,1.0f, 0.0f);
 
 // Output to Fragment Shader
 out vec4 frag_Position;
