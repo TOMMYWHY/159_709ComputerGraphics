@@ -43,10 +43,10 @@ RM = "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08
+CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/opengl_start_08.dir/depend.make
@@ -59,81 +59,81 @@ include CMakeFiles/opengl_start_08.dir/flags.make
 
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../src/example08.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/example08.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/example08.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/example08.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/example08.cpp
 
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/example08.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/example08.cpp > CMakeFiles/opengl_start_08.dir/src/example08.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/example08.cpp > CMakeFiles/opengl_start_08.dir/src/example08.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/example08.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/example08.cpp -o CMakeFiles/opengl_start_08.dir/src/example08.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/example08.cpp -o CMakeFiles/opengl_start_08.dir/src/example08.cpp.s
 
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o: ../src/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/geometry.cpp
 
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/geometry.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/geometry.cpp > CMakeFiles/opengl_start_08.dir/src/geometry.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/geometry.cpp > CMakeFiles/opengl_start_08.dir/src/geometry.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/geometry.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/geometry.cpp -o CMakeFiles/opengl_start_08.dir/src/geometry.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/geometry.cpp -o CMakeFiles/opengl_start_08.dir/src/geometry.cpp.s
 
 CMakeFiles/opengl_start_08.dir/src/image.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/image.cpp.o: ../src/image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/image.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/image.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/image.cpp
 
 CMakeFiles/opengl_start_08.dir/src/image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/image.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/image.cpp > CMakeFiles/opengl_start_08.dir/src/image.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/image.cpp > CMakeFiles/opengl_start_08.dir/src/image.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/image.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/image.cpp -o CMakeFiles/opengl_start_08.dir/src/image.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/image.cpp -o CMakeFiles/opengl_start_08.dir/src/image.cpp.s
 
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/shader.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/shader.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/shader.cpp
 
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/shader.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/shader.cpp > CMakeFiles/opengl_start_08.dir/src/shader.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/shader.cpp > CMakeFiles/opengl_start_08.dir/src/shader.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/shader.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/shader.cpp -o CMakeFiles/opengl_start_08.dir/src/shader.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/shader.cpp -o CMakeFiles/opengl_start_08.dir/src/shader.cpp.s
 
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.o: ../src/testing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/testing.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/testing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/testing.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/testing.cpp
 
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/testing.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/testing.cpp > CMakeFiles/opengl_start_08.dir/src/testing.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/testing.cpp > CMakeFiles/opengl_start_08.dir/src/testing.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/testing.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/testing.cpp -o CMakeFiles/opengl_start_08.dir/src/testing.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/testing.cpp -o CMakeFiles/opengl_start_08.dir/src/testing.cpp.s
 
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.o: ../src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/utils.cpp.o -c /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/utils.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/utils.cpp
 
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/utils.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/utils.cpp > CMakeFiles/opengl_start_08.dir/src/utils.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/utils.cpp > CMakeFiles/opengl_start_08.dir/src/utils.cpp.i
 
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/utils.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/utils.cpp -o CMakeFiles/opengl_start_08.dir/src/utils.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/utils.cpp -o CMakeFiles/opengl_start_08.dir/src/utils.cpp.s
 
 # Object files for target opengl_start_08
 opengl_start_08_OBJECTS = \
@@ -156,11 +156,11 @@ opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/utils.
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/build.make
 opengl_start_08_Debug/opengl_start_08: /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable opengl_start_08_Debug/opengl_start_08"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable opengl_start_08_Debug/opengl_start_08"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengl_start_08.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Creating symlink to shader directory"
-	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/shaders /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/opengl_start_08_Debug/shaders
-	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/images /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/opengl_start_08_Debug/images
+	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/shader /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/opengl_start_08_Debug/shader
+	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/images /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/opengl_start_08_Debug/images
 
 # Rule to build all files generated by this target.
 CMakeFiles/opengl_start_08.dir/build: opengl_start_08_Debug/opengl_start_08
@@ -172,6 +172,6 @@ CMakeFiles/opengl_start_08.dir/clean:
 .PHONY : CMakeFiles/opengl_start_08.dir/clean
 
 CMakeFiles/opengl_start_08.dir/depend:
-	cd /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08 /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08 /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/opengl_start_08.dir/depend
 

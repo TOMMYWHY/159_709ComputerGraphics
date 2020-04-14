@@ -6,7 +6,7 @@ CMakeFiles/opengl_start_08.dir/src/example08.cpp.o
  ../include/image.h
  ../include/shader.h
  ../include/utils.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/example08.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/example08.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -216,7 +216,7 @@ CMakeFiles/opengl_start_08.dir/src/example08.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o
  ../include/geometry.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/geometry.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/geometry.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -425,7 +425,7 @@ CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o
 CMakeFiles/opengl_start_08.dir/src/image.cpp.o
  ../include/image.h
  ../include/stb_image.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/image.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/image.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -627,12 +627,12 @@ CMakeFiles/opengl_start_08.dir/src/image.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.o
  ../include/shader.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/shader.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/shader.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.o
  ../include/stb_image.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/testing.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/testing.cpp
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.o
  ../include/utils.h
- /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/utils.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/utils.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h

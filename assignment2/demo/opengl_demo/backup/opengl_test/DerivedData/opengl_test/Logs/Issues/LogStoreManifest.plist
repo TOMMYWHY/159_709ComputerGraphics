@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>68DFBAAD-FE8E-404D-9678-B28294F32CE6</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>68DFBAAD-FE8E-404D-9678-B28294F32CE6.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>opengl_test-dbotwwxjrdyqsvemhtbfubgozazc</string>
+			<key>timeStartedRecording</key>
+			<real>608468544.67210603</real>
+			<key>timeStoppedRecording</key>
+			<real>608468548.14539599</real>
+			<key>title</key>
+			<string>Build target opengl_test</string>
+			<key>uniqueIdentifier</key>
+			<string>68DFBAAD-FE8E-404D-9678-B28294F32CE6</string>
+		</dict>
+		<key>BD5A5054-0740-4E2B-82F1-0C055B6DA49C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogMajorGroupSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>BD5A5054-0740-4E2B-82F1-0C055B6DA49C.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>signature</key>
+			<string>opengl_test-avkmphclhkznjscyfzozuewlwvno</string>
+			<key>timeStartedRecording</key>
+			<real>608518863.21155906</real>
+			<key>timeStoppedRecording</key>
+			<real>608518863.27309704</real>
+			<key>title</key>
+			<string>Build target opengl_test</string>
+			<key>uniqueIdentifier</key>
+			<string>BD5A5054-0740-4E2B-82F1-0C055B6DA49C</string>
+		</dict>
+	</dict>
+	<key>preserveOldLogs</key>
+	<true/>
+</dict>
+</plist>

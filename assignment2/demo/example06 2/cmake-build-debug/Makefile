@@ -177,6 +177,33 @@ src/geometry.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_start_06.dir/build.make CMakeFiles/opengl_start_06.dir/src/geometry.cpp.s
 .PHONY : src/geometry.cpp.s
 
+src/image.o: src/image.cpp.o
+
+.PHONY : src/image.o
+
+# target to build an object file
+src/image.cpp.o:
+	$(MAKE) -f CMakeFiles/opengl_start_06.dir/build.make CMakeFiles/opengl_start_06.dir/src/image.cpp.o
+.PHONY : src/image.cpp.o
+
+src/image.i: src/image.cpp.i
+
+.PHONY : src/image.i
+
+# target to preprocess a source file
+src/image.cpp.i:
+	$(MAKE) -f CMakeFiles/opengl_start_06.dir/build.make CMakeFiles/opengl_start_06.dir/src/image.cpp.i
+.PHONY : src/image.cpp.i
+
+src/image.s: src/image.cpp.s
+
+.PHONY : src/image.s
+
+# target to generate assembly for a file
+src/image.cpp.s:
+	$(MAKE) -f CMakeFiles/opengl_start_06.dir/build.make CMakeFiles/opengl_start_06.dir/src/image.cpp.s
+.PHONY : src/image.cpp.s
+
 src/shader.o: src/shader.cpp.o
 
 .PHONY : src/shader.o
@@ -246,6 +273,9 @@ help:
 	@echo "... src/geometry.o"
 	@echo "... src/geometry.i"
 	@echo "... src/geometry.s"
+	@echo "... src/image.o"
+	@echo "... src/image.i"
+	@echo "... src/image.s"
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"

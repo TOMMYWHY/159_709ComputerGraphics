@@ -14,12 +14,12 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 
 
 # --- exmaple2 ---#
-#set(SHADERS shaders-02)
-#file(GLOB PROJECT_SOURCES example02.cpp)
+set(SHADERS shaders-02)
+file(GLOB PROJECT_SOURCES example02.cpp)
 
 # --- exmaple3 ---#
-set(SHADERS shaders-03)
-file(GLOB PROJECT_SOURCES example03.cpp)
+#set(SHADERS shaders-03)
+#file(GLOB PROJECT_SOURCES example03.cpp)
 
 
 

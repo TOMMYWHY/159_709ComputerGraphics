@@ -83,9 +83,22 @@ CMakeFiles/opengl_start_06.dir/src/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_06.dir/src/geometry.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/geometry.cpp" -o CMakeFiles/opengl_start_06.dir/src/geometry.cpp.s
 
+CMakeFiles/opengl_start_06.dir/src/image.cpp.o: CMakeFiles/opengl_start_06.dir/flags.make
+CMakeFiles/opengl_start_06.dir/src/image.cpp.o: ../src/image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_06.dir/src/image.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_06.dir/src/image.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.cpp"
+
+CMakeFiles/opengl_start_06.dir/src/image.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_06.dir/src/image.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.cpp" > CMakeFiles/opengl_start_06.dir/src/image.cpp.i
+
+CMakeFiles/opengl_start_06.dir/src/image.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_06.dir/src/image.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.cpp" -o CMakeFiles/opengl_start_06.dir/src/image.cpp.s
+
 CMakeFiles/opengl_start_06.dir/src/shader.cpp.o: CMakeFiles/opengl_start_06.dir/flags.make
 CMakeFiles/opengl_start_06.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_06.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_06.dir/src/shader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_06.dir/src/shader.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/shader.cpp"
 
 CMakeFiles/opengl_start_06.dir/src/shader.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/opengl_start_06.dir/src/shader.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_06.dir/src/utils.cpp.o: CMakeFiles/opengl_start_06.dir/flags.make
 CMakeFiles/opengl_start_06.dir/src/utils.cpp.o: ../src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_06.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_start_06.dir/src/utils.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_06.dir/src/utils.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/utils.cpp"
 
 CMakeFiles/opengl_start_06.dir/src/utils.cpp.i: cmake_force
@@ -113,6 +126,7 @@ CMakeFiles/opengl_start_06.dir/src/utils.cpp.s: cmake_force
 opengl_start_06_OBJECTS = \
 "CMakeFiles/opengl_start_06.dir/src/example06.cpp.o" \
 "CMakeFiles/opengl_start_06.dir/src/geometry.cpp.o" \
+"CMakeFiles/opengl_start_06.dir/src/image.cpp.o" \
 "CMakeFiles/opengl_start_06.dir/src/shader.cpp.o" \
 "CMakeFiles/opengl_start_06.dir/src/utils.cpp.o"
 
@@ -121,12 +135,13 @@ opengl_start_06_EXTERNAL_OBJECTS =
 
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/src/example06.cpp.o
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/src/geometry.cpp.o
+opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/src/image.cpp.o
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/src/shader.cpp.o
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/src/utils.cpp.o
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/build.make
 opengl_start_06_Debug/opengl_start_06: /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib
 opengl_start_06_Debug/opengl_start_06: CMakeFiles/opengl_start_06.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable opengl_start_06_Debug/opengl_start_06"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable opengl_start_06_Debug/opengl_start_06"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengl_start_06.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Creating symlink to shader directory"
 	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/shader" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/opengl_start_06_Debug/shader"

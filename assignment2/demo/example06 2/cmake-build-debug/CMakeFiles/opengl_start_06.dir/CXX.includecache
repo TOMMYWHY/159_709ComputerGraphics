@@ -32,6 +32,40 @@ glm/glm.hpp
 glm/gtx/string_cast.hpp
 ../include/glm/gtx/string_cast.hpp
 
+../include/image.h
+iostream
+-
+GL/glew.h
+-
+GL/eglew.h
+-
+GL/osmesa.h
+-
+GL/wglew.h
+-
+GL/glxew.h
+-
+GLFW/glfw3.h
+-
+GLFW/glfw3.h
+-
+OpenGL/gl3.h
+-
+OpenGL/gl3ext.h
+-
+GL/glew.h
+-
+GL/gl.h
+-
+GLFW/glfw3.h
+-
+glm/glm.hpp
+-
+glm/gtc/matrix_transform.hpp
+-
+glm/gtc/type_ptr.hpp
+-
+
 ../include/shader.h
 iostream
 -
@@ -58,6 +92,36 @@ GL/glew.h
 GL/gl.h
 -
 GLFW/glfw3.h
+-
+
+../include/stb_image.h
+stb_image.h
+../include/stb_image.h
+stdio.h
+-
+stdarg.h
+-
+stddef.h
+-
+stdlib.h
+-
+string.h
+-
+limits.h
+-
+math.h
+-
+stdio.h
+-
+assert.h
+-
+stdint.h
+-
+emmintrin.h
+-
+intrin.h
+-
+arm_neon.h
 -
 
 ../include/utils.h
@@ -123,6 +187,12 @@ utils.h
 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/utils.h
 geometry.h
 /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/geometry.h
+image.h
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.h
+stb_image.h
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/stb_image.h
+image.h
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.h
 
 /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
 stddef.h

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/opengl_start_03.dir/example03.cpp.o"
-  "opengl_start_03_Debug/opengl_start_03.pdb"
+  "CMakeFiles/opengl_start_03.dir/example02.cpp.o"
   "opengl_start_03_Debug/opengl_start_03"
+  "opengl_start_03_Debug/opengl_start_03.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

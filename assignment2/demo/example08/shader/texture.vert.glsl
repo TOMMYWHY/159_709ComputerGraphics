@@ -11,7 +11,7 @@ uniform mat4 u_Model;
 uniform mat4 u_View;
 uniform mat4 u_Projection;
 
-uniform vec4 u_Light_Direction = vec4(-1.0f, 0.0f, -1.0f, 0.0f); // 坐标正负相反
+//uniform vec4 u_Light_Direction = vec4(.0f, 0.0f, -1.0f, 0.0f); // 坐标正负相反
 
 // Output to Fragment Shader
 out vec4 frag_UV;
@@ -33,7 +33,7 @@ void main() {
 	//----------------------------------------------
 	frag_Position = u_View * u_Model * vert_Position;
 	frag_Normal = u_View * u_Model * vert_Normal;
-	frag_Light_Direction = u_View * u_Light_Direction;
+//	frag_Light_Direction = u_View * u_Light_Direction;
 
 	gl_Position = u_Projection * u_View * u_Model * vert_Position;
 }

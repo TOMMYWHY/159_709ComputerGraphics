@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>5832C9A9-889A-440B-95E2-351E54A4457E</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>5832C9A9-889A-440B-95E2-351E54A4457E.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>opengl_test project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>opengl_test</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug opengl_test</string>
+			<key>timeStartedRecording</key>
+			<real>608501144.54904699</real>
+			<key>timeStoppedRecording</key>
+			<real>608501164.37523305</real>
+			<key>title</key>
+			<string>Debug opengl_test</string>
+			<key>uniqueIdentifier</key>
+			<string>5832C9A9-889A-440B-95E2-351E54A4457E</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

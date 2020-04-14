@@ -87,7 +87,7 @@ struct STAR{
 //STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f,3.65f};
 
 //STAR Earth = {"./images/earthbump1k.jpg",      .8f,    4.0f,   1.0f,3.65f};
-STAR Earth = {"./images/earthbump1k.jpg",      1.8f,    0.0f,   .02f,13.65f};
+STAR Earth = {"./images/EarthMap.jpg",      1.8f,    0.0f,   .02f,13.65f};
 
 //STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   0.8f,6.86f};
 //STAR Jupiter = {"./images/jupitermap.jpg",  1.5f,   8.0f,   0.4f,23.32f};
@@ -224,10 +224,27 @@ int main() {
 
     // -----------------light-----------------------啊啊
 
-    glUniform4f(glGetUniformLocation(program, "material.ambient"),1.0f, 1.0f, 1.0f, 1.0f);
-    glUniform1i(glGetUniformLocation(program, "material.diffuse"),textureEarth);
+    GLuint textureMapLoc = glGetUniformLocation(program, "u_texture_Map");
+//     Set Sample Texture Unit
+    glUniform1i(textureMapLoc, 0);
+    glUniform4f(glGetUniformLocation(program, "material.ambient"),.1f, .1f, .1f, 0.1f);
+//    glUniform4f(glGetUniformLocation(program, "material.diffuse"),0.780392, 0.568627, 0.113725, 1.0);
+    glUniform1i(glGetUniformLocation(program, "material.diffuse"),0);
+//    glUniform1i(glGetUniformLocation(program, "material.specular"),1);
     glUniform4f(glGetUniformLocation(program, "material.specular"),1.0f, 1.0f, 1.0f, 1.0f);
-    glUniform1f(glGetUniformLocation(program, "material.shininess"), 27.89743616);
+    glUniform1f(glGetUniformLocation(program, "material.shininess"), 47.89743616);
+    glUniform1f(glGetUniformLocation(program, "material.shininess"), 47.89743616);
+
+
+
+//    glUniform4f(glGetUniformLocation(program, "material.ambient"),1.0f, 1.0f, 1.0f, 1.0f);
+////    glUniform4f(glGetUniformLocation(program, "material.diffuse"),0.780392, 0.568627, 0.113725, 1.0);
+//    glUniform1i(glGetUniformLocation(program, "material.diffuse"),0);
+////    glUniform1i(textureMapLoc,0);
+//    glUniform4f(glGetUniformLocation(program, "material.specular"),1.0f, 1.0f, 1.0f, 1.0f);
+//    glUniform1f(glGetUniformLocation(program, "material.shininess"), 27.89743616);
+
+
 
 
     // Get time
@@ -535,6 +552,8 @@ void RenderingSpheres(GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuin
     glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
     glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, 0);
+    glBindVertexArray(0);
+
 }
 
 /*

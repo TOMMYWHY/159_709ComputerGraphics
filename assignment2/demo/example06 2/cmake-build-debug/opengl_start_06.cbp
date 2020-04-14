@@ -93,7 +93,13 @@
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/include/geometry.h">
 			<Option target="opengl_start_06"/>
 		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/include/image.h">
+			<Option target="opengl_start_06"/>
+		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/include/shader.h">
+			<Option target="opengl_start_06"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/include/stb_image.h">
 			<Option target="opengl_start_06"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/include/utils.h">
@@ -103,6 +109,9 @@
 			<Option target="opengl_start_06"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/geometry.cpp">
+			<Option target="opengl_start_06"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.cpp">
 			<Option target="opengl_start_06"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/shader.cpp">

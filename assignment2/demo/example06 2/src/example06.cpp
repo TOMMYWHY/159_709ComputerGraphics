@@ -39,7 +39,12 @@
 #include "shader.h"
 #include "utils.h"
 #include "geometry.h"
+#include "image.h"
+#include "stb_image.h"
+#include "image.h"
 
+
+using namespace std;
 // --------------------------------------------------------------------------------
 // GLFW Callbacks
 // --------------------------------------------------------------------------------
@@ -120,6 +125,7 @@ int main() {
     std::vector<glm::ivec3> indexes2;
 	// Create Cube
 //	 createCube(buffer, indexes);
+    createTexturedCube(buffer, indexes);
 //	 createSphere(buffer, indexes);
 
 
@@ -127,7 +133,7 @@ int main() {
 //	 createTetrahedron(buffer, indexes);
 
 	// // Create Torus
-	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
+//	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -151,6 +157,18 @@ int main() {
 
 	// Element Buffer Objects (EBO)
 	GLuint ebo = 0;
+
+
+    int x, y, n;
+//    unsigned char *image = stbi_load("./images/container.png", x, y, &n, 4);
+//    unsigned char *image = loadImage("./images/dark_red_brick.jpg", x, y, n, true);
+
+    int force_channels = 4;
+
+//    unsigned char *image = stbi_load("./images/container.png", reinterpret_cast<int *>(x), reinterpret_cast<int *>(y),
+//                                     reinterpret_cast<int *>(4), force_channels);
+
+
 
 	// ----------------------------------------
 	// Triangle
@@ -178,57 +196,21 @@ int main() {
 	// Get Normal Attribute location (must match name in shader)
 	GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
 
-	// Set Vertex Attribute Pointers
-	glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+    GLuint texLoc = glGetAttribLocation(program, "vert_UV");
 
-	// Enable Vertex Attribute Arrays
+
+
+    glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat),  NULL);
+    glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+    glVertexAttribPointer(texLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
+
+    // Enable Vertex Attribute Arrays
 	glEnableVertexAttribArray(posLoc);
 	glEnableVertexAttribArray(norLoc);
+    glEnableVertexAttribArray(texLoc);
 
-	// Unbind VAO, VBO & EBO
-//	glBindVertexArray(0);
-//	glBindBuffer(GL_ARRAY_BUFFER, 0);
-//	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-//    // ----------------------------------------
-//    // Triangle222
-//    // ----------------------------------------
-//    GLuint vao2 = 0;
-//    GLuint vbo2 = 0;
-//    GLuint ebo2 = 0;
-//
-//    // Create VAO, VBO & EBO
-//    glGenVertexArrays(1, &vao2);
-//    glGenBuffers(1, &vbo2);
-//    glGenBuffers(1, &ebo2);
-//
-//    // Bind VAO, VBO & EBO
-//    glBindVertexArray(vao);
-//    glBindBuffer(GL_ARRAY_BUFFER, vbo2);
-//    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo2);
-//
-//    // Load Vertex Data
-//    glBufferData(GL_ARRAY_BUFFER, buffer2.size() * sizeof(glm::vec4), buffer2.data(), GL_STATIC_DRAW);
-//
-//    // Load Element Data
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes2.size() * sizeof(glm::ivec3), indexes2.data(), GL_STATIC_DRAW);
-//
-//    // Get Position Attribute location (must match name in shader)
-//    GLuint posLoc2 = glGetAttribLocation(program, "vert_Position");
-//
-//    // Get Normal Attribute location (must match name in shader)
-//    GLuint norLoc2 = glGetAttribLocation(program, "vert_Normal");
-//
-//    // Set Vertex Attribute Pointers
-//    glVertexAttribPointer(posLoc2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
-//    glVertexAttribPointer(norLoc2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
-//
-//    // Enable Vertex Attribute Arrays
-//    glEnableVertexAttribArray(posLoc2);
-//    glEnableVertexAttribArray(norLoc2);
 
-    // Unbind VAO, VBO & EBO
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -274,7 +256,7 @@ int main() {
 	// ----------------------------------------
 	// Projection Matrix
 	glm::mat4 projectionMatrix(1.0f);
-	
+
 	// Calculate Perspective Projection
 	projectionMatrix = glm::perspective(glm::radians(77.0f), 1.0f, 0.2f, 10.0f); // fov 张角
 
@@ -285,7 +267,14 @@ int main() {
 	glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 	// ----------------------------------------
 
-	// ----------------------------------------
+    glUniform4f(glGetUniformLocation(program, "material.ambient"),0.329412, 0.223529, 0.027451, 1.0);
+    glUniform4f(glGetUniformLocation(program, "material.diffuse"),0.780392, 0.568627, 0.113725, 1.0);
+    glUniform4f(glGetUniformLocation(program, "material.specular"),0.992157, 0.941176, 0.807843, 1.0);
+    glUniform1f(glGetUniformLocation(program, "material.shininess"), 27.89743616);
+
+
+
+    // ----------------------------------------
 	// Main Render loop
 	// ----------------------------------------
 	while (!glfwWindowShouldClose(window)) {
@@ -320,7 +309,7 @@ int main() {
 //		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(viewMatrix));
 		// ----------------------------------------
 
-		// ----------------------------------------		
+		// ----------------------------------------
 		// Input/Output - Model Matrix
 		// ----------------------------------------
 		// Check W Key
@@ -387,14 +376,7 @@ int main() {
 		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 
-//        glBindVertexArray(vao2);
-//
-//        // Draw Elements (Triangles)
-//        glDrawElements(GL_TRIANGLES, indexes2.size() * 3, GL_UNSIGNED_INT, NULL);
 
-//        glDrawElements(GL_TRIANGLES, 50*50 * 6, GL_UNSIGNED_INT, 0);
-
-        // Swap the back and front buffers
 		glfwSwapBuffers(window);
 
 		// Poll window events

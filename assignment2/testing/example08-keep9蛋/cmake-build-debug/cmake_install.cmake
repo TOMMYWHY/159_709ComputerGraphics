@@ -1,4 +1,4 @@
-# Install script for directory: /Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08
+# Install script for directory: /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

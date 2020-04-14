@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/example06.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles/opengl_start_06.dir/src/example06.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/geometry.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles/opengl_start_06.dir/src/geometry.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/image.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles/opengl_start_06.dir/src/image.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/shader.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles/opengl_start_06.dir/src/shader.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/src/utils.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/demo/example06 2/cmake-build-debug/CMakeFiles/opengl_start_06.dir/src/utils.cpp.o"
   )

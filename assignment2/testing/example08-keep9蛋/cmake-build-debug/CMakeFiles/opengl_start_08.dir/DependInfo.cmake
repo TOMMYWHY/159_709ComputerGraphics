@@ -4,19 +4,19 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/example08.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/geometry.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/image.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/shader.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/testing.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
-  "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/src/utils.cpp" "/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/example08.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/geometry.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/image.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/shader.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/testing.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/src/utils.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "GLFW_INCLUDE_NONE"
-  "PROJECT_SOURCE_DIR=\"/Users/Tommy/Downloads/159_709ComputerGraphics-master/assignment2/demo/example08\""
+  "PROJECT_SOURCE_DIR=\"/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/testing/example08-keep9蛋\""
   )
 
 # The include file search paths:

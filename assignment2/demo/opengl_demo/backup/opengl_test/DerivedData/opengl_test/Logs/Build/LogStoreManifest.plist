@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>10</integer>
+	<key>logs</key>
+	<dict>
+		<key>2B35525C-2496-45D8-9ABB-B685F0AF2923</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2B35525C-2496-45D8-9ABB-B685F0AF2923.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>opengl_test project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>opengl_test</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build opengl_test</string>
+			<key>timeStartedRecording</key>
+			<real>608518861.87593699</real>
+			<key>timeStoppedRecording</key>
+			<real>608518863.28584599</real>
+			<key>title</key>
+			<string>Build opengl_test</string>
+			<key>uniqueIdentifier</key>
+			<string>2B35525C-2496-45D8-9ABB-B685F0AF2923</string>
+		</dict>
+		<key>41DA6D6A-8E46-4832-B162-B98C4C84B896</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>41DA6D6A-8E46-4832-B162-B98C4C84B896.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>W</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>opengl_test project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>opengl_test</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build opengl_test</string>
+			<key>timeStartedRecording</key>
+			<real>608502491.81399703</real>
+			<key>timeStoppedRecording</key>
+			<real>608502496.50497305</real>
+			<key>title</key>
+			<string>Build opengl_test</string>
+			<key>uniqueIdentifier</key>
+			<string>41DA6D6A-8E46-4832-B162-B98C4C84B896</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

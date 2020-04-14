@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opengl_start_06.dir/src/example06.cpp.o"
   "CMakeFiles/opengl_start_06.dir/src/geometry.cpp.o"
+  "CMakeFiles/opengl_start_06.dir/src/image.cpp.o"
   "CMakeFiles/opengl_start_06.dir/src/shader.cpp.o"
   "CMakeFiles/opengl_start_06.dir/src/utils.cpp.o"
   "opengl_start_06_Debug/opengl_start_06"

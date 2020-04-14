@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D7EA82EF170812889C73D6826FDDD708D94C008F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D7EA82EF170812889C73D6826FDDD708D94C008F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4E863604-A1C2-4D3D-9DBA-28B1F46218E9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D7EA82EF170812889C73D6826FDDD708D94C008F" : "159_709ComputerGraphics\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "opengl_test",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "assignment2\/demo\/opengl_demo\/opengl_test\/opengl_test.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/TOMMYWHY\/159_709ComputerGraphics.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D7EA82EF170812889C73D6826FDDD708D94C008F"
+    }
+  ]
+}

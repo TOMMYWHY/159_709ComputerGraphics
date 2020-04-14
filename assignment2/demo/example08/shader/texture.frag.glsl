@@ -6,19 +6,14 @@ in vec4 frag_UV;
 
 in vec4 frag_Position;
 in vec4 frag_Normal;
-in vec4 frag_Light_Direction;
+//in vec4 frag_Light_Direction;
 
 // Texture
 uniform sampler2D u_texture_Map;
+out vec4 pixel_Colour;
 
-
-// Light Source
-//uniform vec4 Ia = vec4(0.3f, 0.3f, 0.3f, 1.0f);
-uniform vec4 Ia = vec4(1.0f, 1.0f, 1.0f, 1.0f);
-uniform vec4 Id = vec4(1.0f, 1.0f, 1.0f, 1.0f);
-uniform vec4 Is = vec4(1.0f, 1.0f, 1.0f, 1.0f);
-
-struct Material {
+struct Material
+{
 	vec4 ambient;
 	sampler2D diffuse;
 	vec4 specular;
@@ -26,8 +21,25 @@ struct Material {
 };
 uniform Material material;
 
-// Output from Fragment Shader
-out vec4 pixel_Colour;
+struct LightPoint
+{
+	float constant;
+	float linear;
+	float quadratic;
+};
+//uniform LightPoint lightPoint = vec4(1.0f,0.09f,0.032f,1.0f);
+//uniform LightPoint lightPoint = vec4(0.0f, 0.0f, 0.0f, 0.0f);
+
+// Light Source
+uniform vec4 frag_Light_Direction = vec4(.0f, 0.0f, -1.0f, 0.0f); // 坐标正负相反
+
+//uniform vec4 Ia = vec4(0.3f, 0.3f, 0.3f, 1.0f);
+uniform vec4 u_Light_position = vec4(0.0f, 0.0f, 0.0f, 0.0f);  //光源 位置
+uniform vec4 Ia = vec4(0.5f, 0.5f, 0.5f, 1.0f); // 环境光为0 显示材质本来颜色 light color
+uniform vec4 Id = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+uniform vec4 Is = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+
+
 
 void main () {
 
@@ -50,16 +62,20 @@ void main () {
 	vec4 Ta = material.ambient * Ia;
 
 	// Diffuse Term
-	vec4 Td = texture(material.diffuse,frag_UV.xy) * max(dot(l, n), 0.0) * Id; // 漫反射 与 入射光，物体法向量 ，物体漫反射系数(颜色Kd)
+	vec4 Td = texture(u_texture_Map,frag_UV.xy) * max(dot(l, n), 0.0) * Id; // 漫反射 与 入射光，物体法向量 ，物体漫反射系数(颜色Kd)
 //	vec4 Td = texture(u_texture_Map,frag_UV.xy) * max(dot(l, n), 0.0) * Id; // 漫反射 与 入射光，物体法向量 ，物体漫反射系数(颜色Kd)
 
 	// Specular Term
-//	vec4 Ts = material.specular * pow((max(dot(r, v), 0.0)), material.shininess) * Is;
+	vec4 Ts = material.specular * pow((max(dot(r, v), 0.0)), material.shininess) * Is;
 
 	pixel_Colour = Ta + Td + Ts;
 
 	//----------------------------------------------
 	// Fragment Colour
 	//----------------------------------------------
-//	pixel_Colour = texture(u_texture_Map, frag_UV.xy);
+	pixel_Colour = texture(u_texture_Map, frag_UV.xy);
+
+
+
+
 }

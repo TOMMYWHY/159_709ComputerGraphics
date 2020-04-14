@@ -4,6 +4,8 @@
 // Input to Vertex Shader
 in vec4 vert_Position;
 in vec4 vert_Normal;
+in vec4 vert_UV;
+
 
 // Transform Matrices
 uniform mat4 u_Model;
@@ -14,11 +16,15 @@ uniform mat4 u_Projection;
 uniform vec4 u_Light_Direction = vec4(0.0f, 0.0f, -1.0f, 0.0f);
 
 // Output to Fragment Shader
+out vec4 frag_UV;
+
 out vec4 frag_Position;
 out vec4 frag_Normal;
 out vec4 frag_Light_Direction;
 
 void main() {
+	frag_UV = vert_UV;
+
 	// Frag Position
 	frag_Position = u_View * u_Model * vert_Position;
 

@@ -49,4 +49,5 @@ void createTorus(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexe
 
 void createSphere(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexes);
 
+void createTexturedCube(std::vector<glm::vec4> &buffer, std::vector<glm::ivec3> &indexes);
 #endif // GEOMETRY_H
