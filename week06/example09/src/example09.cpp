@@ -147,8 +147,8 @@ int main() {
 	// ----------------------------------------
 
 	// Load GLSL Program
-	// GLuint program = loadProgram("./shader/normal1.vert.glsl", NULL, NULL, NULL, "./shader/normal1.frag.glsl");
-	// GLuint program = loadProgram("./shader/normal2.vert.glsl", NULL, NULL, NULL, "./shader/normal2.frag.glsl");
+//	 GLuint program = loadProgram("./shader/normal1.vert.glsl", NULL, NULL, NULL, "./shader/normal1.frag.glsl");
+//	 GLuint program = loadProgram("./shader/normal2.vert.glsl", NULL, NULL, NULL, "./shader/normal2.frag.glsl");
 	GLuint program = loadProgram("./shader/normal3.vert.glsl", NULL, NULL, NULL, "./shader/normal3.frag.glsl");
 
 	// Vertex Array Objects (VAO)

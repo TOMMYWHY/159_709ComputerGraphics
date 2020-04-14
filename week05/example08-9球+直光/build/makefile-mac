@@ -1,0 +1,26 @@
+# Makefile Settings
+headers = -I/opt/local/include/ -I./include/
+frameworks = -framework OpenGL
+libs = -L/opt/local/lib/ -lglfw 
+build = ./obj/
+src = ./src/
+cc = g++ -O3
+
+# Example
+example = example08
+
+# Example Objects
+objects := $(patsubst ${src}/%.cpp,${build}/%.o,$(wildcard ${src}/*.cpp))
+
+# Build Rule
+${example} : ${objects}
+	${cc} -o ${example} ${objects} ${libs} ${frameworks}
+
+# Object Build Rule
+${build}/%.o : ${src}/%.cpp
+	$(cc) -o $@ -c $^ ${headers} ${frameworks}
+
+# Clean
+clean:
+	rm ${build}/*.o
+	rm ${example}

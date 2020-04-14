@@ -68,7 +68,7 @@ void main () {
 	// Specular Term
 	vec4 Ts = material.specular * pow((max(dot(r, v), 0.0)), material.shininess) * Is;
 
-	pixel_Colour = Ta + Td + Ts;
+//	pixel_Colour = Ta + Td + Ts;
 
 	//----------------------------------------------
 	// Fragment Colour

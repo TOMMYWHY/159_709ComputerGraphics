@@ -18,8 +18,8 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 include_directories(include/)
 
 # --- exmaple5 ---#
-set(SHADERS shaders)
-#set(IMAGES image)
+set(SHADERS shader)
+#set(IMAGES images)
 file(GLOB PROJECT_SOURCES src/*.cpp)
 #file(GLOB PROJECT_SOURCES src/testing.cpp)
 file(GLOB PROJECT_HEADERS include/*.h)
@@ -63,9 +63,11 @@ add_custom_command(
 )
 
 
+
 add_custom_command(TARGET ${PROJECT_NAME}
         POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_directory
         ${CMAKE_SOURCE_DIR}/images
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/images)
+
 

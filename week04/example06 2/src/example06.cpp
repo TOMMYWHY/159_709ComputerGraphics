@@ -39,6 +39,8 @@
 #include "shader.h"
 #include "utils.h"
 #include "geometry.h"
+#include "image.h"
+
 
 // --------------------------------------------------------------------------------
 // GLFW Callbacks
@@ -122,7 +124,8 @@ int main() {
 	// createTetrahedron(buffer, indexes);
 
 	// // Create Torus
-	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
+//	createTorus(buffer, indexes, 2.0f, 0.9f, 20, 20);
+    createSphere(buffer, indexes,0.8f,50,50);
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -146,8 +149,12 @@ int main() {
 
 	// Element Buffer Objects (EBO)
 	GLuint ebo = 0;
+    int x, y, n;
 
-	// ----------------------------------------
+//    unsigned char *image = loadImage("./images/EarthMap.jpg", x, y, n, false);
+    GLuint texture =  loadTexture2D("./images/EarthMap.jpg",x, y, n,GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR,GL_CLAMP_TO_EDGE,GL_CLAMP_TO_EDGE);
+
+    // ----------------------------------------
 	// Triangle
 	// ----------------------------------------
 
@@ -173,20 +180,32 @@ int main() {
 	// Get Normal Attribute location (must match name in shader)
 	GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
 
-	// Set Vertex Attribute Pointers
-	glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+    GLuint texLoc = glGetAttribLocation(program, "vert_UV");
+
+    // Set Vertex Attribute Pointers
+	glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
+	glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+    glVertexAttribPointer(texLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
 
 	// Enable Vertex Attribute Arrays
 	glEnableVertexAttribArray(posLoc);
 	glEnableVertexAttribArray(norLoc);
 
-	// Unbind VAO, VBO & EBO
+    glEnableVertexAttribArray(texLoc);
+
+    // Unbind VAO, VBO & EBO
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 	// ----------------------------------------
+    glUseProgram(program);
+
+    GLuint textureMapLoc = glGetUniformLocation(program, "u_texture_Map");
+
+    // Set Sample Texture Unit
+    glUniform1i(textureMapLoc, 0);
+
 	// Model Matrix
 	glm::mat4 modelMatrix(1.0f);
 	float modelThetaX = 0.8f;
@@ -256,8 +275,11 @@ int main() {
 
 		// ----------------------------------------
 		// Orbiting - View Matrix
-		viewPosition.x = sin(glfwGetTime()) * 5.0f;
-		viewPosition.z = cos(glfwGetTime()) * 5.0f;
+		/*viewPosition.x = sin(glfwGetTime()) * 5.0f;
+		viewPosition.z = cos(glfwGetTime()) * 5.0f;*/
+
+        viewPosition.x =  0.0f;
+        viewPosition.z =  5.0f;
 
 		// Look towards origin
 		viewForward = -viewPosition;

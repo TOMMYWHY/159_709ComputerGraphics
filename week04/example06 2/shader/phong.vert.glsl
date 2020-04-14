@@ -4,14 +4,16 @@
 // Input to Vertex Shader
 in vec4 vert_Position;
 in vec4 vert_Normal;
-
+in vec4 vert_UV;
 // Transform Matrices
 uniform mat4 u_Model;
 uniform mat4 u_View;
 uniform mat4 u_Projection;
+out vec4 frag_UV;
+
 
 // Light Source - Directional
-uniform vec4 u_Light_Direction = vec4(0.0f, 0.0f, -1.0f, 0.0f);
+uniform vec4 u_Light_Direction = vec4(0.0f, 0.0f, -10.0f, 0.0f);
 
 // Output to Fragment Shader
 out vec4 frag_Position;
@@ -27,6 +29,8 @@ void main() {
 
 	// Frag Light Position
 	frag_Light_Direction = u_View * u_Light_Direction;
+
+	frag_UV = vert_UV;
 
 	//----------------------------------------------
 	// Vertex Position

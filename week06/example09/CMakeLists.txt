@@ -18,7 +18,7 @@ link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK})
 include_directories(include/)
 
 # --- exmaple5 ---#
-set(SHADERS shaders)
+set(SHADERS shader)
 #set(IMAGES image)
 file(GLOB PROJECT_SOURCES src/*.cpp)
 #file(GLOB PROJECT_SOURCES src/testing.cpp)
