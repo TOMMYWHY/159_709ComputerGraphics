@@ -221,12 +221,6 @@ opengl_demo_BINARY_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709Computer
 //Value Computed by CMake
 opengl_demo_SOURCE_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08
 
-//Value Computed by CMake
-opengl_start_08_BINARY_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug
-
-//Value Computed by CMake
-opengl_start_08_SOURCE_DIR:STATIC=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08
-
 
 ########################
 # INTERNAL cache entries

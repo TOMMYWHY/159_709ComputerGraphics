@@ -4,13 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/LightDirectional.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o"
-  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/LightPoint.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/example08.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/example08.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/geometry.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/geometry.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/image.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/image.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/shader.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/shader.cpp.o"
-  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/testing.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/testing.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/src/utils.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/utils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")

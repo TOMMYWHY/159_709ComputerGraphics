@@ -418,6 +418,7 @@ CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/LightPoint.h
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/geometry.h
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/image.h
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/shader.h
+CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/stb_image.h
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../include/utils.h
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../src/example08.cpp
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h

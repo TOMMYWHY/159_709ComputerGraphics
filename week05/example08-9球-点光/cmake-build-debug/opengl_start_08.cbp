@@ -90,6 +90,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/include/Camera.h">
+			<Option target="opengl_start_08"/>
+		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/include/LightDirectional.h">
 			<Option target="opengl_start_08"/>
 		</Unit>
@@ -109,6 +112,9 @@
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/include/utils.h">
+			<Option target="opengl_start_08"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/Camera.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/LightDirectional.cpp">

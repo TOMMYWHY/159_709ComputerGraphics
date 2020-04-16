@@ -21,8 +21,10 @@ out vec4 frag_Light_Direction;
 void main() {
 	// Frag Position
 	frag_Position = u_View * u_Model * vert_Position;
+//	frag_Position = u_Model * vert_Position;
 
 	// Frag Normal
+//	frag_Normal =  u_Model * vert_Normal;
 	frag_Normal = u_View * u_Model * vert_Normal;
 
 	// Frag Light Position

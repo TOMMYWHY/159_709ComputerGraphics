@@ -48,6 +48,8 @@
 #include "image.h"
 #include "LightDirectional.h"
 #include "LightPoint.h"
+#include "stb_image.h"
+#include <FileSystem>
 using namespace std;
 
 // --------------------------------------------------------------------------------
@@ -86,7 +88,51 @@ LightPoint light = LightPoint(glm::vec4(0.0f, 1.0f, 1.0f, 0.0f),
 #pragma endregion
 
 
+unsigned int loadCubemap(vector<std::string> faces);
+float skyboxVertices[] = {
+        // positions
+        -1.0f,  1.0f, -1.0f,
+        -1.0f, -1.0f, -1.0f,
+        1.0f, -1.0f, -1.0f,
+        1.0f, -1.0f, -1.0f,
+        1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
 
+        -1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f, -1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+        1.0f, -1.0f, -1.0f,
+        1.0f, -1.0f,  1.0f,
+        1.0f,  1.0f,  1.0f,
+        1.0f,  1.0f,  1.0f,
+        1.0f,  1.0f, -1.0f,
+        1.0f, -1.0f, -1.0f,
+
+        -1.0f, -1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+        1.0f,  1.0f,  1.0f,
+        1.0f,  1.0f,  1.0f,
+        1.0f, -1.0f,  1.0f,
+        -1.0f, -1.0f,  1.0f,
+
+        -1.0f,  1.0f, -1.0f,
+        1.0f,  1.0f, -1.0f,
+        1.0f,  1.0f,  1.0f,
+        1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f,  1.0f,
+        -1.0f,  1.0f, -1.0f,
+
+        -1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+        1.0f, -1.0f, -1.0f,
+        1.0f, -1.0f, -1.0f,
+        -1.0f, -1.0f,  1.0f,
+        1.0f, -1.0f,  1.0f
+};
 int main() {
 	// Set Error Callback
 	glfwSetErrorCallback(onError);
@@ -145,6 +191,7 @@ int main() {
 
 	// Load GLSL Program
 	GLuint program  = loadProgram("./shader/texture.vert.glsl",  NULL, NULL, NULL, "./shader/texture.frag.glsl");
+	GLuint skybox_program  = loadProgram("./shader/skybox.vert.glsl",  NULL, NULL, NULL, "./shader/skybox.frag.glsl");
 
 	// Vertex Array Objects (VAO)
 	GLuint vao = 0;
@@ -222,8 +269,46 @@ int main() {
 
 
 
+// sky box
+ /*   // ----------------------------------------
 
-	// ----------------------------------------
+
+    unsigned int skyboxVAO, skyboxVBO;
+    glGenVertexArrays(1, &skyboxVAO);
+    glGenBuffers(1, &skyboxVBO);
+    glBindVertexArray(skyboxVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+
+    const char *faces[] =
+            {
+                    "images/right.jpg",
+                    "images/left.jpg",
+                    "images/top.jpg",
+                    "images/bottom.jpg",
+                    "images/front.jpg",
+                    "images/back.jpg"
+            };
+
+    int xx, yy, nn;
+    unsigned int cubemapTexture =loadTextureCubeMap(faces, xx, yy, nn);
+
+
+//    shader.use();
+//    shader.setInt("texture1", 0);
+    glUseProgram(skybox_program);
+//    skyboxShader.use();
+//    skyboxShader.setInt("skybox", 0);
+    glUniform1i(glGetUniformLocation(skybox_program,"skybox"), 0);
+*/
+
+
+
+
+
+    // ----------------------------------------
 	// Model Matrix
 	// ----------------------------------------
 	 float modelThetaX =  0.3f;
@@ -292,85 +377,100 @@ int main() {
 
 		// ----------------------------------------
 		// Get current time
-		float current = glfwGetTime();
-		float dt = current - last;
-		last = current;
+        float current = glfwGetTime();
+        float dt = current - last;
+        last = current;
 
-		// ----------------------------------------
-		// Rotating Model Matrix
-		if(glfwGetKey(window, GLFW_KEY_W)) {
-			// Key - W
-			modelThetaX -= 1.0f * dt;
+        // ----------------------------------------
+        // Rotating Model Matrix
+        float camera_horizontal_angle;
+        float camera_vertical_angle;
+        float camera_speed = 5.0f;
+        if(glfwGetKey(window, GLFW_KEY_UP)) {
+            // Move Closer
+            viewPosition.z -= camera_speed * dt;
 
-			// Recompute Model Matrix
-			modelMatrix = glm::translate(glm::mat4(1.0f),              glm::vec3(0.0f, 0.0f, 0.0f)) *
-						  glm::rotate(   glm::mat4(1.0f), modelThetaX, glm::vec3(1.0f, 0.0f, 0.0f)) * 
-						  glm::rotate(   glm::mat4(1.0f), modelThetaY, glm::vec3(0.0f, 1.0f, 0.0f));
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
 
-			// Copy Rotation Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-		}
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_DOWN)) {
+            // Move Away
+            viewPosition.z += camera_speed * dt;
 
-		if(glfwGetKey(window, GLFW_KEY_S)) {
-			// Key - S
-			modelThetaX += 1.0f * dt;
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
 
-			// Recompute Model Matrix
-			modelMatrix = glm::translate(glm::mat4(1.0f),              glm::vec3(0.0f, 0.0f, 0.0f)) *
-						  glm::rotate(   glm::mat4(1.0f), modelThetaX, glm::vec3(1.0f, 0.0f, 0.0f)) * 
-						  glm::rotate(   glm::mat4(1.0f), modelThetaY, glm::vec3(0.0f, 1.0f, 0.0f));
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_LEFT)) {
+            // Move Away
+            viewPosition.x -=camera_speed* dt;
 
-			// Copy Rotation Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-		}
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
 
-		if(glfwGetKey(window, GLFW_KEY_A)) {
-			// Key - A
-			modelThetaY -= 1.0f * dt;
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_RIGHT)) {
+            // Move Away
+            viewPosition.x += camera_speed* dt;
 
-			// Recompute Model Matrix
-			modelMatrix = glm::translate(glm::mat4(1.0f),              glm::vec3(0.0f, 0.0f, 0.0f)) *
-						  glm::rotate(   glm::mat4(1.0f), modelThetaX, glm::vec3(1.0f, 0.0f, 0.0f)) * 
-						  glm::rotate(   glm::mat4(1.0f), modelThetaY, glm::vec3(0.0f, 1.0f, 0.0f));
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
 
-			// Copy Rotation Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-		}
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        // camera  angle // 尝试左右转动 cemera
+        if(glfwGetKey(window, GLFW_KEY_A)) {
+//            viewForward.x -=  1.0f * dt;
+            camera_horizontal_angle -=  (1.0f*dt );
+            viewForward.x =fmod( camera_horizontal_angle,3);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_D)) {
+//             旋转 360度
+//            viewForward.x +=  (1.0f*dt );
+            camera_horizontal_angle +=  (1.0f*dt );
+            viewForward.x =fmod( camera_horizontal_angle,360 );
+//            cout <<viewForward.x <<endl;
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
 
-		if(glfwGetKey(window, GLFW_KEY_D)) {
-			// Key - D
-			modelThetaY += 1.0f * dt;
+        if(glfwGetKey(window, GLFW_KEY_W)) {
+            // Move Away
+//            viewForward.y +=  1.0f * dt;
+            camera_vertical_angle +=  (1.0f*dt );
+            viewForward.y =fmod( camera_vertical_angle,360);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_S)) {
+            // viewForward Away
+//            viewForward.y -=  1.0f * dt;
+            camera_vertical_angle -=  (1.0f*dt );
+            viewForward.y =fmod( camera_vertical_angle,360);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        // ------end----------move camera------------------------ function-------
 
-			// Recompute Model Matrix
-			modelMatrix = glm::translate(glm::mat4(1.0f),              glm::vec3(0.0f, 0.0f, 0.0f)) *
-						  glm::rotate(   glm::mat4(1.0f), modelThetaX, glm::vec3(1.0f, 0.0f, 0.0f)) * 
-						  glm::rotate(   glm::mat4(1.0f), modelThetaY, glm::vec3(0.0f, 1.0f, 0.0f));
 
-			// Copy Rotation Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-		}
-
-		if(glfwGetKey(window, GLFW_KEY_UP)) {
-			// Move Closer
-			viewPosition.z -= 1.0f * dt;
-
-			// Construct View Matrix
-			viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-
-			// Copy View Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-		}
-
-		if(glfwGetKey(window, GLFW_KEY_DOWN)) {
-			// Move Away
-			viewPosition.z += 1.0f * dt;
-
-			// Construct View Matrix
-			viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
-
-			// Copy View Matrix to Shader
-			glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
-		}
 
 		// ----------------------------------------
 
@@ -392,7 +492,27 @@ int main() {
 		// Unbind Texture Map
 		glBindTexture(GL_TEXTURE_2D, 0);
 
-		// Swap the back and front buffers
+
+// sky box
+/*        glDepthFunc(GL_LEQUAL);  // change depth function so depth test passes when values are equal to depth buffer's content
+        glUseProgram(skybox_program);
+//        viewMatrix = glm::mat4(glm::mat3(glm::lookAt(viewPosition, viewPosition + viewForward, viewUp))); // remove translation from the view matrix
+        viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp); // remove translation from the view matrix
+//        skyboxShader.setMat4("view", view);
+        glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        glUniformMatrix4fv(glGetUniformLocation(program, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
+
+//        skyboxShader.setMat4("projection", projection);
+        // skybox cube
+        glBindVertexArray(skyboxVAO);
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+        glDrawArrays(GL_TRIANGLES, 0, 36);
+        glBindVertexArray(0);
+        glDepthFunc(GL_LESS); // set depth function back to default*/
+
+
+        // Swap the back and front buffers
 		glfwSwapBuffers(window);
 
 		// Poll window events
@@ -418,3 +538,34 @@ int main() {
 }
 
 
+unsigned int loadCubemap(vector<std::string> faces)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+
+    int width, height, nrChannels;
+    for (unsigned int i = 0; i < faces.size(); i++)
+    {
+        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
+        if (data)
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i,
+                         0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data
+            );
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
+            stbi_image_free(data);
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    return textureID;
+}

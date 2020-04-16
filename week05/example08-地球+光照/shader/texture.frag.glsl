@@ -49,7 +49,8 @@ uniform vec4 material_diffuse =  vec4(1.0f, 1.0f, 1.0f,1.0f);
 uniform vec4 material_specular =  vec4(1.0f, 1.0f, 1.0f,1.0f);
 uniform float material_shininess = 27.89743616;
 
-uniform vec4 objColor =  vec4( 1.0f, 1.0f, 1.0f,1.0f);
+//uniform vec4 objColor =  vec4( 1.0f, 1.0f, 1.0f,1.0f);
+uniform vec4 objColor =  vec4( 2.0f, 2.0f, 2.0f,1.0f);
 uniform vec4 ambientColor =  vec4(  0.1f, 0.1f, 0.1f,1.0f);
 
 void main () {

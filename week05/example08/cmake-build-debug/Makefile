@@ -123,60 +123,6 @@ opengl_demo/fast:
 	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/build
 .PHONY : opengl_demo/fast
 
-src/LightDirectional.o: src/LightDirectional.cpp.o
-
-.PHONY : src/LightDirectional.o
-
-# target to build an object file
-src/LightDirectional.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o
-.PHONY : src/LightDirectional.cpp.o
-
-src/LightDirectional.i: src/LightDirectional.cpp.i
-
-.PHONY : src/LightDirectional.i
-
-# target to preprocess a source file
-src/LightDirectional.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.i
-.PHONY : src/LightDirectional.cpp.i
-
-src/LightDirectional.s: src/LightDirectional.cpp.s
-
-.PHONY : src/LightDirectional.s
-
-# target to generate assembly for a file
-src/LightDirectional.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.s
-.PHONY : src/LightDirectional.cpp.s
-
-src/LightPoint.o: src/LightPoint.cpp.o
-
-.PHONY : src/LightPoint.o
-
-# target to build an object file
-src/LightPoint.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o
-.PHONY : src/LightPoint.cpp.o
-
-src/LightPoint.i: src/LightPoint.cpp.i
-
-.PHONY : src/LightPoint.i
-
-# target to preprocess a source file
-src/LightPoint.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.i
-.PHONY : src/LightPoint.cpp.i
-
-src/LightPoint.s: src/LightPoint.cpp.s
-
-.PHONY : src/LightPoint.s
-
-# target to generate assembly for a file
-src/LightPoint.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.s
-.PHONY : src/LightPoint.cpp.s
-
 src/example08.o: src/example08.cpp.o
 
 .PHONY : src/example08.o
@@ -285,33 +231,6 @@ src/shader.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
-src/testing.o: src/testing.cpp.o
-
-.PHONY : src/testing.o
-
-# target to build an object file
-src/testing.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/testing.cpp.o
-.PHONY : src/testing.cpp.o
-
-src/testing.i: src/testing.cpp.i
-
-.PHONY : src/testing.i
-
-# target to preprocess a source file
-src/testing.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/testing.cpp.i
-.PHONY : src/testing.cpp.i
-
-src/testing.s: src/testing.cpp.s
-
-.PHONY : src/testing.s
-
-# target to generate assembly for a file
-src/testing.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/testing.cpp.s
-.PHONY : src/testing.cpp.s
-
 src/utils.o: src/utils.cpp.o
 
 .PHONY : src/utils.o
@@ -348,12 +267,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... opengl_demo"
-	@echo "... src/LightDirectional.o"
-	@echo "... src/LightDirectional.i"
-	@echo "... src/LightDirectional.s"
-	@echo "... src/LightPoint.o"
-	@echo "... src/LightPoint.i"
-	@echo "... src/LightPoint.s"
 	@echo "... src/example08.o"
 	@echo "... src/example08.i"
 	@echo "... src/example08.s"
@@ -366,9 +279,6 @@ help:
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"
-	@echo "... src/testing.o"
-	@echo "... src/testing.i"
-	@echo "... src/testing.s"
 	@echo "... src/utils.o"
 	@echo "... src/utils.i"
 	@echo "... src/utils.s"
