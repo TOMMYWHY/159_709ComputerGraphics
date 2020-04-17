@@ -4,7 +4,6 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/Camera.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/LightDirectional.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/LightPoint.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/example08.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"

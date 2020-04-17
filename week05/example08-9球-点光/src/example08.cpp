@@ -46,16 +46,35 @@
 #include "utils.h"
 #include "geometry.h"
 #include "image.h"
-#include "Camera.h"
-
-
+#include "LightDirectional.h"
+#include "LightPoint.h"
 using namespace std;
 
-void onError(int error, const char *description);
-void onWindowClose(GLFWwindow *window);
-void onFramebufferSize(GLFWwindow *window, int width, int height);
 
 
+// --------------------------------------------------------------------------------
+// GLFW Callbacks
+// --------------------------------------------------------------------------------
+
+// Called on Error Event
+void onError(int error, const char *description) {
+	// Print Error message
+	std::cerr << "Error: " << error << " : " << description << std::endl;
+}
+
+// Called on Window Close Event
+void onWindowClose(GLFWwindow *window) {
+	// Nothing to do right now
+	// Do not call glfwDestroyWindow from here
+}
+
+// Called on Window Size Event
+void onFramebufferSize(GLFWwindow *window, int width, int height) {
+	// Set-up the window/screen coordinates
+	glfwMakeContextCurrent(window);
+	glViewport(0, 0, width, height);
+	glfwMakeContextCurrent(NULL);
+}
 
 // --------------------------------------------------------------------------------
 // Example 07 - Texture Mapping
@@ -99,22 +118,6 @@ void Rotation  (STAR star,GLuint vaoEarth,GLuint textureEarth,vector<glm::ivec3>
 void RenderingSpheres(GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuint program, glm::mat4 modelMatrix);
 
 
-// --------------------------------------------------------------------------------
-// ----- mouse function-------//
-
-void processInput(GLFWwindow *window);
-void mouse_callback(GLFWwindow* window, double xpos, double ypos);
-float lastX,lastY;
-bool firstMouse = true;
-Camera *camera = new Camera(glm::vec3(0.0f, 10.0f,  20.0f),
-        glm::radians(-15.0f),
-        glm::radians(180.0f),
-        glm::vec3(0.0f,  1.0f,  0.0f));
-
-
-// ----- mouse function end-------//
-
-
 int main() {
 	// Set Error Callback
 	glfwSetErrorCallback(onError);
@@ -127,11 +130,8 @@ int main() {
 
 	// Create Window
 	GLFWwindow *window = createWindow(600, 600, "Example 08 - Texturing", 3, 2);
-    glfwSetCursorPosCallback(window,mouse_callback);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);//turn off mouse
 
-
-    // Check Window
+	// Check Window
 	if (window == NULL) {
 		// Print Error Message
 		std::cerr << "Error: create window or context failed." << std::endl;
@@ -248,25 +248,52 @@ int main() {
 	// ----------------------------------------
 	// Model Matrix
 	// ----------------------------------------
-    /*u_Model 没给球 已内部定义*/
-	/* float modelThetaX =  0.3f;
+	 float modelThetaX =  0.3f;
 	 float modelThetaY = -0.5f;
+//	float modelThetaX =  0.0f;
+//	float modelThetaY =  0.0f;
 	glm::mat4 modelMatrix = glm::translate(glm::mat4(1.0f),              glm::vec3(0.0f, 0.0f, 0.0f)) *
 							glm::rotate(   glm::mat4(1.0f), modelThetaX, glm::vec3(1.0f, 0.0f, 0.0f)) * 
 							glm::rotate(   glm::mat4(1.0f), modelThetaY, glm::vec3(0.0f, 1.0f, 0.0f));
 
 	// Copy Rotation Matrix to Shader
 	glUniformMatrix4fv(glGetUniformLocation(program, "u_Model"), 1, GL_FALSE, glm::value_ptr(modelMatrix));
-*/
-    glm::mat4 viewMatrix(1.0f); // todo camera Init
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// View Matrix
+	// ----------------------------------------
+	glm::mat4 viewMatrix(1.0f);
+	glm::vec3 viewPosition(0.0f,  10.0f,  20.0f);
+	glm::vec3 viewUp      (0.0f,  1.0f,  0.0f);
+	glm::vec3 viewForward (0.0f,  0.0f, -1.0f);
+
+	// Normalise Vectors
+	viewUp      = glm::normalize(viewUp);
+	viewForward = glm::normalize(viewForward);
+
+	// Construct View Matrix
+	viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+
+	// Copy View Matrix to Shader
+	glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+	// ----------------------------------------
+
+	// ----------------------------------------
+	// Projection Matrix
+	// ----------------------------------------
 	glm::mat4 projectionMatrix(1.0f);
+	
+	// Calculate Perspective Projection
 	projectionMatrix = glm::perspective(glm::radians(67.0f), 1.0f, 0.2f, 50.0f);
+
+	// Copy Projection Matrix to Shader
 	glUniformMatrix4fv(glGetUniformLocation(program, "u_Projection"), 1, GL_FALSE, glm::value_ptr(projectionMatrix));
 	// ----------------------------------------
 // ----------------------------------------
 
     // Get time
-//	float last = glfwGetTime();
+	float last = glfwGetTime();
 
 	// ----------------------------------------
 	// Main Render loop
@@ -274,19 +301,111 @@ int main() {
 	while (!glfwWindowShouldClose(window)) {
 		// Make the context of the given window current on the calling thread
 		glfwMakeContextCurrent(window);
+
+		// Set clear (background) colour to dark grey
 		glClearColor(0.15f, 0.15f, 0.15f, 0.0f);
+		// glClearColor(1.0f, 1.0f, 1.0f, 0.0f);
+
+		// Clear Screen
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glUseProgram(program);
-
-
-        viewMatrix = camera->GetViewMatrix(); // camera movement
-        cout <<"u_camera_Postion:"<<camera->Position.x <<","<< camera->Position.y <<","
-             << camera->Position.z <<" ; " <<endl;
-        glUniformMatrix4fv(glGetUniformLocation(program,"u_View"),1,GL_FALSE,glm::value_ptr(viewMatrix));
-
-        // Use Program
+		// Use Program
 		glUseProgram(program);
+
+		// ----------------------------------------
+		// Get current time
+		float current = glfwGetTime();
+		float dt = current - last;
+		last = current;
+
+		// ----------------------------------------
+		// Rotating Model Matrix
+        float camera_horizontal_angle;
+        float camera_vertical_angle;
+        float camera_speed = 5.0f;
+        if(glfwGetKey(window, GLFW_KEY_UP)) {
+            // Move Closer
+            viewPosition.z -= camera_speed * dt;
+
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_DOWN)) {
+            // Move Away
+            viewPosition.z += camera_speed * dt;
+
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_LEFT)) {
+            // Move Away
+            viewPosition.x -=camera_speed* dt;
+
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_RIGHT)) {
+            // Move Away
+            viewPosition.x += camera_speed* dt;
+
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        // camera  angle // 尝试左右转动 cemera
+        if(glfwGetKey(window, GLFW_KEY_A)) {
+//            viewForward.x -=  1.0f * dt;
+            camera_horizontal_angle -=  (1.0f*dt );
+            viewForward.x =fmod( camera_horizontal_angle,360);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_D)) {
+//             旋转 360度
+//            viewForward.x +=  (1.0f*dt );
+            camera_horizontal_angle +=  (1.0f*dt );
+            viewForward.x =fmod( camera_horizontal_angle,360 );
+//            cout <<viewForward.x <<endl;
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+
+        if(glfwGetKey(window, GLFW_KEY_W)) {
+            // Move Away
+//            viewForward.y +=  1.0f * dt;
+            camera_vertical_angle +=  (1.0f*dt );
+            viewForward.y =fmod( camera_vertical_angle,360);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        if(glfwGetKey(window, GLFW_KEY_S)) {
+            // viewForward Away
+//            viewForward.y -=  1.0f * dt;
+            camera_vertical_angle -=  (1.0f*dt );
+            viewForward.y =fmod( camera_vertical_angle,360);
+            // Construct View Matrix
+            viewMatrix = glm::lookAt(viewPosition, viewPosition + viewForward, viewUp);
+            // Copy View Matrix to Shader
+            glUniformMatrix4fv(glGetUniformLocation(program, "u_View"), 1, GL_FALSE, glm::value_ptr(viewMatrix));
+        }
+        // ------end----------move camera------------------------ function-------
 
 		// ----------------------------------------
 
@@ -312,14 +431,12 @@ int main() {
 
 
 
-        processInput(window);
         // Swap the back and front buffers
 		glfwSwapBuffers(window);
+
 		// Poll window events
 		glfwPollEvents();
-        camera->updateCameraPosition();// update camera position
-
-    }
+	}
 
 	// Delete VAO, VBO & EBO
 //	glDeleteVertexArrays(1, &vao);
@@ -439,67 +556,3 @@ void RenderingSpheres(GLuint vao,GLuint texture,vector<glm::ivec3> indexes,GLuin
 
 }
 
-
-//=========================================================================
-void processInput(GLFWwindow *window){
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
-        glfwSetWindowShouldClose(window,true);
-    }
-
-    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
-    else{camera->speedZ = 0;}
-    if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -1.0f;}
-    else{camera->speedX = 0;}
-    // Q下沉 E上浮
-    if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= 1.0f;}
-    else{camera->speedY = 0;}
-
-    /*
-     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
-     else{camera->speedZ = 0;}*/
-
-}
-
-void mouse_callback(GLFWwindow* window, double xPos, double yPos){
-    if (firstMouse == true){
-        lastX = xPos;
-        lastY = yPos;
-        firstMouse = false;
-    }
-    float deltaX, deltaY;
-    deltaX = xPos - lastX;
-    deltaY = yPos - lastY;
-    lastX = xPos;
-    lastY = yPos;
-    camera->ProcessMouseMovement(deltaX,deltaY);
-//    cout<<"xpos:" <<xPos<< ", ypos:"<< yPos<<endl;
-}
-
-//=========================================================================
-// --------------------------------------------------------------------------------
-// GLFW Callbacks
-// --------------------------------------------------------------------------------
-
-// Called on Error Event
-void onError(int error, const char *description) {
-    // Print Error message
-    std::cerr << "Error: " << error << " : " << description << std::endl;
-}
-
-// Called on Window Close Event
-void onWindowClose(GLFWwindow *window) {
-    // Nothing to do right now
-    // Do not call glfwDestroyWindow from here
-}
-
-// Called on Window Size Event
-void onFramebufferSize(GLFWwindow *window, int width, int height) {
-    // Set-up the window/screen coordinates
-    glfwMakeContextCurrent(window);
-    glViewport(0, 0, width, height);
-    glfwMakeContextCurrent(NULL);
-}

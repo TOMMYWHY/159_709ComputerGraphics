@@ -1,5 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"

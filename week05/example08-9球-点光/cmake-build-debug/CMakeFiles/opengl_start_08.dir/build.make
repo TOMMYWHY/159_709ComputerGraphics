@@ -57,22 +57,9 @@ include CMakeFiles/opengl_start_08.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/opengl_start_08.dir/flags.make
 
-CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
-CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o: ../src/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/Camera.cpp
-
-CMakeFiles/opengl_start_08.dir/src/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_start_08.dir/src/Camera.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/Camera.cpp > CMakeFiles/opengl_start_08.dir/src/Camera.cpp.i
-
-CMakeFiles/opengl_start_08.dir/src/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_start_08.dir/src/Camera.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/Camera.cpp -o CMakeFiles/opengl_start_08.dir/src/Camera.cpp.s
-
 CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o: ../src/LightDirectional.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/LightDirectional.cpp
 
 CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.i: cmake_force
@@ -85,7 +72,7 @@ CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o: ../src/LightPoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/LightPoint.cpp
 
 CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.i: cmake_force
@@ -98,7 +85,7 @@ CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.o: ../src/example08.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/example08.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/example08.cpp
 
 CMakeFiles/opengl_start_08.dir/src/example08.cpp.i: cmake_force
@@ -111,7 +98,7 @@ CMakeFiles/opengl_start_08.dir/src/example08.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o: ../src/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/geometry.cpp
 
 CMakeFiles/opengl_start_08.dir/src/geometry.cpp.i: cmake_force
@@ -124,7 +111,7 @@ CMakeFiles/opengl_start_08.dir/src/geometry.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/image.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/image.cpp.o: ../src/image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/image.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/image.cpp
 
 CMakeFiles/opengl_start_08.dir/src/image.cpp.i: cmake_force
@@ -137,7 +124,7 @@ CMakeFiles/opengl_start_08.dir/src/image.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/shader.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/shader.cpp
 
 CMakeFiles/opengl_start_08.dir/src/shader.cpp.i: cmake_force
@@ -150,7 +137,7 @@ CMakeFiles/opengl_start_08.dir/src/shader.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.o: ../src/testing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/opengl_start_08.dir/src/testing.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/testing.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/testing.cpp
 
 CMakeFiles/opengl_start_08.dir/src/testing.cpp.i: cmake_force
@@ -163,7 +150,7 @@ CMakeFiles/opengl_start_08.dir/src/testing.cpp.s: cmake_force
 
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.o: CMakeFiles/opengl_start_08.dir/flags.make
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.o: ../src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_start_08.dir/src/utils.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/src/utils.cpp
 
 CMakeFiles/opengl_start_08.dir/src/utils.cpp.i: cmake_force
@@ -176,7 +163,6 @@ CMakeFiles/opengl_start_08.dir/src/utils.cpp.s: cmake_force
 
 # Object files for target opengl_start_08
 opengl_start_08_OBJECTS = \
-"CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o" \
 "CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o" \
 "CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o" \
 "CMakeFiles/opengl_start_08.dir/src/example08.cpp.o" \
@@ -189,7 +175,6 @@ opengl_start_08_OBJECTS = \
 # External object files for target opengl_start_08
 opengl_start_08_EXTERNAL_OBJECTS =
 
-opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/LightDirectional.cpp.o
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/LightPoint.cpp.o
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/example08.cpp.o
@@ -201,7 +186,7 @@ opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/src/utils.
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/build.make
 opengl_start_08_Debug/opengl_start_08: /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib
 opengl_start_08_Debug/opengl_start_08: CMakeFiles/opengl_start_08.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable opengl_start_08_Debug/opengl_start_08"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable opengl_start_08_Debug/opengl_start_08"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengl_start_08.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Creating symlink to shader directory"
 	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/shader /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/week05/example08-9球-点光/cmake-build-debug/opengl_start_08_Debug/shader

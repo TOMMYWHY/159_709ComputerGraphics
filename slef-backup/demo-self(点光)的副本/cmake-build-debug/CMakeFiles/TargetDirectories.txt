@@ -1,3 +1,3 @@
-/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles/opengl_demo.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles/opengl_demo.dir

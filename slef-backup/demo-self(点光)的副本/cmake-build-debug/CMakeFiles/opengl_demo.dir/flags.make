@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk   -std=gnu++14
 
-CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self\"
+CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR="\"/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本\""
 
-CXX_INCLUDES = -I/usr/local/Cellar/glfw/3.3/include -I/usr/local/Cellar/glm/0.9.9.5/include -I/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include 
+CXX_INCLUDES = -I/usr/local/Cellar/glfw/3.3/include -I/usr/local/Cellar/glm/0.9.9.5/include -I"/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include" 
 

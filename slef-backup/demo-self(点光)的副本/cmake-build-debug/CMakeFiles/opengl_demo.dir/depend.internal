@@ -3,7 +3,7 @@
 
 CMakeFiles/opengl_demo.dir/src/Camera.cpp.o
  ../include/Camera.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Camera.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Camera.cpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_swizzle.hpp
@@ -204,7 +204,7 @@ CMakeFiles/opengl_demo.dir/src/Camera.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o
  ../include/LightDirectional.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightDirectional.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightDirectional.cpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_swizzle.hpp
@@ -409,7 +409,7 @@ CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o
  ../include/LightPoint.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightPoint.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightPoint.cpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_swizzle.hpp
@@ -614,11 +614,11 @@ CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_demo.dir/src/Shade.cpp.o
  ../include/Shade.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Shade.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Shade.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
 CMakeFiles/opengl_demo.dir/src/geometry.cpp.o
  ../include/geometry.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/geometry.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/geometry.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -827,7 +827,7 @@ CMakeFiles/opengl_demo.dir/src/geometry.cpp.o
 CMakeFiles/opengl_demo.dir/src/image.cpp.o
  ../include/image.h
  ../include/stb_image.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/image.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/image.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -1036,7 +1036,7 @@ CMakeFiles/opengl_demo.dir/src/main.cpp.o
  ../include/image.h
  ../include/shader.h
  ../include/utils.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/main.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/main.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
  /usr/local/Cellar/glm/0.9.9.5/include/glm/common.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/detail/_fixes.hpp
@@ -1250,9 +1250,9 @@ CMakeFiles/opengl_demo.dir/src/main.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 CMakeFiles/opengl_demo.dir/src/shader.cpp.o
  ../include/shader.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/shader.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/shader.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
 CMakeFiles/opengl_demo.dir/src/utils.cpp.o
  ../include/utils.h
- /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/utils.cpp
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/utils.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h

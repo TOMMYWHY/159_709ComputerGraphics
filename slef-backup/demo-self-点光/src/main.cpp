@@ -233,7 +233,7 @@ int main() {
         for( int i = 0; i < 10; i++)
         {
             modelMatrix = glm::translate(glm::mat4(1.0f), cubePositions[i]);
-            modelMatrix = glm::scale(modelMatrix, glm::vec3(0.5f));
+            modelMatrix = glm::scale(modelMatrix, glm::vec3(.5f));
             shaderProgram->use();
 
 
@@ -275,7 +275,7 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(lampShade->ID,"projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
         glm::mat4 lampModelMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(light->Position));
-        lampModelMatrix = glm::scale(lampModelMatrix, glm::vec3(0.2f));
+        lampModelMatrix = glm::scale(lampModelMatrix, glm::vec3(1.2f));
         glUniformMatrix4fv(glGetUniformLocation(lampShade->ID,"model"),1,GL_FALSE,glm::value_ptr(lampModelMatrix));
 
         glBindVertexArray(lightVAO);

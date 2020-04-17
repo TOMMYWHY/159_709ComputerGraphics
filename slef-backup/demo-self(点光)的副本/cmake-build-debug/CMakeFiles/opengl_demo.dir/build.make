@@ -43,10 +43,10 @@ RM = "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self
+CMAKE_SOURCE_DIR = "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug
+CMAKE_BINARY_DIR = "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/opengl_demo.dir/depend.make
@@ -59,120 +59,120 @@ include CMakeFiles/opengl_demo.dir/flags.make
 
 CMakeFiles/opengl_demo.dir/src/Camera.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/Camera.cpp.o: ../src/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_demo.dir/src/Camera.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/Camera.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/opengl_demo.dir/src/Camera.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/Camera.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Camera.cpp"
 
 CMakeFiles/opengl_demo.dir/src/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/Camera.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Camera.cpp > CMakeFiles/opengl_demo.dir/src/Camera.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Camera.cpp" > CMakeFiles/opengl_demo.dir/src/Camera.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/Camera.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Camera.cpp -o CMakeFiles/opengl_demo.dir/src/Camera.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Camera.cpp" -o CMakeFiles/opengl_demo.dir/src/Camera.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o: ../src/LightDirectional.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightDirectional.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightDirectional.cpp"
 
 CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightDirectional.cpp > CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightDirectional.cpp" > CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightDirectional.cpp -o CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightDirectional.cpp" -o CMakeFiles/opengl_demo.dir/src/LightDirectional.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o: ../src/LightPoint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightPoint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightPoint.cpp"
 
 CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightPoint.cpp > CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightPoint.cpp" > CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightPoint.cpp -o CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightPoint.cpp" -o CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/Shade.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/Shade.cpp.o: ../src/Shade.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_demo.dir/src/Shade.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/Shade.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Shade.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/opengl_demo.dir/src/Shade.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/Shade.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Shade.cpp"
 
 CMakeFiles/opengl_demo.dir/src/Shade.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/Shade.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Shade.cpp > CMakeFiles/opengl_demo.dir/src/Shade.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Shade.cpp" > CMakeFiles/opengl_demo.dir/src/Shade.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/Shade.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/Shade.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Shade.cpp -o CMakeFiles/opengl_demo.dir/src/Shade.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Shade.cpp" -o CMakeFiles/opengl_demo.dir/src/Shade.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/geometry.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/geometry.cpp.o: ../src/geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_demo.dir/src/geometry.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/geometry.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/opengl_demo.dir/src/geometry.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/geometry.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/geometry.cpp"
 
 CMakeFiles/opengl_demo.dir/src/geometry.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/geometry.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/geometry.cpp > CMakeFiles/opengl_demo.dir/src/geometry.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/geometry.cpp" > CMakeFiles/opengl_demo.dir/src/geometry.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/geometry.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/geometry.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/geometry.cpp -o CMakeFiles/opengl_demo.dir/src/geometry.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/geometry.cpp" -o CMakeFiles/opengl_demo.dir/src/geometry.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/image.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/image.cpp.o: ../src/image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_demo.dir/src/image.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/image.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/opengl_demo.dir/src/image.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/image.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/image.cpp"
 
 CMakeFiles/opengl_demo.dir/src/image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/image.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/image.cpp > CMakeFiles/opengl_demo.dir/src/image.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/image.cpp" > CMakeFiles/opengl_demo.dir/src/image.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/image.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/image.cpp -o CMakeFiles/opengl_demo.dir/src/image.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/image.cpp" -o CMakeFiles/opengl_demo.dir/src/image.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/main.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/opengl_demo.dir/src/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/main.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/opengl_demo.dir/src/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/main.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/main.cpp"
 
 CMakeFiles/opengl_demo.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/main.cpp > CMakeFiles/opengl_demo.dir/src/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/main.cpp" > CMakeFiles/opengl_demo.dir/src/main.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/main.cpp -o CMakeFiles/opengl_demo.dir/src/main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/main.cpp" -o CMakeFiles/opengl_demo.dir/src/main.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/shader.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/shader.cpp.o: ../src/shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/opengl_demo.dir/src/shader.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/shader.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/opengl_demo.dir/src/shader.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/shader.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/shader.cpp"
 
 CMakeFiles/opengl_demo.dir/src/shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/shader.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/shader.cpp > CMakeFiles/opengl_demo.dir/src/shader.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/shader.cpp" > CMakeFiles/opengl_demo.dir/src/shader.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/shader.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/shader.cpp -o CMakeFiles/opengl_demo.dir/src/shader.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/shader.cpp" -o CMakeFiles/opengl_demo.dir/src/shader.cpp.s
 
 CMakeFiles/opengl_demo.dir/src/utils.cpp.o: CMakeFiles/opengl_demo.dir/flags.make
 CMakeFiles/opengl_demo.dir/src/utils.cpp.o: ../src/utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/opengl_demo.dir/src/utils.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/utils.cpp.o -c /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/opengl_demo.dir/src/utils.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/opengl_demo.dir/src/utils.cpp.o -c "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/utils.cpp"
 
 CMakeFiles/opengl_demo.dir/src/utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/opengl_demo.dir/src/utils.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/utils.cpp > CMakeFiles/opengl_demo.dir/src/utils.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/utils.cpp" > CMakeFiles/opengl_demo.dir/src/utils.cpp.i
 
 CMakeFiles/opengl_demo.dir/src/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/opengl_demo.dir/src/utils.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/utils.cpp -o CMakeFiles/opengl_demo.dir/src/utils.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/utils.cpp" -o CMakeFiles/opengl_demo.dir/src/utils.cpp.s
 
 # Object files for target opengl_demo
 opengl_demo_OBJECTS = \
@@ -201,11 +201,11 @@ opengl_demo_Debug/opengl_demo: CMakeFiles/opengl_demo.dir/src/utils.cpp.o
 opengl_demo_Debug/opengl_demo: CMakeFiles/opengl_demo.dir/build.make
 opengl_demo_Debug/opengl_demo: /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib
 opengl_demo_Debug/opengl_demo: CMakeFiles/opengl_demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable opengl_demo_Debug/opengl_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable opengl_demo_Debug/opengl_demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/opengl_demo.dir/link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Creating symlink to shader directory"
-	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/shader /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/opengl_demo_Debug/shader
-	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/images /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/opengl_demo_Debug/images
+	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E create_symlink "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/shader" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/opengl_demo_Debug/shader"
+	"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -E copy_directory /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/images /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/opengl_demo_Debug/images
 
 # Rule to build all files generated by this target.
 CMakeFiles/opengl_demo.dir/build: opengl_demo_Debug/opengl_demo
@@ -217,6 +217,6 @@ CMakeFiles/opengl_demo.dir/clean:
 .PHONY : CMakeFiles/opengl_demo.dir/clean
 
 CMakeFiles/opengl_demo.dir/depend:
-	cd /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/CMakeFiles/opengl_demo.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/CMakeFiles/opengl_demo.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/opengl_demo.dir/depend
 

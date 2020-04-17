@@ -8,47 +8,47 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="opengl_demo">
-				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/opengl_demo_Debug/opengl_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug"/>
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/opengl_demo_Debug/opengl_demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DGLFW_INCLUDE_NONE"/>
-					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self&quot;"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本&quot;"/>
 					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
 					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
-					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
@@ -57,24 +57,24 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 opengl_demo"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 opengl_demo"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="opengl_demo/fast">
-				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/opengl_demo_Debug/opengl_demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug"/>
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/opengl_demo_Debug/opengl_demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add option="-DGLFW_INCLUDE_NONE"/>
-					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self&quot;"/>
+					<Add option="-DPROJECT_SOURCE_DIR=&quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本&quot;"/>
 					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
 					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
-					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
@@ -83,68 +83,68 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 opengl_demo/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 opengl_demo/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/Camera.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/Camera.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/LightDirectional.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/LightDirectional.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/LightPoint.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/LightPoint.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/Shade.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/Shade.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/geometry.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/geometry.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/image.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/image.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/shader.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/shader.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/stb_image.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/stb_image.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/include/utils.h">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/include/utils.h">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Camera.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Camera.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightDirectional.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightDirectional.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/LightPoint.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/LightPoint.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/Shade.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/Shade.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/geometry.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/geometry.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/image.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/image.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/main.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/main.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/shader.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/shader.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/src/utils.cpp">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/src/utils.cpp">
 			<Option target="opengl_demo"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self/CMakeLists.txt">
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/slef-backup/demo-self(点光)的副本/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

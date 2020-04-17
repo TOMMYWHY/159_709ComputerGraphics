@@ -123,33 +123,6 @@ opengl_start_08/fast:
 	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/build
 .PHONY : opengl_start_08/fast
 
-src/Camera.o: src/Camera.cpp.o
-
-.PHONY : src/Camera.o
-
-# target to build an object file
-src/Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o
-.PHONY : src/Camera.cpp.o
-
-src/Camera.i: src/Camera.cpp.i
-
-.PHONY : src/Camera.i
-
-# target to preprocess a source file
-src/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Camera.cpp.i
-.PHONY : src/Camera.cpp.i
-
-src/Camera.s: src/Camera.cpp.s
-
-.PHONY : src/Camera.s
-
-# target to generate assembly for a file
-src/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Camera.cpp.s
-.PHONY : src/Camera.cpp.s
-
 src/LightDirectional.o: src/LightDirectional.cpp.o
 
 .PHONY : src/LightDirectional.o
@@ -375,9 +348,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... opengl_start_08"
-	@echo "... src/Camera.o"
-	@echo "... src/Camera.i"
-	@echo "... src/Camera.s"
 	@echo "... src/LightDirectional.o"
 	@echo "... src/LightDirectional.i"
 	@echo "... src/LightDirectional.s"

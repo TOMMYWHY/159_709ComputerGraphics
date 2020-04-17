@@ -21,92 +21,43 @@
 #include <image.h>
 #include <Camera.h>
 #include <vector>
-#include "Shade.h"
 #include "geometry.h"
-#include "LightDirectional.h"
 #include "LightPoint.h"
-#include "LightSpot.h"
+
+using namespace std;
 
 void onError(int error, const char *description);
 void onWindowClose(GLFWwindow *window);
 void onFramebufferSize(GLFWwindow *window, int width, int height);
 
-float vertices[] = {
-        -0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f,  0.5f, -0.5f,
-        0.5f,  0.5f, -0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
+//水星 金星 地球 火星 木星 土星 天王星//海王星
+struct STAR{
+    char url[128];
+    float size ;
+    float distance ;
+    float RotationSpeed; // rotation 自转
+    float RevolutionSpeed; // revolution 公转
+//    glm::vec3 location;
+};
+STAR Sun = {"./images/sunmap.tga",          3.0f,   0.0f,   0.0f, 0.0f};
+STAR Mercury = {"./images/mercurymap.jpg",  .1f,    1.8f,   1.4f,1.87f};
+STAR Venus = {"./images/venusmap.jpg",      .3f,    2.5f,   1.3f,2.24f};
+STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f,3.65f};
+STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   0.8f,6.86f};
+STAR Jupiter = {"./images/jupitermap.jpg",  2.5f,   8.0f,   0.4f,5.32f};
+STAR Saturn = {"./images/saturnmap.jpg",    1.0f,   10.5f,   0.3f,40.0f};
+STAR Uranus = {"./images/uranusmap.jpg",    0.8f,   13.0f,   0.2f,80.0f};
+STAR Neptune = {"./images/neptunemap.jpg",  .8f,    15.5f,   0.1f,100.0f};
 
-        -0.5f, -0.5f,  0.5f,
-        0.5f, -0.5f,  0.5f,
-        0.5f,  0.5f,  0.5f,
-        0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-        -0.5f, -0.5f,  0.5f,
-
-        -0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f, -0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-
-        0.5f,  0.5f,  0.5f,
-        0.5f,  0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f,  0.5f,
-        0.5f,  0.5f,  0.5f,
-
-        -0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f, -0.5f,
-        0.5f, -0.5f,  0.5f,
-        0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f,  0.5f,
-        -0.5f, -0.5f, -0.5f,
-
-        -0.5f,  0.5f, -0.5f,
-        0.5f,  0.5f, -0.5f,
-        0.5f,  0.5f,  0.5f,
-        0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f,  0.5f,
-        -0.5f,  0.5f, -0.5f,
+STAR stars[8] = {
+        Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune
 };
 
-glm::vec3 cubePositions[] = {
-        glm::vec3( 0.0f,  0.0f,  0.0f),
-        glm::vec3( 2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3( 2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3( 1.3f, -2.0f, -2.5f),
-        glm::vec3( 1.5f,  2.0f, -2.5f),
-        glm::vec3( 1.5f,  0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
-};
+glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
+LightPoint * lightP = new LightPoint(lightPos,glm::vec3(1.0f,1.0f,1.0f));
 
-    glm::vec3 lightPos(1.0f, 1.3f, -1.0f);
-
-//    Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f),glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  1.0f,  0.0f));
-Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f),glm::radians(15.0f),glm::radians(180.0f), glm::vec3(0.0f,  1.0f,  0.0f));
-LightDirectional * lightD = new LightDirectional(
-        lightPos,
-        glm::vec3(glm::radians(45.0f),glm::radians(45.0f),0),
-         glm::vec3(1.0f,1.0f,1.0f));
-
-LightPoint * lightP0 = new LightPoint(glm::vec3(1.0f, 0.0f, 0.0f),glm::vec3(1.0f,0.0f,0.0f));
-LightPoint * lightP1 = new LightPoint(glm::vec3(0.0f, 1.0f, 0.0f),glm::vec3(0.0f,1.0f,0.0f));
-LightPoint * lightP2 = new LightPoint(glm::vec3(0.0f, 0.0f, 1.0f),glm::vec3(0.0f,0.0f,1.0f));
-LightPoint * lightP3 = new LightPoint(glm::vec3(1.0f, 1.0f, 1.0f),glm::vec3(1.0f,1.0f,1.0f));
-
-LightSpot * lightS = new LightSpot(
-        glm::vec3(0.0f, 5.0f, 0.0f),
-         glm::vec3(glm::radians(90.0f),glm::radians(0.0f),0),
-          glm::vec3(1.0f,1.0f,1.0f));
 // ----- mouse function-------//
+Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 20.0f),glm::radians(15.0f),glm::radians(180.0f), glm::vec3(0.0f,  1.0f,  0.0f));
 float lastX,lastY;
 bool firstMouse = true;
 void processInput(GLFWwindow *window);
@@ -114,9 +65,12 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 // ----- mouse function-------//
 
 
-
 #if 1
 int main() {
+
+    cout << "star[1]" << sizeof(stars)/ sizeof(stars[0])<<endl;
+
+
     if (!glfwInit()) {
         return 1;
     }
@@ -130,34 +84,28 @@ int main() {
     #endif
    glfwSetFramebufferSizeCallback(window, onFramebufferSize);
    glfwSetWindowCloseCallback(window, onWindowClose);
-   glfwSetCursorPosCallback(window,mouse_callback);
-    glfwMakeContextCurrent(window);
-    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);//turn off mouse
+   glfwSetCursorPosCallback(window,mouse_callback); // mouse move function
+   glfwMakeContextCurrent(window);
+   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);//turn off mouse
 
     // ----------------------------------------
-    glEnable(GL_DEPTH_TEST); //  Z 缓冲
+    glEnable(GL_DEPTH_TEST); //  Z buffer
     glDepthFunc(GL_LEQUAL);
-    /*glEnable(GL_CULL_FACE); // todo
-    glCullFace(GL_FRONT); */
     // ----------------------------------------
 
-    Shade * shaderProgram = new Shade("./shader/vert.glsl","./shader/frag.glsl");
-//    GLuint shaderProgram  = loadProgram("./shader/vert.glsl",  NULL, NULL, NULL, "./shader/frag.glsl");
-    Shade * lampShade =new Shade("./shader/lamp.vert.glsl", "./shader/lamp.frag.glsl");
+    GLuint program  = loadProgram("./shader/vert.glsl",NULL, NULL, NULL,"./shader/frag.glsl");
+    GLuint sunProgram  =loadProgram("./shader/lamp.vert.glsl",NULL, NULL, NULL, "./shader/lamp.frag.glsl");
 
 // Vertex and Index buffers (host)
     std::vector<glm::vec4> buffer;
     std::vector<glm::ivec3> indexes;
 
-    // Create Textured Cube
-    createTexturedCube(buffer, indexes);
+    // Create Textured sphere
+    createSphere(buffer, indexes,0.8f,50,50);
 
     GLuint VBO = 0;
     GLuint EBO = 0;
 
-//     GLuint VAO = Create_VAO(VBO,EBO,vertices,indices,shaderProgram);
-
-//    GLuint VAO = vao_test(shaderProgram);
     GLuint VAO=0;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
@@ -168,18 +116,12 @@ int main() {
     glGenBuffers(1, &EBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 
-//    glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices, GL_STATIC_DRAW);
     glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
 
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-    GLuint posLoc = glGetAttribLocation(shaderProgram->ID, "vert_Position");
-    GLuint norLoc = glGetAttribLocation(shaderProgram->ID, "vert_Normal");
-
-//    GLuint colLoc = glGetAttribLocation(shaderProgram->ID, "vert_Color");
-    GLuint texLoc = glGetAttribLocation(shaderProgram->ID, "vert_UV");
+    GLuint posLoc = glGetAttribLocation(program, "vert_Position");
+    GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
+    GLuint texLoc = glGetAttribLocation(program, "vert_UV");
 
     glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
     glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
@@ -189,52 +131,43 @@ int main() {
     glEnableVertexAttribArray(norLoc);
     glEnableVertexAttribArray(texLoc);
 
-
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-
-
-
-
+    // ----------------------- textures  group------------------------------//
     int x,y,n;
-    const char * texture_url = "images/container.png";
-//    const char * texture_url = "images/EarthMap.jpg";
-    const char * texture2_url = "images/container2_specular.png";
-    GLuint texture = loadTexture2D(texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-//    GLuint texture2 = loadTexture2D(texture2_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-    GLuint texture2 = loadTexture2D(texture2_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+    vector<GLuint> textureIDs;
+    for (int i = 0; i <  sizeof(stars)/ sizeof(stars[0]); i++) {
+        GLuint texture = loadTexture2D(stars[i].url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+        textureIDs.push_back(texture);
+    }
 
+    // ----------------------- Sun single Light Source ------------------------------//
+    const char * texture_url_sun = "images/sunmap.jpg";
+    GLuint textureSun = loadTexture2D(texture_url_sun, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
-
-// ================Matrix======================//
-    glm::mat4 modelMatrix(1.0f);
-    glm::mat4 viewMatrix(1.0f);
-    glm::mat4 projectionMatrix(1.0f);
-//    modelMatrix =  glm::rotate(modelMatrix,glm::radians(-45.0f),glm::vec3(1,0,1.0f));
-//    viewMatrix = camera->GetViewMatrix();
-    projectionMatrix = glm::perspective(glm::radians(67.0f), 1.0f, 0.2f, 50.0f);
-
-
-    // ----------------------- 光源 ------------------------------//
     unsigned int lightVAO;
     glGenVertexArrays(1, &lightVAO);
     glBindVertexArray(lightVAO);
-// 只需要绑定VBO不用再次设置VBO的数据，因为箱子的VBO数据中已经包含了正确的立方体顶点数据
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-// 设置灯立方体的顶点属性（对我们的灯来说仅仅只有位置数据）
-   /* glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);*/
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 
     glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
-    glEnableVertexAttribArray(0); // posLoc
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
+    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
+    glEnableVertexAttribArray(0); //
+    glEnableVertexAttribArray(1); //
+    glEnableVertexAttribArray(2); //
 
-        cout <<"u_camera_Postion:"<<camera->Position.x <<","<< camera->Position.y <<","
-        << camera->Position.z <<" ; " <<";"<<endl;
+    // ================Matrix======================//
+    glm::mat4 modelMatrix(1.0f);
+    glm::mat4 viewMatrix(1.0f);
+    glm::mat4 projectionMatrix(1.0f);
+    projectionMatrix = glm::perspective(glm::radians(67.0f), 1.0f, 0.2f, 50.0f);
 
     while (!glfwWindowShouldClose(window)) {
         glClearColor(0.15f, 0.15f, 0.15f, 0.0f);
@@ -244,85 +177,59 @@ int main() {
 
         viewMatrix = camera->GetViewMatrix(); // camera movement
 
-        for( int i = 0; i < 10; i++)
+        for( int i = 0; i <  sizeof(stars)/ sizeof(stars[0]); i++)
         {
-            modelMatrix = glm::translate(glm::mat4(1.0f), cubePositions[i]);
-            modelMatrix = glm::scale(modelMatrix, glm::vec3(0.5f));
-            shaderProgram->use();
+            int num_segments= 360;
+            float theta;
+            theta = 2.0f * M_PI  / float(num_segments);
+            theta = theta * glfwGetTime()*300* (1/stars[i].RevolutionSpeed);
+            float revolution_x= stars[i].distance * cosf(theta);
+            float revolution_z= stars[i].distance * sinf(theta);
+            float Rotation_theta = (float)(glfwGetTime()*stars[i].RotationSpeed *1);
 
+            modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3(revolution_x, 0.0f, revolution_z)) *
+                                    glm::rotate(   glm::mat4(1.0f), Rotation_theta , glm::vec3(0.0f, 1.0f, 0.0f))*
+                                    glm::scale(glm::mat4(1.0f), glm::vec3(stars[i].size));
 
-            glActiveTexture(GL_TEXTURE0);// 0 号位开启 texture
-            glBindTexture(GL_TEXTURE_2D,texture);
+            glUseProgram(program);
+
             // matrix uniform
-            glUniformMatrix4fv(glGetUniformLocation(shaderProgram->ID,"u_ModelMat"),1,GL_FALSE,glm::value_ptr(modelMatrix));
-            glUniformMatrix4fv(glGetUniformLocation(shaderProgram->ID,"u_ViewMat"),1,GL_FALSE,glm::value_ptr(viewMatrix));
-            glUniformMatrix4fv(glGetUniformLocation(shaderProgram->ID,"u_ProjectionMat"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
+            glUniformMatrix4fv(glGetUniformLocation(program,"u_ModelMat"),1,GL_FALSE,glm::value_ptr(modelMatrix));
+            glUniformMatrix4fv(glGetUniformLocation(program,"u_ViewMat"),1,GL_FALSE,glm::value_ptr(viewMatrix));
+            glUniformMatrix4fv(glGetUniformLocation(program,"u_ProjectionMat"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"u_camera_Postion"), camera->Position.x,camera->Position.y,camera->Position.z,1.0f );
+            glUniform4f(glGetUniformLocation(program,"u_camera_Postion"), camera->Position.x,camera->Position.y,camera->Position.z,1.0f );
 
-            // light uniform
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"objColor"), 1.0f,1.0f,1.0f,1.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"ambinetColor"), 0.0f,0.0f,0.0f,0.0f ); //在没有光照面也能看到。。。
+            //------------------ 点光 ----------------------------//
+            glUniform4f(glGetUniformLocation(program,"lightP.pos"),lightP->Position.x,lightP->Position.y,lightP->Position.z,0.0f );
+            glUniform4f(glGetUniformLocation(program,"lightP.color"), lightP->Color.x, lightP->Color.y, lightP->Color.z,1.0f );
 
-            //------------------ 平行光 ----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightD.pos"),lightD->Position.x,lightD->Position.y,lightD->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightD.color"), lightD->Color.x, lightD->Color.y, lightD->Color.z,1.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightD.dirToLight"), lightD->Direction.x, lightD->Direction.y, lightD->Direction.z,0.0f );
-
-            //------------------ 点光 0----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP0.pos"),lightP0->Position.x,lightP0->Position.y,lightP0->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP0.color"), lightP0->Color.x, lightP0->Color.y, lightP0->Color.z,1.0f );
-//------------------ 点光 1 ----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP1.pos"),lightP1->Position.x,lightP1->Position.y,lightP1->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP1.color"), lightP1->Color.x, lightP1->Color.y, lightP1->Color.z,1.0f );
-//------------------ 点光 2----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP2.pos"),lightP2->Position.x,lightP2->Position.y,lightP2->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP2.color"), lightP2->Color.x, lightP2->Color.y, lightP2->Color.z,1.0f );
-//------------------ 点光 3----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP3.pos"),lightP3->Position.x,lightP3->Position.y,lightP3->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightP3.color"), lightP3->Color.x, lightP3->Color.y, lightP3->Color.z,1.0f );
-
-
-            //------------------  聚焦光 ----------------------------//
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightS.pos"),lightS->Position.x,lightS->Position.y,lightS->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightS.color"), lightS->Color.x, lightS->Color.y, lightS->Color.z,1.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightS.dirToLight"), lightS->Direction.x, lightS->Direction.y, lightS->Direction.z,0.0f );
-            glUniform1f(glGetUniformLocation(shaderProgram->ID,"lightS.cosPhyInner"), lightS->cosPhyInner );
-            glUniform1f(glGetUniformLocation(shaderProgram->ID,"lightS.cosPhyOuter"), lightS->cosPhyOuter );
-            /* // 聚焦光源
-             glUniform1f(glGetUniformLocation(shaderProgram->ID,"lightSpot.cosPhyInner"), light->cosPhyInner );
-             glUniform1f(glGetUniformLocation(shaderProgram->ID,"lightSpot.cosPhyOuter"), light->cosPhyOuter );*/
-
-
-
-            glActiveTexture(GL_TEXTURE0);// 0 号位开启 texture
-            glBindTexture(GL_TEXTURE_2D,texture);
-            glActiveTexture(GL_TEXTURE0 + 1);// 1 号位开启 texture2
-            glBindTexture(GL_TEXTURE_2D,texture2);
-            glUniform1i(glGetUniformLocation(shaderProgram->ID, "material_diffuse"), 0); // 手动设置
-            glUniform1i(glGetUniformLocation(shaderProgram->ID,"material_specular"), 1);
-
-
+            glActiveTexture(GL_TEXTURE0 );// 0 号位开启 texture
+            glBindTexture(GL_TEXTURE_2D,textureIDs[i]);
+//            glBindTexture(GL_TEXTURE_2D,texture4);
+            glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
             glBindVertexArray(VAO);
-//            glDrawArrays(GL_TRIANGLES, 0, 36);
             glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
         }
-//        cout <<"u_camera_Postion:"<<camera->Position.x <<","<< camera->Position.y <<","<< camera->Position.x <<" ; "<<endl;
+        //------------------ SUN 光源 ----------------------------//
 
-        lampShade->use();
-        glUniformMatrix4fv(glGetUniformLocation(lampShade->ID,"view"),1,GL_FALSE,glm::value_ptr(viewMatrix));
-        glUniformMatrix4fv(glGetUniformLocation(lampShade->ID,"projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
+        glUseProgram(sunProgram);
+        glUniformMatrix4fv(glGetUniformLocation(sunProgram,"u_View"),1,GL_FALSE,glm::value_ptr(viewMatrix));
+        glUniformMatrix4fv(glGetUniformLocation(sunProgram,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-        glm::mat4 lampModelMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(lightD->Position));
-        lampModelMatrix = glm::scale(lampModelMatrix, glm::vec3(0.2f));
-        glUniformMatrix4fv(glGetUniformLocation(lampShade->ID,"model"),1,GL_FALSE,glm::value_ptr(lampModelMatrix));
+        glm::mat4 lampModelMatrix = glm::translate(glm::mat4(1.0f),lightPos);
+        lampModelMatrix = glm::scale(lampModelMatrix, glm::vec3(Sun.size));
+        glUniformMatrix4fv(glGetUniformLocation(sunProgram,"u_Model"),1,GL_FALSE,glm::value_ptr(lampModelMatrix));
+
+        glActiveTexture(GL_TEXTURE0);// 0 号位开启 texture
+        glBindTexture(GL_TEXTURE_2D,textureSun);
+        glUniform1i( glGetUniformLocation(sunProgram, "textureSun"), 0);
+
 
         glBindVertexArray(lightVAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
-//        glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
-
-
+        glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+        //------------------ SUN 光源 done ----------------------------//
 
 
         glActiveTexture(GL_TEXTURE0);
@@ -346,26 +253,18 @@ int main() {
 
 //=========================================================================
 void processInput(GLFWwindow *window){
-    if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
-        glfwSetWindowShouldClose(window,true);
-    }
-
-    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
+    float Sense = 10.0f;
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){glfwSetWindowShouldClose(window,true);}
+    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =Sense;}
+    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -Sense;}
     else{camera->speedZ = 0;}
-    if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -1.0f;}
+    if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =Sense;}
+    else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -Sense;}
     else{camera->speedX = 0;}
     // Q下沉 E上浮
-    if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= 1.0f;}
+    if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-Sense;}
+    else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= Sense;}
     else{camera->speedY = 0;}
-
-   /*
-    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
-    else{camera->speedZ = 0;}*/
-
 }
 
 void mouse_callback(GLFWwindow* window, double xPos, double yPos){

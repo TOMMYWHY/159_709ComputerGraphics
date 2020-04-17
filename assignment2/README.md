@@ -40,4 +40,5 @@
 > 点光源 + 9 球  
 > todo： 发光太阳 土星白光
 > todo：太阳改成光源， 独立shader 独立 program
-> camera方向控制
+
+> ~~  camera方向控制 done	 ~~
