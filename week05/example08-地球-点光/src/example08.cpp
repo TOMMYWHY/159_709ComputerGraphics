@@ -158,7 +158,7 @@ int main() {
 	// ----------------------------------------
 	// Load Texture Map from file
 	int x, y, n;
-    GLuint texture = loadTexture2D("./images/EarthMap.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+    GLuint texture = loadTexture2D("./images/saturnmap.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
 
 

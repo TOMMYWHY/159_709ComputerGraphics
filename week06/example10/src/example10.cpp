@@ -246,7 +246,7 @@ int main() {
 	// Load Textures from File - Brick
 	GLuint texture  = loadTexture2D("./images/brick_diff.tga", x, y, n);
 	GLuint surface  = loadSurfaceTexture2D("./images/brick_norm.tga", "./images/brick_disp.png", x, y, n);
-	GLuint specular = loadTexture2D("./images/brick_spec.tga", x, y, n);
+	GLuint specular = loadTexture2D( "./images/brick_spec.tga", x, y, n);
 
 	// ----------------------------------------
 	// Use Program

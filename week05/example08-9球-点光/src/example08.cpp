@@ -99,7 +99,10 @@ struct STAR{
 STAR Sun = {"./images/sunmap.tga",          3.0f,   0.0f,   0.0f, 0.0f};
 STAR Mercury = {"./images/mercurymap.jpg",  .1f,    1.8f,   1.4f,0.87f};
 STAR Venus = {"./images/venusmap.jpg",      .3f,    2.5f,   1.3f,2.24f};
+
 STAR Earth = {"./images/EarthMap.jpg",      .8f,    4.0f,   1.0f,3.65f};
+
+
 STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    6.5f,   0.8f,6.86f};
 //STAR Jupiter = {"./images/jupitermap.jpg",  1.5f,   8.0f,   0.4f,23.32f};
 STAR Jupiter = {"./images/EarthMap.jpg",  2.5f,   8.0f,   0.4f,5.32f};
