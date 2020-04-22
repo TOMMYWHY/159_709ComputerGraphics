@@ -45,63 +45,63 @@ uniform float a = 27.89743616;
 // uniform float a = 32;
 
 void main () {
-	//----------------------------------------------
-	// Phong Reflection Model
-	//----------------------------------------------
-
-	// ---------- Calculate Vectors ----------
-	// Direction to Light (normalised)
-	vec4 l = normalize(-frag_Light_Direction);
-
-	// Surface Normal (normalised)
-	vec4 n = normalize(frag_Normal);
-
-	// Reflected Vector
-	vec4 r = reflect(-l, n);
-
-	// View Vector
-	vec4 v = normalize(-frag_Position);
-
-	// ---------- Calculate Terms ----------
-	// Ambient Term
-	vec4 Ta = Ka * Ia;
-
-	// Diffuse Term
-	vec4 Td = Kd * max(dot(l, n), 0.0) * Id;
-
-	// Specular Term
-	vec4 Ts = Ks * pow((max(dot(r, v), 0.0)), a) * Is;
+//	//----------------------------------------------
+//	// Phong Reflection Model
+//	//----------------------------------------------
+//
+//	// ---------- Calculate Vectors ----------
+//	// Direction to Light (normalised)
+//	vec4 l = normalize(-frag_Light_Direction);
+//
+//	// Surface Normal (normalised)
+//	vec4 n = normalize(frag_Normal);
+//
+//	// Reflected Vector
+//	vec4 r = reflect(-l, n);
+//
+//	// View Vector
+//	vec4 v = normalize(-frag_Position);
+//
+//	// ---------- Calculate Terms ----------
+//	// Ambient Term
+//	vec4 Ta = Ka * Ia;
+//
+//	// Diffuse Term
+//	vec4 Td = Kd * max(dot(l, n), 0.0) * Id;
+//
+//	// Specular Term
+//	vec4 Ts = Ks * pow((max(dot(r, v), 0.0)), a) * Is;
 
 	//----------------------------------------------
 	// Blinn-Phong Reflection Model
 	//----------------------------------------------
 
-	// // ---------- Calculate Vectors ----------
-	// // Direction to Light (normalised)
-	// vec4 l = normalize(-frag_Light_Direction);
+	 // ---------- Calculate Vectors ----------
+	 // Direction to Light (normalised)
+	 vec4 l = normalize(-frag_Light_Direction);
 
-	// // Surface Normal (normalised)
-	// vec4 n = normalize(frag_Normal);
+	 // Surface Normal (normalised)
+	 vec4 n = normalize(frag_Normal);
 
-	// // Reflected Vector
-	// // vec4 r = reflect(-l, n);
+	 // Reflected Vector
+	 // vec4 r = reflect(-l, n);
 
-	// // View Vector
-	// vec4 v = normalize(-frag_Position);
+	 // View Vector
+	 vec4 v = normalize(-frag_Position);
 
-	// // Half Vector
-	// vec4 h = normalize(l + v);
+	 // Half Vector
+	 vec4 h = normalize(l + v);
 
-	// // ---------- Calculate Terms ----------
-	// // Ambient Term
-	// vec4 Ta = Ka * Ia;
+	 // ---------- Calculate Terms ----------
+	 // Ambient Term
+	 vec4 Ta = Ka * Ia;
 
-	// // Diffuse Term
-	// vec4 Td = Kd * max(dot(l, n), 0.0) * Id;
+	 // Diffuse Term
+	 vec4 Td = Kd * max(dot(l, n), 0.0) * Id;
 
-	// // Specular Term
-	// // vec4 Ts = Ks * pow((max(dot(h, n), 0.0)), a) * Is;
-	// vec4 Ts = Ks * pow((max(dot(h, n), 0.0)), 4.0f*a) * Is;
+	 // Specular Term
+	 // vec4 Ts = Ks * pow((max(dot(h, n), 0.0)), a) * Is;
+	 vec4 Ts = Ks * pow((max(dot(h, n), 0.0)), 4.0f*a) * Is;
 
 	//----------------------------------------------
 	// Fragment Colour

@@ -47,7 +47,7 @@ void main () {
 				 frag_Normal    * normalMap.z, 0.0f);
 	}
 
-	// pixel_Colour = n; return;
+//	 pixel_Colour = n; return;
 	
 	// Direction to Light (normalised)
 	vec4 l = normalize(-frag_Light_Direction);

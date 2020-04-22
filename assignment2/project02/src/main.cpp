@@ -1,10 +1,15 @@
-//
-//  main.cpp
-//  opengl_test
-//
-//  Created by Tommy on 2020/4/13.
-//  Copyright © 2020 Tommy. All rights reserved.
-//
+/*
+ *  Assignment 2 , 159.709, 2020 S1
+ *  Family Name: JIANG , Given Name: TAO , Student ID:20004769,
+ *  Solar system:
+ *  Camera angle control: Mouse move
+ *  Camera movement control: A(left); D(right); W(forward); S(back); Q(rise); E(sink);
+ *  Pause function control: SPACE
+ *  Quit: ESC
+ *
+ * */
+
+
 
 #include <iostream>
 //#include <glad/glad.h>
@@ -23,7 +28,6 @@
 #include <vector>
 #include <stb_image.h>
 #include "geometry.h"
-#include "LightPoint.h"
 
 using namespace std;
 
@@ -33,29 +37,30 @@ void onFramebufferSize(GLFWwindow *window, int width, int height);
 
 //水星 金星 地球 火星 木星 土星 天王星//海王星
 struct STAR{
-    char url[128];
+    char texture_url[128];
+    char texture_bump[128];
     float size ;
     float distance ;
     float RotationSpeed; // rotation 自转
     float RevolutionSpeed; // revolution 公转
 //    glm::vec3 location;
 };
-STAR Sun = {"./images/sunmap.tga",          3.0f,   0.0f,   0.0f, 0.0f};
-STAR Mercury = {"./images/mercurymap.jpg",  .1f,    3.5f,   1.4f,3.87f};
-STAR Venus = {"./images/venusmap.jpg",      .3f,    4.5f,   1.3f,4.24f};
-STAR Earth = {"./images/EarthMap.jpg",      .8f,    6.0f,   1.0f,7.65f};
-STAR Mars = {"./images/mars_1k_color.jpg",  .4f,    7.5f,   0.8f,16.86f};
-STAR Jupiter = {"./images/jupitermap.jpg",  2.5f,   11.0f,   0.4f,25.32f};
-STAR Saturn = {"./images/saturnmap.jpg",    1.0f,   16.5f,   0.3f,40.0f};
-STAR Uranus = {"./images/uranusmap.jpg",    2.8f,   22.0f,   0.2f,80.0f};
-STAR Neptune = {"./images/neptunemap.jpg",  2.4f,   32.5f,   0.1f,100.0f};
+STAR Sun = {"./images/sunmap.tga","./images/sunmap.tga",            3.0f,   0.0f,   0.0f, 0.0f};
+STAR Mercury = {"./images/mercurymap.jpg","./images/mercurybump.jpg",.1f,    3.5f,   1.4f,3.87f};
+STAR Venus = {"./images/venusmap.jpg","./images/venusbump.jpg",      .3f,    4.5f,   1.3f,4.24f};
+STAR Earth = {"./images/earth_nightmap.jpg","./images/earth_specular_map.jpg",      .8f,    6.0f,   1.0f,7.65f};
+
+STAR Mars = {"./images/mars_1k_color.jpg","./images/mars_1k_color.jpg",.4f,    7.5f,   0.8f,16.86f};
+STAR Jupiter = {"./images/jupitermap.jpg","./images/jupitermap.jpg", 2.5f,   11.0f,   0.4f,25.32f};
+STAR Saturn = {"./images/saturnmap.jpg","./images/saturnmap.jpg",   1.0f,   16.5f,   0.3f,40.0f};
+STAR Uranus = {"./images/uranusmap.jpg","./images/uranusmap.jpg",2.8f,   22.0f,   0.2f,80.0f};
+STAR Neptune = {"./images/neptunemap.jpg","./images/neptunemap.jpg",   2.4f,   32.5f,   0.1f,100.0f};
 
 STAR stars[8] = {
         Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune
 };
 
 glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
-LightPoint * lightP = new LightPoint(lightPos,glm::vec3(1.0f,1.0f,1.0f));
 
 bool is_play = true;
 int timing = 0;
@@ -66,9 +71,9 @@ bool firstMouse = true;
 void processInput(GLFWwindow *window);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 // ----- mouse function-------//
+unsigned int loadCubemap(vector<std::string> faces);
 
-
-float skyboxVertices[] = {
+float skyboxVertices [] = {
         // positions
         -1.0f,  1.0f, -1.0f,
         -1.0f, -1.0f, -1.0f,
@@ -112,41 +117,9 @@ float skyboxVertices[] = {
         -1.0f, -1.0f,  1.0f,
         1.0f, -1.0f,  1.0f
 };
-unsigned int loadCubemap(vector<std::string> faces)
-{
-    unsigned int textureID;
-    glGenTextures(1, &textureID);
-    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
-
-    int width, height, nrChannels;
-    for (unsigned int i = 0; i < faces.size(); i++)
-    {
-        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
-        if (data)
-        {
-            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
-            stbi_image_free(data);
-        }
-        else
-        {
-            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
-            stbi_image_free(data);
-        }
-    }
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
-    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
-
-    return textureID;
-}
 
 #if 1
 int main() {
-
-    cout << "star[1]" << sizeof(stars)/ sizeof(stars[0])<<endl;
-
 
     if (!glfwInit()) {
         return 1;
@@ -169,24 +142,22 @@ int main() {
     glEnable(GL_DEPTH_TEST); //  Z buffer
     glDepthFunc(GL_LEQUAL);
 //    glEnable(GL_FRAMEBUFFER_SRGB);
-
     // ----------------------------------------
 
     GLuint program  = loadProgram("./shader/vert.glsl",NULL, NULL, NULL,"./shader/frag.glsl");
-    GLuint sunProgram  =loadProgram("./shader/lamp.vert.glsl",NULL, NULL, NULL, "./shader/lamp.frag.glsl");
+    GLuint sunProgram  =loadProgram("./shader/sun.vert.glsl",NULL, NULL, NULL, "./shader/sun.frag.glsl");
     GLuint skyboxProgram  =loadProgram("./shader/skybox.vert.glsl",NULL, NULL, NULL, "./shader/skybox.frag.glsl");
 
-// Vertex and Index buffers (host)
+// Vertex and Index buffers
     std::vector<glm::vec4> buffer;
     std::vector<glm::ivec3> indexes;
 
     // Create Textured sphere
-    createSphere(buffer, indexes,0.8f,50,50);
+    createSphere(buffer, indexes,0.8f,100,100);
 
     GLuint VBO = 0;
     GLuint EBO = 0;
-
-    GLuint VAO=0;
+    GLuint VAO = 0;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
@@ -215,16 +186,20 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
-    // ----------------------- textures  group------------------------------//
+    // ----------------------- texture  group------------------------------//
+    stbi_set_flip_vertically_on_load(true);
     int x,y,n;
     vector<GLuint> textureIDs;
+    vector<GLuint> texture_bumpIDs;
     for (int i = 0; i <  sizeof(stars)/ sizeof(stars[0]); i++) {
-        GLuint texture = loadTexture2D(stars[i].url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+        GLuint texture = loadTexture2D(stars[i].texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+        GLuint texture_bump = loadTexture2D(stars[i].texture_bump, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
         textureIDs.push_back(texture);
+        texture_bumpIDs.push_back(texture_bump);
     }
 
     // ----------------------- Sun single Light Source ------------------------------//
-    const char * texture_url_sun = "./images/sunmap.jpg";
+    const char * texture_url_sun = "./images/sunmap.tga";
     GLuint textureSun = loadTexture2D(texture_url_sun, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
     unsigned int lightVAO;
@@ -266,16 +241,6 @@ int main() {
                     "./images/back.png"
             };
     unsigned int cubemapTexture = loadCubemap(faces);
-
-
-
-//    glUseProgram(sunProgram);
-//    glUniform1i( glGetUniformLocation(sunProgram, "textureSun"), 0);
-//
-//
-//    glUseProgram(skyboxProgram);
-//    glUniform1i( glGetUniformLocation(skyboxProgram, "skybox"), 0);
-
 
 
     // ================Matrix======================//
@@ -338,16 +303,21 @@ int main() {
             glUniformMatrix4fv(glGetUniformLocation(program,"u_ViewMat"),1,GL_FALSE,glm::value_ptr(viewMatrix));
             glUniformMatrix4fv(glGetUniformLocation(program,"u_ProjectionMat"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-            glUniform4f(glGetUniformLocation(program,"u_camera_Postion"), camera->Position.x,camera->Position.y,camera->Position.z,1.0f );
+//            glUniform4f(glGetUniformLocation(program,"u_camera_Postion"), camera->Position.x,camera->Position.y,camera->Position.z,1.0f );
 
             //------------------ 点光 ----------------------------//
-            glUniform4f(glGetUniformLocation(program,"lightP.pos"),lightP->Position.x,lightP->Position.y,lightP->Position.z,0.0f );
-            glUniform4f(glGetUniformLocation(program,"lightP.color"), lightP->Color.x, lightP->Color.y, lightP->Color.z,1.0f );
+//            glUniform4f(glGetUniformLocation(program,"lightP.pos"),lightPos.x,lightPos.y,lightPos.z,0.0f );
+//            glUniform4f(glGetUniformLocation(program,"lightP.color"), 1.0f,1.0f,1.0f,1.0f );
 
             glActiveTexture(GL_TEXTURE0 );// 0 号位开启 texture
             glBindTexture(GL_TEXTURE_2D,textureIDs[i]);
+
+            glActiveTexture(GL_TEXTURE1 );// 0 号位开启 texture
+            glBindTexture(GL_TEXTURE_2D,texture_bumpIDs[i]);
+
 //            glBindTexture(GL_TEXTURE_2D,texture4);
             glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
+            glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture
             glBindVertexArray(VAO);
             glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
@@ -389,7 +359,37 @@ int main() {
     return 0;
 }
 #endif
+//=============================skybox============================================
 
+unsigned int loadCubemap(vector<std::string> faces)
+{
+    unsigned int textureID;
+    glGenTextures(1, &textureID);
+    glBindTexture(GL_TEXTURE_CUBE_MAP, textureID);
+
+    int width, height, nrChannels;
+    for (unsigned int i = 0; i < faces.size(); i++)
+    {
+        unsigned char *data = stbi_load(faces[i].c_str(), &width, &height, &nrChannels, 0);
+        if (data)
+        {
+            glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+            stbi_image_free(data);
+        }
+        else
+        {
+            std::cout << "Cubemap texture failed to load at path: " << faces[i] << std::endl;
+            stbi_image_free(data);
+        }
+    }
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+
+    return textureID;
+}
 
 
 //=========================================================================
@@ -406,7 +406,7 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-Sense;}
     else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= Sense;}
     else{camera->speedY = 0;}
-    if(glfwGetKey(window, GLFW_KEY_P)==GLFW_PRESS){
+    if(glfwGetKey(window, GLFW_KEY_SPACE)==GLFW_PRESS){
         is_play = !is_play;
     }
 }
@@ -427,6 +427,9 @@ void mouse_callback(GLFWwindow* window, double xPos, double yPos){
 }
 
 //=========================================================================
+
+
+
 
 // Called on Error Event
 void onError(int error, const char *description) {

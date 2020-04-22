@@ -41,7 +41,7 @@ void main() {
 						  tangent.z, bitangent.z, normal.z, 0,
 						  0,         0,           0,        1);
 
-	// Inverse Tangent Matrix
+	// Inverse Tangent Matrix 转置矩阵
 	i_Tangent = transpose(m_Tangent);
 
 	//----------------------------------------------
