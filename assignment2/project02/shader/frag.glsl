@@ -33,8 +33,8 @@ void main()
 //	vec4 Ka = texture(material_specular, frag_UV.xy);
 //	vec4 Ka = vec4(1.0f, 1.0f, 1.0f, 0.1f);
 	vec4 Kd = Ka;
-	vec4 Ks = vec4(1.0f, 1.0f, 1.0f, 0.1f);
-//	vec4 Ks = texture(material_specular, frag_UV.xy); // specular effect not working
+//	vec4 Ks = vec4(1.0f, 1.0f, 1.0f, 0.1f);
+	vec4 Ks = texture(material_specular, frag_UV.xy); // specular effect not working
 
 
 	vec4 uNormal = normalize(frag_Normal);
