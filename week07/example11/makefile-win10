@@ -1,0 +1,25 @@
+# Makefile Settings
+headers = -I./GLFW/include/ -I./GLEW/include/ -I./include/
+libs = -L./GLFW/lib/ -L./GLEW/lib/ -lglew32 -lglfw3 -lopengl32 -lgdi32
+build = ./obj/
+src = ./src/
+cc = g++ -O3
+
+# Example
+example = example11
+
+# Example Objects
+objects := $(patsubst ${src}/%.cpp,${build}/%.o,$(wildcard ${src}/*.cpp))
+
+# Build Rule
+${example} : ${objects}
+	${cc} -o ${example} ${objects} ${libs} ${frameworks}
+
+# Object Build Rule
+${build}/%.o : ${src}/%.cpp
+	$(cc) -o $@ -c $^ ${headers} ${frameworks}
+
+# Clean
+clean:
+	del ${build}/*.o
+	del ${example}
