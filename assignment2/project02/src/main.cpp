@@ -7,6 +7,9 @@
  *      Pause function control: SPACE
  *      Quit: ESC
  *
+ *  Improving plausibility and realistic depends on the quality of the texture map resource.
+ *  Using diffuse texture to replace temporarily.
+ *
  * */
 
 
@@ -39,24 +42,26 @@ void onFramebufferSize(GLFWwindow *window, int width, int height);
 float controlSense = 10.0f;
 
 struct STAR{
-    char texture_url[128];
-    char texture_bump[128];
+    char texture_texture[128];
     char texture_specular[128];
+    char texture_normal[128];
     float size ;
     float distance ;
-    float RotationSpeed; // rotation 自转
-    float RevolutionSpeed; // revolution 公转
+    float RotationSpeed; // rotation
+    float RevolutionSpeed; // revolution
 };
-STAR Sun = {"./images/sunmap.tga",          "./images/sunmap.tga",      "./images/sunmap.tga",                  3.0f,   0.0f,   0.0f, 0.0f};
-STAR Mercury = {"./images/mercurymap.jpg",  "./images/mercurybump.jpg", "./images/mercury_sepc.jpg",  .1f,    3.5f,   1.4f,3.87f};
-STAR Venus = {"./images/venusmap.jpg",      "./images/venusbump.jpg",   "./images/venusbump.jpg",         .3f,    4.5f,   1.3f,4.24f};
-STAR Earth = {"./images/earth_nightmap.jpg","./images/earthbump.jpg",   "./images/earthspec1k.jpg",.8f,    6.0f,   1.0f,7.65f};
-STAR Mars = {"./images/mars_1k_color.jpg",  "./images/mars_1k_color.jpg","./images/rgbmars-spec-2k.jpg",  .4f,    7.5f,   0.8f,16.86f};
-STAR Jupiter = {"./images/jupitermap.jpg",  "./images/jupitermap.jpg",  "./images/jupiter_sepc.png",   2.5f,   11.0f,   0.4f,25.32f};
+STAR Sun = {"./images/sunmap.tga",          "./images/sunmap.tga",      "./images/sunmap.tga",         3.0f,    0.0f,   0.0f, 0.0f};
+STAR Mercury = {"./images/mercurymap.jpg",  "./images/mercurybump.jpg", "./images/mercury_sepc.jpg",    .1f,    3.5f,   1.4f,3.87f};
+STAR Venus = {"./images/venusmap.jpg",      "./images/venusbump.jpg",   "./images/venusbump.jpg",       .3f,    4.5f,   1.3f,4.24f};
+
+STAR Earth = {"./images/earth_nightmap.jpg","./images/earthbump.jpg",   "./images/earthspec1k.jpg",     .8f,    6.0f,   1.0f,7.65f};
+//STAR Earth = {"./images/EarthMap.jpg","./images/earthbump.jpg",   "./images/earth_specular_map.tif",     .8f,    6.0f,   1.0f,7.65f};
+
+STAR Mars = {"./images/mars_1k_color.jpg",  "./images/mars_1k_color.jpg","./images/rgbmars-spec-2k.jpg",.4f,    7.5f,   0.8f,16.86f};
+STAR Jupiter = {"./images/jupitermap.jpg",   "./images/jupitermap.jpg",  "./images/jupiter_sepc.png",   2.5f,   11.0f,   0.4f,25.32f};
 STAR Saturn = {"./images/saturnmap.jpg",    "./images/saturnmap.jpg",   "./images/saturnmap.jpg",      1.0f,   16.5f,   0.3f,40.0f};
-STAR Uranus = {"./images/uranusmap.jpg",    "./images/uranusmap.jpg",   "./images/uranusmap.jpg",       2.8f,   22.0f,   0.2f,80.0f};
-STAR Neptune = {"./images/neptunemap.jpg",  "./images/neptunemap.jpg",  "./images/neptunemap.jpg",   2.4f,   32.5f,   0.1f,100.0f};
-//水星 金星 地球 火星 木星 土星 天王星 海王星
+STAR Uranus = {"./images/uranusmap.jpg",    "./images/uranusmap.jpg",   "./images/uranusmap.jpg",      2.8f,   22.0f,   0.2f,80.0f};
+STAR Neptune = {"./images/neptunemap.jpg",  "./images/neptunemap.jpg",  "./images/neptunemap.jpg",     2.4f,   32.5f,   0.1f,100.0f};
 STAR stars[8] = { Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune};
 
 /** control play **/
@@ -196,14 +201,15 @@ int main() {
     stbi_set_flip_vertically_on_load(true);
     int x,y,n;
     vector<GLuint> textureIDs;
-    vector<GLuint> texture_bumpIDs;
     vector<GLuint> texture_specularIDs;
+    vector<GLuint> texture_normalIDs;
     for (int i = 0; i <  sizeof(stars)/ sizeof(stars[0]); i++) {
-        GLuint texture = loadTexture2D(stars[i].texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-        GLuint texture_bump = loadTexture2D(stars[i].texture_bump, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+        GLuint texture = loadTexture2D(stars[i].texture_texture, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
         GLuint texture_specular = loadTexture2D(stars[i].texture_specular, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+        GLuint texture_normal = loadTexture2D(stars[i].texture_normal, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
         textureIDs.push_back(texture);
-        texture_bumpIDs.push_back(texture_bump);
+        texture_specularIDs.push_back(texture_specular);
+//        texture_normalIDs.push_back(texture_bump);
     }
 
     // ----------------------- Sun single Light Source ------------------------------//
@@ -298,7 +304,12 @@ int main() {
             glBindTexture(GL_TEXTURE_2D,textureIDs[i]);
 
             glActiveTexture(GL_TEXTURE1 );// 1  texture
-            glBindTexture(GL_TEXTURE_2D,texture_bumpIDs[i]);
+//            glBindTexture(GL_TEXTURE_2D,texture_bumpIDs[i]);
+            glBindTexture(GL_TEXTURE_2D,texture_specularIDs[i]);
+
+            glActiveTexture(GL_TEXTURE2 );// 1  texture normal
+//            glBindTexture(GL_TEXTURE_2D,texture_bumpIDs[i]);
+//            glBindTexture(GL_TEXTURE_2D,texture_specularIDs[i]);
 
             glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
             glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture

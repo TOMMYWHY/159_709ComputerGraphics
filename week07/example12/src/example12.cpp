@@ -81,8 +81,8 @@ void onFramebufferSize(GLFWwindow *window, int width, int height) {
 // orientation_mode mode = GIMBAL;
 // orientation_mode mode = GLOBAL_MATRIX;
 // orientation_mode mode = LOCAL_MATRIX;
-orientation_mode mode = GLOBAL_QUATERNION;
-// orientation_mode mode = LOCAL_QUATERNION;
+//orientation_mode mode = GLOBAL_QUATERNION;
+ orientation_mode mode = LOCAL_QUATERNION;
 
 void update_keyboard(GLFWwindow *window, glm::mat4 &modelMatrix, float dt) {
 	// Gimbal

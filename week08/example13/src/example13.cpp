@@ -147,7 +147,7 @@ int main() {
 	// ----------------------------------------
 	// Camera
 	// ----------------------------------------
-	// camera = new FreeLookCamera(window);
+//	 camera = new FreeLookCamera(window);
 	camera = new GimbalFreeLookCamera(window);
 
 	// ----------------------------------------
