@@ -54,7 +54,7 @@ STAR Sun = {"./images/sunmap.tga",          "./images/sunmap.tga",      "./image
 STAR Mercury = {"./images/mercurymap.jpg",  "./images/mercurybump.jpg", "./images/mercury_sepc.jpg",    .1f,    3.5f,   1.4f,3.87f};
 STAR Venus = {"./images/venusmap.jpg",      "./images/venusbump.jpg",   "./images/venusbump.jpg",       .3f,    4.5f,   1.3f,4.24f};
 
-STAR Earth = {"./images/earth_nightmap.jpg","./images/earthbump.jpg",   "./images/earthspec1k.jpg",     .8f,    6.0f,   1.0f,7.65f};
+STAR Earth = {"./images/earth_nightmap.jpg","./images/earthbump.jpg",   "./images/Earth_Normal_Map_1.jpg",     .8f,    6.0f,   1.0f,7.65f};
 //STAR Earth = {"./images/EarthMap.jpg","./images/earthbump.jpg",   "./images/earth_specular_map.tif",     .8f,    6.0f,   1.0f,7.65f};
 
 STAR Mars = {"./images/mars_1k_color.jpg",  "./images/mars_1k_color.jpg","./images/rgbmars-spec-2k.jpg",.4f,    7.5f,   0.8f,16.86f};
@@ -209,7 +209,7 @@ int main() {
         GLuint texture_normal = loadTexture2D(stars[i].texture_normal, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
         textureIDs.push_back(texture);
         texture_specularIDs.push_back(texture_specular);
-//        texture_normalIDs.push_back(texture_bump);
+        texture_normalIDs.push_back(texture_normal);
     }
 
     // ----------------------- Sun single Light Source ------------------------------//
@@ -309,10 +309,11 @@ int main() {
 
             glActiveTexture(GL_TEXTURE2 );// 1  texture normal
 //            glBindTexture(GL_TEXTURE_2D,texture_bumpIDs[i]);
-//            glBindTexture(GL_TEXTURE_2D,texture_specularIDs[i]);
+            glBindTexture(GL_TEXTURE_2D,texture_normalIDs[i]);
 
             glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
             glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture
+//            glUniform1i(glGetUniformLocation(program, "material_Normal"), 2); // texture
             glBindVertexArray(VAO);
             glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 

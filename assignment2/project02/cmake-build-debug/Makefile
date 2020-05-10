@@ -48,10 +48,10 @@ RM = "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox
+CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named opengl_demo
+# Target rules for targets named project02
 
 # Build rule for target.
-opengl_demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 opengl_demo
-.PHONY : opengl_demo
+project02: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 project02
+.PHONY : project02
 
 # fast build rule for target.
-opengl_demo/fast:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/build
-.PHONY : opengl_demo/fast
+project02/fast:
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/build
+.PHONY : project02/fast
 
 src/Camera.o: src/Camera.cpp.o
 
@@ -129,7 +129,7 @@ src/Camera.o: src/Camera.cpp.o
 
 # target to build an object file
 src/Camera.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Camera.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/Camera.cpp.o
 .PHONY : src/Camera.cpp.o
 
 src/Camera.i: src/Camera.cpp.i
@@ -138,7 +138,7 @@ src/Camera.i: src/Camera.cpp.i
 
 # target to preprocess a source file
 src/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Camera.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/Camera.cpp.i
 .PHONY : src/Camera.cpp.i
 
 src/Camera.s: src/Camera.cpp.s
@@ -147,7 +147,7 @@ src/Camera.s: src/Camera.cpp.s
 
 # target to generate assembly for a file
 src/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Camera.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/Camera.cpp.s
 .PHONY : src/Camera.cpp.s
 
 src/geometry.o: src/geometry.cpp.o
@@ -156,7 +156,7 @@ src/geometry.o: src/geometry.cpp.o
 
 # target to build an object file
 src/geometry.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/geometry.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/geometry.cpp.o
 .PHONY : src/geometry.cpp.o
 
 src/geometry.i: src/geometry.cpp.i
@@ -165,7 +165,7 @@ src/geometry.i: src/geometry.cpp.i
 
 # target to preprocess a source file
 src/geometry.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/geometry.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/geometry.cpp.i
 .PHONY : src/geometry.cpp.i
 
 src/geometry.s: src/geometry.cpp.s
@@ -174,7 +174,7 @@ src/geometry.s: src/geometry.cpp.s
 
 # target to generate assembly for a file
 src/geometry.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/geometry.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/geometry.cpp.s
 .PHONY : src/geometry.cpp.s
 
 src/image.o: src/image.cpp.o
@@ -183,7 +183,7 @@ src/image.o: src/image.cpp.o
 
 # target to build an object file
 src/image.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/image.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/image.cpp.o
 .PHONY : src/image.cpp.o
 
 src/image.i: src/image.cpp.i
@@ -192,7 +192,7 @@ src/image.i: src/image.cpp.i
 
 # target to preprocess a source file
 src/image.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/image.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/image.cpp.i
 .PHONY : src/image.cpp.i
 
 src/image.s: src/image.cpp.s
@@ -201,7 +201,7 @@ src/image.s: src/image.cpp.s
 
 # target to generate assembly for a file
 src/image.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/image.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/image.cpp.s
 .PHONY : src/image.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -210,7 +210,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/main.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -219,7 +219,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/main.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -228,7 +228,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/main.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/shader.o: src/shader.cpp.o
@@ -237,7 +237,7 @@ src/shader.o: src/shader.cpp.o
 
 # target to build an object file
 src/shader.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/shader.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/shader.cpp.o
 .PHONY : src/shader.cpp.o
 
 src/shader.i: src/shader.cpp.i
@@ -246,7 +246,7 @@ src/shader.i: src/shader.cpp.i
 
 # target to preprocess a source file
 src/shader.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/shader.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/shader.cpp.i
 .PHONY : src/shader.cpp.i
 
 src/shader.s: src/shader.cpp.s
@@ -255,7 +255,7 @@ src/shader.s: src/shader.cpp.s
 
 # target to generate assembly for a file
 src/shader.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/shader.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/shader.cpp.s
 .PHONY : src/shader.cpp.s
 
 src/utils.o: src/utils.cpp.o
@@ -264,7 +264,7 @@ src/utils.o: src/utils.cpp.o
 
 # target to build an object file
 src/utils.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/utils.cpp.o
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/utils.cpp.o
 .PHONY : src/utils.cpp.o
 
 src/utils.i: src/utils.cpp.i
@@ -273,7 +273,7 @@ src/utils.i: src/utils.cpp.i
 
 # target to preprocess a source file
 src/utils.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/utils.cpp.i
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/utils.cpp.i
 .PHONY : src/utils.cpp.i
 
 src/utils.s: src/utils.cpp.s
@@ -282,7 +282,7 @@ src/utils.s: src/utils.cpp.s
 
 # target to generate assembly for a file
 src/utils.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/utils.cpp.s
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/src/utils.cpp.s
 .PHONY : src/utils.cpp.s
 
 # Help Target
@@ -293,7 +293,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... opengl_demo"
+	@echo "... project02"
 	@echo "... src/Camera.o"
 	@echo "... src/Camera.i"
 	@echo "... src/Camera.s"

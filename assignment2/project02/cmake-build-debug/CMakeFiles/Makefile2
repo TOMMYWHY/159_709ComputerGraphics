@@ -44,21 +44,21 @@ RM = "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox
+CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/opengl_demo.dir/all
+all: CMakeFiles/project02.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/opengl_demo.dir/clean
+clean: CMakeFiles/project02.dir/clean
 
 .PHONY : clean
 
@@ -68,31 +68,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/opengl_demo.dir
+# Target rules for target CMakeFiles/project02.dir
 
 # All Build rule for target.
-CMakeFiles/opengl_demo.dir/all:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/depend
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target opengl_demo"
-.PHONY : CMakeFiles/opengl_demo.dir/all
+CMakeFiles/project02.dir/all:
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/depend
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target project02"
+.PHONY : CMakeFiles/project02.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/opengl_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/opengl_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02backup-skybox/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/opengl_demo.dir/rule
+CMakeFiles/project02.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/project02.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment2/project02/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/project02.dir/rule
 
 # Convenience name for target.
-opengl_demo: CMakeFiles/opengl_demo.dir/rule
+project02: CMakeFiles/project02.dir/rule
 
-.PHONY : opengl_demo
+.PHONY : project02
 
 # clean rule for target.
-CMakeFiles/opengl_demo.dir/clean:
-	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/clean
-.PHONY : CMakeFiles/opengl_demo.dir/clean
+CMakeFiles/project02.dir/clean:
+	$(MAKE) -f CMakeFiles/project02.dir/build.make CMakeFiles/project02.dir/clean
+.PHONY : CMakeFiles/project02.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

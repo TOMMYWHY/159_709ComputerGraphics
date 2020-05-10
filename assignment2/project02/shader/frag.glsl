@@ -20,6 +20,7 @@ uniform float light_quadratic = 0.032f;
 
 uniform sampler2D material_diffuse ;
 uniform sampler2D material_specular ;
+uniform sampler2D material_Normal;
 //uniform vec4 material_specular =vec4(1.0f, 1.0f, 1.0f, 0.1f);
 uniform float material_shininess = 32.89743616;
 //uniform float material_shininess = 128.89743616;
@@ -38,6 +39,8 @@ void main()
 
 
 	vec4 uNormal = normalize(frag_Normal);
+//	vec4 uNormal= vec4(normalize(texture(material_Normal, frag_UV.xy).rgb * 2.0f - 1.0f), 0.0f);
+
 	vec4 lightDir   = normalize(light_postion - frag_Position);
 	vec4 viewDir    = normalize( - frag_Position);
 	vec4 halfwayDir = normalize(lightDir + viewDir);
