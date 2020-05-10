@@ -238,9 +238,7 @@ int main() {
 
 
     // ----------------------- sky box ------------------------------//
-    std::vector<glm::vec4> skybox_buffer;
-    std::vector<glm::ivec3> skybox_indexes;
-    createSkybox(skybox_buffer, skybox_indexes);
+
     unsigned int skyboxVAO, skyboxVBO,skyboxEBO;
     glGenVertexArrays(1, &skyboxVAO);
     glGenBuffers(1, &skyboxVBO);
@@ -249,17 +247,9 @@ int main() {
     glBindBuffer(GL_ARRAY_BUFFER, skyboxVBO);
     glBindBuffer(GL_ARRAY_BUFFER, skyboxEBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(skyboxVertices), &skyboxVertices, GL_STATIC_DRAW);
-//    glBufferData(GL_ARRAY_BUFFER, skybox_buffer.size() * sizeof(glm::vec4), skybox_buffer.data(), GL_STATIC_DRAW);
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, skybox_indexes.size() * sizeof(glm::ivec3), skybox_indexes.data(), GL_STATIC_DRAW);
-
-
     GLuint skybox_posLoc = glGetAttribLocation(skyboxProgram, "vert_Position");
-
     glVertexAttribPointer(skybox_posLoc, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-//    glVertexAttribPointer(skybox_posLoc, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), NULL);
-
     glEnableVertexAttribArray(skybox_posLoc);
-
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
@@ -291,11 +281,6 @@ int main() {
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_CUBE_MAP, skeyboxTexture);
         glDrawArrays(GL_TRIANGLES, 0, 36);
-
-//        glDrawElements(GL_TRIANGLES, skybox_indexes.size() * 3, GL_UNSIGNED_INT, NULL);
-
-
-
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
         glBindVertexArray(0);
