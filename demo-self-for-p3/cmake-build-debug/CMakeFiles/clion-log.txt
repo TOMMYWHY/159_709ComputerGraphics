@@ -1,0 +1,5 @@
+"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3
+-- Configuring done
+WARNING: Target "opengl_demo" requests linking to directory "/usr/local/Cellar/assimp/5.0.1/lib".  Targets may link only to libraries.  CMake is dropping the item.
+-- Generating done
+-- Build files have been written to: /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug
