@@ -6,20 +6,26 @@ set(CMAKE_CXX_STANDARD 14)
 #set(GLEW_H /usr/local/Cellar/glew/2.1.0/include)
 set(GLFW_H /usr/local/Cellar/glfw/3.3/include)
 set(GLM_H /usr/local/Cellar/glm/0.9.9.5/include)
-set(ASSIMP_H /usr/local/Cellar/assimp/5.0.1/include)
-
-
+#set(ASSIMP_H /usr/local/Cellar/assimp/5.0.1/include)
 include_directories(${GLEW_H} ${GLFW_H} ${GLM_H} ${ASSIMP_H})
 
 # 添加目标链接
 #set(GLEW_LINK /usr/local/Cellar/glew/2.1.0/lib/libGLEW.2.1.dylib)
 set(GLFW_LINK /usr/local/Cellar/glfw/3.3/lib/libglfw.3.dylib)
-set(ASSIMP_LINK /usr/local/Cellar/assimp/5.0.1/lib)
+#set(ASSIMP_LINK /usr/local/Cellar/assimp/5.0.1/lib)
 
 link_libraries(${OPENGL} ${GLEW_LINK} ${GLFW_LINK} ${ASSIMP_LINK})
 
+#assimp
+option(ASSIMP_BUILD_ASSIMP_TOOLS OFF)
+option(ASSIMP_BUILD_SAMPLES OFF)
+option(ASSIMP_BUILD_TESTS OFF)
+add_subdirectory(external/assimp)
 
-include_directories(include/)
+
+
+include_directories(include/ external/assimp/include/)
+
 
 # --- exmaple5 ---#
 set(SHADERS shader)
@@ -36,7 +42,7 @@ add_definitions(-DGLFW_INCLUDE_NONE
 
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_SHADERS}${EXTERNAL_SOURCES}
-        src/Shade.cpp include/Shade.h src/Camera.cpp include/Camera.h src/LightDirectional.cpp include/LightDirectional.h src/LightPoint.cpp include/LightPoint.h src/LightSpot.cpp include/LightSpot.h src/Mesh.cpp include/Mesh.h)
+        src/Shade.cpp include/Shade.h src/Camera.cpp include/Camera.h src/LightDirectional.cpp include/LightDirectional.h src/LightPoint.cpp include/LightPoint.h src/LightSpot.cpp include/LightSpot.h src/Mesh.cpp include/Mesh.h src/Model.cpp include/Model.h)
 
 
 
@@ -45,12 +51,17 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_BINARY_DIR}/${PROJECT_NAME}_Release)
 
 
+target_link_libraries(${PROJECT_NAME} assimp
+        ${GLFW_LIBRARIES} ${GLAD_LIBRARIES})
+
 
 
 # mac下这步很重要
 if (APPLE)
     target_link_libraries(${PROJECT_NAME}  "-framework OpenGL")
     target_link_libraries(${PROJECT_NAME}  "-framework GLUT")
+    target_link_libraries(${PROJECT_NAME} ${ASSIMP_LIBRARIES})
+
 
 endif()
 
@@ -71,3 +82,4 @@ add_custom_command(TARGET ${PROJECT_NAME}
         ${CMAKE_SOURCE_DIR}/images
         $<TARGET_FILE_DIR:${PROJECT_NAME}>/images)
 
+# todo 读取 obj

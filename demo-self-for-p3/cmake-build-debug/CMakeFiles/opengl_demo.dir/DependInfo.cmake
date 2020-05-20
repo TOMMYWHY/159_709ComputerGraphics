@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/LightPoint.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/LightSpot.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/LightSpot.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/Mesh.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/Mesh.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/Model.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/Model.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/Shade.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/Shade.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/geometry.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/geometry.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/src/image.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/opengl_demo.dir/src/image.cpp.o"
@@ -28,12 +29,14 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/local/Cellar/glfw/3.3/include"
   "/usr/local/Cellar/glm/0.9.9.5/include"
-  "/usr/local/Cellar/assimp/5.0.1/include"
   "../include"
+  "../external/assimp/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/CMakeFiles/assimp.dir/DependInfo.cmake"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

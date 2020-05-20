@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/opengl_demo.dir/src/LightPoint.cpp.o"
   "CMakeFiles/opengl_demo.dir/src/LightSpot.cpp.o"
   "CMakeFiles/opengl_demo.dir/src/Mesh.cpp.o"
+  "CMakeFiles/opengl_demo.dir/src/Model.cpp.o"
   "CMakeFiles/opengl_demo.dir/src/Shade.cpp.o"
   "CMakeFiles/opengl_demo.dir/src/geometry.cpp.o"
   "CMakeFiles/opengl_demo.dir/src/image.cpp.o"

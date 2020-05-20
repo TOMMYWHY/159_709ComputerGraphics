@@ -6,5 +6,5 @@ CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sd
 
 CXX_DEFINES = -DGLFW_INCLUDE_NONE -DPROJECT_SOURCE_DIR=\"/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3\"
 
-CXX_INCLUDES = -I/usr/local/Cellar/glfw/3.3/include -I/usr/local/Cellar/glm/0.9.9.5/include -I/usr/local/Cellar/assimp/5.0.1/include -I/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/include 
+CXX_INCLUDES = -I/usr/local/Cellar/glfw/3.3/include -I/usr/local/Cellar/glm/0.9.9.5/include -I/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/include -I/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include 
 

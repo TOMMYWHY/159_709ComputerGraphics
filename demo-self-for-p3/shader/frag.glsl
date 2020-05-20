@@ -172,8 +172,8 @@ void main()
 */
 
 
-//	pixel_Colour = finalResult;
-	pixel_Colour = vec4(1.0,1.0,1.0,1.0);
+	pixel_Colour = finalResult;
+//	pixel_Colour = vec4(1.0,1.0,1.0,1.0);
 
 
 	//	pixel_Colour = objColor * ambinetColor;

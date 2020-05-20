@@ -1,5 +1,38 @@
 "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3
--- Configuring done
-WARNING: Target "opengl_demo" requests linking to directory "/usr/local/Cellar/assimp/5.0.1/lib".  Targets may link only to libraries.  CMake is dropping the item.
--- Generating done
--- Build files have been written to: /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug
+-- Shared libraries enabled
+CMake Error at external/assimp/CMakeLists.txt:269 (INCLUDE):
+  INCLUDE could not find load file:
+
+    FindPkgMacros
+
+
+CMake Error at external/assimp/CMakeLists.txt:270 (INCLUDE):
+  INCLUDE could not find load file:
+
+    PrecompiledHeader
+
+
+CMake Warning at external/assimp/CMakeLists.txt:309 (FIND_PACKAGE):
+  By not providing "FindDirectX.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "DirectX", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "DirectX" with any
+  of the following names:
+
+    DirectXConfig.cmake
+    directx-config.cmake
+
+  Add the installation prefix of "DirectX" to CMAKE_PREFIX_PATH or set
+  "DirectX_DIR" to a directory containing one of the above files.  If
+  "DirectX" provides a separate development package or SDK, be sure it has
+  been installed.
+
+
+-- Found ZLIB: /usr/lib/libz.dylib (found version "1.2.11") 
+CMake Error at external/assimp/CMakeLists.txt:343 (use_pkgconfig):
+  Unknown CMake command "use_pkgconfig".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/CMakeFiles/CMakeOutput.log".

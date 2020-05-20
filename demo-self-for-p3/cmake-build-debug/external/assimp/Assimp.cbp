@@ -1,0 +1,1692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Assimp"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="clang"/>
+		<Option virtualFolders="CMake Files\;CMake Files\external\;CMake Files\external\assimp\;CMake Files\external\assimp\include\;CMake Files\external\assimp\include\assimp\;CMake Files\external\assimp\cmake-modules\;CMake Files\external\assimp\contrib\;CMake Files\external\assimp\contrib\irrXML\;CMake Files\external\assimp\code\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="uninstall">
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 uninstall"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IrrXML">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/libIrrXMLd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/."/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 IrrXML"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IrrXML/fast">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/libIrrXMLd.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/."/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 IrrXML/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/contrib/irrXML/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/libassimpd.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DASSIMP_BUILD_DLL_EXPORT"/>
+					<Add option="-DOPENDDLPARSER_BUILD"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/."/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/rapidjson/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/unzip"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/openddlparser/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 assimp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="assimp/fast">
+				<Option output="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/libassimpd.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="clang"/>
+				<Compiler>
+					<Add option="-DOPENDDL_NO_USE_CPP11"/>
+					<Add option="-DASSIMP_BUILD_NO_OWN_ZLIB"/>
+					<Add option="-DASSIMP_BUILD_NO_C4D_IMPORTER"/>
+					<Add option="-DASSIMP_BUILD_DLL_EXPORT"/>
+					<Add option="-DOPENDDLPARSER_BUILD"/>
+					<Add directory="/usr/local/Cellar/glfw/3.3/include"/>
+					<Add directory="/usr/local/Cellar/glm/0.9.9.5/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/."/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/rapidjson/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/unzip"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/../contrib/openddlparser/include"/>
+					<Add directory="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/.."/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 assimp/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/code/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/cmake-build-debug/external/assimp/include/assimp/config.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSConverter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3DSLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/3MFXmlTags.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ACLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ACLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter_Geometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter_Macro.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter_Material.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter_Node.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AMFImporter_Postprocess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ASELoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ASELoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ASEParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ASEParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssbinExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssbinExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssbinLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssbinLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Assimp.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssimpCExport.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssxmlExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/AssxmlExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/B3DImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/B3DImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BVHLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BVHLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BaseImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BaseProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BaseProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Bitmap.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderBMesh.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderBMesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderDNA.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderDNA.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderDNA.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderIntermediate.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderModifier.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderModifier.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderScene.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderScene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderSceneGen.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderTessellator.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/BlenderTessellator.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CInterfaceIOWrapper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CInterfaceIOWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/COBLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/COBLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/COBScene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CSMLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CSMLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CalcTangentsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CalcTangentsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ColladaParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ComputeUVMappingProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ComputeUVMappingProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ConvertToLHProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ConvertToLHProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CreateAnimMesh.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFOpcPackage.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/D3MFOpcPackage.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DXFHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DXFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DXFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DeboneProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DeboneProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DefaultIOStream.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DefaultIOSystem.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DefaultLogger.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/DefaultProgressHandler.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/EmbedTexturesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/EmbedTexturesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Exporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXBinaryTokenizer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXCommon.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXCompileConfig.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXConverter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXConverter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXDeformer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXDocument.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXDocument.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXDocumentUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXDocumentUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExportNode.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExportNode.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExportProperty.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExportProperty.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXImportSettings.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXMeshGeometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXMeshGeometry.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXModel.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXNodeAttribute.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXProperties.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXProperties.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXTokenizer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXTokenizer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FBXUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FIReader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FIReader.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FileLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindDegenerates.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindDegenerates.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindInstancesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindInstancesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindInvalidDataProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FindInvalidDataProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FixNormalsStep.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/FixNormalsStep.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/GenFaceNormalsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/GenFaceNormalsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/GenVertexNormalsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/GenVertexNormalsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/HMPFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/HMPLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/HMPLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/HalfLifeFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IFF.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRMeshLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRMeshLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRShared.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/IRRShared.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCBoolean.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCCurve.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCGeometry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCOpenings.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCProfile.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCReaderGen1_2x3.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCReaderGen2_2x3.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCReaderGen_2x3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCUtil.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/IFCUtil.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/STEPFileEncoding.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/STEPFileEncoding.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/STEPFileReader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Importer/IFC/STEPFileReader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ImporterRegistry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ImproveCacheLocality.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ImproveCacheLocality.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/JoinVerticesProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/JoinVerticesProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOAnimation.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOBLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWOMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWSLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LWSLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LimitBoneWeightsProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/LimitBoneWeightsProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD2FileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD2Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD2Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD2NormalTable.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD3FileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD3Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD3Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD5Loader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD5Loader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD5Parser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MD5Parser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDCFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDCLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDCLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDCNormalTable.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDLDefaultColorMap.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDLFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MDLMaterialLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDCpp14.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDPmdParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDPmxParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDPmxParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MMDVmdParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MS3DLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MS3DLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MakeVerboseFormat.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MakeVerboseFormat.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MaterialSystem.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/MaterialSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/NDOLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/NDOLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/NFFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/NFFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OFFLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OFFLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileMtlImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileMtlImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ObjTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreBinarySerializer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreBinarySerializer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreMaterial.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreParsingUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreStructs.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreStructs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreXmlSerializer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OgreXmlSerializer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OpenGEXExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OpenGEXExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OpenGEXImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OpenGEXImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OpenGEXStructs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OptimizeGraph.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OptimizeGraph.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OptimizeMeshes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/OptimizeMeshes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PlyParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PolyTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PostStepRegistry.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PretransformVertices.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/PretransformVertices.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ProcessHelper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ProcessHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPFileData.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPZipArchive.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3BSPZipArchive.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3DLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Q3DLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RawLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RawLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RemoveComments.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RemoveRedundantMaterials.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RemoveRedundantMaterials.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RemoveVCProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/RemoveVCProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SGSpatialSort.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SGSpatialSort.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SIBImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SIBImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SMDLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SMDLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/STEPFile.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/STLExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/STLExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/STLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/STLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ScaleProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ScaleProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SceneCombiner.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ScenePreprocessor.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ScenePreprocessor.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ScenePrivate.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SkeletonMeshBuilder.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SortByPTypeProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SortByPTypeProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SpatialSort.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SplitByBoneCountProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SplitByBoneCountProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SplitLargeMeshes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/SplitLargeMeshes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/StandardShapes.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/StdOStreamLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/StepExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/StepExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Subdivision.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TargetAnimation.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TargetAnimation.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TerragenLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TerragenLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TextureTransform.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TextureTransform.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TriangulateProcess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/TriangulateProcess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/UnrealLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/UnrealLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ValidateDataStructure.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/ValidateDataStructure.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Version.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/VertexTriangleAdjacency.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/VertexTriangleAdjacency.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/Win32DebugLogStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DExporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Geometry2D.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Geometry3D.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Group.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Light.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Macro.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Metadata.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Networking.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Node.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Postprocess.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Rendering.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Shape.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DImporter_Texturing.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/X3DVocabulary.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileHelper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XFileParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XGLLoader.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/XGLLoader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Asset.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Asset.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2AssetWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2AssetWriter.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Exporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Exporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Importer.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTF2Importer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFAsset.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFAsset.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFAssetWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFAssetWriter.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFExporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFExporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFImporter.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/glTFImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/scene.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/clipper/clipper.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/clipper/clipper.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/CXMLReaderImpl.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/heapsort.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/irrArray.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/irrString.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/irrTypes.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/irrXML.cpp">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/irrXML.h">
+			<Option target="IrrXML"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/DDLNode.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/OpenDDLCommon.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/OpenDDLExport.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/OpenDDLParser.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/OpenDDLStream.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/code/Value.cpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/DDLNode.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/OpenDDLCommon.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/OpenDDLExport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/OpenDDLParser.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/OpenDDLParserUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/OpenDDLStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/openddlparser/include/openddlparser/Value.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/common/shapes.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/common/shapes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/common/utils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/advancing_front.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/advancing_front.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/cdt.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/cdt.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/sweep.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/sweep.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/sweep_context.cc">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/poly2tri/poly2tri/sweep/sweep_context.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/unzip/crypt.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/unzip/ioapi.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/unzip/ioapi.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/unzip/unzip.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/unzip/unzip.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/zip/src/miniz.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/zip/src/zip.c">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/zip/src/zip.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/BaseImporter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Bitmap.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/BlobIOSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/ByteSwapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Compiler/poppack1.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Compiler/pstdint.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Compiler/pushpack1.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/CreateAnimMesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/DefaultIOStream.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/DefaultIOSystem.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/DefaultLogger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Defines.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Exceptional.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Exporter.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/GenericProperty.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Hash.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/IOStream.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/IOStreamBuffer.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/IOSystem.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Importer.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/LineSplitter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/LogAux.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/LogStream.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Logger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Macros.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/MathFunctions.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/MemoryIOWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/NullLogger.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/ParsingUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Profiler.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/ProgressHandler.hpp">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/RemoveComments.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SGSpatialSort.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SceneCombiner.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SkeletonMeshBuilder.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SmoothingGroups.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SmoothingGroups.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/SpatialSort.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/StandardShapes.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/StreamReader.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/StreamWriter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/StringComparison.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/StringUtils.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Subdivision.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/TinyFormatter.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/Vertex.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/XMLTools.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/ai_assert.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/anim.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/camera.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/cexport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/cfileio.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/cimport.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/color4.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/color4.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/defs.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/fast_atof.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/importerdesc.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/irrXMLWrapper.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/light.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/material.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/material.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/matrix3x3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/matrix3x3.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/matrix4x4.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/matrix4x4.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/mesh.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/metadata.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/pbrmaterial.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/postprocess.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/qnan.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/quaternion.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/quaternion.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/scene.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/texture.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/types.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/vector2.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/vector2.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/vector3.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/vector3.inl">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/version.h">
+			<Option target="assimp"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/assimp-config-version.cmake.in">
+			<Option virtualFolder="CMake Files\external\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/assimp-config.cmake.in">
+			<Option virtualFolder="CMake Files\external\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/assimp.pc.in">
+			<Option virtualFolder="CMake Files\external\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/revision.h.in">
+			<Option virtualFolder="CMake Files\external\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/include/assimp/config.h.in">
+			<Option virtualFolder="CMake Files\external\assimp\include\assimp\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/FindDirectX.cmake">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/FindPkgMacros.cmake">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/FindRT.cmake">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/FindZLIB.cmake">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/PrecompiledHeader.cmake">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/cmake-modules/cmake_uninstall.cmake.in">
+			<Option virtualFolder="CMake Files\external\assimp\cmake-modules\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\assimp\contrib\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/contrib/irrXML/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\assimp\contrib\irrXML\"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/demo-self-for-p3/external/assimp/code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\external\assimp\code\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

@@ -22,6 +22,7 @@
 #include <Camera.h>
 #include <vector>
 #include <Mesh.h>
+#include <Model.h>
 #include "Shade.h"
 #include "geometry.h"
 #include "LightDirectional.h"
@@ -117,13 +118,18 @@ void mouse_callback(GLFWwindow* window, double xpos, double ypos);
 
 
 #if 1
-int main() {
+int main(int argc, char* argv[]) {
+    string exePath = argv[0];
+
+//    cout << "argv[0] : "<< argv[0]<<endl;
+//    cout << "argv[0] : "<< exePath.substr( 0,exePath.find_last_of('/')) + "/model/nanosuit.obj"<<endl;
+
     if (!glfwInit()) {
         return 1;
     }
     GLFWwindow *window = createWindow(600, 600, "Self——learning", 3, 2);
     if (window == NULL) { std::cerr << "Error: create window or context failed." << std::endl;return 1;  }
-    #if defined(_WIN32) || defined(__linux__)
+    #if defined(_WIN32) || defined(__linux__ )
         if (glewInit() != GLEW_OK) {
             // Return Error
             return 1;
@@ -189,8 +195,9 @@ int main() {
     glEnableVertexAttribArray(posLoc);
     glEnableVertexAttribArray(norLoc);
     glEnableVertexAttribArray(texLoc);*/
-    Mesh cube(vertices);
-
+//    Mesh cube(vertices);
+//    Model model( exePath.substr( 0,exePath.find_last_of('/')) + "/model/nanosuit.obj");
+    Model model( exePath.substr( 0,exePath.find_last_of('/')) + "/oldMan/muro.obj");
 
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -309,7 +316,9 @@ int main() {
 //            glDrawArrays(GL_TRIANGLES, 0, 36);
             glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);*/
 
-            cube.Draw(shaderProgram);
+//            cube.Draw(shaderProgram);
+            model.Draw(shaderProgram);
+
         }
 //        cout <<"u_camera_Postion:"<<camera->Position.x <<","<< camera->Position.y <<","<< camera->Position.x <<" ; "<<endl;
 
@@ -352,16 +361,16 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
         glfwSetWindowShouldClose(window,true);
     }
-
-    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
+    float speed = 100.0f;
+    if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =speed;}
+    else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -speed;}
     else{camera->speedZ = 0;}
-    if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -1.0f;}
+    if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =speed;}
+    else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -speed;}
     else{camera->speedX = 0;}
     // Q下沉 E上浮
-    if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-1.0f;}
-    else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= 1.0f;}
+    if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-speed;}
+    else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= speed;}
     else{camera->speedY = 0;}
 
    /*

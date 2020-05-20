@@ -11,6 +11,21 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.15.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.15.3/CMakeSystem.cmake"
+  "../external/assimp/CMakeLists.txt"
+  "../external/assimp/assimp-config-version.cmake.in"
+  "../external/assimp/assimp-config.cmake.in"
+  "../external/assimp/assimp.pc.in"
+  "../external/assimp/cmake-modules/FindDirectX.cmake"
+  "../external/assimp/cmake-modules/FindPkgMacros.cmake"
+  "../external/assimp/cmake-modules/FindRT.cmake"
+  "../external/assimp/cmake-modules/FindZLIB.cmake"
+  "../external/assimp/cmake-modules/PrecompiledHeader.cmake"
+  "../external/assimp/cmake-modules/cmake_uninstall.cmake.in"
+  "../external/assimp/code/CMakeLists.txt"
+  "../external/assimp/contrib/CMakeLists.txt"
+  "../external/assimp/contrib/irrXML/CMakeLists.txt"
+  "../external/assimp/include/assimp/config.h.in"
+  "../external/assimp/revision.h.in"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/CMakeCInformation.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/CMakeCXXInformation.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
@@ -27,6 +42,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Compiler/Clang.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Compiler/GNU.cmake"
+  "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/FindPackageHandleStandardArgs.cmake"
+  "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/FindPackageMessage.cmake"
+  "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/FindPkgConfig.cmake"
+  "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/GNUInstallDirs.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Internal/CMakeCheckCompilerFlag.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Platform/Apple-AppleClang-C.cmake"
   "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/share/cmake-3.15/Modules/Platform/Apple-AppleClang-CXX.cmake"
@@ -48,9 +67,16 @@ set(CMAKE_MAKEFILE_OUTPUTS
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/assimp/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/assimp/contrib/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/assimp/contrib/irrXML/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "external/assimp/code/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/opengl_demo.dir/DependInfo.cmake"
+  "external/assimp/CMakeFiles/uninstall.dir/DependInfo.cmake"
+  "external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/DependInfo.cmake"
+  "external/assimp/code/CMakeFiles/assimp.dir/DependInfo.cmake"
   )
