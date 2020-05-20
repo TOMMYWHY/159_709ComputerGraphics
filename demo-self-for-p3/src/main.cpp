@@ -21,6 +21,7 @@
 #include <image.h>
 #include <Camera.h>
 #include <vector>
+#include <Mesh.h>
 #include "Shade.h"
 #include "geometry.h"
 #include "LightDirectional.h"
@@ -158,7 +159,7 @@ int main() {
 //     GLuint VAO = Create_VAO(VBO,EBO,vertices,indices,shaderProgram);
 
 //    GLuint VAO = vao_test(shaderProgram);
-    GLuint VAO=0;
+/*    GLuint VAO=0;
     glGenVertexArrays(1, &VAO);
     glBindVertexArray(VAO);
 
@@ -187,7 +188,8 @@ int main() {
 
     glEnableVertexAttribArray(posLoc);
     glEnableVertexAttribArray(norLoc);
-    glEnableVertexAttribArray(texLoc);
+    glEnableVertexAttribArray(texLoc);*/
+    Mesh cube(vertices);
 
 
     glBindVertexArray(0);
@@ -240,11 +242,11 @@ int main() {
         glClearColor(0.15f, 0.15f, 0.15f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // Z 缓冲
 
-        glBindVertexArray(VAO);
+//        glBindVertexArray(VAO);
 
         viewMatrix = camera->GetViewMatrix(); // camera movement
 
-        for( int i = 0; i < 10; i++)
+        for( int i = 0; i < 1; i++)
         {
             modelMatrix = glm::translate(glm::mat4(1.0f), cubePositions[i]);
             modelMatrix = glm::scale(modelMatrix, glm::vec3(0.5f));
@@ -295,18 +297,19 @@ int main() {
 
 
 
-            glActiveTexture(GL_TEXTURE0);// 0 号位开启 texture
+            /*glActiveTexture(GL_TEXTURE0);// 0 号位开启 texture
             glBindTexture(GL_TEXTURE_2D,texture);
             glActiveTexture(GL_TEXTURE0 + 1);// 1 号位开启 texture2
             glBindTexture(GL_TEXTURE_2D,texture2);
             glUniform1i(glGetUniformLocation(shaderProgram->ID, "material_diffuse"), 0); // 手动设置
-            glUniform1i(glGetUniformLocation(shaderProgram->ID,"material_specular"), 1);
+            glUniform1i(glGetUniformLocation(shaderProgram->ID,"material_specular"), 1);*/
 
 
-            glBindVertexArray(VAO);
+           /* glBindVertexArray(VAO);
 //            glDrawArrays(GL_TRIANGLES, 0, 36);
-            glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+            glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);*/
 
+            cube.Draw(shaderProgram);
         }
 //        cout <<"u_camera_Postion:"<<camera->Position.x <<","<< camera->Position.y <<","<< camera->Position.x <<" ; "<<endl;
 

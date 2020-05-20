@@ -36,7 +36,7 @@ add_definitions(-DGLFW_INCLUDE_NONE
 
 
 add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_SHADERS}${EXTERNAL_SOURCES}
-        src/Shade.cpp include/Shade.h src/Camera.cpp include/Camera.h src/LightDirectional.cpp include/LightDirectional.h src/LightPoint.cpp include/LightPoint.h src/LightSpot.cpp include/LightSpot.h)
+        src/Shade.cpp include/Shade.h src/Camera.cpp include/Camera.h src/LightDirectional.cpp include/LightDirectional.h src/LightPoint.cpp include/LightPoint.h src/LightSpot.cpp include/LightSpot.h src/Mesh.cpp include/Mesh.h)
 
 
 

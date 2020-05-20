@@ -231,6 +231,33 @@ src/LightSpot.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/LightSpot.cpp.s
 .PHONY : src/LightSpot.cpp.s
 
+src/Mesh.o: src/Mesh.cpp.o
+
+.PHONY : src/Mesh.o
+
+# target to build an object file
+src/Mesh.cpp.o:
+	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Mesh.cpp.o
+.PHONY : src/Mesh.cpp.o
+
+src/Mesh.i: src/Mesh.cpp.i
+
+.PHONY : src/Mesh.i
+
+# target to preprocess a source file
+src/Mesh.cpp.i:
+	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Mesh.cpp.i
+.PHONY : src/Mesh.cpp.i
+
+src/Mesh.s: src/Mesh.cpp.s
+
+.PHONY : src/Mesh.s
+
+# target to generate assembly for a file
+src/Mesh.cpp.s:
+	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/src/Mesh.cpp.s
+.PHONY : src/Mesh.cpp.s
+
 src/Shade.o: src/Shade.cpp.o
 
 .PHONY : src/Shade.o
@@ -414,6 +441,9 @@ help:
 	@echo "... src/LightSpot.o"
 	@echo "... src/LightSpot.i"
 	@echo "... src/LightSpot.s"
+	@echo "... src/Mesh.o"
+	@echo "... src/Mesh.i"
+	@echo "... src/Mesh.s"
 	@echo "... src/Shade.o"
 	@echo "... src/Shade.i"
 	@echo "... src/Shade.s"

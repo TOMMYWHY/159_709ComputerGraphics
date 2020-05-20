@@ -118,13 +118,13 @@ void main()
 	vec4 finalResult = vec4 (0,0,0,0);
 	vec4 uNormal = normalize(frag_Normal);
 	vec4 dirToCamera = normalize(u_camera_Postion  - frag_Position);
-//	//平行光
-//	finalResult += CalcLightDirectional(lightD,uNormal, dirToCamera);
-//	//点光
-//	finalResult += CalcLightPoint(lightP0,uNormal, dirToCamera);
-//	finalResult += CalcLightPoint(lightP1,uNormal, dirToCamera);
-//	finalResult += CalcLightPoint(lightP2,uNormal, dirToCamera);
-//	finalResult += CalcLightPoint(lightP3,uNormal, dirToCamera);
+	//平行光
+	finalResult += CalcLightDirectional(lightD,uNormal, dirToCamera);
+	//点光
+	finalResult += CalcLightPoint(lightP0,uNormal, dirToCamera);
+	finalResult += CalcLightPoint(lightP1,uNormal, dirToCamera);
+	finalResult += CalcLightPoint(lightP2,uNormal, dirToCamera);
+	finalResult += CalcLightPoint(lightP3,uNormal, dirToCamera);
 //	// 聚光
 	finalResult += CalcLightSpot(lightS,uNormal, dirToCamera);
 
@@ -172,9 +172,9 @@ void main()
 */
 
 
+//	pixel_Colour = finalResult;
+	pixel_Colour = vec4(1.0,1.0,1.0,1.0);
 
-
-	pixel_Colour = finalResult;
 
 	//	pixel_Colour = objColor * ambinetColor;
 //	pixel_Colour =  objColor *(Target_ambient + (Target_diffuse + Target_specular) * attenuation);

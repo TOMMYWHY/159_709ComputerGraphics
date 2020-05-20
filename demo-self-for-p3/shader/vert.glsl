@@ -1,8 +1,8 @@
 #version 330 core
 
-in vec4 vert_Position;
-in vec4 vert_Normal;
-in vec4 vert_UV;
+layout(location = 0) in vec4 vert_Position;
+layout(location = 1) in vec4 vert_Normal;
+layout(location = 2) in vec4 vert_UV;
 //in vec3 vert_Color;
 
 uniform mat4 u_ModelMat;
