@@ -44,10 +44,10 @@ RM = "/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头
+CMAKE_SOURCE_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -77,14 +77,14 @@ CMakeFiles/opengl_demo.dir/all: external/assimp/contrib/irrXML/CMakeFiles/IrrXML
 CMakeFiles/opengl_demo.dir/all: external/assimp/code/CMakeFiles/assimp.dir/all
 	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/depend
 	$(MAKE) -f CMakeFiles/opengl_demo.dir/build.make CMakeFiles/opengl_demo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num=94,95,96,97,98,99,100 "Built target opengl_demo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num=94,95,96,97,98,99,100 "Built target opengl_demo"
 .PHONY : CMakeFiles/opengl_demo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/opengl_demo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 100
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 100
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/opengl_demo.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/opengl_demo.dir/rule
 
 # Convenience name for target.
@@ -126,14 +126,14 @@ external/assimp/preinstall: external/assimp/code/preinstall
 external/assimp/CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f external/assimp/CMakeFiles/uninstall.dir/build.make external/assimp/CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f external/assimp/CMakeFiles/uninstall.dir/build.make external/assimp/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : external/assimp/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 external/assimp/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 external/assimp/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 .PHONY : external/assimp/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -189,14 +189,14 @@ external/assimp/contrib/irrXML/preinstall:
 external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/all:
 	$(MAKE) -f external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/build.make external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/depend
 	$(MAKE) -f external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/build.make external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num= "Built target IrrXML"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num= "Built target IrrXML"
 .PHONY : external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/all
 
 # Build rule for subdir invocation for target.
 external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 .PHONY : external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/rule
 
 # Convenience name for target.
@@ -234,14 +234,14 @@ external/assimp/code/preinstall:
 external/assimp/code/CMakeFiles/assimp.dir/all: external/assimp/contrib/irrXML/CMakeFiles/IrrXML.dir/all
 	$(MAKE) -f external/assimp/code/CMakeFiles/assimp.dir/build.make external/assimp/code/CMakeFiles/assimp.dir/depend
 	$(MAKE) -f external/assimp/code/CMakeFiles/assimp.dir/build.make external/assimp/code/CMakeFiles/assimp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93 "Built target assimp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93 "Built target assimp"
 .PHONY : external/assimp/code/CMakeFiles/assimp.dir/all
 
 # Build rule for subdir invocation for target.
 external/assimp/code/CMakeFiles/assimp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 93
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 93
 	$(MAKE) -f CMakeFiles/Makefile2 external/assimp/code/CMakeFiles/assimp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug/CMakeFiles 0
 .PHONY : external/assimp/code/CMakeFiles/assimp.dir/rule
 
 # Convenience name for target.

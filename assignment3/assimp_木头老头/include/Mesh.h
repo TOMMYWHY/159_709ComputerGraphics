@@ -21,6 +21,8 @@ struct Vertex{
     glm::vec3 Position;
     glm::vec3 Normal;
     glm::vec2 TexCoords; // uv
+    glm::vec3 Tangent;
+    glm::vec3 Bitangent;
 };
 
 struct Texture{
@@ -34,6 +36,8 @@ public:
     vector<Vertex>  vertices;
     vector<unsigned int> indices;
     vector<Texture> textures;
+    unsigned int VAO,VBO,EBO;
+
     Mesh(float vertices[] );
     Mesh(vector<Vertex> vertices,vector<unsigned int> indices,vector<Texture> textures);
     ~Mesh();
@@ -41,7 +45,6 @@ public:
     void Draw(Shade* shade);
 
 private:
-    unsigned int VAO,VBO,EBO;
     void setupMesh();
 };
 

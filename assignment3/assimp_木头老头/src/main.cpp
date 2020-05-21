@@ -78,25 +78,17 @@ float vertices[] = {
 };
 
 glm::vec3 cubePositions[] = {
-        glm::vec3( 0.0f,  0.0f,  0.0f),
-        glm::vec3( 2.0f,  5.0f, -15.0f),
-        glm::vec3(-1.5f, -2.2f, -2.5f),
-        glm::vec3(-3.8f, -2.0f, -12.3f),
-        glm::vec3( 2.4f, -0.4f, -3.5f),
-        glm::vec3(-1.7f,  3.0f, -7.5f),
-        glm::vec3( 1.3f, -2.0f, -2.5f),
-        glm::vec3( 1.5f,  2.0f, -2.5f),
-        glm::vec3( 1.5f,  0.2f, -1.5f),
-        glm::vec3(-1.3f,  1.0f, -1.5f)
+
+
 };
 
-    glm::vec3 lightPos(1.0f, 1.3f, -1.0f);
+    glm::vec3 lightPos(0.0f, 10.0f, 15.0f);
 
 //    Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f),glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f,  1.0f,  0.0f));
-Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f),glm::radians(15.0f),glm::radians(180.0f), glm::vec3(0.0f,  1.0f,  0.0f));
+Camera *camera = new Camera(glm::vec3(0.0f, 0.0f, 3.0f),glm::radians(0.0f),glm::radians(180.0f), glm::vec3(0.0f,  1.0f,  0.0f));
 LightDirectional * lightD = new LightDirectional(
         lightPos,
-        glm::vec3(glm::radians(45.0f),glm::radians(45.0f),0),
+        glm::vec3(glm::radians(0.0f),glm::radians(0.0f),0),
          glm::vec3(1.0f,1.0f,1.0f));
 
 LightPoint * lightP0 = new LightPoint(glm::vec3(1.0f, 0.0f, 0.0f),glm::vec3(1.0f,0.0f,0.0f));
@@ -162,39 +154,6 @@ int main(int argc, char* argv[]) {
     GLuint VBO = 0;
     GLuint EBO = 0;
 
-//     GLuint VAO = Create_VAO(VBO,EBO,vertices,indices,shaderProgram);
-
-//    GLuint VAO = vao_test(shaderProgram);
-/*    GLuint VAO=0;
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    glGenBuffers(1, &VBO);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-
-//    glBufferData(GL_ARRAY_BUFFER,sizeof(vertices),vertices, GL_STATIC_DRAW);
-    glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
-
-//    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-    GLuint posLoc = glGetAttribLocation(shaderProgram->ID, "vert_Position");
-    GLuint norLoc = glGetAttribLocation(shaderProgram->ID, "vert_Normal");
-
-//    GLuint colLoc = glGetAttribLocation(shaderProgram->ID, "vert_Color");
-    GLuint texLoc = glGetAttribLocation(shaderProgram->ID, "vert_UV");
-
-    glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
-    glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
-    glVertexAttribPointer(texLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
-
-    glEnableVertexAttribArray(posLoc);
-    glEnableVertexAttribArray(norLoc);
-    glEnableVertexAttribArray(texLoc);*/
 //    Mesh cube(vertices);
 //    Model model( exePath.substr( 0,exePath.find_last_of('/')) + "/model/nanosuit.obj");
     Model model( exePath.substr( 0,exePath.find_last_of('/')) + "/oldMan/muro.obj");
@@ -255,8 +214,8 @@ int main(int argc, char* argv[]) {
 
         for( int i = 0; i < 1; i++)
         {
-            modelMatrix = glm::translate(glm::mat4(1.0f), cubePositions[i]);
-            modelMatrix = glm::scale(modelMatrix, glm::vec3(0.5f));
+            modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3( -3.0f,  -5.0f,  -2.0f));
+            modelMatrix = glm::scale(modelMatrix, glm::vec3(0.04f));
             shaderProgram->use();
 
 
@@ -271,7 +230,7 @@ int main(int argc, char* argv[]) {
 
             // light uniform
             glUniform4f(glGetUniformLocation(shaderProgram->ID,"objColor"), 1.0f,1.0f,1.0f,1.0f );
-            glUniform4f(glGetUniformLocation(shaderProgram->ID,"ambinetColor"), 0.0f,0.0f,0.0f,0.0f ); //在没有光照面也能看到。。。
+            glUniform4f(glGetUniformLocation(shaderProgram->ID,"ambinetColor"), 0.2f,0.2f,0.2f,0.0f ); //在没有光照面也能看到。。。
 
             //------------------ 平行光 ----------------------------//
             glUniform4f(glGetUniformLocation(shaderProgram->ID,"lightD.pos"),lightD->Position.x,lightD->Position.y,lightD->Position.z,0.0f );
@@ -361,7 +320,7 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
         glfwSetWindowShouldClose(window,true);
     }
-    float speed = 100.0f;
+    float speed = 10.0f;
     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =speed;}
     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -speed;}
     else{camera->speedZ = 0;}

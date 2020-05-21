@@ -1,4 +1,4 @@
-"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头
+"/Users/Tommy/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/193.6911.21/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头
 -- The C compiler identification is AppleClang 11.0.0.11000033
 -- The CXX compiler identification is AppleClang 11.0.0.11000033
 -- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc
@@ -38,4 +38,4 @@ CMake Warning (dev):
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
 -- Generating done
--- Build files have been written to: /Users/Tommy/Desktop/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug
+-- Build files have been written to: /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/assimp_木头老头/cmake-build-debug

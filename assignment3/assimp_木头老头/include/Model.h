@@ -23,18 +23,24 @@
 
 using namespace std;
 
+unsigned int TextureFromFile(const char *path, const string &directory, bool gamma = false);
+
 class Model {
 public:
     Model(string path);
     ~Model();
     vector<Mesh> meshes;
     string directory;
+    vector<Texture> textures_loaded;
     void Draw(Shade* shade);
+
 
 private:
     void loadModel(string path);
     void processNode(aiNode* node, const aiScene* scene);
     Mesh processMesh(aiMesh* mesh, const aiScene* scene);
+    vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName);
+
 
 };
 

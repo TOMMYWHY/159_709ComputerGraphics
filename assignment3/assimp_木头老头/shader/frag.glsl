@@ -43,19 +43,13 @@ struct LightPoint{
 //	float	quadratic;
 };
 
-struct LightSpot{
-	vec4 pos;
-	vec4 color;
-	vec4 dirToLight;
-	float cosPhyInner;
-	float cosPhyOuter;
-};
+
 uniform LightDirectional lightD;
-uniform LightPoint lightP0;
+/*uniform LightPoint lightP0;
 uniform LightPoint lightP1;
 uniform LightPoint lightP2;
 uniform LightPoint lightP3;
-uniform LightSpot lightS;
+uniform LightSpot lightS;*/
 
 
 
@@ -71,7 +65,7 @@ vec4 CalcLightDirectional(LightDirectional light,vec4 uNormal, vec4 dirToCamera)
 	vec4 result = diffuseColor + specularColor;
 	return result;
 }
-vec4 CalcLightPoint(LightPoint light,vec4 uNormal, vec4 dirToCamera){
+/*vec4 CalcLightPoint(LightPoint light,vec4 uNormal, vec4 dirToCamera){
 	//attenuation
 	float dis = length(light.pos - frag_Position);
 	float attenuation = 1.0 / (light_constant + light_linear * dis + light_quadratic * (dis * dis));
@@ -112,21 +106,21 @@ vec4 CalcLightSpot(LightSpot light,vec4 uNormal, vec4 dirToCamera){
 	vec4 specularColor = specIntensity * light.color * texture(material_specular , frag_UV.xy) ;
 	vec4 result =( diffuseColor + specularColor)  * attenuation * spotRatio;
 	return result;
-}
+}*/
 void main()
 {
 	vec4 finalResult = vec4 (0,0,0,0);
 	vec4 uNormal = normalize(frag_Normal);
-	vec4 dirToCamera = normalize(u_camera_Postion  - frag_Position);
+	vec4 dirToCamera = normalize(  - frag_Position);
 	//平行光
 	finalResult += CalcLightDirectional(lightD,uNormal, dirToCamera);
 	//点光
-	finalResult += CalcLightPoint(lightP0,uNormal, dirToCamera);
-	finalResult += CalcLightPoint(lightP1,uNormal, dirToCamera);
-	finalResult += CalcLightPoint(lightP2,uNormal, dirToCamera);
-	finalResult += CalcLightPoint(lightP3,uNormal, dirToCamera);
+//	finalResult += CalcLightPoint(lightP0,uNormal, dirToCamera);
+//	finalResult += CalcLightPoint(lightP1,uNormal, dirToCamera);
+//	finalResult += CalcLightPoint(lightP2,uNormal, dirToCamera);
+//	finalResult += CalcLightPoint(lightP3,uNormal, dirToCamera);
 //	// 聚光
-	finalResult += CalcLightSpot(lightS,uNormal, dirToCamera);
+//	finalResult += CalcLightSpot(lightS,uNormal, dirToCamera);
 
 
 /*
