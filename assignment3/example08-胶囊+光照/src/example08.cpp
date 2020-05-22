@@ -171,36 +171,7 @@ int main() {
 
 	// Bind VAO, VBO & EBO
 	glBindVertexArray(vao);
-/*
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 
-	// Load Vertex Data
-	glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
-
-	// Load Element Data
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
-
-	// Get Position Attribute location (must match name in shader)
-	GLuint posLoc = glGetAttribLocation(program, "vert_Position");
-
-	// Get Normal Attribute location (must match name in shader)
-	GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
-
-	// Get Texture Attribute location (must match name in shader)
-	GLuint texLoc = glGetAttribLocation(program, "vert_UV");
-
-	// Set Vertex Attribute Pointers
-	glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
-	glVertexAttribPointer(texLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
-
-	// Enable Vertex Attribute Arrays
-	glEnableVertexAttribArray(posLoc);
-	glEnableVertexAttribArray(norLoc);
-	glEnableVertexAttribArray(texLoc);
-*/
-        //todo
     GLuint posLoc = glGetAttribLocation(program, "vert_Position");
     GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
     GLuint texLoc = glGetAttribLocation(program, "vert_UV");
@@ -253,14 +224,11 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
 
-       /* glActiveTexture(GL_TEXTURE0 );// 0 texture
-        glBindTexture(GL_TEXTURE_2D,texture);
-        glActiveTexture(GL_TEXTURE1 );// 1  texture
-        glBindTexture(GL_TEXTURE_2D,texture_specular);
+        glUniform3f(glGetUniformLocation(program,"lightPos"),8.0f,8.0f,15.0f);
+        glUniform3f(glGetUniformLocation(program,"viewPos"),0.0f, 0.0f, 3.0f);//todo +camera
 
-        glUniform1i(glGetUniformLocation(program, "u_texture_Map"), 0); // texture
-        glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture*/
-        // ----------------------------------------
+
+
 
 		// Bind Vertex Array Object
 		glBindVertexArray(vao);

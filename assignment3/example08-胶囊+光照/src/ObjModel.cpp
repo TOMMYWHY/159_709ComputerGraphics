@@ -210,12 +210,20 @@ void ObjModel::Draw(GLuint shadeID)
 //    vector<Texture> diffuseMaps=loadMaterialTextures("texture_diffuse");
 
     for (int i = 0; i < m_mtls.size(); i++) {
-        glActiveTexture(GL_TEXTURE0+i);
-//        glBindTexture(GL_TEXTURE_2D,textures[i].id);
-        glBindTexture(GL_TEXTURE_2D, m_mtls[i]->texture);
-        glUniform1i(glGetUniformLocation(shadeID,"texture_diffuse1"), 0 );
-//        glUniform1i(glGetUniformLocation(shadeID,"texture_specular1"), 0 );
-//        glUniform1i(glGetUniformLocation(shadeID,"texture_normal1"), 0 );
+        if(m_mtls[i]->texture){
+            glActiveTexture(GL_TEXTURE0);
+            glBindTexture(GL_TEXTURE_2D,m_mtls[i]->texture);
+            glUniform1i(glGetUniformLocation(shadeID,"material_diffuse"), 0 );
+        }else if(m_mtls[i]->texture_bump){
+            glActiveTexture(GL_TEXTURE1);
+            glBindTexture(GL_TEXTURE_2D,m_mtls[i]->texture);
+            glUniform1i(glGetUniformLocation(shadeID,"material_specular"), 1);
+        }else if(m_mtls[i]->texture_ks){
+            glActiveTexture(GL_TEXTURE2);
+            glBindTexture(GL_TEXTURE_2D,m_mtls[i]->texture);
+            glUniform1i(glGetUniformLocation(shadeID,"material_Normal"), 1);
+        }
+
 
         glUniform4f(glGetUniformLocation(shadeID,"Ka"),m_mtls[i]->Ka[0],m_mtls[i]->Ka[1],m_mtls[i]->Ka[2],0.0f );
         glUniform4f(glGetUniformLocation(shadeID,"Kd"),m_mtls[i]->Kd[0],m_mtls[i]->Ka[1],m_mtls[i]->Kd[2],0.0f );
