@@ -407,6 +407,7 @@ CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o: /usr/local/Cellar/glm/0.9.9.5/inc
 
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/Mesh.h
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/ObjModel.h
+CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/image.h
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/shader.h
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/stb_image.h
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o: ../include/utils.h

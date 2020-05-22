@@ -408,6 +408,7 @@ CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o
 CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o
  ../include/Mesh.h
  ../include/ObjModel.h
+ ../include/image.h
  ../include/shader.h
  ../include/stb_image.h
  ../include/utils.h

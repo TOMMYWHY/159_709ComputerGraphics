@@ -10,11 +10,21 @@
 #include <string>
 #include <vector>
 #include <stb_image.h>
+#include <image.h>
 
-
-
-void ObjModel::Init(const char*modelFilePath)
+template <class Type>
+Type stringToNum(const string& str)
 {
+    istringstream iss(str);
+    Type num;
+    iss >> num;
+    return num;
+}
+
+void ObjModel::Init(string modelFilePath)
+{
+    this->directory = modelFilePath.substr(0, modelFilePath.find_last_of('/'));
+
     struct VertexInfo
     {
         float v[3];
@@ -189,13 +199,30 @@ void ObjModel::Bind(GLint posLoc, GLint texcoordLoc, GLint normalLoc)
     glBindBuffer(GL_ARRAY_BUFFER,0);
 
 
+    this->loadMtlFile(this->directory);
+//    cout << "mtls::"<<m_mtls[0]->Ka[0]<<endl;
 
 }
 
-void ObjModel::Draw()
+void ObjModel::Draw(GLuint shadeID)
 {
     vector<Texture> tempTextures;
-    vector<Texture> diffuseMaps=loadMaterialTextures("texture_diffuse");
+//    vector<Texture> diffuseMaps=loadMaterialTextures("texture_diffuse");
+
+    for (int i = 0; i < m_mtls.size(); i++) {
+        glActiveTexture(GL_TEXTURE0+i);
+//        glBindTexture(GL_TEXTURE_2D,textures[i].id);
+        glBindTexture(GL_TEXTURE_2D, m_mtls[i]->texture);
+        glUniform1i(glGetUniformLocation(shadeID,"texture_diffuse1"), 0 );
+//        glUniform1i(glGetUniformLocation(shadeID,"texture_specular1"), 0 );
+//        glUniform1i(glGetUniformLocation(shadeID,"texture_normal1"), 0 );
+
+        glUniform4f(glGetUniformLocation(shadeID,"Ka"),m_mtls[i]->Ka[0],m_mtls[i]->Ka[1],m_mtls[i]->Ka[2],0.0f );
+        glUniform4f(glGetUniformLocation(shadeID,"Kd"),m_mtls[i]->Kd[0],m_mtls[i]->Ka[1],m_mtls[i]->Kd[2],0.0f );
+        glUniform4f(glGetUniformLocation(shadeID,"Ks"),m_mtls[i]->Ks[0],m_mtls[i]->Ka[1],m_mtls[i]->Ks[2],0.0f );
+
+    }
+
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,mEBO);
     glDrawElements(GL_TRIANGLES,mIndexCount,GL_UNSIGNED_INT,0);
@@ -246,7 +273,7 @@ unsigned int TextureFromFile(const char *path, const string &directory, bool gam
 
     return textureID;
 }
-char* ObjModel:: LoadFileContent(const char *filename) {
+char* ObjModel:: LoadFileContent(string filename) {
     // Open File
     std::ifstream input(filename);
 
@@ -282,4 +309,114 @@ char* ObjModel:: LoadFileContent(const char *filename) {
 
     // Return file contents
     return data;
+}
+
+
+
+void ObjModel::loadFromFile(string objfile, string mtlfile)
+{
+    loadMtlFile(mtlfile);
+//    loadObjFile(objfile);
+//    transToVAO();
+}
+void ObjModel::loadMtlFile(string filename)
+{
+//    cout <<"filename" <<filename+"/capsule.mtl"<< endl;
+    cout <<"filename" <<filename+"/muro.mtl"<< endl;
+    ifstream f;
+    f.open(filename+"/muro.mtl", ios::in);
+//    f.open(filename+"/capsule.mtl", ios::in);
+
+    if (!f)
+    {
+        cout << "Error: Mtl File cannot be opened!";
+        exit(-2);
+    }
+
+    int index = -1; // 当前材质的下标
+
+    char buffer[300], word[300];
+
+    while (f.getline(buffer, 300)) {
+        vector<string> ls;
+        string str(buffer);
+        string sTmp;
+        istringstream istr(str);
+        while (!istr.eof())
+        {
+            istr >> sTmp; //get a word
+            ls.push_back(sTmp);
+        }
+//        cout <<"mtl:"<<ls[0] <<endl;
+        if (ls[0] == "newmtl") {
+            Material* tMtl = new Material();
+
+            tMtl->mtlName = ls[1];
+            m_mtls.push_back(tMtl);  // 获得一个新的材质
+            cout << m_mtls.size() << endl;
+            index = m_mtls.size() - 1;
+        }
+
+        if (ls[0] == "Ns")
+        {
+            int i;
+            for (i = 0; i < ls[1].length(); i++)
+                word[i] = ls[1][i];
+            word[i] = '\0';
+            m_mtls[index]->Ns = strtod(word,NULL);
+        }
+        if (ls[0] == "Ka")
+        {
+            m_mtls[index]->Ka[0] = stringToNum<double>(ls[1]);
+            m_mtls[index]->Ka[1] = stringToNum<double>(ls[2]);
+            m_mtls[index]->Ka[2] = stringToNum<double>(ls[3]);
+        }
+        if (ls[0] == "Kd")
+        {
+            m_mtls[index]->Kd[0] = stringToNum<double>(ls[1]);
+            m_mtls[index]->Kd[1] = stringToNum<double>(ls[2]);
+            m_mtls[index]->Kd[2] = stringToNum<double>(ls[3]);
+        }
+        if (ls[0] == "Ks")
+        {
+            m_mtls[index]->Ks[0] = stringToNum<double>(ls[1]);
+            m_mtls[index]->Ks[1] = stringToNum<double>(ls[2]);
+            m_mtls[index]->Ks[2] = stringToNum<double>(ls[3]);
+        }
+        if (ls[0] == "map_Kd")
+        {
+            string imgPath = ls[1];
+            //QString imgPath = "./res/obj/car1/"+strList[1];
+            cout <<  "map_Kd imgPath:"<<directory+"/"+imgPath <<endl;
+
+            int x,y,n;
+            const char * texture_url = (directory+"/"+imgPath).c_str();
+            m_mtls[index]->texture = loadTexture2D(texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+
+        }
+        if (ls[0] == "bump")
+        {
+            string imgPath = ls[1];
+            //QString imgPath = "./res/obj/car1/"+strList[1];
+            cout <<  " bump imgPath:"<<directory+"/"+imgPath <<endl;
+
+            int x,y,n;
+            const char * texture_url = (directory+"/"+imgPath).c_str();
+            m_mtls[index]->texture_bump = loadTexture2D(texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+
+        }
+        if (ls[0] == "map_Ks")
+        {
+            string imgPath = ls[1];
+            //QString imgPath = "./res/obj/car1/"+strList[1];
+            cout <<  "map_Ks imgPath:"<<directory+"/"+imgPath <<endl;
+
+            int x,y,n;
+            const char * texture_url = (directory+"/"+imgPath).c_str();
+            m_mtls[index]->texture_ks = loadTexture2D(texture_url, x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+
+        }
+        ls.clear();
+
+    }
 }

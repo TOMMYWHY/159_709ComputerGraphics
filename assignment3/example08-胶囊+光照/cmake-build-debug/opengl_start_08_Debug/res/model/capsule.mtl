@@ -2,9 +2,9 @@
 # Each is referenced by name before the faces it applies to in the obj file
 
 newmtl material0
-Ka 1.000000 1.000000 1.000000
-Kd 1.000000 1.000000 1.000000
-Ks 0.000000 0.000000 0.000000
+Ka 0.329412 0.223529 0.027451
+Kd 0.780392 0.568627 0.113725
+Ks 0.992157 0.941176 0.807843
 Tr 1.000000
 illum 1
 Ns 0.000000

@@ -141,10 +141,13 @@ int main() {
 
 	//todo
     ObjModel model;
-//    model.Init("res/model/muro.obj");
-    model.Init("res/model/capsule.obj");
+    model.Init("res/model/muro.obj");
+//    model.Init("res/model/capsule.obj");
 
-	// Vertex Array Objects (VAO)
+//    model.loadMtlFile("res/model/capsule.mtl");
+
+
+    // Vertex Array Objects (VAO)
 	GLuint vao = 0;
 	
 	// Vertex Buffer Objects (VBO)
@@ -156,8 +159,9 @@ int main() {
 	// ----------------------------------------
 	// Load Texture Map from file
 	int x, y, n;
-    GLuint texture = loadTexture2D("./images/earth_nightmap.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-    GLuint texture_specular = loadTexture2D("./images/earthspec1k.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+//    GLuint texture = loadTexture2D("./res/model/capsule0.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+//    GLuint texture = loadTexture2D("./images/earth_nightmap.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+//    GLuint texture_specular = loadTexture2D("./images/earthspec1k.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
 
 	// Create VAO, VBO & EBO
@@ -237,10 +241,11 @@ int main() {
 
         viewMatrix = camera->GetViewMatrix(); // camera movement
 
-        float Rotation_theta  = (float)(glfwGetTime()* 0.5f);
+//        float Rotation_theta  = (float)(glfwGetTime()* 0.5f);
+        float Rotation_theta  = 0;
         modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3(0, 0, 0)) *
                       glm::rotate(   glm::mat4(1.0f), Rotation_theta , glm::vec3(0.0f, 1.0f, 0.0f))*
-                      glm::scale(glm::mat4(1.0f),glm::vec3(0.5f));
+                      glm::scale(glm::mat4(1.0f),glm::vec3(0.05f));
 
 
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Model"),1,GL_FALSE,glm::value_ptr(modelMatrix));
@@ -248,27 +253,22 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
 
-        glActiveTexture(GL_TEXTURE0 );// 0 texture
+       /* glActiveTexture(GL_TEXTURE0 );// 0 texture
         glBindTexture(GL_TEXTURE_2D,texture);
         glActiveTexture(GL_TEXTURE1 );// 1  texture
         glBindTexture(GL_TEXTURE_2D,texture_specular);
 
         glUniform1i(glGetUniformLocation(program, "u_texture_Map"), 0); // texture
-        glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture
+        glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture*/
         // ----------------------------------------
 
 		// Bind Vertex Array Object
 		glBindVertexArray(vao);
 
-		// Set active Texture Unit 0
-		glActiveTexture(GL_TEXTURE0);
-
-		// Bind Texture Map
-		glBindTexture(GL_TEXTURE_2D, texture);
 
 		// Draw Elements (Triangles)
 		//todo
-        model.Draw();
+        model.Draw(program);
 
 //		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
@@ -311,7 +311,7 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
         glfwSetWindowShouldClose(window,true);
     }
-    float speed = 1.0f;
+    float speed = 10.0f;
     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =speed;}
     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -speed;}
     else{camera->speedZ = 0;}
