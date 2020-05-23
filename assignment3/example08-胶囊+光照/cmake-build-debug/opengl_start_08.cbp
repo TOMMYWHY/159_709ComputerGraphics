@@ -96,6 +96,9 @@
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/include/Mesh.h">
 			<Option target="opengl_start_08"/>
 		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/include/Model.h">
+			<Option target="opengl_start_08"/>
+		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/include/ObjModel.h">
 			<Option target="opengl_start_08"/>
 		</Unit>
@@ -118,6 +121,9 @@
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/src/Mesh.cpp">
+			<Option target="opengl_start_08"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/src/Model.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/example08-胶囊+光照/src/ObjModel.cpp">

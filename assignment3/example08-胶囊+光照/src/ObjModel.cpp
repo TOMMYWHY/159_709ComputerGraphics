@@ -67,6 +67,7 @@ void ObjModel::Init(string modelFilePath)
     {
         memset(szOneLine,0,256);
         ssFileContent.getline(szOneLine,256);
+
         if (strlen(szOneLine)>0)
         {
             std::stringstream ssOneLine(szOneLine);
@@ -102,7 +103,9 @@ void ObjModel::Init(string modelFilePath)
             }
             else if (szOneLine[0]=='f') //解析面信息
             {
+
                 ssOneLine >> temp;//f
+                cout << szOneLine[2]<<endl;
                 std::string vertexStr;
                 for (int i = 0; i < 3; ++i)
                 {
@@ -140,6 +143,10 @@ void ObjModel::Init(string modelFilePath)
 
         }
     }
+
+    /*for (int k = 0; k < faces.size(); k++) {
+        cout <<"face"<<k<<":"<<faces[k]<<endl;
+    }*/
     int vertexCount = (int)vertices.size();
     VertexData*vertexes = new VertexData[vertexCount];
     for (int  i = 0; i < vertexCount; ++i)
@@ -177,16 +184,7 @@ void ObjModel::Bind(GLint posLoc, GLint texcoordLoc, GLint normalLoc)
 {
     glBindBuffer(GL_ARRAY_BUFFER,mVBO);
     glEnableVertexAttribArray(posLoc);//启用顶点属性
-    /*
-    参数含义：
-    第一个参数：GPU中顶点属性的引用
-    第二个参数:因为顶点是一个向量,表示向量的维度
-    第三个参数：每个维度数据的类型
-    第四个参数：是否归一化
-    第五个参数：每个顶点间的偏移量
-    第六个参数：顶点数据的起始地址，因为用了VBO，所以起始地址为0
-    实际起始地址跟顶点属性在结构体VertexData中的位置有关
-    */
+
     glVertexAttribPointer(posLoc,3,GL_FLOAT,GL_FALSE,sizeof(VertexData),0);
 
     glEnableVertexAttribArray(texcoordLoc);//启用纹理属性
@@ -330,7 +328,7 @@ void ObjModel::loadFromFile(string objfile, string mtlfile)
 void ObjModel::loadMtlFile(string filename)
 {
 //    cout <<"filename" <<filename+"/capsule.mtl"<< endl;
-    cout <<"filename" <<filename+"/muro.mtl"<< endl;
+//    cout <<"filename" <<filename+"/muro.mtl"<< endl;
     ifstream f;
     f.open(filename+"/muro.mtl", ios::in);
 //    f.open(filename+"/capsule.mtl", ios::in);
@@ -361,7 +359,7 @@ void ObjModel::loadMtlFile(string filename)
 
             tMtl->mtlName = ls[1];
             m_mtls.push_back(tMtl);  // 获得一个新的材质
-            cout << m_mtls.size() << endl;
+//            cout << m_mtls.size() << endl;
             index = m_mtls.size() - 1;
         }
 
@@ -395,7 +393,7 @@ void ObjModel::loadMtlFile(string filename)
         {
             string imgPath = ls[1];
             //QString imgPath = "./res/obj/car1/"+strList[1];
-            cout <<  "map_Kd imgPath:"<<directory+"/"+imgPath <<endl;
+//            cout <<  "map_Kd imgPath:"<<directory+"/"+imgPath <<endl;
 
             int x,y,n;
             const char * texture_url = (directory+"/"+imgPath).c_str();
@@ -406,7 +404,7 @@ void ObjModel::loadMtlFile(string filename)
         {
             string imgPath = ls[1];
             //QString imgPath = "./res/obj/car1/"+strList[1];
-            cout <<  " bump imgPath:"<<directory+"/"+imgPath <<endl;
+//            cout <<  " bump imgPath:"<<directory+"/"+imgPath <<endl;
 
             int x,y,n;
             const char * texture_url = (directory+"/"+imgPath).c_str();
@@ -417,7 +415,7 @@ void ObjModel::loadMtlFile(string filename)
         {
             string imgPath = ls[1];
             //QString imgPath = "./res/obj/car1/"+strList[1];
-            cout <<  "map_Ks imgPath:"<<directory+"/"+imgPath <<endl;
+//            cout <<  "map_Ks imgPath:"<<directory+"/"+imgPath <<endl;
 
             int x,y,n;
             const char * texture_url = (directory+"/"+imgPath).c_str();

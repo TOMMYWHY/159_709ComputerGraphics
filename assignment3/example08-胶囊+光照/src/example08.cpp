@@ -50,6 +50,7 @@
 #include <FileSystem>
 #include <Camera.h>
 #include <ObjModel.h>
+#include <Model.h>
 
 using namespace std;
 
@@ -142,9 +143,9 @@ int main() {
 	//todo
     ObjModel model;
     model.Init("res/model/muro.obj");
-//    model.Init("res/model/capsule.obj");
+//    model.loadMtlFile("res/model/muro.mtl");
 
-//    model.loadMtlFile("res/model/capsule.mtl");
+//    Model model("res/model/","muro.obj");
 
 
     // Vertex Array Objects (VAO)
@@ -155,13 +156,6 @@ int main() {
 
 	// Element Buffer Objects (EBO)
 	GLuint ebo = 0;
-
-	// ----------------------------------------
-	// Load Texture Map from file
-	int x, y, n;
-//    GLuint texture = loadTexture2D("./res/model/capsule0.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-//    GLuint texture = loadTexture2D("./images/earth_nightmap.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
-//    GLuint texture_specular = loadTexture2D("./images/earthspec1k.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
 
 	// Create VAO, VBO & EBO
@@ -223,22 +217,17 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_View"),1,GL_FALSE,glm::value_ptr(viewMatrix));
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-
         glUniform3f(glGetUniformLocation(program,"lightPos"),8.0f,8.0f,15.0f);
         glUniform3f(glGetUniformLocation(program,"viewPos"),0.0f, 0.0f, 3.0f);//todo +camera
-
-
 
 
 		// Bind Vertex Array Object
 		glBindVertexArray(vao);
 
-
 		// Draw Elements (Triangles)
 		//todo
         model.Draw(program);
 
-//		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
@@ -279,7 +268,7 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
         glfwSetWindowShouldClose(window,true);
     }
-    float speed = 10.0f;
+    float speed = 1.0f;
     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =speed;}
     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -speed;}
     else{camera->speedZ = 0;}
@@ -290,12 +279,6 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-speed;}
     else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= speed;}
     else{camera->speedY = 0;}
-
-    /*
-     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
-     else{camera->speedZ = 0;}*/
-
 }
 
 void mouse_callback(GLFWwindow* window, double xPos, double yPos){

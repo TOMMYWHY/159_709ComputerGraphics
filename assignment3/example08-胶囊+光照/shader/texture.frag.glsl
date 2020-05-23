@@ -29,7 +29,8 @@ void main()
 	vec3 specular = specularStrength * spec * Color;
 
 	vec3 result = (ambient + diffuse + specular) * Color;
-	pixel_Colour = vec4(result, 1.0);
+//	pixel_Colour = vec4(result, 1.0);
+	pixel_Colour = vec4(1.0f,1.0f,1.0f, 1.0);
 
 }
 
