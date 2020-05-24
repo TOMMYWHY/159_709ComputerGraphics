@@ -28,19 +28,31 @@ struct Node{
 
 
 };
+
+struct Part{
+    vector<glm::vec4>buffer;
+    vector<glm::ivec3>indexes;
+};
+
 using namespace std;
 class Model {
 public:
+    unsigned int VAO;
+
+    GLuint ShadeID;
     string Directory;
     string Model_name;
     vector<Mesh> meshes;
     vector<MeshTexture> textures_loaded;
+    vector<Part> parts;
 
 
-    Model(string directory,string model_name);
+    Model(string directory,string model_name,GLuint shadeID);
     ~Model();
     void loadModel();
 
+    void setupMesh(Part pa);
+    void Draw();
 };
 
 

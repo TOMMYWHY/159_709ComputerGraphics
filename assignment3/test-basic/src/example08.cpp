@@ -126,12 +126,12 @@ int main() {
 	// ----------------------------------------
 
 	// Vertex and Index buffers (host)
-	std::vector<glm::vec4> buffer;
-	std::vector<glm::ivec3> indexes;
-
+//	std::vector<glm::vec4> buffer;
+//	std::vector<glm::ivec3> indexes;
+//
 	// Create Textured Cube
 //	createTexturedCube(buffer, indexes);
-    createSphere(buffer, indexes,0.8f,50,50);
+//    createSphere(buffer, indexes,0.8f,50,50);
 
 	// ----------------------------------------
 	// Create GLSL Program and VAOs, VBOs
@@ -142,12 +142,20 @@ int main() {
 
 	//todo
     ObjModel model;
-    model.Init("res/model/muro.obj");
+//    model.Init("res/model/muro.obj");
 //    model.Init("res/model/capsule.obj");
 
 //    model.loadMtlFile("res/model/capsule.mtl");
-    Model model_test("res/model/","muro.obj");
+//    Model model_test("res/model/","muro.obj");
+    Model model_test("res/model/","capsule.obj",program);
 
+//    model_test.parts[0]
+    vector<glm::vec4> buffer =  model_test.parts[0].buffer;
+    vector<glm::ivec3> indexes =  model_test.parts[0].indexes;
+
+    for (int i = 0; i < indexes.size(); i++) {
+            cout<< buffer[i].x <<","<< buffer[i].y<<"," <<buffer[i].z  << endl;
+    }
     // Vertex Array Objects (VAO)
 	GLuint vao = 0;
 	
@@ -165,7 +173,6 @@ int main() {
 
 	// Bind VAO, VBO & EBO
 	glBindVertexArray(vao);
-/*
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
 
@@ -193,9 +200,8 @@ int main() {
 	glEnableVertexAttribArray(posLoc);
 	glEnableVertexAttribArray(norLoc);
 	glEnableVertexAttribArray(texLoc);
-*/
         //todo
-    GLuint posLoc = glGetAttribLocation(program, "vert_Position");
+    /*GLuint posLoc = glGetAttribLocation(program, "vert_Position");
     GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
     GLuint texLoc = glGetAttribLocation(program, "vert_UV");
     model.Bind(posLoc,texLoc,norLoc);
@@ -207,7 +213,7 @@ int main() {
 
 	// ----------------------------------------
 	// Use Program
-	glUseProgram(program);
+	glUseProgram(program);*/
 
 
     glm::mat4 modelMatrix(1.0f);
@@ -262,9 +268,11 @@ int main() {
 
 		// Draw Elements (Triangles)
 		//todo
-        model.Draw(program);
 
-//		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+//        model.Draw(program);
+//        model_test.Draw();
+
+		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
@@ -282,9 +290,9 @@ int main() {
     }
 
     // Delete VAO, VBO & EBO
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo);
-    glDeleteBuffers(1, &ebo);
+//    glDeleteVertexArrays(1, &vao);
+//    glDeleteBuffers(1, &vbo);
+//    glDeleteBuffers(1, &ebo);
 
     // Delete Program
     glDeleteProgram(program);

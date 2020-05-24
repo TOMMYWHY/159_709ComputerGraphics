@@ -42,6 +42,8 @@ void ObjModel::Init(string modelFilePath)
     };
 
 
+
+
     /*
 
     C++中，iostream类重载了运算符>>和<<
@@ -133,6 +135,8 @@ void ObjModel::Init(string modelFilePath)
                     //trim the same vertice
                     int nCurrentVertexIndex = -1;
                     size_t nCurrentVerticeCount = vertices.size();
+//                        cout << "vertices.size()"<< vertices.size() << endl;
+
                     for (int j = 0; j<nCurrentVerticeCount; ++j)
                     {
                         if (vertices[j].positionIndex == vd.positionIndex&&
@@ -168,6 +172,9 @@ void ObjModel::Init(string modelFilePath)
     glBindBuffer(GL_ARRAY_BUFFER,mVBO);//指定BUFFER类型
     //将顶点数据上传至GPU
     glBufferData(GL_ARRAY_BUFFER,sizeof(VertexData)*vertexCount,vertexes,GL_STATIC_DRAW);
+    for (int i = 0; i < vertexCount; i++) {
+//        cout <<vertexes[i].position[0]<<endl;
+    }
     glBindBuffer(GL_ARRAY_BUFFER,0);
     delete vertexes;
 
@@ -181,6 +188,9 @@ void ObjModel::Init(string modelFilePath)
     glGenBuffers(1,&mEBO);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,mEBO);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER,sizeof(unsigned int)*mIndexCount,indexes,GL_STATIC_DRAW);
+    for (int i = 0; i < mIndexCount; i++) {
+//        cout <<indexes[i] <<endl;
+    }
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,0);
     delete indexes;
 
@@ -343,7 +353,7 @@ void ObjModel::loadMtlFile(string filename)
 
     if (!f)
     {
-        cout << "Error: Mtl File cannot be opened!";
+//        cout << "Error: Mtl File cannot be opened!";
         exit(-2);
     }
 

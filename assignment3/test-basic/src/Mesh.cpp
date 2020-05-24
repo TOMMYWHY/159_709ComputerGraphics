@@ -3,8 +3,17 @@
 //
 
 #include "Mesh.h"
-Mesh::Mesh() {}
+
 Mesh::~Mesh() {}
+
+
+Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices)
+{
+    this->vertices = vertices;
+    this->indices = indices;
+//    this->textures = textures;
+    this->setupMesh();
+}
 
 Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<MeshTexture> textures)
 {
@@ -13,6 +22,8 @@ Mesh::Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std:
     this->textures = textures;
     this->setupMesh();
 }
+
+
 
 void Mesh::setupMesh() {
     glGenVertexArrays(1, &(this->VAO));

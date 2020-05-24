@@ -81,5 +81,6 @@ void main()
 
 	pixel_Colour =(Target_a+ Target_d + Target_s)  * attenuation;
 
-	pixel_Colour = pow(pixel_Colour,vec4(1.0/gamma));
+//	pixel_Colour = pow(pixel_Colour,vec4(1.0/gamma));
+	pixel_Colour =vec4(1.0f,1.0f,1.0f,1.0f);
 }

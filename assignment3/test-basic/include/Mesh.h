@@ -36,7 +36,7 @@ public:
     vector<MeshTexture> textures;
     unsigned int VAO;
 
-    Mesh();
+    Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices);
     Mesh(std::vector<Vertex> vertices, std::vector<unsigned int> indices, std::vector<MeshTexture> textures);
     void Draw(GLuint shaderId);
     void Draw_old(GLuint shaderId);
