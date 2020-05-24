@@ -150,12 +150,10 @@ int main() {
     Model model_test("res/model/","capsule.obj",program);
 
 //    model_test.parts[0]
-    vector<glm::vec4> buffer =  model_test.parts[0].buffer;
-    vector<glm::ivec3> indexes =  model_test.parts[0].indexes;
+//    vector<glm::vec4> buffer =  model_test.parts[0].buffer;
+//    vector<glm::ivec3> indexes =  model_test.parts[0].indexes;
 
-    for (int i = 0; i < indexes.size(); i++) {
-            cout<< buffer[i].x <<","<< buffer[i].y<<"," <<buffer[i].z  << endl;
-    }
+/*
     // Vertex Array Objects (VAO)
 	GLuint vao = 0;
 	
@@ -175,9 +173,12 @@ int main() {
 	glBindVertexArray(vao);
 	glBindBuffer(GL_ARRAY_BUFFER, vbo);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+*/
 
 	// Load Vertex Data
-	glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
+//    model_test.setupMesh(model_test.parts[0]);
+
+    /*glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
 
 	// Load Element Data
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
@@ -199,7 +200,7 @@ int main() {
 	// Enable Vertex Attribute Arrays
 	glEnableVertexAttribArray(posLoc);
 	glEnableVertexAttribArray(norLoc);
-	glEnableVertexAttribArray(texLoc);
+	glEnableVertexAttribArray(texLoc);*/
         //todo
     /*GLuint posLoc = glGetAttribLocation(program, "vert_Position");
     GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
@@ -263,16 +264,18 @@ int main() {
         // ----------------------------------------
 
 		// Bind Vertex Array Object
-		glBindVertexArray(vao);
+//		glBindVertexArray(vao);
 
 
 		// Draw Elements (Triangles)
-		//todo
 
 //        model.Draw(program);
-//        model_test.Draw();
+        model_test.Draw();
+//        glBindVertexArray(model_test.VAO);
 
-		glDrawElements(GL_TRIANGLES, indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+        //todo for
+//		glDrawElements(GL_TRIANGLES, model_test.parts[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+//		glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
