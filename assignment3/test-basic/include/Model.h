@@ -8,10 +8,17 @@
 #include <string>
 #include <vector>
 #include "Mesh.h"
+#include "image.h"
 
 
-
-
+struct NodeVertex {
+    vector<glm::vec4> PositionsIndex;
+    vector<glm::vec4>  NormalsIndex;
+    vector<glm::vec4>  TexCoordsIndex;
+    vector<int> type;
+    vector<glm::vec4>  Tangent;
+    vector<glm::vec4>  Bitangent;
+};
 
 template <class Type>
 Type stringToNum(const string& str)
@@ -22,15 +29,27 @@ Type stringToNum(const string& str)
     return num;
 }
 
+struct Texture_info{
+    unsigned int id;
+    string type;
+    string path;
+};
+
 struct NodeTexture {
     unsigned int id;
     string type;
     glm::vec3 Ka;
     glm::vec3 Kd;
     glm::vec3 Ks;
+    vector<string> std_path;
+    vector<string> tex_type;
     string map_Kd_path;
+    GLuint map_Kd_ID;
     string map_Ks_path;
+    GLuint map_Ks_ID;
     string bump_path;
+    GLuint bump_ID;
+
 
 };
 
@@ -42,11 +61,12 @@ struct Node{
     int face_lineEndIndex;
     string usemtl;
     string mtl_info;
-
+    int face_amount;
     vector<glm::vec4>buffer;
     vector<glm::ivec3>indexes;
 //    vector<NodeTexture> textures;
    NodeTexture node_texture;
+   vector<NodeVertex> node_index_vec;
 
 };
 
@@ -68,6 +88,10 @@ public:
     vector<vector<string>> file_mtl;
 //    vector<string> mtl_groups;
 
+    /*vector<Vertex> vertices;
+    vector<unsigned int> indices;
+    vector<MeshTexture> textures;*/
+
 
     Model(string directory,string model_name,GLuint shadeID);
     ~Model();
@@ -78,7 +102,8 @@ public:
     void get_mtl_info(Node node);
 
     void loadModel();
-    void processNode();
+    void processNode(Node node);
+    void setupNode(Node node);
     void setupMesh(Node node);
     void Draw();
 

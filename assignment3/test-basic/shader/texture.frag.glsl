@@ -30,8 +30,8 @@ uniform float light_quadratic = 0.032f;
 //uniform vec4 u_light_Dir; // 平行光 方向
 
 uniform sampler2D material_diffuse ;
-uniform sampler2D material_specular ;
-uniform sampler2D material_Normal;
+//uniform sampler2D material_specular ;
+//uniform sampler2D material_Normal;
 
 uniform float material_shininess = 32.89743616;
 uniform float gamma = 2.2;
@@ -44,14 +44,16 @@ void main()
 	vec4 Ka = texture(material_diffuse, frag_UV.xy);//vec4 Ka = texture(u_Texture_Map, uv);
 
 	vec4 Kd = Ka;
-	vec4 Ks = texture(material_specular, frag_UV.xy); //vec4 Ks = texture(u_Specular_Map, uv);
+		vec4 Ks = vec4(1.0f, 1.0f, 1.0f, 0.1f);
+
+//	vec4 Ks = texture(material_specular, frag_UV.xy); //vec4 Ks = texture(u_Specular_Map, uv);
 
 
 //	 a = 27.89743616;
 
 
 //	vec4 uNormal = normalize(frag_Normal); //n
-	vec4 normalMap= vec4(normalize(texture(material_Normal, frag_UV.xy).rgb * 2.0f - 1.0f), 0.0f);
+//	vec4 normalMap= vec4(normalize(texture(material_Normal, frag_UV.xy).rgb * 2.0f - 1.0f), 0.0f);
 	vec4 uNormal = vec4(frag_Normal, 0.0f);
 
 //	uNormal = vec4(frag_Tangent   * normalMap.x +frag_Bitangent * normalMap.y +frag_Normal    * normalMap.z, 0.0f);

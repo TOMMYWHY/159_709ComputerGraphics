@@ -177,6 +177,33 @@ src/Mesh.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.s
 .PHONY : src/Mesh.cpp.s
 
+src/ModeObj.o: src/ModeObj.cpp.o
+
+.PHONY : src/ModeObj.o
+
+# target to build an object file
+src/ModeObj.cpp.o:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o
+.PHONY : src/ModeObj.cpp.o
+
+src/ModeObj.i: src/ModeObj.cpp.i
+
+.PHONY : src/ModeObj.i
+
+# target to preprocess a source file
+src/ModeObj.cpp.i:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.i
+.PHONY : src/ModeObj.cpp.i
+
+src/ModeObj.s: src/ModeObj.cpp.s
+
+.PHONY : src/ModeObj.s
+
+# target to generate assembly for a file
+src/ModeObj.cpp.s:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.s
+.PHONY : src/ModeObj.cpp.s
+
 src/Model.o: src/Model.cpp.o
 
 .PHONY : src/Model.o
@@ -381,6 +408,9 @@ help:
 	@echo "... src/Mesh.o"
 	@echo "... src/Mesh.i"
 	@echo "... src/Mesh.s"
+	@echo "... src/ModeObj.o"
+	@echo "... src/ModeObj.i"
+	@echo "... src/ModeObj.s"
 	@echo "... src/Model.o"
 	@echo "... src/Model.i"
 	@echo "... src/Model.s"

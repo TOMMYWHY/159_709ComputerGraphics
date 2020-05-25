@@ -121,101 +121,26 @@ int main() {
 	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LEQUAL);
 
-	// ----------------------------------------
-	// Create Object
-	// ----------------------------------------
-
-	// Vertex and Index buffers (host)
-//	std::vector<glm::vec4> buffer;
-//	std::vector<glm::ivec3> indexes;
-//
-	// Create Textured Cube
-//	createTexturedCube(buffer, indexes);
-//    createSphere(buffer, indexes,0.8f,50,50);
-
-	// ----------------------------------------
-	// Create GLSL Program and VAOs, VBOs
-	// ----------------------------------------
 
 	// Load GLSL Program
 	GLuint program  = loadProgram("./shader/texture.vert.glsl",  NULL, NULL, NULL, "./shader/texture.frag.glsl");
 
 	//todo
-    ObjModel model;
-//    model.Init("res/model/muro.obj");
-//    model.Init("res/model/capsule.obj");
 
-//    model.loadMtlFile("res/model/capsule.mtl");
-//    Model model_test("res/model/","muro.obj");
     Model model_test("res/model/","capsule.obj",program);
 
-//    model_test.parts[0]
-//    vector<glm::vec4> buffer =  model_test.parts[0].buffer;
-//    vector<glm::ivec3> indexes =  model_test.parts[0].indexes;
-
-/*
-    // Vertex Array Objects (VAO)
-	GLuint vao = 0;
-	
-	// Vertex Buffer Objects (VBO)
-	GLuint vbo = 0;
-
-	// Element Buffer Objects (EBO)
-	GLuint ebo = 0;
-
-
-	// Create VAO, VBO & EBO
-	glGenVertexArrays(1, &vao);
-	glGenBuffers(1, &vbo);
-	glGenBuffers(1, &ebo);
-
-	// Bind VAO, VBO & EBO
-	glBindVertexArray(vao);
-	glBindBuffer(GL_ARRAY_BUFFER, vbo);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
-*/
-
-	// Load Vertex Data
-//    model_test.setupMesh(model_test.parts[0]);
-
-    /*glBufferData(GL_ARRAY_BUFFER, buffer.size() * sizeof(glm::vec4), buffer.data(), GL_STATIC_DRAW);
-
-	// Load Element Data
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexes.size() * sizeof(glm::ivec3), indexes.data(), GL_STATIC_DRAW);
-
-	// Get Position Attribute location (must match name in shader)
-	GLuint posLoc = glGetAttribLocation(program, "vert_Position");
-
-	// Get Normal Attribute location (must match name in shader)
-	GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
-
-	// Get Texture Attribute location (must match name in shader)
-	GLuint texLoc = glGetAttribLocation(program, "vert_UV");
-
-	// Set Vertex Attribute Pointers
-	glVertexAttribPointer(posLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), NULL);
-	glVertexAttribPointer(norLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(4*sizeof(float)));
-	glVertexAttribPointer(texLoc, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(GLfloat), (GLvoid*)(8*sizeof(float)));
-
-	// Enable Vertex Attribute Arrays
-	glEnableVertexAttribArray(posLoc);
-	glEnableVertexAttribArray(norLoc);
-	glEnableVertexAttribArray(texLoc);*/
-        //todo
-    /*GLuint posLoc = glGetAttribLocation(program, "vert_Position");
-    GLuint norLoc = glGetAttribLocation(program, "vert_Normal");
-    GLuint texLoc = glGetAttribLocation(program, "vert_UV");
-    model.Bind(posLoc,texLoc,norLoc);
-
-	// Unbind VAO, VBO & EBO
-	glBindVertexArray(0);
-	glBindBuffer(GL_ARRAY_BUFFER, 0);
-	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+//    cout << "nimabi daheigou "<< model_test.nodes[0].usemtl << endl;
+//
+//    for (int i = 0; i < model_test.nodes[0].indexes.size(); i++) {
+//        cout<<"indexes" << model_test.nodes[0].indexes[i].x <<  " "<< model_test.nodes[0].indexes[i].y<<  " " <<model_test.nodes[0].indexes[i].z<< endl;
+//    }
 
 	// ----------------------------------------
 	// Use Program
-	glUseProgram(program);*/
 
+    glUseProgram(program);
+    int x,y,n;
+    GLuint texture = loadTexture2D("res/model/capsule0.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
     glm::mat4 modelMatrix(1.0f);
     glm::mat4 viewMatrix(1.0f);
@@ -253,29 +178,16 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_View"),1,GL_FALSE,glm::value_ptr(viewMatrix));
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-
-       /* glActiveTexture(GL_TEXTURE0 );// 0 texture
+        glActiveTexture(GL_TEXTURE0 );// 0 texture
         glBindTexture(GL_TEXTURE_2D,texture);
-        glActiveTexture(GL_TEXTURE1 );// 1  texture
-        glBindTexture(GL_TEXTURE_2D,texture_specular);
 
-        glUniform1i(glGetUniformLocation(program, "u_texture_Map"), 0); // texture
-        glUniform1i(glGetUniformLocation(program, "material_specular"), 1); // texture*/
-        // ----------------------------------------
-
-		// Bind Vertex Array Object
-//		glBindVertexArray(vao);
+        glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
+        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 
-		// Draw Elements (Triangles)
-
-//        model.Draw(program);
         model_test.Draw();
-//        glBindVertexArray(model_test.VAO);
+//        model.Draw(program);
 
-        //todo for
-//		glDrawElements(GL_TRIANGLES, model_test.parts[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
-//		glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);

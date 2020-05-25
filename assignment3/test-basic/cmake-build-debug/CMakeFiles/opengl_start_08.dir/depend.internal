@@ -405,9 +405,13 @@ CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vec3.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vec4.hpp
  /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
+CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o
+ ../include/ModeObj.h
+ /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/ModeObj.cpp
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o
  ../include/Mesh.h
  ../include/Model.h
+ ../include/image.h
  ../include/shader.h
  /Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Model.cpp
  /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h

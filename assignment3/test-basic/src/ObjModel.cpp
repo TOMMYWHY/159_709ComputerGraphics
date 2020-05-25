@@ -42,15 +42,6 @@ void ObjModel::Init(string modelFilePath)
     };
 
 
-
-
-    /*
-
-    C++中，iostream类重载了运算符>>和<<
-    >>用于cin对象，表示从标准输入，输入数据到变量中
-    <<用于cout对象，表示将变量数据，输出到标准输出中
-    */
-
     std::vector<VertexInfo> positions;//顶点坐标
     std::vector<VertexInfo> texcoords;//纹理坐标
     std::vector<VertexInfo> normals;//法线

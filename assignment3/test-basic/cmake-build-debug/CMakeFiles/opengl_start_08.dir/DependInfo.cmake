@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Camera.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Mesh.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o"
+  "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/ModeObj.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Model.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/Model.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/ObjModel.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o"
   "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/example08.cpp" "/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/cmake-build-debug/CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"

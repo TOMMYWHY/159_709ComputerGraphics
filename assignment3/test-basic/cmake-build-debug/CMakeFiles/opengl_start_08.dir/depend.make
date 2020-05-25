@@ -405,8 +405,12 @@ CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o: /usr/local/Cellar/glm/0.9.9.5/inc
 CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o: /usr/local/Cellar/glm/0.9.9.5/include/glm/vec4.hpp
 CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o: /usr/local/Cellar/glm/0.9.9.5/include/glm/vector_relational.hpp
 
+CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o: ../include/ModeObj.h
+CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o: ../src/ModeObj.cpp
+
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: ../include/Mesh.h
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: ../include/Model.h
+CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: ../include/image.h
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: ../include/shader.h
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: ../src/Model.cpp
 CMakeFiles/opengl_start_08.dir/src/Model.cpp.o: /usr/local/Cellar/glfw/3.3/include/GLFW/glfw3.h
