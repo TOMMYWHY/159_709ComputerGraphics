@@ -99,12 +99,12 @@ public:
     void read_mtl();
 
     void get_nodes();
-    void get_mtl_info(Node node);
+    void get_mtl_info(Node &node);
 
     void loadModel();
-    void processNode(Node node);
-    void setupNode(Node node);
-    void setupMesh(Node node);
+    void processNode(Node &node);
+//    void setupNode(Node node);
+    void setupMesh(Node &node);
     void Draw();
 
     char*  LoadFileContent(string filename);

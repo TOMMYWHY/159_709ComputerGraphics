@@ -128,6 +128,7 @@ int main() {
 	//todo
 
     Model model_test("res/model/","capsule.obj",program);
+//    Model model_test("res/model/","muro.obj",program);
 
 //    cout << "nimabi daheigou "<< model_test.nodes[0].usemtl << endl;
 //
@@ -182,12 +183,12 @@ int main() {
         glBindTexture(GL_TEXTURE_2D,texture);
 
         glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
-        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
+//        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 
         model_test.Draw();
 //        model.Draw(program);
-
+//        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);

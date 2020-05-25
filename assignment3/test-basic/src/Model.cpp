@@ -18,21 +18,17 @@ void Model::loadModel(){
     this->read_obj();
     this->get_nodes();
     this->read_mtl();
-//    for (int i = 0; i <this->nodes.size(); i++) {
-//        this->get_mtl_info(nodes[i]);
-//    }
+    for (int i = 0; i <this->nodes.size(); i++) {
+        this->get_mtl_info(nodes[i]);
+    }
     for (int i = 0; i <this->nodes.size(); i++) {
         this->processNode(nodes[i]);
     }
-    cout << "node0 " <<  nodes[0].usemtl<<endl;
 
-//    this->setupNode(this->nodes[0]);
 
-//    this->setupMesh(nodes[0]);//
-//    for (int i = 0; i <this->nodes.size(); i++) {
-//        cout <<"wocao111333 " <<endl;
-//        this->setupMesh(nodes[i]);//
-//     }
+    for (int i = 0; i <this->nodes.size(); i++) {
+        this->setupMesh(nodes[i]);//
+     }
 }
 void Model::read_obj() {
     ifstream f;
@@ -57,26 +53,21 @@ void Model::read_obj() {
     }
 
 }
-void Model::setupNode(Node node) {
-    cout <<"nibamib"<< node.name<<endl;
-    for (int i = 0; i < node.buffer.size(); i++) {
-        cout<<"indexes" << node.buffer[i].x <<  " "<< node.buffer[i].y<<  " " <<node.buffer[i].z<< endl;
-    }
-}
 
-void Model::setupMesh(Node node) {
-//    std::vector<glm::vec4> buffer = node.buffer;
-//    std::vector<glm::ivec3> indexes = node.indexes;
 
-    cout <<"22222222 " <<endl;
-    cout << node.indexes[0].x<<endl;
-    for (int i = 0; i < node.indexes.size(); i++) {
+void Model::setupMesh(Node &node) {
+    std::vector<glm::vec4> buffer = node.buffer;
+    std::vector<glm::ivec3> indexes = node.indexes;
+
+    /*for (int i = 0; i < node.indexes.size(); i++) {
         cout<<"indexes" << node.indexes[i].x <<  " "<< node.indexes[i].y<<  " " <<node.indexes[i].z<< endl;
+    }*/
+
+  /*  for (int i = 0; i < node.buffer.size(); i++) {
+        cout<<"buffer" << node.buffer[i].x <<
+        " "<< node.buffer[i].y<<  " " <<node.buffer[i].z << " "<<node.buffer[i].w<< endl;
     }
-//    for (int i = 0; i < indexes.size(); i++) {
-//        cout << indexes[i].x << indexes[i].y << indexes[i].z<< endl;
-//    }
-/*
+*/
     GLuint vbo = 0;
     GLuint ebo = 0;
     glGenVertexArrays(1, &(this->VAO));
@@ -104,7 +95,7 @@ void Model::setupMesh(Node node) {
 //    glEnableVertexAttribArray(tanLoc);
     glBindVertexArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);*/
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 
 }
 void Model::Draw() {
@@ -179,7 +170,7 @@ void Model::get_nodes() {
 
 }
 
-void Model::processNode(Node node) {
+void Model::processNode(Node &node) {
 
 //    int use_mtl=0;
     vector<glm::vec4> temp_Positions;
@@ -201,6 +192,9 @@ void Model::processNode(Node node) {
             temp_tex.x = stringToNum<double>(file_obj[i][1]); //long double
             temp_tex.y = stringToNum<double>(file_obj[i][2]);
             temp_TexCoords.push_back(glm::vec4(temp_tex,0.0f,0.0f));
+            cout << "file_obj[i][0]==vt :" <<file_obj[i][0] << " " << file_obj[i][1] << " "<<file_obj[i][2]<<endl;
+            cout << "uv:" << temp_tex.x << " " << temp_tex.y<<endl;
+
         }
         if(file_obj[i][0]=="vn"){
             glm::vec3 temp_nor;
@@ -252,16 +246,16 @@ void Model::processNode(Node node) {
     for (int i = 0; i <temp_node_index.PositionsIndex.size(); i++) {
 
         temp_buffer.push_back(temp_Positions[temp_node_index.PositionsIndex[i].x]);
-        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].x]);
         temp_buffer.push_back(    temp_Normals[temp_node_index.NormalsIndex[i].x]);
+        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].x]);
         /* point 1 */
         temp_buffer.push_back(temp_Positions[temp_node_index.PositionsIndex[i].y]);
-        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].y]);
         temp_buffer.push_back(    temp_Normals[temp_node_index.NormalsIndex[i].y]);
+        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].y]);
         /* point 2 */
         temp_buffer.push_back(temp_Positions[temp_node_index.PositionsIndex[i].z]);
-        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].z]);
         temp_buffer.push_back(    temp_Normals[temp_node_index.NormalsIndex[i].z]);
+        temp_buffer.push_back(temp_TexCoords[temp_node_index.TexCoordsIndex[i].z]);
         /*face == 3*/
         if(temp_node_index.type[i] ==3){
             temp_indexes.push_back(glm::ivec3(index_count,index_count+1,index_count+2));
@@ -307,7 +301,7 @@ void Model:: read_mtl(){
     }*/
 }
 
-void Model::get_mtl_info(Node node) {
+void Model::get_mtl_info(Node &node) {
     char* mtl_file = LoadFileContent(this->Directory+this->Mtl_file_name);
 //    char* mtl_file = LoadFileContent(this->Directory+"muro.mtl");
     vector<string> mtl_groups;
