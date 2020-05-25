@@ -7,3 +7,20 @@ illum 1
 Ns 0.000000
 map_Kd capsule0.jpg
 
+newmtl material1
+Ka 0.00 0.00 0.00
+Kd 0.00 0.00 0.00
+Ks 0.00 0.00 0.00
+Tr 1.000000
+illum 1
+Ns 0.000000
+map_Kd capsule0.jpg
+
+newmtl material2
+Ka 1.00 1.00 1.00
+Kd 1.00 1.00 1.00
+Ks 1.00 1.00 1.00
+Tr 1.000000
+illum 1
+Ns 0.000000
+map_Kd capsule0.jpg

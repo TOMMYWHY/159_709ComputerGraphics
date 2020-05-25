@@ -127,14 +127,10 @@ int main() {
 
 	//todo
 
-    Model model_test("res/model/","capsule.obj",program);
+//    Model model_test("res/model/","capsule.obj",program);
+    Model model_test("res/model/","capsule_2.obj",program);
 //    Model model_test("res/model/","muro.obj",program);
 
-//    cout << "nimabi daheigou "<< model_test.nodes[0].usemtl << endl;
-//
-//    for (int i = 0; i < model_test.nodes[0].indexes.size(); i++) {
-//        cout<<"indexes" << model_test.nodes[0].indexes[i].x <<  " "<< model_test.nodes[0].indexes[i].y<<  " " <<model_test.nodes[0].indexes[i].z<< endl;
-//    }
 
 	// ----------------------------------------
 	// Use Program
@@ -179,16 +175,8 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_View"),1,GL_FALSE,glm::value_ptr(viewMatrix));
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
-        glActiveTexture(GL_TEXTURE0 );// 0 texture
-        glBindTexture(GL_TEXTURE_2D,texture);
-
-        glUniform1i(glGetUniformLocation(program, "material_diffuse"), 0); // texture
-//        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
-
 
         model_test.Draw();
-//        model.Draw(program);
-//        glDrawElements(GL_TRIANGLES, model_test.nodes[0].indexes.size() * 3, GL_UNSIGNED_INT, NULL);
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
@@ -206,9 +194,7 @@ int main() {
     }
 
     // Delete VAO, VBO & EBO
-//    glDeleteVertexArrays(1, &vao);
-//    glDeleteBuffers(1, &vbo);
-//    glDeleteBuffers(1, &ebo);
+    model_test.DeleteBuffer();
 
     // Delete Program
     glDeleteProgram(program);

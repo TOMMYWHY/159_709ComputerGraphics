@@ -29,11 +29,11 @@ Type stringToNum(const string& str)
     return num;
 }
 
-struct Texture_info{
+/*struct Texture_info{
     unsigned int id;
     string type;
     string path;
-};
+};*/
 
 struct NodeTexture {
     unsigned int id;
@@ -41,8 +41,8 @@ struct NodeTexture {
     glm::vec3 Ka;
     glm::vec3 Kd;
     glm::vec3 Ks;
-    vector<string> std_path;
-    vector<string> tex_type;
+//    vector<string> std_path;
+//    vector<string> tex_type;
     string map_Kd_path;
     GLuint map_Kd_ID;
     string map_Ks_path;
@@ -55,57 +55,53 @@ struct NodeTexture {
 
 struct Node{
     string name;
-    int lineStarIndex;
+    int lineStartIndex;
     int lineEndIndex;
     int face_lineStartIndex;
     int face_lineEndIndex;
     string usemtl;
-    string mtl_info;
+
+    string mtl_info; //
     int face_amount;
     vector<glm::vec4>buffer;
     vector<glm::ivec3>indexes;
 //    vector<NodeTexture> textures;
    NodeTexture node_texture;
-   vector<NodeVertex> node_index_vec;
+//   vector<NodeVertex> node_index_vec;
 
 };
-
 
 using namespace std;
 class Model {
 public:
-    unsigned int VAO;
+    unsigned int VAO,VBO,EBO;
 
     GLuint ShadeID;
     string Directory;
-    string Model_name;
-    string Mtl_file_name;
-    vector<Mesh> meshes;
-    vector<MeshTexture> textures_loaded;
-    vector<NodeTexture> node_texutre;
-    vector<Node> nodes;
-    vector<vector<string>> file_obj;
-    vector<vector<string>> file_mtl;
-//    vector<string> mtl_groups;
+    string Model_name; // .obj filename
+    string Mtl_file_name; //.mtl filename
+//    vector<Mesh> meshes;
+//    vector<MeshTexture> textures_loaded;
+//    vector<NodeTexture> node_texutre;
+    vector<Node> nodes; //
+    vector<vector<string>> file_obj; //all words of obj file
+    vector<vector<string>> file_mtl; //all words of obj file
 
-    /*vector<Vertex> vertices;
-    vector<unsigned int> indices;
-    vector<MeshTexture> textures;*/
 
 
     Model(string directory,string model_name,GLuint shadeID);
     ~Model();
     void read_obj();
-    void read_mtl();
+//    void read_mtl();
 
     void get_nodes();
-    void get_mtl_info(Node &node);
+    void get_mtl_info(char* mtl_file, Node &node);
 
     void loadModel();
     void processNode(Node &node);
-//    void setupNode(Node node);
-    void setupMesh(Node &node);
+    void setupNode(Node &node);
     void Draw();
+    void DeleteBuffer();
 
     char*  LoadFileContent(string filename);
     void  split(const string &str,vector<string> &v,string spacer);
