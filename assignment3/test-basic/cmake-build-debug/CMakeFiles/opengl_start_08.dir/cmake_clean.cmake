@@ -1,12 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/opengl_start_08.dir/src/Camera.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.o"
-  "CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/Model.cpp.o"
-  "CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o"
-  "CMakeFiles/opengl_start_08.dir/src/example08.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/geometry.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/image.cpp.o"
+  "CMakeFiles/opengl_start_08.dir/src/main.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/shader.cpp.o"
   "CMakeFiles/opengl_start_08.dir/src/utils.cpp.o"
   "opengl_start_08_Debug/opengl_start_08"

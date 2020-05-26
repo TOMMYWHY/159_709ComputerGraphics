@@ -33,7 +33,7 @@ add_definitions(-DGLFW_INCLUDE_NONE
         -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
 
 
-add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_SHADERS}${EXTERNAL_SOURCES} src/ObjModel.cpp include/ObjModel.h src/Mesh.cpp include/Mesh.h src/Model.cpp include/Model.h src/ModeObj.cpp include/ModeObj.h)
+add_executable(${PROJECT_NAME} ${PROJECT_SOURCES} ${PROJECT_HEADERS} ${PROJECT_SHADERS}${EXTERNAL_SOURCES} src/Mesh.cpp include/Mesh.h src/Model.cpp include/Model.h)
 
 
 

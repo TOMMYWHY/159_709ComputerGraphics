@@ -96,13 +96,7 @@
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/include/Mesh.h">
 			<Option target="opengl_start_08"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/include/ModeObj.h">
-			<Option target="opengl_start_08"/>
-		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/include/Model.h">
-			<Option target="opengl_start_08"/>
-		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/include/ObjModel.h">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/include/geometry.h">
@@ -126,22 +120,16 @@
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Mesh.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/ModeObj.cpp">
-			<Option target="opengl_start_08"/>
-		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/Model.cpp">
-			<Option target="opengl_start_08"/>
-		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/ObjModel.cpp">
-			<Option target="opengl_start_08"/>
-		</Unit>
-		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/example08.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/geometry.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/image.cpp">
+			<Option target="opengl_start_08"/>
+		</Unit>
+		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/main.cpp">
 			<Option target="opengl_start_08"/>
 		</Unit>
 		<Unit filename="/Users/Tommy/Desktop/studyInMassey/159_709ComputerGraphics/assignment3/test-basic/src/shader.cpp">

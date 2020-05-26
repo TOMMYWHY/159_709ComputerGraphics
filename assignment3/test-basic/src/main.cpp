@@ -49,7 +49,7 @@
 #include "stb_image.h"
 #include <FileSystem>
 #include <Camera.h>
-#include <ObjModel.h>
+
 #include <Model.h>
 
 using namespace std;
@@ -128,16 +128,19 @@ int main() {
 	//todo
 
 //    Model model_test("res/model/","capsule.obj",program);
-    Model model_test("res/model/","capsule_2.obj",program);
-//    Model model_test("res/model/","muro.obj",program);
+
+//    Model model_test("res/model/","muro_1.obj",program); //head
+//    Model model_test("res/model/","muro_2.obj",program);//body
+//    Model model_test("res/model/","muro_3.obj",program);//eyes
+    Model model_test("res/model/","muro.obj",program);
 
 
 	// ----------------------------------------
 	// Use Program
 
     glUseProgram(program);
-    int x,y,n;
-    GLuint texture = loadTexture2D("res/model/capsule0.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
+//    int x,y,n;
+//    GLuint texture = loadTexture2D("res/model/capsule0.jpg", x, y, n, GL_LINEAR_MIPMAP_LINEAR,GL_LINEAR);
 
     glm::mat4 modelMatrix(1.0f);
     glm::mat4 viewMatrix(1.0f);
@@ -166,9 +169,9 @@ int main() {
 
 //        float Rotation_theta  = (float)(glfwGetTime()* 0.5f);
         float Rotation_theta  = 0;
-        modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3(0, 0, 0)) *
+        modelMatrix = glm::translate(glm::mat4(1.0f),  glm::vec3(0, -5, -3)) *
                       glm::rotate(   glm::mat4(1.0f), Rotation_theta , glm::vec3(0.0f, 1.0f, 0.0f))*
-                      glm::scale(glm::mat4(1.0f),glm::vec3(0.5f));
+                      glm::scale(glm::mat4(1.0f),glm::vec3(0.05f));
 
 
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Model"),1,GL_FALSE,glm::value_ptr(modelMatrix));
@@ -176,7 +179,11 @@ int main() {
         glUniformMatrix4fv(glGetUniformLocation(program,"u_Projection"),1,GL_FALSE,glm::value_ptr(projectionMatrix));
 
 
-        model_test.Draw();
+//        model_test.Draw(model_test.nodes[0]);
+//        model_test.Draw(model_test.nodes[1]);
+        for (int i = 0; i < model_test.nodes.size(); i++) {
+            model_test.Draw(model_test.nodes[i]);
+        }
 
 		// Set active Texture Unit 0
 		glActiveTexture(GL_TEXTURE0);
@@ -215,23 +222,16 @@ void processInput(GLFWwindow *window){
     if(glfwGetKey(window, GLFW_KEY_ESCAPE)==GLFW_PRESS){
         glfwSetWindowShouldClose(window,true);
     }
-    float speed = 10.0f;
+    float speed = 8.0f;
     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =speed;}
     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -speed;}
     else{camera->speedZ = 0;}
     if(glfwGetKey(window, GLFW_KEY_D)==GLFW_PRESS){camera->speedX =speed;}
     else if(glfwGetKey(window, GLFW_KEY_A)==GLFW_PRESS){camera->speedX= -speed;}
     else{camera->speedX = 0;}
-    // Q下沉 E上浮
     if(glfwGetKey(window, GLFW_KEY_Q)==GLFW_PRESS){camera->speedY =-speed;}
     else if(glfwGetKey(window, GLFW_KEY_E)==GLFW_PRESS){camera->speedY= speed;}
     else{camera->speedY = 0;}
-
-    /*
-     if(glfwGetKey(window, GLFW_KEY_W)==GLFW_PRESS){camera->speedZ =1.0f;}
-     else if(glfwGetKey(window, GLFW_KEY_S)==GLFW_PRESS){camera->speedZ= -1.0f;}
-     else{camera->speedZ = 0;}*/
-
 }
 
 void mouse_callback(GLFWwindow* window, double xPos, double yPos){

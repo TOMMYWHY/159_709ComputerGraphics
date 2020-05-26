@@ -177,33 +177,6 @@ src/Mesh.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Mesh.cpp.s
 .PHONY : src/Mesh.cpp.s
 
-src/ModeObj.o: src/ModeObj.cpp.o
-
-.PHONY : src/ModeObj.o
-
-# target to build an object file
-src/ModeObj.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.o
-.PHONY : src/ModeObj.cpp.o
-
-src/ModeObj.i: src/ModeObj.cpp.i
-
-.PHONY : src/ModeObj.i
-
-# target to preprocess a source file
-src/ModeObj.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.i
-.PHONY : src/ModeObj.cpp.i
-
-src/ModeObj.s: src/ModeObj.cpp.s
-
-.PHONY : src/ModeObj.s
-
-# target to generate assembly for a file
-src/ModeObj.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ModeObj.cpp.s
-.PHONY : src/ModeObj.cpp.s
-
 src/Model.o: src/Model.cpp.o
 
 .PHONY : src/Model.o
@@ -230,60 +203,6 @@ src/Model.s: src/Model.cpp.s
 src/Model.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/Model.cpp.s
 .PHONY : src/Model.cpp.s
-
-src/ObjModel.o: src/ObjModel.cpp.o
-
-.PHONY : src/ObjModel.o
-
-# target to build an object file
-src/ObjModel.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.o
-.PHONY : src/ObjModel.cpp.o
-
-src/ObjModel.i: src/ObjModel.cpp.i
-
-.PHONY : src/ObjModel.i
-
-# target to preprocess a source file
-src/ObjModel.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.i
-.PHONY : src/ObjModel.cpp.i
-
-src/ObjModel.s: src/ObjModel.cpp.s
-
-.PHONY : src/ObjModel.s
-
-# target to generate assembly for a file
-src/ObjModel.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/ObjModel.cpp.s
-.PHONY : src/ObjModel.cpp.s
-
-src/example08.o: src/example08.cpp.o
-
-.PHONY : src/example08.o
-
-# target to build an object file
-src/example08.cpp.o:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/example08.cpp.o
-.PHONY : src/example08.cpp.o
-
-src/example08.i: src/example08.cpp.i
-
-.PHONY : src/example08.i
-
-# target to preprocess a source file
-src/example08.cpp.i:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/example08.cpp.i
-.PHONY : src/example08.cpp.i
-
-src/example08.s: src/example08.cpp.s
-
-.PHONY : src/example08.s
-
-# target to generate assembly for a file
-src/example08.cpp.s:
-	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/example08.cpp.s
-.PHONY : src/example08.cpp.s
 
 src/geometry.o: src/geometry.cpp.o
 
@@ -338,6 +257,33 @@ src/image.s: src/image.cpp.s
 src/image.cpp.s:
 	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/image.cpp.s
 .PHONY : src/image.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/opengl_start_08.dir/build.make CMakeFiles/opengl_start_08.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 src/shader.o: src/shader.cpp.o
 
@@ -408,24 +354,18 @@ help:
 	@echo "... src/Mesh.o"
 	@echo "... src/Mesh.i"
 	@echo "... src/Mesh.s"
-	@echo "... src/ModeObj.o"
-	@echo "... src/ModeObj.i"
-	@echo "... src/ModeObj.s"
 	@echo "... src/Model.o"
 	@echo "... src/Model.i"
 	@echo "... src/Model.s"
-	@echo "... src/ObjModel.o"
-	@echo "... src/ObjModel.i"
-	@echo "... src/ObjModel.s"
-	@echo "... src/example08.o"
-	@echo "... src/example08.i"
-	@echo "... src/example08.s"
 	@echo "... src/geometry.o"
 	@echo "... src/geometry.i"
 	@echo "... src/geometry.s"
 	@echo "... src/image.o"
 	@echo "... src/image.i"
 	@echo "... src/image.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/shader.o"
 	@echo "... src/shader.i"
 	@echo "... src/shader.s"

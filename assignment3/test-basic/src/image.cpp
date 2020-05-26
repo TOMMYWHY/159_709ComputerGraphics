@@ -169,7 +169,7 @@ GLuint createTexture2D(const float *image, int width, int height, int n, GLint m
 GLuint loadTexture2D(const char *filename, int &width, int &height, int &n, GLint minFilter, GLint magFilter, GLint textureWrapS, GLint textureWrapT) {
 	// ----------------------------------------
 	// Load Texture Map from file
-	unsigned char *image = loadImage(filename, width, height, n, true);
+	unsigned char *image = loadImage(filename, width, height, n, false);
 
 	// Check image result
 	if(image == NULL) {
