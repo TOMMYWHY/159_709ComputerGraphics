@@ -1,0 +1,26 @@
+newmtl material0
+Ka 0.329412 0.223529 0.027451
+Kd 0.780392 0.568627 0.113725
+Ks 0.992157 0.941176 0.807843
+Tr 1.000000
+illum 1
+Ns 0.000000
+map_Kd capsule0.jpg
+
+newmtl material1
+Ka 0.00 0.00 0.00
+Kd 0.00 0.00 0.00
+Ks 0.00 0.00 0.00
+Tr 1.000000
+illum 1
+Ns 0.000000
+map_Kd capsule0.jpg
+
+newmtl material2
+Ka 1.00 1.00 1.00
+Kd 1.00 1.00 1.00
+Ks 1.00 1.00 1.00
+Tr 1.000000
+illum 1
+Ns 0.000000
+map_Kd capsule0.jpg
