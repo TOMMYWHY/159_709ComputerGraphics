@@ -1,0 +1,8 @@
+newmtl material0
+Ka 0.329412 0.223529 0.027451
+Kd 0.780392 0.568627 0.113725
+Ks 0.992157 0.941176 0.807843
+illum 1
+Ns 0.000000
+map_Kd volacano_sleep_green.tga
+bump volacano_sleep_normal.tga -bm 1
