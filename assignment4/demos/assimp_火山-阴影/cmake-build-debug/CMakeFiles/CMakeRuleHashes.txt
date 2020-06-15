@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+0b570dfa8659bdd6c0df1469e72b3bd6 external/assimp/CMakeFiles/uninstall
